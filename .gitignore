@@ -18,3 +18,4 @@
 # Claudian 会话日志（临时性）
 .claudian/sessions/
 .claudian/
+.claudian/
