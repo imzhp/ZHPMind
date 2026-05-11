@@ -1,9 +1,9 @@
 ---
 title: "A9 算法（A9 Algorithm）"
 type: concept
-tags: [亚马逊, 算法, 排名, 关键词, 流量]
+tags: [amazon, algorithm, ranking, keywords, traffic]
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-19
 sources: ["亚马逊高阶运营培训手册.pdf"]
 source_count: 1
 ---

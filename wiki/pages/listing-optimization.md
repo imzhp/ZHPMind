@@ -1,9 +1,9 @@
 ---
 title: "Listing 优化（Listing Optimization）"
 type: concept
-tags: [亚马逊, listing, 关键词, 转化率, 图片, 评论]
+tags: [amazon, listing, keywords, conversion-rate, images, reviews]
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-19
 sources: ["亚马逊高阶运营培训手册.pdf"]
 source_count: 1
 ---
