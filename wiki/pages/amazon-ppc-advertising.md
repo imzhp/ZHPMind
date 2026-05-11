@@ -1,9 +1,9 @@
 ---
 title: "亚马逊 PPC 广告（Amazon PPC Advertising）"
 type: concept
-tags: [亚马逊, 广告, PPC, 竞价, 关键词, ACOS]
+tags: [amazon, advertising, ppc, bidding, keywords, acos]
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-19
 sources: ["亚马逊高阶运营培训手册.pdf"]
 source_count: 1
 ---

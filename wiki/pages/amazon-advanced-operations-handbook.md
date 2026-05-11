@@ -1,9 +1,9 @@
 ---
 title: "亚马逊高阶运营培训手册"
-type: summary
-tags: [亚马逊, 跨境电商, 运营, 广告, 选品, listing]
+type: article
+tags: [amazon, cross-border-ecommerce, operations, advertising, product-selection, listing]
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-05-11
 sources: ["亚马逊高阶运营培训手册.pdf"]
 source_count: 1
 ---

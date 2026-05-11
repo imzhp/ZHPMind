@@ -1,9 +1,9 @@
 ---
 title: "亚马逊流量来源（Amazon Traffic Sources）"
 type: concept
-tags: [亚马逊, 流量, 站内流量, 站外流量, 关联流量]
+tags: [amazon, traffic, internal-traffic, external-traffic, related-traffic]
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-19
 sources: ["亚马逊高阶运营培训手册.pdf"]
 source_count: 1
 ---
