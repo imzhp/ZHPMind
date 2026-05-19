@@ -75,3 +75,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[amazon-moc]]、[[ai-engineering-moc]]、[[people-moc]]
 - **Pages updated**: [[index]]（新增 "Maps of Content" 分组置顶，总页数更新为 25）
 - **Note**: [self-reviewed] 新建三个 MOC（Map of Content）导航文件，不设 frontmatter type（MOC 是导航页，不是内容页）。amazon-moc 按七个子主题组织亚马逊/电商相关页面（算法与排名 / Listing 优化 / 广告体系 / 流量来源 / 评论管理 / 选品思维 / 综合运营手册）；ai-engineering-moc 按六个子主题组织 AI/LLM/工程相关页面（范式与能力 / 开发方式 / 工具链 / Agent 架构 / 知识管理 / 战略判断）并附来源文章区；people-moc 列出全部 person 类页面，新增三位思想家的关联关系图。index.md 在原有六组之上增加 "Maps of Content" 首组。发现并修复以下问题：(1) type 字段违规——`summary`（4 处）和 `entity`（4 处）均为旧体系值，替换为 v2 规范值：`summary` → `article`（4 个蒸馏页：amazon-advanced-operations-handbook、andrej-karpathy-vibe-coding-to-agentic-engineering、boris-cherny-coding-is-solved、garry-tan-meta-meta-prompting）；`entity` → `person`（3 个人物页：andrej-karpathy、boris-cherny、garry-tan）；`entity` → `concept`（claude-code，工具/产品类，不属于 person）。(2) 人物页结构违规——andrej-karpathy、boris-cherny、garry-tan 三页缺少三段式结构（Compiled Truth + Timeline + References），已全部重写；现有正文内容梳理入 Compiled Truth，可验证时间节点提取入 Timeline（无法确认的历史事件标注 [unsourced]），来源链接归入 References。(3) index.md 分类结构过时——旧有"综合概览/概念/实体/来源摘要/对比分析"5 组替换为 v2 规范的 6 组（Concepts & Methods / Frameworks / People / Articles & Books / Reflections / Snapshots）；claude-code 从 Entities 移入 Concepts & Methods；article 类页面统一归入 Articles & Books。tags 全库检查无违规（全小写、连字符分隔、纯英文）。updated 字段同步刷新至 2026-05-11。
+
+---
+
+## [2026-05-19] distill | The-Founders-Playbook-05062026_v3.pdf
+
+- **Sources touched**: `raw/assets/references/The-Founders-Playbook-05062026_v3.pdf`
+- **Pages created**: [[the-founders-playbook]], [[ai-native-startup]]
+- **Pages updated**: [[claude-code]]（添加 CLAUDE.md 机制和 Claude Code Security 章节，增加来源）、[[agentic-engineering]]（添加代理技术债务章节，增加来源）、[[index]]（新增 2 条目，总页数 27）
+- **Note**: Anthropic 出版的 36 页创业方法论。核心框架：AI 原生创业四阶段（Idea/MVP/Launch/Scale），每阶段有明确退出标准。新建概念页 ai-native-startup（包含护城河三重奏、与传统创业对比）。代理技术债务（Agentic Technical Debt）作为新的关键概念写入 agentic-engineering 页。Claude Cowork 作为新产品提及（候选新建页：尚未单独建页，但多处引用）。[self-reviewed]

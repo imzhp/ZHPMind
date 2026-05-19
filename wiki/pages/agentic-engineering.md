@@ -3,9 +3,9 @@ title: "Agentic Engineering（代理工程）"
 type: concept
 tags: [ai, software-engineering, agents, llm, productivity]
 created: 2026-05-08
-updated: 2026-05-10
-sources: ["Andrej Karpathy From Vibe Coding to Agentic Engineering.md", "Boris Cherny Why Coding Is Solved, and What Comes Next.md", "Meta-Meta-Prompting The Secret to Making AI Agents Work.md"]
-source_count: 3
+updated: 2026-05-19
+sources: ["Andrej Karpathy From Vibe Coding to Agentic Engineering.md", "Boris Cherny Why Coding Is Solved, and What Comes Next.md", "Meta-Meta-Prompting The Secret to Making AI Agents Work.md", "assets/references/The-Founders-Playbook-05062026_v3.pdf"]
+source_count: 4
 discussions: []
 ---
 
@@ -106,8 +106,30 @@ Garry 的核心论断与 Karpathy 的 Agentic Engineering 高度呼应：
 
 这对应 Karpathy 的"Agent 是实习生，需要人类设计师和指挥官"——但 Garry 的系统更进一步：随着技能和数据积累，对人类实时把关的依赖在持续降低。
 
+## 代理技术债务（Agentic Technical Debt）
+
+[[the-founders-playbook]] 引入了一个 [[agentic-engineering]] 的关键反模式概念：**代理技术债务（Agentic Technical Debt）**。
+
+传统技术债务是线性积累的，可以规划偿还；代理技术债务是**指数级**的：
+
+- 每次 Agent 会话缺乏持久上下文时，它被迫从头推导架构决策
+- 各次会话的决策相互独立、容易漂移，代码库逐渐失去连贯的心智模型
+- 每个单独的部分可能能运行，但整体从未被设计成协同工作
+- 最终必然出现"被迫重写"的时刻
+
+解法是 **CLAUDE.md**（见 [[claude-code]]）：在项目目录中维护一个 Claude Code 自动读取的架构上下文文件，确保每次会话从共同理解出发，而非从零开始。
+
+这与 Karpathy 的 **规格说明与顶层设计（Spec Design）** 原则高度一致：Agent 会犯系统级设计错误，人类必须定义正确的数据结构和系统边界，而不是等 Agent 自己摸索出来。代理技术债务可以理解为"没有做好规格说明"的累积后果。
+
+**判断代理技术债务程度的信号**：
+- 新会话开始时需要大量时间重新解释代码库
+- AI 生成的变更与之前的设计决策不一致
+- 同一个问题在不同会话中被以不同方式解决
+- 很难向新加入的人（或 AI）解释代码库为什么是现在这个样子
+
 ## Sources
 
 - `raw/Andrej Karpathy From Vibe Coding to Agentic Engineering.md` — Karpathy 对 Agentic Engineering 的定义、人类角色、招聘范式和工程纪律的系统阐述
 - `raw/Boris Cherny Why Coding Is Solved, and What Comes Next.md` — Boris Cherny 100% AI 工作流的现实案例及 Agentic Engineering 的演化预测
 - `raw/Meta-Meta-Prompting The Secret to Making AI Agents Work.md` — Garry Tan 在知识管理维度的 Agentic Engineering 实践：技能化、Fat Skills / Thin Harness 架构和实体传播机制
+- `raw/assets/references/The-Founders-Playbook-05062026_v3.pdf` — Anthropic 创业指南中代理技术债务的定义及 CLAUDE.md 解法

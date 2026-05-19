@@ -3,9 +3,9 @@ title: "Claude Code"
 type: concept
 tags: [ai, tools, anthropic, software-engineering, agents, cli]
 created: 2026-05-08
-updated: 2026-05-11
-sources: ["Boris Cherny Why Coding Is Solved, and What Comes Next.md"]
-source_count: 1
+updated: 2026-05-19
+sources: ["Boris Cherny Why Coding Is Solved, and What Comes Next.md", "assets/references/The-Founders-Playbook-05062026_v3.pdf"]
+source_count: 2
 discussions: []
 ---
 
@@ -51,6 +51,22 @@ Claude Code 是当前 [[agentic-engineering]] 工作流的主要载体。[[andre
 
 Claude Code 支持通过 MCP（Model Context Protocol）连接任意外部服务（Salesforce、Google Docs、Google Calendar、Slack 等），使 Agent 能够跨工具执行知识工作，而不仅限于代码库操作。
 
+## CLAUDE.md：会话持久记忆
+
+在创业 MVP 阶段，Claude Code 与 **CLAUDE.md** 配合使用是防止代理技术债务（Agentic Technical Debt）的关键机制。CLAUDE.md 是放在项目目录中的 Markdown 文件，Claude Code 运行时自动读取作为会话上下文——包含架构原则、要避免的依赖关系、有意识接受的权衡等。
+
+没有 CLAUDE.md，每次会话都从头推导架构决策，决策漂移导致代码库失去连贯性：各部分代码能运行，但从未被设计成协同工作——这是 AI 原生创业中独特的技术债务形式，以指数而非线性速度积累。
+
+CLAUDE.md 的正确使用模式：
+- **会话开始时**：提供 CLAUDE.md 架构上下文 + 本次任务 + 约束条件
+- **会话结束时**：更新 CLAUDE.md，记录本次会话的决策和引入的新假设
+- **目标**：一个你能解释清楚结构的代码库，而不仅仅是能跑的代码库
+
+## Claude Code Security
+
+Claude Code Security 是 [[claude-code]] 的安全扫描功能（截至 2026 年 5 月为限量测试版），可扫描代码库中的安全漏洞并针对性建议补丁供人工审查，能发现传统方法容易遗漏的问题。它不能替代安全工具或人工审查，但作为在部署给真实用户前的第一道检查，可以覆盖认证处理、API 数据暴露、输入验证和依赖漏洞等常见问题。
+
 ## Sources
 
 - `raw/Boris Cherny Why Coding Is Solved, and What Comes Next.md` — Boris Cherny 对 Claude Code 起源、架构决策、功能演进和未来路线图的系统阐述
+- `raw/assets/references/The-Founders-Playbook-05062026_v3.pdf` — Anthropic 创业指南中 Claude Code 在 MVP/Launch/Scale 阶段的具体用法，特别是 CLAUDE.md 会话上下文机制
