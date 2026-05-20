@@ -1,14 +1,3 @@
----
-title: ZHPMind 设计原则
-type: framework
-tags:
-  - architecture
-  - knowledge-management
-created: 2026-05-11
-updated: 2026-05-12
-source_count: 0
----
-
 # ZHPMind 设计原则
 
 > ZHPMind 是张昊鹏的个人 Brain——一个"人生随身笔记本"，同时承载学习、思考、业务运营、人生反思。它是一个会陪伴几十年的活系统。
@@ -133,7 +122,7 @@ ZHPMind 的终极目的：让这个循环**转得更快、更深、更不容易�
 
 7. **propagation** —— 横向散播。一条新信息进来，自动更新所有相关页。分层策略：distill 后自动 propagate；journal 后 AI 建议你审；harvest 后自动 propagate。
 8. **output** —— 从 vault 沉淀生成成品（文章、报告、决策书）。复利的最终兑现。
-9. **skillify** —— 把手做过一次的工作流提炼成可复用 skill。skill 的设计意图和迭代记录也存在 wiki 里。
+9. **skillify** —— skill 执行文件由 Hermes 在后台**自动复盘并生成**（`creation_nudge_interval` 触发，每若干轮工具循环后台 agent 检查"刚才的对话里有没有经过试错、调整方向、或者用户期望不同做法的非平凡经验"，三种结果：更新已有 skill / 新建 skill / 无值得保留）。人工只做两件事：决定是否保留 / 修订（Hermes 会给出 review 结果让人裁决），把 skill 的设计意图、应用场景、迭代记录补到 `wiki/pages/skill-xxx.md`。两层通过 skill name 关联——智能层（`~/.hermes/skills/`）放执行，存储层（`wiki/pages/`）放理解。
 
 ## 内容分类（从信息三态推导）
 
@@ -226,37 +215,22 @@ Compiled Truth 在上（理解），Timeline 在中（事件，append-only），
 
 ```
 ZHPMind/
-├── inbox/               ← Pull + Push 的统一入口（含 Obsidian Clipper 剪藏）
+├── inbox/           ← Pull + Push 的统一入口（含 Obsidian Clipper 剪藏）
 ├── wiki/
-│   ├── pages/           ← 概念/方法/人物/反思（平铺，tag + MOC 导航）
-│   │   └── index.md     ← AI 自动维护的全局目录（每页一行摘要，按 type 分类）
-│   └── raw/             ← 已被 wiki 引用的原始素材（永久保留）
-│       └── assets/      ← 图片等附件
-├── projects/            ← 活的工作（每个项目一个子文件夹）
-├── outputs/             ← 完成产出（报告、文章、对外文档）+ HTML 仪表盘（派生层）
-├── design-principles.md ← 本文件：vault 架构宪法（系统级，不在 wiki/pages/ 中）
-├── changelog.md         ← AI 每次写入的操作日志（append-only）
-└── archive/             ← 按原结构镜像归档
+│   ├── pages/       ← 概念/方法/人物/反思（平铺，tag + MOC 导航）
+│   └── raw/         ← 已被 wiki 引用的原始素材（永久保留）
+├── projects/        ← 活的工作（每个项目一个子文件夹）
+├── outputs/         ← 完成产出（报告、文章、对外文档）
+└── archive/         ← 按原结构镜像归档
 ```
 
 **inbox 和 raw 的区别是生命周期**：inbox 是"未来的可能性"（会被清空）；raw 是"过去的记忆"（作为引用源永久保留）。
 
-**index.md** 是 wiki/pages/ 的全局目录，由 AI 在每次 distill/harvest 时自动维护。格式为每个页面一行链接 + 一句话摘要，按 type 分类组织。用途：AI 操作 vault 前先读 index 定位相关页面，不需要遍历全目录；人一眼看到 wiki 的全貌。index 不替代 MOC——MOC 是主题深度导航，index 是全局目录。
-
-**changelog.md** 是 vault 的操作时间线，每次 AI 写入（distill、harvest、propagation）追加一条记录，格式为 `## [YYYY-MM-DD] verb | Subject`。比 git log 更人类可读，比 review-digest 更细粒度。
-
-## 命名规范
-
-- **文件名**：英文、小写、连字符分隔（kebab-case）。如 `amazon-product-selection.md`、`design-principles.md`
-- **中文标题**：放在 frontmatter 的 `title` 字段。如 `title: 亚马逊选品思维（Amazon Product Selection）`
-- **tags**：英文、小写、连字符分隔，单层平铺。如 `amazon`、`competitive-analysis`、`knowledge-management`
-
 ## 导航
 
-- **tag** —— 多维度标记，英文连字符命名，内容驱动
+- **tag** —— 多维度标记（`#业务/曜野` `#健康` `#育儿` 等），内容驱动
 - **MOC（Maps of Content）** —— 自下而上生长：某 tag 下 ≥5 页时建主题导航页
 - **backlink** —— 自然连接，流动的最小单位
-- **index.md** —— AI 维护的全局目录（见物理结构）
 
 ## 底层逻辑 → 工具来源映射
 
@@ -268,12 +242,9 @@ ZHPMind/
 | 信息三态 | wiki 的 rewrite 哲学 | compiled truth + timeline 三段式 | 三态显式分类 |
 | Pull + Push | Pull：人手动喂 LLM | Push：signal-detector + recipes | — |
 | 人判断 AI 执行 | "LLM 写，人审" | 三条硬约束（溯源+互评+可回滚） | 不设 AI 禁入区 |
-| 三层松耦合 | Obsidian(交互) + Claude Code(智能) + markdown(存储) | GBrain(检索) + skills(智能) + git(存储) | 交互层双模（Obsidian + HTML Artifacts） |
+| 三层松耦合 | Obsidian(交互) + Claude Code(智能) + markdown(存储) | GBrain(检索) + skills(智能) + git(存储) | 显式三层命名 |
 | 开放格式 | markdown + git | markdown + git | — |
-| 健康度 | index.md + log.md + lint | maintain + doctor + skillpack-check | "流动"作为第一性原则 |
-
-> **2026-05-12 新增来源：Karpathy LLM Wiki（2026-04）** —— index.md 全局目录、changelog 操作日志、content-lint、query-to-wiki 回写。
-> **2026-05-12 新增来源：Thariq "HTML is the new markdown"（2026-05）** —— 交互层双模结构（markdown 给 AI 存储，HTML 给人消费），视觉是人脑信息最大带宽通道。
+| 健康度 | （无显式监测） | maintain + doctor + skillpack-check | "流动"作为第一性原则 |
 
 ## 当前三层的具体工具
 
@@ -300,39 +271,13 @@ Hermes Agent 负责 vault 外的信号采集和自动化：
 
 两者的接口是 **inbox/** —— Hermes 把外部信号搬到 inbox，Claudian 从 inbox 蒸馏到 wiki。
 
-智能层的产出分两种形态：
-- **写入型**（markdown → 存储层）：distill、harvest、propagation、capture、review-digest 快照
-- **呈现型**（HTML → 交互层）：仪表盘、查询综合、分拣界面、信号可视化
-同一次操作可同时产出两种形态——例如 review-digest 既写 markdown 存档到 inbox/，又生成 HTML 仪表盘到 outputs/。
+**Cross-modal eval 的技术实现**：Hermes 支持多 profile（同一台机器上跑多个独立 agent 实例，各自的模型、记忆、skill 完全隔离）。蒸馏类任务用主 profile + worker profile 双跑——主 profile 跑 Claude 做 distill，worker profile 跑不同家系的模型（如 qwen）做 eval。两个模型对同一份输入独立产出，结果不一致时进入人工裁决。这就是 AI 红线"互评"约束在工具层的落地路径。
 
-**身份锚点 = `wiki/pages/zhanghaopeng.md`**
-
-智能层做任何个性化操作（mirror、reflect、Life Mirror、context pack）之前，必须先读取这个页面。这是"你是谁"的权威来源——不靠 AI 从散落的 wiki 碎片里推测，不靠对话历史里的 memory 碎片。
-
-页面结构沿用三段式（type: person）：
-- **Compiled Truth**：你对自己的当前理解——身份、角色、价值观、当前人生阶段、关键关系、核心目标。由你主导维护，rewrite-friendly。
-- **Timeline**：关键人生事件、转折点。append-only。
-- **References**：相关的 raw 素材、日记条目链接。
-
-这个页面解决一个具体问题：AI 做 Book Mirror 时需要知道"这本书对你意味着什么"，做 Life Mirror 时需要知道"你现在的处境是什么"。没有权威身份来源，AI 会编造或拼错身份信息（Garry Tan 的教训）。
-
-**交互层 = Obsidian（编辑 + 导航）+ HTML Artifacts（呈现 + 行动）**
-
-Obsidian 负责你和**原始知识**的交互：
-- 浏览/编辑 wiki 页面
+**交互层 = Obsidian**
+- 你浏览/编辑 wiki 的界面
 - 移动端捕捉（手机 Obsidian）
 - graph view / backlink 导航
-- Obsidian 是可替换的——切换只需指向同一个 ZHPMind 目录
-
-HTML Artifacts 负责你和**知识衍生物**的交互：
-- 仪表盘（review-digest 的可视化呈现，替代阅读 markdown 表格）
-- 查询综合（跨 vault 复杂查询的结果以图表/对比视图呈现）
-- 信号可视化（竞品/趋势/政策等 Push 信号的视觉化）
-- 分拣界面（inbox 条目列表 + 操作按钮，触发 distill/archive）
-
-Artifacts 是**派生层**——从 markdown 数据动态生成，可从核心数据重建，消失不影响存储层。两者可独立替换，互不依赖。
-
-为什么需要双模：markdown 是文字通道，人脑处理效率有限；视觉是人脑信息带宽最大的通道（约 1/3 大脑皮层用于视觉处理）。知识的存储用 markdown（给 AI 和长期保存），知识的消费用视觉呈现（给人）。
+- Obsidian 是可替换的——如果明天出现更好的 markdown 浏览器，切换只需指向同一个 ZHPMind 目录
 
 ## 曜野业务的 Push 信号采集规划（Hermes skills）
 
@@ -342,7 +287,7 @@ Artifacts 是**派生层**——从 markdown 数据动态生成，可从核心�
 | product-trend-watch | 电商平台/Google Trends | weekly | inbox/ |
 | email-triage | 邮箱（供应商/平台/客户） | hourly | inbox/ |
 | competitor-watch | 竞品 listing 变化 | daily | inbox/ |
-| review-digest | vault 自身 | weekly | inbox/（markdown 快照）+ outputs/（HTML 仪表盘） |
+| review-digest | vault 自身 | weekly | inbox/ |
 
 参考 GBrain 的 recipes 设计，在 Hermes 里实现。随业务变化可增减。
 
@@ -383,18 +328,10 @@ Artifacts 是**派生层**——从 markdown 数据动态生成，可从核心�
 
 # Changelog
 
-**2026-05-12 v3** —— 交互层架构升级 + 规范对齐。核心变化：
-- 新增 frontmatter（type: framework），文件可入 vault wiki/pages/
-- 交互层从 "Obsidian" 升级为 "Obsidian（编辑+导航）+ HTML Artifacts（呈现+行动）" 双模结构
-- 智能层产出显式区分写入型（markdown → 存储层）和呈现型（HTML → 交互层）
-- 新增身份锚点 zhanghaopeng.md 作为 mirror/reflect 的前置依赖
-- 新增 wiki/pages/index.md（AI 自动维护的全局目录）
-- 新增 changelog.md（vault 操作时间线，append-only）
-- 新增「命名规范」章节：文件名英文 kebab-case，中文标题放 frontmatter title，tags 英文单层
-- 修正导航章节 tag 描述与实际 vault 规范一致（英文连字符，非中文斜杠分层）
-- review-digest 改为双输出（markdown 快照 + HTML 仪表盘）
-- 来源映射表新增 Karpathy LLM Wiki 和 Thariq HTML Artifacts
-- 触发来源：Karpathy 2026-04 LLM Wiki Gist + Thariq 2026-05-08 "HTML is the new markdown"
+**2026-05-20 v2.1** —— 基于 LufzzLiz《上手 Hermes Agent 后建议先尝试的十件事情》的实测文章对照修订：
+- **skillify 从"设计 gap"改为"已落地"**。Hermes 原生支持后台 skill 自动复盘（`creation_nudge_interval` 触发，默认 15 轮），自动判断"有没有值得固化的经验"并写入 `~/.hermes/skills/`。人工层面只剩"在 wiki/pages/ 写设计意图 + 决定是否保留"。
+- **Cross-modal eval 明确技术路径**：用 Hermes 多 profile 机制（主 profile 跑 Claude + worker profile 跑 qwen 等不同家系模型）。"互评"从原则变为可执行配置。
+- **不变**：第一层 7 条底层逻辑、第二层设计原则全部保留。第三层只是补技术注解。
 
 **2026-05-11 v2** —— 从第一性原理重写。核心变化：
 - 建立三层架构：底层逻辑（不变量）→ 设计原则（推导）→ 工具映射（可变）
