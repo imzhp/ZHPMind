@@ -88,8 +88,10 @@ ZHPMind/
 | `book` | 理解（双栏映射） | 基本不改 | 标准结构 + Mirror 区 |
 | `reflection` | 理解 + 事件 | mirror 产物，可 rewrite | 三段式 |
 | `snapshot` | 快照 | 定期更新，旧版归档 | 三段式 |
+| `moc` | 索引/导航 | 随主题页累积更新 | 标准结构 |
+| `skill` | 工作流定义 | 记录设计意图和迭代历史 | 标准结构 |
 
-**`type` 必须严格取上述 8 个值之一，不得自造。**
+**`type` 必须严格取上述 10 个值之一，不得自造。**
 
 ### 3.2 Frontmatter
 
@@ -98,7 +100,8 @@ ZHPMind/
 ```yaml
 ---
 title: "Human-Readable Page Title"
-type: concept | method | framework | person | article | book | reflection | snapshot
+aliases: []         # 可选。业务实体页和有别名的实体页使用，用于挂载中文别名/拼音；Obsidian 会让 [[别名]] 自动跳到主页
+type: concept | method | framework | person | article | book | reflection | snapshot | moc | skill
 tags: [tag-one, tag-two]
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -113,9 +116,9 @@ discussions: []     # reflect 日期列表，如 ["2026-04-18"]
 - 每次编辑页面时刷新 `updated`
 - `source_count` 始终等于 `len(sources)`——保持同步
 - `tags` 必须全小写、连字符分隔、纯英文——如 `machine-learning`、`e-commerce`、`supply-chain`。**禁止中文 tag，禁止中英混合 tag。** 跨相关页面尽量复用已有 tag。
-- `type` 必须是 §3.1 表中的 8 个值之一
+- `type` 必须是 §3.1 表中的 10 个值之一
 
-### 3.3 标准结构（concept / method / framework / article）
+### 3.3 标准结构（concept / method / framework / article / moc / skill）
 
 ```markdown
 # Page Title
@@ -544,7 +547,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 
 **结构完整性**
 - [ ] Frontmatter 完整性 — `pages/` 中每个文件（`index.md` 除外）具有所有必填字段且类型正确
-- [ ] `type` 字段值是 8 种合法值之一
+- [ ] `type` 字段值是 10 种合法值之一
 - [ ] `source_count` 与 `len(sources)` 匹配
 - [ ] `sources` 中列出的每个文件确实存在于 `wiki/raw/`
 - [ ] `index.md` 完整 — `pages/` 中每个 `.md` 文件（`index.md` 除外）都有索引条目

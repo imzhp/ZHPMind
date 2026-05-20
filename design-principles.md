@@ -138,6 +138,8 @@ ZHPMind 的终极目的：让这个循环**转得更快、更深、更不容易�
 | `book` | 理解（双栏映射） | 基本不改 |
 | `reflection` | 理解 + 事件 | mirror 产物，可 rewrite |
 | `snapshot` | 快照 | 定期更新，旧版归档 |
+| `moc` | 索引/导航 | 自下而上生长，随主题页累积更新。当某 tag 累积 ≥5 页时建立 |
+| `skill` | 工作流定义 | 记录 skill 的设计意图、版本、迭代历史（执行体在 `~/.hermes/skills/` 或 `.claude/skills/`）|
 
 **三段式结构**（对事件类和混合类页面严格执行）：
 
@@ -162,7 +164,47 @@ tags: [...]
 
 Compiled Truth 在上（理解），Timeline 在中（事件，append-only），References 在下（溯源）。
 
-概念类页面（`concept` / `method` / `framework`）不需要三段式——它们整页都是 rewrite-friendly。
+概念类及导航/系统类页面（`concept` / `method` / `framework` / `moc` / `skill`）不需要三段式——它们整页都是 rewrite-friendly。
+
+## 业务实体命名约定
+
+业务实体在 vault 内的 token，**跟其对外标识符（域名、品牌名、官方英文名）保持一致**。这确保 vault 跟外部世界（邮件、ERP、合作伙伴沟通、合同）共享同一套命名空间，认知不打折。
+
+**判断流程：**
+
+1. **该实体有官方英文标识吗？**（自有公司、有英文官网/品牌的供应商或合作伙伴、平台、产品）
+   - 有 → 主文件名用对外英文标识，小写连字符
+   - 没有 → 走第 2 步
+
+2. **纯本地、纯中文实体？**（本地供应商、华人合作伙伴的中文名、中国本地平台等）
+   - 主文件名直接用中文
+
+**别名机制：**
+
+中文常用名、拼音、过渡时期的别名，通过 frontmatter `aliases` 字段挂在主 token 上。Obsidian 会让 `[[别名]]` 自动跳到主页。
+
+**Tag 跟随主 token：**
+
+- 主 token 是英文 → tag 也用英文小写连字符（如 `wildlume`）
+- 主 token 是中文 → tag 也用中文（如 `王经理`）
+- 不用斜杠分隔（`#wildlume` ✅ / `#业务/wildlume` ❌）
+- 不在同一个实体上中英 tag 混用
+
+**举例：**
+
+| 实体 | 对外标识 | 主文件名 | aliases | tag |
+|---|---|---|---|---|
+| 自有公司 | wildlume（域名/商标）| `wildlume-business-reference.md` | `[yaoye, 曜野, 曜野业务]` | `wildlume` |
+| 某海外供应商 | acme-corp（官网）| `acme-corp.md` | `[艾克米]`（如有中文俗称）| `acme-corp` |
+| 本地货代王经理 | 无英文 | `王经理.md` | 无 | `王经理` |
+| 亚马逊平台 | amazon | `amazon-moc.md` 等 | 无 | `amazon` |
+
+**对已有页面的影响：**
+
+本次 v2.3 仅修订规则。基于本规则，以下文件存在偏离，**但本次不处理**，作为 v2.3 完成后的迁移任务列入待办：
+- 4 个 `yaoye-*` 页面应迁移到 `wildlume-*`（主名 + alias 保留 yaoye）
+- 根目录 `wildlume-business-reference.md` 与 wiki/pages 版本的双份并存需要合并（具体策略下一步定）
+- 含中文 tag（`业务/曜野`、`反哺机制` 等）和含斜杠 tag（`业务/曜野`、`system/skill`、`tool/hermes`）的页面需要 tag 规范化
 
 ## 信号采集设计（从 Pull + Push 推导）
 
@@ -341,6 +383,18 @@ Hermes Agent 负责 vault 外的信号采集和自动化：
 ---
 
 # Changelog
+
+**2026-05-21 v2.3** —— 命名规范补缺，基于 vault 现状审计：
+
+- **type 表扩展**：新增 `moc` 和 `skill` 两个值，修补内部矛盾（已定义系统但 type 表未覆盖）
+- **同步更新三段式豁免列表**：`moc` 和 `skill` 加入无需三段式的页面类型
+- **新增“业务实体命名约定”章节**：确立“vault 内 token 跟对外标识符一致”原则。理由：自有公司 wildlume 是注册商标，yaoye 拼音未注册，vault 内若用 yaoye 会跟邮件/ERP/合作沟通脱节
+- **不在本次范围内的迁移任务**（列入待办，后续单独处理）：
+  - 4 个 `yaoye-*` 页面 → `wildlume-*`
+  - 根目录 `wildlume-business-reference.md` 与 wiki 版本合并
+  - 全 vault tag 规范化（去中文 tag、去斜杠 tag）
+  - 3 个 MOC 文件补 `type: moc`
+  - `skill-review-digest.md` 的 `type: skill` 现在合规，无需改动
 
 **2026-05-20 v2.2** —— 基于第一次 Hermes 端到端实战的观察校准：
 - **新增第二层「Skill 系统设计」小节**（5 条原则）：经验沉淀（Pitfalls）、方法论与实现分离（SKILL.md + references/）、来源分层（bundled vs agent-created）、协议互通（Anthropic skill 格式）、维护机制分工（skill_manage vs Curator）。
