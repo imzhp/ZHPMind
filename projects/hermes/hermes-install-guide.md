@@ -182,194 +182,68 @@ cat ~/.hermes/config.yaml 2>/dev/null | head -30
 
 ---
 
-## 阶段三：配置 review-digest Skill
+## 阶段三：review-digest Skill — 设计意图与演化反思
 
-### 3.1 这个 Skill 做什么
+> **本节是文档化反思，不是安装步骤**。review-digest 不需要从零安装：它已经在 `~/.hermes/skills/` 下，由 skill_manage（Hermes 主对话期间的自动维护机制）持续迭代。
+>
+> 具体可执行内容（SKILL.md 完整文本）由 Hermes 自行维护，见 `~/.hermes/skills/review-digest/SKILL.md`。本文件只放"为什么这么设计、是怎么演化的"。
 
-**review-digest** 是 ZHPMind 的健康度周报。它扫描 vault 自身，产出一份结构化摘要到 `inbox/`，让你在每周 review 时一眼看到系统状态。
+### 3.1 设计意图
 
-**产出内容（对应 design-principles 的健康度指标）：**
+review-digest 是 ZHPMind 的健康度周报。它扫描 vault 自身，产出一份结构化摘要到 `inbox/`，让每周 review 时一眼看到系统状态。
 
-| 检查项 | 说明 |
-|---|---|
-| inbox 积压 | inbox/ 下未处理条目数，>50 条警告 |
-| wiki 孤岛率 | wiki/pages/ 中无 backlink 的页面占比，>30% 警告 |
-| projects 僵尸率 | projects/ 中 >3 月未修改的项目占比 |
-| 本周新增 | 本周新建 / 修改的 wiki 页面列表 |
-| 本周 capture | 本周新增到 inbox 的条目数 |
-| MOC 候选 | 某 tag 下 ≥5 页但还没有 MOC 的主题 |
+这是 design-principles 第一层「认知循环」里 **review 环节** 的自动化体现——人不可能每次手动扫 vault，需要 skill 把"看到系统当前状态"这件事自动化。
 
-**频率：** weekly（每周一次，通过 Hermes cron 触发）
-**产出位置：** `inbox/review-digest-YYYY-MM-DD.md`
+产出位置选在 `inbox/` 而不是 `outputs/` 是有意的：digest 是信息三态中的**快照类**（`type: snapshot`），不是对外输出，应该进入下一轮 review 的待消化队列。
 
-### 3.2 创建 Skill 文件
+产出指标对应 design-principles 的健康度监测：
 
-> 下面的命令会在 `~/.hermes/skills/` 下创建 skill 文件。
-> 你需要先确认 ZHPMind vault 的实际路径——诊断脚本的输出会告诉你。
-> 默认假设是：`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind`
-
-```bash
-cat > ~/.hermes/skills/review-digest.md << 'SKILL_EOF'
----
-name: review-digest
-description: ZHPMind vault 健康度周报。扫描 vault 状态，生成结构化 digest 写入 inbox。
-trigger: weekly review, vault health check, 周报, review digest
-created_by: human
-version: 1.0
----
-
-# Review Digest — ZHPMind 健康度周报
-
-## 目标
-
-扫描 ZHPMind vault，生成一份健康度 digest，写入 `inbox/review-digest-{YYYY-MM-DD}.md`。
-这是认知循环的 **review** 环节——让系统的主人看到系统自身的状态。
-
-## Vault 路径
-
-```
-~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind
-```
-
-如果路径不存在，报错退出，不要猜测其他路径。
-
-## 扫描步骤
-
-按顺序执行以下检查：
-
-### 1. Inbox 积压
-
-- 统计 `inbox/` 下的 `.md` 文件数量（不含子目录中的 `.obsidian` 等系统文件）
-- 如果 >50，标记为 🔴 警告
-- 如果 20-50，标记为 🟡 注意
-- 如果 <20，标记为 🟢 正常
-
-### 2. Wiki 孤岛率
-
-- 扫描 `wiki/pages/` 下所有 `.md` 文件
-- 对每个文件名（不含 `.md`），在整个 vault 中搜索 `[[文件名]]` 或 `[[文件名|` 形式的引用
-- 如果一个 wiki 页面在 vault 中没有任何其他文件链接到它（0 个 backlink），视为"孤岛"
-- 孤岛率 = 孤岛数 / wiki 总页数
-- >30% 标 🔴，15-30% 标 🟡，<15% 标 🟢
-- 列出所有孤岛页面的文件名
-
-### 3. Projects 僵尸率
-
-- 扫描 `projects/` 下的一级子目录
-- 对每个子目录，找到其中最近修改的 `.md` 文件的修改时间
-- 如果距今 >90 天，视为"僵尸项目"
-- 僵尸率 = 僵尸数 / 活跃项目总数
-- 列出所有僵尸项目及其最后修改日期
-
-### 4. 本周活动
-
-- 扫描 `wiki/pages/` 中过去 7 天内修改过的文件，列出文件名和修改日期
-- 扫描 `wiki/pages/` 中过去 7 天内新建的文件（创建时间在 7 天内），单独标注
-
-### 5. 本周 Capture
-
-- 统计 `inbox/` 中过去 7 天内新增的文件数量
-- 列出文件名
-
-### 6. MOC 候选检测
-
-- 扫描 `wiki/pages/` 所有文件的 frontmatter `tags` 字段
-- 统计每个 tag 被多少个页面使用
-- 如果某 tag 被 ≥5 个页面使用，但 vault 中不存在对应的 `MOC-{tag名}.md` 文件，则标记为 MOC 候选
-- 列出所有 MOC 候选及其页面数
-
-### 7. 修正频率
-
-- 在 `wiki/pages/` 中，统计过去 30 天内被修改过（但不是新建的）的页面数量
-- 如果为 0，标 🔴（认知僵化警告）
-
-## 输出格式
-
-将结果写入 `inbox/review-digest-{YYYY-MM-DD}.md`，格式如下：
-
-```markdown
----
-type: snapshot
-source: hermes/review-digest
-created: {YYYY-MM-DD}
-tags:
-  - system/review
----
-
-# ZHPMind 周报 — {YYYY-MM-DD}
-
-## 总览
-
-| 指标 | 状态 | 数值 |
+| 检查项 | 说明 | 警戒 |
 |---|---|---|
-| Inbox 积压 | {emoji} | {N} 条 |
-| Wiki 孤岛率 | {emoji} | {N}%（{孤岛数}/{总数}）|
-| Projects 僵尸率 | {emoji} | {N}%（{僵尸数}/{总数}）|
-| 本周 wiki 活动 | — | {新建 N} 篇新建，{修改 N} 篇修改 |
-| 本周 capture | — | {N} 条 |
-| 修正频率（30天） | {emoji} | {N} 篇 |
+| inbox 积压 | inbox/ 下 `.md` 数（排除 `source: hermes/*` 系统快照） | >50 🔴 |
+| wiki 孤岛率 | wiki/pages/ 中无 backlink 占比 | >30% 🔴 |
+| projects 僵尸率 | >3 月未修改项目占比 | >50% 🔴 |
+| 本周活动 | 7 天内修改/新建 wiki 页 | — |
+| 本周 capture | 7 天内新增 inbox 条目 | — |
+| MOC 候选 | tag 用 ≥5 页但无对应 `*-moc.md` | — |
+| 修正频率 | 30 天内被改但非新建的 wiki 页 | =0 🔴 |
 
-## Inbox 积压详情
+频率：每周一次，通过 Hermes cron 触发（见 3.4）。
 
-（如果 >20 条，列出最旧的 10 条文件名和创建日期）
+### 3.2 演化反思（v1 → v4）
 
-## Wiki 孤岛页面
+这个 skill 在 5/11-5/13 期间经历了快速演化，**不是 Curator 做的**——Curator 截至 5/19 总共才跑过 1 次，且本次结论为「无改动可做」。真正驱动演化的是 **skill_manage 在主对话期间的迭代**：每次用户跟 Hermes 谈"扫描 vault 健康度"任务时，`creation_nudge_interval` 触发后台 skill review，Hermes 通过 skill_manage 更新文件，每次自动留 `.bak`。
 
-（列出所有孤岛页面文件名）
+| 版本 | 时间 | 关键改动 |
+|---|---|---|
+| v1.0 | 5/11 | 初版手写（review-digest.md 单文件） |
+| v1.1 | 5/12 23:16 | 升级为目录格式（review-digest/SKILL.md + references/），首次加入 Pitfalls 小节 |
+| v2.0 | 5/12 23:46 | 排除 `source: hermes/*` 系统快照防自递归；MOC 检测从 `MOC-{tag}.md` 改为 `*-moc.md`（匹配 vault 实际命名）；🔴 必须附具体建议 |
+| v3.0 | 5/13 00:18 | MOC 检测改用 wikilinks-as-source |
+| v4.0 | 5/13 00:54 | changelog 声明"架构重构：scanner.py 分离"，**但 scanner.py 实际未落地**——这是 changelog ≠ 实现状态的实例 |
 
-## 僵尸项目
+**当前状态**：`~/.hermes/skills/` 下并存两份 review-digest：
 
-（列出项目名 + 最后修改日期）
+- `review-digest/SKILL.md`（v1.1，目录形态，含 references/backlink-scanner.md + references/yaml-lite-parser.md）
+- `review-digest.md`（v4 changelog，单文件遗留）+ `review-digest.md.v[1-3].bak` 三个备份
 
-## MOC 候选
+哪个被 Hermes 实际加载，运行时观察即可（看 digest 产出 frontmatter 是否包含 changelog 字段、🔴 是否附建议等）。Curator 的 Consolidation Pass 看到的是「1 agent-created skill」（单数），所以 Hermes 内部只识别一个 review-digest，重复版本可能在未来 Curator pass 中被合并。
 
-| Tag | 使用页数 |
-|---|---|
-| {tag} | {N} |
+### 3.3 五条实战 Pitfalls（v1.1 SKILL.md 提炼）
 
-## 本周新建 Wiki 页面
+这些是 skill_manage 在每次跑 skill 遇到问题后沉淀进 skill 的实战经验。**比"如何写 skill" 的方法论更有价值——它们是 fix 过的踩坑记录**。
 
-（列表）
+| Pitfall | 性质 | 应对 |
+|---|---|---|
+| `python3 -c '...'` 触发审批门控 | 工具调用约束 | 把脚本写入 `/tmp/*.py`，用 `terminal('python3 /tmp/x.py')` 执行 |
+| `pyyaml` 在沙箱不可用 | 环境约束 | 内联轻量 frontmatter 解析器，参见 `references/yaml-lite-parser.md` |
+| `grep -oh '[[...]]'` 漏 alias 形式 | 平台约束（macOS grep 单行） | Python `os.walk` + `re.findall` 全文扫描，参见 `references/backlink-scanner.md` |
+| 新建页面当天必然是孤岛 | 业务语义校准 | 报告中对"今日新建"的孤岛加注说明为预期状态 |
+| macOS `ctime ≠ 创建时间` | 平台陷阱（iCloud vault 尤甚） | 用 `os.stat(fpath).st_birthtime`（macOS 专有）获取真实创建时间 |
 
-## 本周修改 Wiki 页面
+这正是 design-principles 第二层「经验沉淀」原则的实战体现——skill 不只是方法论，更是被 fix 过的踩坑记录。
 
-（列表）
-```
-
-## 注意事项
-
-- 不要修改 vault 中的任何现有文件——只在 inbox/ 下创建新文件
-- 文件名中的日期用 ISO 格式：YYYY-MM-DD
-- frontmatter 中的 `type: snapshot` 和 `source: hermes/review-digest` 是必须的——符合 ZHPMind 的信息三态分类（快照类，定期被新快照替代）
-- 如果 vault 路径不存在或权限不足，报错退出并说明原因
-SKILL_EOF
-
-echo "✅ review-digest.md 已创建"
-ls -la ~/.hermes/skills/review-digest.md
-```
-
-### 3.3 验证 Skill 已注册
-
-```bash
-hermes skills
-```
-
-截图回报。在列表中应该能看到 `review-digest`。
-
-### 3.4 手动测试一次
-
-```bash
-hermes chat -q "运行 review-digest skill，扫描我的 ZHPMind vault 并生成周报。"
-```
-
-看输出是否正确。重点确认：
-1. 它找到了 vault 路径
-2. 各项指标数值合理
-3. 输出文件确实写到了 `inbox/` 下
-
-确认无误后截图回报。
-
-### 3.5 设置 Cron 自动执行
+### 3.4 设置 Cron 自动执行
 
 每周一早上 9 点自动运行：
 
@@ -385,9 +259,7 @@ hermes cron add \
 hermes cron list
 ```
 
-截图回报。
-
-### 3.6 启动 Cron 调度器（如果还没运行）
+### 3.5 启动 Cron 调度器（如果还没运行）
 
 ```bash
 hermes cron start

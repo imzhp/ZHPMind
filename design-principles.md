@@ -185,6 +185,20 @@ Compiled Truth 在上（理解），Timeline 在中（事件，append-only），
 
 **不设 AI 禁入区。** 情感内容是 mirror 工作流的核心载体。隐私通过"源头不记敏感数据"控制：证件号、银行卡号、密码、API key 不写进 vault。
 
+## Skill 系统设计（从工具实践沉淀）
+
+skill 是 design-principles 的物理载体——它把工作流编码为可执行单元。基于 Hermes 实战观察，skill 系统应遵循以下原则：
+
+1. **经验沉淀**：每个 agent-created skill 在 SKILL.md 内设置专门的 Pitfalls 小节，记录每次跑 skill 时遇到的工具/环境/平台/业务约束。每条 Pitfall 必须包含「为什么会出错」和「对应做法」。这是 skill_manage 在主对话期间通过 `creation_nudge_interval` 触发的后台 review 自动维护的，是 skill 真正变"聪明"的机制。
+
+2. **方法论与实现分离**：SKILL.md 讲方法论（决策逻辑、判断标准、产出结构），具体代码片段、命名约定、查询模板放 `references/{name}.md`。SKILL.md 引用 references 用相对路径。这让 SKILL.md 保持短而可读，让具体实现可独立更新。
+
+3. **来源分层**：`~/.hermes/skills/` 下两类共存——bundled（Hermes 官方预装，登记在 `.bundled_manifest`，跟着 Hermes 升级走）和 agent-created（用户/主对话生成，不登记到 manifest，由 Curator 处理 deduplication）。两类在「溯源」原则下含义不同：bundled 溯源到上游 repo，agent-created 溯源到本机 `.bak` 链 + vault git。
+
+4. **协议互通**：Hermes 的目录 skill 格式（`{skill}/SKILL.md` + `references/`）与 Anthropic Claude Code / Claude.ai 的 skill 协议一致。这意味着第一层「三层松耦合」中"智能层换了其他两层不报废"的原则，在 skill 粒度上得到了**协议级保障**——换 agent runtime，skill 不用重写。
+
+5. **维护机制分工**：skill_manage（主对话内、高频、跟着任务走、自动备份 `.bak`）做单 skill 的迭代；Curator（后台 batch、低频、合并/聚类/去重）做 skill 池子的整理。**不要把 Curator 当作 skill 演化的主驱动力**——它处理的是"杂乱"，不是"进化"。
+
 ## 技术架构约束（从三层松耦合推导）
 
 - **存储层**：markdown + git。不依赖任何特定工具的私有格式。
@@ -327,6 +341,11 @@ Hermes Agent 负责 vault 外的信号采集和自动化：
 ---
 
 # Changelog
+
+**2026-05-20 v2.2** —— 基于第一次 Hermes 端到端实战的观察校准：
+- **新增第二层「Skill 系统设计」小节**（5 条原则）：经验沉淀（Pitfalls）、方法论与实现分离（SKILL.md + references/）、来源分层（bundled vs agent-created）、协议互通（Anthropic skill 格式）、维护机制分工（skill_manage vs Curator）。
+- **修正认知**：skill_manage 才是 skill 演化的主驱动（主对话期间、高频），Curator 是后台合并整理（低频，5/12 至今仅 1 次）。之前对 Curator 的角色描述过高估了。
+- **不变**：第一层 7 条底层逻辑、第二层其他设计原则、v2.1 的修订内容全部保留。
 
 **2026-05-20 v2.1** —— 基于 LufzzLiz《上手 Hermes Agent 后建议先尝试的十件事情》的实测文章对照修订：
 - **skillify 从"设计 gap"改为"已落地"**。Hermes 原生支持后台 skill 自动复盘（`creation_nudge_interval` 触发，默认 15 轮），自动判断"有没有值得固化的经验"并写入 `~/.hermes/skills/`。人工层面只剩"在 wiki/pages/ 写设计意图 + 决定是否保留"。
