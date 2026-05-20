@@ -84,3 +84,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[the-founders-playbook]], [[ai-native-startup]]
 - **Pages updated**: [[claude-code]]（添加 CLAUDE.md 机制和 Claude Code Security 章节，增加来源）、[[agentic-engineering]]（添加代理技术债务章节，增加来源）、[[index]]（新增 2 条目，总页数 27）
 - **Note**: Anthropic 出版的 36 页创业方法论。核心框架：AI 原生创业四阶段（Idea/MVP/Launch/Scale），每阶段有明确退出标准。新建概念页 ai-native-startup（包含护城河三重奏、与传统创业对比）。代理技术债务（Agentic Technical Debt）作为新的关键概念写入 agentic-engineering 页。Claude Cowork 作为新产品提及（候选新建页：尚未单独建页，但多处引用）。[self-reviewed]
+
+---
+
+## [2026-05-20] distill | 曜野 Project 推进框架
+
+- **Sources touched**: none（来源为 Claude 对话沉淀，文件已在 wiki/pages/test-yaoye.md）
+- **Pages created**: [[yaoye-project-roadmap]]
+- **Pages updated**: [[index]]（Frameworks 区新增 1 条目，总页数 28）
+- **Note**: 按 distill-yaoye-doc 规范处理 test-yaoye.md。内容为 2026-05-20 对话沉淀的曜野 Project 推进框架 v1，包含三层结构（业务层/流程层/基础设施层）、Phase 1 任务清单（14 项）、开新对话标准化做法。原文中指向已存在 wiki 页面的 wikilink（yaoye-business-architecture、yaoye-feedback-product、yaoye-feedback-listing）已验证有效；《曜野业务参考》无对应 wiki 页面，保留原文。重命名：test-yaoye.md → yaoye-project-roadmap.md（按命名映射表）。[self-reviewed]
