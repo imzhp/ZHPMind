@@ -1,21 +1,24 @@
 # macOS
 .DS_Store
 
-# Obsidian — 窗口布局，每次操作都变，纯噪声
+# Obsidian — 窗口布局,每次操作都变,纯噪声
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
-# 插件运行时数据（可能含 API key，且频繁变动）
+# 插件运行时数据(可能含 API key,且频繁变动)
 .obsidian/plugins/*/data.json
 
-# 插件代码（可通过 community-plugins.json + BRAT 重装）
+# 插件代码(可通过 community-plugins.json + BRAT 重装)
 .obsidian/plugins/*/main.js
 .obsidian/plugins/*/styles.css
 
-# Smart Environment 索引（从 vault 内容完全可重建）
+# Smart Environment 索引(从 vault 内容完全可重建)
 .smart-env/
 
-# Claudian 会话日志（临时性）
-.claudian/sessions/
+# Claudian 会话日志(临时性)
 .claudian/
-.claudian/
+
+# Claude Code — 仅 ignore 临时会话和备份文件
+# skills/agents/commands 默认 track,对应 design-principles 第二层 Skill 系统设计
+.claude/sessions/
+.claude/**/*.bak
