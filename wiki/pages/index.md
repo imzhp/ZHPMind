@@ -2,14 +2,14 @@
 title: "Wiki Index"
 tags: [meta, index]
 created: 2026-04-12
-updated: 2026-05-11
+updated: 2026-05-22
 sources: []
 source_count: 0
 ---
 
 # Wiki Index
 
-_最后更新：2026-05-20 — 共 28 页_
+_最后更新：2026-05-22 — 共 34 页_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -43,13 +43,21 @@ _最后更新：2026-05-20 — 共 28 页_
 
 ## Frameworks
 
-- [[yaoye-project-roadmap]] — 曜野 Project 三层框架与 Phase 1 推进路线图，含任务清单与开新对话规范 (0 个来源)
+- [[wildlume-business-architecture]] — 曜野业务架构与价值链全景：参与者图谱、战略骨架、价值主张、信息流盘点 (0 个来源)
+- [[wildlume-feedback-listing]] — C 端反馈反哺 Listing 运营与分销商的机制设计（B 方向）(0 个来源)
+- [[wildlume-feedback-product]] — C 端反馈反哺产品改良与工厂研发的机制设计（A 方向）(0 个来源)
+- [[wildlume-project-roadmap]] — 曜野 Project 三层框架与 Phase 1 推进路线图，含任务清单与开新对话规范 (0 个来源)
+
+## Skills
+
+- [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：vault 健康度周报
 
 ## People
 
 - [[andrej-karpathy]] — OpenAI 联合创始人、Tesla AI 前负责人，提出 Vibe Coding 和 Software 3.0 (1 个来源)
 - [[boris-cherny]] — Anthropic 工程师，Claude Code 创造者，主张编程已被 AI 解决 (1 个来源)
 - [[garry-tan]] — Y Combinator CEO，开源个人 AI 操作系统（GBrain/GStack/OpenClaw）的建造者 (1 个来源)
+- [[zhanghaopeng]] — 曜野跨境供应链创始人、ZHPMind 系统搭建者，vault 的身份锚点 (3 个来源)
 
 ## Articles & Books
 
@@ -65,4 +73,4 @@ _暂无页面。_
 
 ## Snapshots
 
-_暂无页面。_
+- [[wildlume-business-reference]] — 曜野业务事实单一来源：股东、SKU、定价、海外仓、货代、ERP、团队 (0 个来源)
