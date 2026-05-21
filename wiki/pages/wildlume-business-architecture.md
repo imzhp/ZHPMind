@@ -3,11 +3,15 @@ type: framework
 title: 曜野业务架构
 aliases:
   - 曜野业务架构
+  - yaoye-business-architecture
 tags:
-  - 业务/曜野
-  - 架构
+  - wildlume
+  - architecture
 created: 2026-05-20
-source: 曜野 project 对话沉淀（Claude）
+updated: 2026-05-22
+sources: []
+source_count: 0
+discussions: []
 ---
 # 曜野业务架构
 

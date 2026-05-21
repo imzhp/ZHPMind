@@ -4,12 +4,16 @@ title: C 端反馈反哺机制 — A 方向（产品/工厂）
 aliases:
   - 反哺机制-A方向
   - 反哺产品
+  - yaoye-feedback-product
 tags:
-  - 业务/曜野
-  - 反哺机制
-  - c端反馈
+  - wildlume
+  - feedback-loop
+  - c-side-feedback
 created: 2026-05-20
-source: 曜野 project 对话沉淀（Claude）
+updated: 2026-05-22
+sources: []
+source_count: 0
+discussions: []
 ---
 # C 端反馈反哺机制设计 — A 方向（产品/工厂）
 

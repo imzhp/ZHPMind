@@ -5,11 +5,15 @@ aliases:
   - 曜野 Project 推进框架
   - 推进路线图
   - Phase 1 计划
+  - yaoye-project-roadmap
 tags:
-  - 业务/曜野
+  - wildlume
   - project-management
 created: 2026-05-20
-source: 曜野 project 对话沉淀（Claude）
+updated: 2026-05-22
+sources: []
+source_count: 0
+discussions: []
 ---
 # 曜野 Project 推进框架
 

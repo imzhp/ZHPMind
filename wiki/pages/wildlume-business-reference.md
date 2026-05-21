@@ -1,12 +1,15 @@
 ---
-title: 曜野业务参考（Wildlume Business Reference）
+title: 曜野业务参考
 type: snapshot
 tags:
+  - wildlume
   - cross-border-ecommerce
   - amazon
 created: 2026-05-12
-updated: 2026-05-12
-source_count: 1
+updated: 2026-05-22
+sources: []
+source_count: 0
+discussions: []
 aliases: [曜野业务参考, 业务参考, yaoye-business-reference]
 ---
 
