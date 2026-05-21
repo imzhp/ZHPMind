@@ -22,3 +22,7 @@
 # skills/agents/commands 默认 track,对应 design-principles 第二层 Skill 系统设计
 .claude/sessions/
 .claude/**/*.bak
+
+# Claude Code ↔ 主对话 传输通道(Phase D 临时;报告不入 git,仅 README 跟踪)
+.tmp-claude-reports/*
+!.tmp-claude-reports/README.md
