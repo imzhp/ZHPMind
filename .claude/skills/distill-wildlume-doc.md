@@ -2,7 +2,7 @@
 
 > **触发场景**：当 `inbox/` 里出现来自「曜野」project 对话沉淀的 `.md` 文件时（文件名通常含"曜野"或某种 v1/v2 后缀），按本规范 distill 到 `wiki/pages/`。
 >
-> **使用方法**：在 Obsidian + Claudian 中，把目标文件移到 inbox/ 后，对 Claudian 说："按 distill-yaoye-doc 规范处理 inbox/ 里的曜野新文档"。
+> **使用方法**：在 Obsidian + Claudian 中，把目标文件移到 inbox/ 后，对 Claudian 说："按 distill-wildlume-doc 规范处理 inbox/ 里的曜野新文档"。
 
 ---
 
@@ -10,28 +10,28 @@
 
 - 英文小写+连字符
 - 不带 v1/v2 等版本后缀（理解类文档 rewrite-friendly，由 git 管版本）
-- 曜野业务相关用 `yaoye-` 前缀
+- 曜野业务相关用 `wildlume-` 前缀
 
 ### 已知/约定的命名映射
 
 | 原文档主题 | 目标文件名 |
 |---|---|
-| 曜野业务架构 | `yaoye-business-architecture.md` |
-| C 端反馈反哺机制设计-A 方向（产品/工厂）| `yaoye-feedback-product.md` |
-| C 端反馈反哺机制设计-B 方向（Listing/分销商）| `yaoye-feedback-listing.md` |
-| C 端反馈反哺机制设计-C 方向（选品）| `yaoye-feedback-selection.md` |
-| C 端反馈反哺机制设计-D 方向（库存/采购）| `yaoye-feedback-inventory.md` |
-| C 端反馈反哺机制设计-E 方向（定价）| `yaoye-feedback-pricing.md` |
-| 曜野 Project 推进框架 | `yaoye-project-roadmap.md` |
-| 曜野 ERP 整体架构 | `yaoye-erp-architecture.md` |
-| 曜野协作工具策略 | `yaoye-collaboration-tools.md` |
-| 曜野知识库架构 | `yaoye-knowledge-base.md` |
-| 曜野 AI 应用图谱 | `yaoye-ai-map.md` |
-| 曜野选品方法论 | `yaoye-product-selection.md` |
-| 曜野标准化流程清单 | `yaoye-standard-processes.md` |
-| 反哺机制完整闭环图 | `yaoye-feedback-loop-overview.md` |
+| 曜野业务架构 | `wildlume-business-architecture.md` |
+| C 端反馈反哺机制设计-A 方向（产品/工厂）| `wildlume-feedback-product.md` |
+| C 端反馈反哺机制设计-B 方向（Listing/分销商）| `wildlume-feedback-listing.md` |
+| C 端反馈反哺机制设计-C 方向（选品）| `wildlume-feedback-selection.md` |
+| C 端反馈反哺机制设计-D 方向（库存/采购）| `wildlume-feedback-inventory.md` |
+| C 端反馈反哺机制设计-E 方向（定价）| `wildlume-feedback-pricing.md` |
+| 曜野 Project 推进框架 | `wildlume-project-roadmap.md` |
+| 曜野 ERP 整体架构 | `wildlume-erp-architecture.md` |
+| 曜野协作工具策略 | `wildlume-collaboration-tools.md` |
+| 曜野知识库架构 | `wildlume-knowledge-base.md` |
+| 曜野 AI 应用图谱 | `wildlume-ai-map.md` |
+| 曜野选品方法论 | `wildlume-product-selection.md` |
+| 曜野标准化流程清单 | `wildlume-standard-processes.md` |
+| 反哺机制完整闭环图 | `wildlume-feedback-loop-overview.md` |
 
-不在表中的新主题：按 `yaoye-{topic-in-english-kebab}.md` 规则自创，并在本表追加记录。
+不在表中的新主题：按 `wildlume-{topic-in-english-kebab}.md` 规则自创，并在本表追加记录。
 
 ---
 
@@ -61,7 +61,7 @@ source: 曜野 project 对话沉淀（Claude）
    - `# 曜野业务架构 v1` → `# 曜野业务架构`
 
 2. **文档级引用替换**：把指向**已存在** wiki/pages 文档的 `《xxx-v1》` / `《xxx》` 引用，替换为 `[[文件名|别名]]` wikilink
-   - `《曜野业务架构-v1》` → `[[yaoye-business-architecture|曜野业务架构]]`
+   - `《曜野业务架构-v1》` → `[[wildlume-business-architecture|曜野业务架构]]`
    - 替换前先确认目标 wiki 页面已存在；不存在的保留原文
 
 3. **相邻 wikilink 加分隔**：原文中两个《》直接相连时，转换后在两个 `[[]]` 之间补顿号
@@ -90,7 +90,7 @@ source: 曜野 project 对话沉淀（Claude）
 5. **写入** `wiki/pages/<目标文件名>`
 6. **检查冲突**：若目标文件已存在，停下来询问用户（覆盖 / 重命名 / 跳过）
 7. **删除** inbox/ 中的原文件
-8. **git commit**：commit message 格式 `distill(yaoye): <中文标题>`
+8. **git commit**：commit message 格式 `distill(wildlume): <中文标题>`
 
 ---
 
@@ -118,4 +118,4 @@ source: 曜野 project 对话沉淀（Claude）
 
 ---
 
-*维护说明：本 skill 文件本身的设计意图和迭代记录应在 `wiki/pages/skill-distill-yaoye-doc.md` 中记录（按 design-principles 的 skillify 机制）。*
+*维护说明：本 skill 文件本身的设计意图和迭代记录应在 `wiki/pages/skill-distill-wildlume-doc.md` 中记录（按 design-principles 的 skillify 机制）。*
