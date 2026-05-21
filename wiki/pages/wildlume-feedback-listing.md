@@ -272,4 +272,4 @@ A 没有这项,B 必须有:
 
 *文档版本:v1*
 *生成日期:2026-05-20*
-*关联文档:[[yaoye-business-architecture|曜野业务架构]]、[[yaoye-feedback-product|反哺机制-A方向]]*
+*关联文档:[[wildlume-business-architecture|曜野业务架构]]、[[wildlume-feedback-product|反哺机制-A方向]]*

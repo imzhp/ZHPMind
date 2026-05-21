@@ -219,4 +219,4 @@ AI 输出形式应为：**问题清单 + 严重程度排序 + 归因假设**（�
 
 *文档版本：v1*
 *生成日期：2026-05-20*
-*关联文档：[[yaoye-business-architecture|曜野业务架构]]*
+*关联文档：[[wildlume-business-architecture|曜野业务架构]]*

@@ -142,9 +142,9 @@ source: 曜野 project 对话沉淀（Claude）
 
 | 模块 | 状态 | 产出 |
 |------|------|------|
-| 业务架构 v1(信息流盘点) | ✅ | [[yaoye-business-architecture|曜野业务架构]] |
-| 反哺机制 A 方向 | ✅ | [[yaoye-feedback-product|反哺机制-A方向]] |
-| 反哺机制 B 方向 | ✅ | [[yaoye-feedback-listing|反哺机制-B方向]] |
+| 业务架构 v1(信息流盘点) | ✅ | [[wildlume-business-architecture|曜野业务架构]] |
+| 反哺机制 A 方向 | ✅ | [[wildlume-feedback-product|反哺机制-A方向]] |
+| 反哺机制 B 方向 | ✅ | [[wildlume-feedback-listing|反哺机制-B方向]] |
 | 业务参考资料 | ✅ | 《曜野业务参考》 |
 | 推进框架 | ✅ | 本文档 |
 
