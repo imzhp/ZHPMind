@@ -164,7 +164,18 @@ tags: [...]
 
 Compiled Truth 在上（理解），Timeline 在中（事件，append-only），References 在下（溯源）。
 
-概念类及导航/系统类页面（`concept` / `method` / `framework` / `moc` / `skill`）不需要三段式——它们整页都是 rewrite-friendly。
+**不需要三段式的类型:** `concept` / `method` / `framework` / `moc` / `skill` / `snapshot`。这些页面整页都是 rewrite-friendly。
+
+其中 `snapshot` 的特殊性在于:它表示"某时点的整体状态",通过 frontmatter `updated` 字段标记最新版本时间,通过 `archive/` 目录承载历史版本——**不需要在文件正文内开 Timeline 段**。Timeline 适合事件流(append-only),不适合快照式整页重写。
+
+**关于 sources 字段:**
+
+`sources` 字段的语义是"该页面引用的 wiki/raw/ 文件名列表"。两种合法情况:
+
+- **从 raw 蒸馏的页面:** `sources` 列出所有引用的 raw 文件名,`source_count = len(sources)`
+- **对话沉淀产物(没有对应 raw 文件):** `sources: []` + `source_count: 0`,来源信息以正文引言形式记录(如"本文档是 YYYY-MM-DD 对话推演的沉淀产物"),不进 `sources` frontmatter
+
+后者不是"不完整的 distill",而是 vault 内容的合法形态。Lint 检查时需要区分这两种情况。
 
 ## 业务实体命名约定
 
@@ -181,7 +192,7 @@ Compiled Truth 在上（理解），Timeline 在中（事件，append-only），
 
 **别名机制：**
 
-中文常用名、拼音、过渡时期的别名，通过 frontmatter `aliases` 字段挂在主 token 上。Obsidian 会让 `[[别名]]` 自动跳到主页。
+中文常用名、拼音、过渡时期的别名，通过 frontmatter `aliases` 字段挂在主 token 上。Obsidian 会让 `[[别名]]` 自动跳到主页。这一机制同样适用于文件改名后的旧名兼容——把旧文件名加入 aliases,所有指向旧名的 wikilink 经别名解析继续生效,不断链。
 
 **Tag 跟随主 token：**
 
@@ -273,7 +284,7 @@ skill 是 design-principles 的物理载体——它把工作流编码为可执�
 ZHPMind/
 ├── inbox/           ← Pull + Push 的统一入口（含 Obsidian Clipper 剪藏）
 ├── wiki/
-│   ├── pages/       ← 概念/方法/人物/反思（平铺，tag + MOC 导航）
+│   ├── pages/       ← 所有 wiki 页面（平铺，tag + MOC 导航，frontmatter type 区分）
 │   └── raw/         ← 已被 wiki 引用的原始素材（永久保留）
 ├── projects/        ← 活的工作（每个项目一个子文件夹）
 ├── outputs/         ← 完成产出（报告、文章、对外文档）
@@ -383,6 +394,26 @@ Hermes Agent 负责 vault 外的信号采集和自动化：
 ---
 
 # Changelog
+
+**2026-05-22 v2.4** —— Phase D 完成后的规则层下游影响审计修订:
+
+- **snapshot 结构要求显式化**:`snapshot` 类型不走三段式(跟 `concept` / `framework` / `moc` / `skill` 同列为"整页 rewrite-friendly")。时间维度由 frontmatter `updated` + `archive/` 历史版本承载,不在文件正文开 Timeline 段。修复 v2.3 type 表扩展时遗漏的 snapshot 结构语义。同步修订 wiki/CLAUDE.md §3.1 表、§3.4 三段式说明、§12 Lint "三段式合规"检查项(移除 `type: snapshot`)。
+- **对话沉淀产物 sources: [] 合法化**:对话推演产生的 wiki 页面没有对应 raw 文件,`sources: []` + `source_count: 0` 是合法状态,不算"不完整的 distill"。新增"关于 sources 字段"说明小段,同步修订 wiki/CLAUDE.md §3.2 frontmatter 注释和 §12 Lint 检查规则。
+- **wiki/CLAUDE.md §4 Index 分区补全**:补 MOCs / Skills 两个分区(v2.3 type 表扩展时遗漏的下游 propagation)。配合 D5 (commit b6ab657) 已经在 index.md 实际加的 Skills 分区。
+- **aliases 字段"迁移兼容"用法显式化**:Phase D 实战中大量使用 aliases 挂载旧文件名(D2/D4),作为 wikilink 修复期间的兜底。本次显式认可此用法。
+- **wiki/CLAUDE.md §12 Lint 补充检查项**:tags 合规(全小写、纯英文、连字符)、业务实体命名约定合规。
+- **第三层物理结构描述微调**:`wiki/pages` 不只是"概念/方法/人物/反思",而是所有 wiki 页面(通过 frontmatter type 区分)。
+
+**Phase D(2026-05-21~22)迁移任务完成确认:**
+v2.3 Changelog 列出的"不在本次范围内的迁移任务"全部在 Phase D 完成:
+- 4 个 `yaoye-*` 页面 → `wildlume-*`(D3 commit 66a09ab)
+- 根目录 `wildlume-business-reference.md` 与 wiki/pages 版本合并 A 版本迁入 wiki/pages(D2 commit 30703fe)
+- 全 vault tag 规范化(D4 commit 8a7e59b)
+- `skill-review-digest.md` type: skill 合规(D5 commit b6ab657 入 index)
+- 业务实体命名约定全 vault 落地(全 Phase D)
+
+**协作工作流元洞察:**
+Phase D 中段切换到"Filesystem MCP 直读 vault 内 .tmp-claude-reports/"传输通道后,主对话和 Claude Code 协作效率显著提升。Claude Code 节奏三原则:diff 先行、模糊处停下、核对计划假设。此模式适用于未来所有"长流程多 commit"工作。
 
 **2026-05-21 v2.3** —— 命名规范补缺，基于 vault 现状审计：
 

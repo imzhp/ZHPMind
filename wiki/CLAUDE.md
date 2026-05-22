@@ -87,7 +87,7 @@ ZHPMind/
 | `article` | 理解（一次性蒸馏） | 基本不改 | 标准结构 |
 | `book` | 理解（双栏映射） | 基本不改 | 标准结构 + Mirror 区 |
 | `reflection` | 理解 + 事件 | mirror 产物，可 rewrite | 三段式 |
-| `snapshot` | 快照 | 定期更新，旧版归档 | 三段式 |
+| `snapshot` | 快照 | 定期更新，旧版归档 | 标准结构 |
 | `moc` | 索引/导航 | 随主题页累积更新 | 标准结构 |
 | `skill` | 工作流定义 | 记录设计意图和迭代历史 | 标准结构 |
 
@@ -100,12 +100,12 @@ ZHPMind/
 ```yaml
 ---
 title: "Human-Readable Page Title"
-aliases: []         # 可选。业务实体页和有别名的实体页使用，用于挂载中文别名/拼音；Obsidian 会让 [[别名]] 自动跳到主页
+aliases: []         # 可选。三种用法:(1) 业务实体页挂载中文别名/拼音;(2) 实体页挂载常用别名;(3) 文件改名时挂载旧文件名,作为 wikilink 修复期间的兼容兜底。Obsidian 会让 [[别名]] 自动跳到主页
 type: concept | method | framework | person | article | book | reflection | snapshot | moc | skill
 tags: [tag-one, tag-two]
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-sources: []         # 该页面引用的 raw/ 文件名列表，如 ["article.md", "paper.pdf"]
+sources: []         # raw/ 文件名列表(如 ["article.md", "paper.pdf"])。对话沉淀产物用 sources: [] + source_count: 0,来源信息以正文引言记录(详见 design-principles.md "关于 sources 字段")
 source_count: 0     # 整数，必须等于 len(sources)
 discussions: []     # reflect 日期列表，如 ["2026-04-18"]
 ---
@@ -139,7 +139,7 @@ discussions: []     # reflect 日期列表，如 ["2026-04-18"]
 - `raw/filename.md` — 一句话注明该来源的贡献
 ```
 
-### 3.4 三段式结构（person / reflection / snapshot）
+### 3.4 三段式结构（person / reflection）
 
 事件类和混合类页面必须使用三段式——这是"理解可重写 + 事件 append-only"的物理实现：
 
@@ -168,7 +168,9 @@ discussions: []     # reflect 日期列表，如 ["2026-04-18"]
 - Timeline 条目按时间倒序（最新在上）
 - Timeline 条目格式固定：`- YYYY-MM-DD [来源:来源名] 事件描述`
 - Compiled Truth 由人主导编辑；Claudian 可以在 distill/reflect 时提出修改建议，经 Haopeng 确认后执行
-- 概念类页面（concept / method / framework）**不用三段式**——它们整页都是 rewrite-friendly
+- 概念类、导航/系统类、快照类页面（`concept` / `method` / `framework` / `moc` / `skill` / `snapshot`）**不用三段式**——它们整页都是 rewrite-friendly
+
+`snapshot` 类型虽然有时间维度,但通过 frontmatter `updated` 字段 + `archive/` 历史版本承载,不在文件正文内开 Timeline 段。`snapshot` 适用标准结构(§3.3)。
 
 ### 3.5 Book 页面的特殊结构
 
@@ -244,6 +246,14 @@ _Last updated: YYYY-MM-DD — N pages total_
 ## Snapshots
 
 - [[page-name]] — 一句话摘要 (N sources)
+
+## MOCs
+
+- [[page-name]] — 一句话摘要
+
+## Skills
+
+- [[page-name]] — 一句话摘要
 ```
 
 ### 维护规则
@@ -253,6 +263,7 @@ _Last updated: YYYY-MM-DD — N pages total_
 - 条目格式：`- [[page-name]] — 一句话摘要 (N sources)`
   - 摘要为单句，不加句号，80 字符以内
   - `N sources` 取自该页 frontmatter 的 `source_count`
+  - MOC 和 Skill 条目不带 `(N sources)` 后缀(这两类页面 sources 概念不适用)
 - 每个条目放在与其 `type` 对应的分类下：
   - `concept` + `method` → "Concepts & Methods"
   - `framework` → "Frameworks"
@@ -260,6 +271,8 @@ _Last updated: YYYY-MM-DD — N pages total_
   - `article` + `book` → "Articles & Books"
   - `reflection` → "Reflections"
   - `snapshot` → "Snapshots"
+  - `moc` → "MOCs"
+  - `skill` → "Skills"
 - 每个分类内按页面名字母排序
 - 页面被删除时立即移除其索引条目
 
@@ -551,7 +564,9 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 - [ ] `source_count` 与 `len(sources)` 匹配
 - [ ] `sources` 中列出的每个文件确实存在于 `wiki/raw/`
 - [ ] `index.md` 完整 — `pages/` 中每个 `.md` 文件（`index.md` 除外）都有索引条目
-- [ ] 三段式合规 — `type: person`、`type: reflection`、`type: snapshot` 的页面具有 Compiled Truth + Timeline + References 三段
+- [ ] 三段式合规 — `type: person`、`type: reflection` 的页面具有 Compiled Truth + Timeline + References 三段
+- [ ] `tags` 合规 — 全小写、纯英文、连字符分隔，无中文 tag，无含斜杠 tag
+- [ ] 业务实体命名约定合规 — 自有公司/有英文标识的实体页文件名用对外英文标识（详见 design-principles.md 业务实体命名约定）
 
 **链接健康**
 - [ ] 无断链 `[[wikilinks]]` — 每个 `[[page-name]]` 目标在 `pages/` 中存在
@@ -559,7 +574,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 - [ ] 缺失交叉引用 — 正文中提到的、有独立页面的概念/实体未使用 `[[link]]`
 
 **内容质量**
-- [ ] `source_count: 0` 或 `sources: []` 的页面 — 可能表示不完整的 distill
+- [ ] `sources: []` 且正文无"对话沉淀产物"声明的页面 — 可能表示不完整的 distill(注意:对话沉淀产物使用 sources: [] 是合法的,正文引言会有相应声明)
 - [ ] `sources` 中引用了 `wiki/raw/` 中不存在的文件 — 失效引用
 - [ ] `updated` 超过 90 天且同主题有更新来源 — 可能过时
 - [ ] 跨多个页面高频出现但没有独立页面的术语 — 建议创建 concept 页
