@@ -43,7 +43,7 @@ references:
 | Pitfall | 性质 | 应对 |
 |---|---|---|
 | **#1 目标页不存在时 SKILL / prompt template 无 fallback,dogfood / 探索性使用没法跑** | 流程缺陷 | prompt-template.md A.3 加显式 `--draft` 标志:跳 Step 1 页读取,用 LLM 常识 + 用户验证作输入,跳 Step 5/6/7;产出仅供评估 |
-| **#2 感觉型若兼具"主动技法"维度,寓言会偏被动唤醒,技法面只在"边界"提一句没正面给** | 生成偏差 | prompt-template.md B 约束加:概念若兼有"感觉 + 操作"两面,候选中至少 1 个聚焦操作面 |
+| **#2 感觉型若兼具"主动技法"维度,寓言会偏被动唤醒,技法面只在"边界"提一句没正面给** | 生成偏差 | prompt-template.md B 约束加:概念若兼有"感觉 + 操作"两面,候选中至少 1 个聚焦操作面 ✅ v2.6 验证已修(2026-05-23 dogfood 二轮,详见 .tmp-claude-reports/concept-fable-dogfood.md 第 4 节) |
 
 ### 边界模糊档(可选 / 方法论)
 
