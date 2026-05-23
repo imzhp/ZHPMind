@@ -28,20 +28,38 @@ references:
 
 **核心痛点**：分享完概念后听者点头说懂、转头就忘。这种问题加大讲解力度解决不了，因为问题不在讲的人不努力，而在大脑对抽象概念的留存机制天然偏弱。故事是大脑愿意主动复述的载体。
 
+**适用范围(三轮 dogfood 后的修订,2026-05-23)**:fable 不是"学懂概念"的全套工具,而是**工具链一环,只负责概念的"感觉 / 视角翻转"那一段**。感觉型概念能由 fable 单点完成(陌生化:"看见熟悉的木勺");方法论类靠 fable + 类比 + cases 组合(fable 锁视角,类比 / cases 教结构);结构型靠 fable + 教材 / 行业数据(fable 给"有这回事"印象,结构必须从公式 / 基准另学)。详见 `.claude/skills/concept-fable/references/prompt-template.md` A.1 三层光谱表。
+
 **为什么落在 Claudian 而不是 Hermes**：concept-fable 是 vault 内的深度加工——给一个 wiki 页面（concept/method/framework）加直觉锚点段落，属于"距 wiki 最近"的 skill。按 design-principles v2.5「执行体归属」，vault 内深度加工归 Claudian。Hermes 通过 Gateway 暴露的轻量调用（手机端要寓言但不写入 vault）是备选 surface，暂不实现。
 
 **为什么这是人工设计的 skill 而非 Hermes 自动复盘产出**：受外部启发（Amanda Askell 原版 prompt + 公众号文章优化版）想沉淀成可复用 skill。按 design-principles v2.5「skill 怎么产生」的「人主动设计」路径：先建反思页占位 → 建执行体 → 首次实战后回填 Pitfalls 和反思。
 
 ## 实战 Pitfalls
 
-待首次实战后回填。预期会在以下几个方向遇到坑：
+三轮 dogfood(陌生化 / jobs-to-be-done / 库存周转率,2026-05-23)沉淀。按 SKILL 边界表三档分组——每档暴露的 Pitfall 模式不同。原始归档见 `.tmp-claude-reports/concept-fable-dogfood.md`。
 
-- 寓言生成时陷入"嵌套概念解释概念"（用一个抽象概念解释另一个抽象概念，背离用日常场景包裹的初衷）
-- 检验问题写成"复述比喻"（如"老王为什么走小巷？"）而非"概念迁移"
-- 结构型概念触发警告后用户选择继续，结果产出确实掩盖了关键结构
-- 直觉锚点段落超过 100 行 soft limit
+### 感觉型档(强烈推荐)
 
-每条踩坑发生后按照 `wiki/pages/skill-review-digest.md` 的 Pitfalls 表格式补：Pitfall / 性质（工具调用约束 / 环境约束 / 平台约束 / 业务语义校准 / 平台陷阱）/ 应对。
+| Pitfall | 性质 | 应对 |
+|---|---|---|
+| **#1 目标页不存在时 SKILL / prompt template 无 fallback,dogfood / 探索性使用没法跑** | 流程缺陷 | prompt-template.md A.3 加显式 `--draft` 标志:跳 Step 1 页读取,用 LLM 常识 + 用户验证作输入,跳 Step 5/6/7;产出仅供评估 |
+| **#2 感觉型若兼具"主动技法"维度,寓言会偏被动唤醒,技法面只在"边界"提一句没正面给** | 生成偏差 | prompt-template.md B 约束加:概念若兼有"感觉 + 操作"两面,候选中至少 1 个聚焦操作面 |
+
+### 边界模糊档(可选 / 方法论)
+
+| Pitfall | 性质 | 应对 |
+|---|---|---|
+| **#3 边界模糊概念 SKILL 写「问 Haopeng」,dogfood / 自动化调用里这条规则没自动触发** | 流程不严 | prompt-template.md A.2 分档默认行为:可选档默认先问「记忆 vs 结构?」根据回答决定 generate / 改推荐别的载体 |
+| **#4 方法论类概念寓言只覆盖视角翻转面,结构化方法学维度寓言不该碰** | 适用边界本质 | prompt-template.md A.4 加补注:概念某一面也是边界,产出末尾明示「本组寓言聚焦 X 面,不替代 Y 面学习」 |
+
+### 结构型档(警告)
+
+| Pitfall | 性质 | 应对 |
+|---|---|---|
+| **#5 结构型寓言反复需要附"不替代结构本身"注,SKILL 现状只在 prompt template A 段一段警告,生成时是否每候选加靠 LLM 记得** | 生成一致性缺陷 | prompt-template.md B.5 结构型专用产出模板:强制每候选附「记忆触发」blockquote + 候选末尾「本寓言不能回答的问题清单」 |
+| **#6 SKILL 对结构型只「警告 + 确认」,没规定继续后产物的格式应有什么不同;dogfood 三次都自发加了三件套,LLM 的好心不可靠** | 流程不严 | prompt-template.md B.5 三件套强制:① 每候选「记忆触发」blockquote ② 末尾「不能回答的问题清单」 ③ 产出末尾指向"结构本身"的外部来源(教材 / 行业报告 / 公式参考) |
+
+每条新踩坑发生后,按照 `wiki/pages/skill-review-digest.md` 的 Pitfalls 表格式补到对应档:Pitfall / 性质(工具调用约束 / 环境约束 / 平台约束 / 业务语义校准 / 平台陷阱 / 流程缺陷 / 生成偏差 / 生成一致性缺陷 / 适用边界本质)/ 应对。
 
 ## 演化简史
 
