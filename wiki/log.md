@@ -102,3 +102,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[karpathy-claude-md]]
 - **Pages updated**: [[index]]（Concepts & Methods 新增 karpathy-claude-md；Skills 补 skill-concept-fable；总页数 34 → 36）
 - **Note**: [self-reviewed] 蒸馏外部参考——Forrest Chang（Jiayuan Zhang）基于 Andrej Karpathy 对 LLM 编码失败模式的公开观察提炼的 4 原则 CLAUDE.md（Think Before Coding / Simplicity First / Surgical Changes / Goal-Driven Execution）。Concept 页 5 节：是什么 / 4 原则蒸馏 / 演进生态与争议 / 跟 ZHPMind 现规则对照 / v2.6 concept-fable dogfood 活样本。对照核心结论：v2.5 落地后 Think Before Coding（diff 先行 + 模糊处停下）和 Simplicity First（AI 心法三条）已基本对齐；Surgical Changes 类似精神但缺“每一行改动可追到请求”硬判据；Goal-Driven Execution 为最大补漏点（ZHPMind 现 AI 红线管“AI 写什么”，Goal-Driven 管“AI 怎么写”），不立即修，挂 v2.7 backlog。**顺带补 v2.5 遗漏**：skill-concept-fable.md 早于本次入 vault（commit a0ee185）但未在 index 登记，本次一并修复（Skills 区从 1 条到 2 条）。
+
+---
+
+## [2026-05-23] update | skill-review-digest 自我纠错（scanner 落地位置）
+
+- **Sources touched**: 无（反思页内部修订）
+- **Pages created**: 无
+- **Pages updated**: [[skill-review-digest]]（§1 自我纠错；当前状态加 2026-05-23 观察结论；References 加 scanner 实际路径）
+- **Note**: [self-reviewed] §1「changelog ≠ 实现状态」此前 5/20 判断 scanner 未落地，基于 `find ~/.hermes/skills/review-digest -name "*.py"` 无结果。本次 vault-tidy 设计前置 diligence 中查实，scanner 实际落地在 `~/.hermes/scripts/review-digest-scan.py`（独立 scripts/ 目录，跟 skills/ 平级），v4 changelog 准确反映了实现。教训反转：cross-check 文件状态时不要只在 skill 子目录找，Hermes 自身分工是 skill = 行为定义、scripts = 确定性逻辑。附独立 pitfall：SKILL.md 文档用 `review-digest-scanner.py`（带 ner），实际脚本/cron config 用 `review-digest-scan.py`（无 ner），命名漂移但不影响功能。当前状态段加观察结论：5/13 起 cron 实际跑 v4 单文件，v1.1 目录形态未再被调用，可考虑清理。

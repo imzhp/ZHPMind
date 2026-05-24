@@ -3,7 +3,7 @@ type: skill
 title: review-digest
 status: active
 created: 2026-05-11
-updated: 2026-05-20
+updated: 2026-05-23
 tags:
   - system/skill
   - tool/hermes
@@ -67,6 +67,8 @@ review-digest 是 ZHPMind 的**健康度周报**。它扫描 vault 自身，产�
 
 哪个被 Hermes 实际加载，运行时观察即可（看 digest 产出 frontmatter 是否包含 changelog 字段、🔴 是否附建议等）。Curator 的 Consolidation Pass 看到的是「1 agent-created skill」（单数），所以 Hermes 内部只识别一个 review-digest，重复版本可能在未来 Curator pass 中被合并。
 
+**2026-05-23 运行时观察结论**：cron output（`~/.hermes/cron/output/4923ff1a9586/`）显示 5/13 起跑的是 **v4 单文件**（prompt 含 scanner JSON 的 `## Script Output` 段），v1.1 目录形态从 5/13 起未再被调用。两版本并存确实是历史遗留，可考虑清理（目录式 v1.1+ 3 个 .bak）。
+
 ## 五条实战 Pitfalls（来自 v1.1 SKILL.md）
 
 这些是 skill 真正变"聪明"的部分——每条都是被 fix 过的踩坑记录，比方法论更有价值。
@@ -81,11 +83,17 @@ review-digest 是 ZHPMind 的**健康度周报**。它扫描 vault 自身，产�
 
 ## 反思与未解决问题
 
-**1. changelog ≠ 实现状态**
+**1. ~~changelog ≠ 实现状态~~ → 自我纠错（2026-05-23）**
 
-v4.0 的 changelog 写「scanner.py 架构重构」，但 `find ~/.hermes/skills/review-digest -name "*.py"` 找不到任何脚本文件。这是 LLM-driven skill 维护的一个固有风险：**Hermes 可能在 changelog 里描述了一个意图但没真的落地**。
+> 此前（5/13-5/20）的判断：v4.0 的 changelog 写「scanner.py 架构重构」，但 `find ~/.hermes/skills/review-digest -name "*.py"` 找不到任何脚本文件，故推断“Hermes 在 changelog 里描述了一个意图但没真的落地”。
 
-教训：以后看 skill 演化别只看 changelog，要 cross-check 实际文件状态。
+**这个判断错了**——scanner 实际落地在 `~/.hermes/scripts/review-digest-scan.py`（独立的 `scripts/` 目录，跟 `skills/` 平级，**不在** `skills/review-digest/` 子目录下）。`find` 命令查错位置。v4 changelog 不是空声明，准确反映了实现。
+
+cron 输出文件（`~/.hermes/cron/output/4923ff1a9586/2026-05-13_00-21-37.md` 起）的 `## Script Output` 段含有完整 JSON 扫描结果，证实 scanner 自 5/13 起就在 production 跑。
+
+**真正的教训反转**：cross-check 实际文件状态时，**不要只在 skill 自己的子目录里找**——Hermes 把可执行脚本放在 `~/.hermes/scripts/`，跟 `skills/` 平级。这是 Hermes 自身的目录分工（skill = 行为定义，scripts = 确定性逻辑），不是文档跟实现不一致。
+
+**附：命名漂移（独立小 pitfall）**：v4 SKILL.md 内文用 `review-digest-scanner.py`（带 ner），cron config 和实际脚本是 `review-digest-scan.py`（无 ner）。功能不受影响（Hermes 通过 cron config 里的 `script` 字段 resolve），但是个值得记录的小 pitfall——LLM 自主维护的 skill 文档里的脚本命名跟实际文件不一致。
 
 **2. Curator 的实际工作 vs 我对它的预期**
 
@@ -109,7 +117,8 @@ SKILL.md v1.1 frontmatter 明明写 `created_by: human`，但 Curator 看到的�
 
 - skill 执行文件：`~/.hermes/skills/review-digest/SKILL.md`
 - 相关脚本/模板：`~/.hermes/skills/review-digest/references/`
-- 单文件遗留：`~/.hermes/skills/review-digest.md`
+- 单文件遗留：`~/.hermes/skills/review-digest.md`（实际为 v4 active，见 §1 纠错）
+- **scanner 脚本（实际生效）**：`~/.hermes/scripts/review-digest-scan.py`（2026-05-23 补）
 - 备份链：`~/.hermes/skills/review-digest.md.v[1-3].bak`
 - Curator 日志：`~/.hermes/logs/curator/`
 - design-principles 对应小节：「Skill 系统设计（从工具实践沉淀）」
