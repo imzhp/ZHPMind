@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-05-23 — 共 36 页_
+_最后更新：2026-05-23 — 共 37 页_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -53,6 +53,7 @@ _最后更新：2026-05-23 — 共 36 页_
 
 - [[skill-concept-fable]] — concept-fable skill 的设计意图与演化记录：为 concept/method/framework 页生成直觉锚点寓言
 - [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：vault 健康度周报
+- [[skill-vault-tidy]] — vault-tidy skill 的设计意图与演化记录：vault 执行器，基于 review-digest scanner JSON 生成 tidy actions（status: draft）
 
 ## People
 
