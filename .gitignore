@@ -26,3 +26,6 @@
 # Claude Code ↔ 主对话 传输通道(Phase D 临时;报告不入 git,仅 README 跟踪)
 .tmp-claude-reports/*
 !.tmp-claude-reports/README.md
+
+# iCloud Optimize Storage 占位符
+*.icloud
