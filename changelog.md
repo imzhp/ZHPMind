@@ -15,3 +15,12 @@
 ## [2026-05-18] review-digest | 健康度周报
 
 - 新建 inbox/review-digest-2026-05-18.md
+
+## [2026-05-25] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-05-25.md（覆盖写入，快照语义）
+
+
+## [2026-05-25] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-05-25.md（覆盖写入，快照语义）
