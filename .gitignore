@@ -23,9 +23,16 @@
 .claude/sessions/
 .claude/**/*.bak
 
-# Claude Code ↔ 主对话 传输通道(Phase D 临时;报告不入 git,仅 README 跟踪)
-.tmp-claude-reports/*
-!.tmp-claude-reports/README.md
+# Claude Code ↔ 主对话 传输通道
+# 默认入 git,只排除真临时文件
+# 教训:2026-05-26 因整目录 gitignored 导致 amazon 对照表 v0.9 在 iCloud→Sync 迁移中物理丢失
+# 现策略:drafts/诊断报告进 git 历史 + 每版必 commit;只排除 .bak / .tmp / scratch / incoming 子目录
+.tmp-claude-reports/*.bak
+.tmp-claude-reports/*.tmp
+.tmp-claude-reports/*~
+.tmp-claude-reports/incoming-*/
+.tmp-claude-reports/scratch-*
+.tmp-claude-reports/.DS_Store
 
 # iCloud Optimize Storage 占位符
 *.icloud
