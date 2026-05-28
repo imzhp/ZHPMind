@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-05-28 — 共 42 页_
+_最后更新：2026-05-28 — 共 46 页_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -28,10 +28,14 @@ _最后更新：2026-05-28 — 共 42 页_
 - [[ai-native-startup]] — AI 作为核心基础设施的创业范式，创始人角色从执行者转变为 Agent 调度员 (1 个来源)
 - [[agentic-engineering]] — 在专业质量标准不降前提下用 Agent 大幅提速的工程纪律 (4 个来源)
 - [[amazon-cashflow-roi]] — 现金流与 ROI 模型：年化 ROI = 单次 ROI × 周转次数，盈利 ≠ 账上钱 (1 个来源)
+- [[amazon-data-driven-operations]] — 数据化运营方法论枢纽：80% 难题可数据解释、问题归类四象限、ACoS 拆解链、广告归因 7 天 (1 个来源)
 - [[amazon-inventory-replenishment]] — 库存管理与备货节奏：周转率杠杆、备货决定定价权、安全库存放着不动用 (1 个来源)
+- [[amazon-keyword-library]] — 关键词词库 = 财富+护城河：SIFT 占位率筛选、词根分析、投放四象限、相关性 2.0 与跨类目 ASIN 定投 (2 个来源)
 - [[amazon-new-product-launch]] — 新品推广全流程 SOP：立项三件闭环、投放评级 ABCD、整体盈亏 ACoS 作上限、让产品适应你的标准 (1 个来源)
+- [[amazon-opportunity-explorer]] — 商机探测器与推广成本预估：总销量倒推、活跃商品数=真竞争、转化率高≠蓝海、转化率 vs 大盘终极判据 (1 个来源)
 - [[amazon-patent-screening]] — 跨境电商专利筛查：消费者混淆原则、保护越整体范围越窄、规避方法 (1 个来源)
 - [[amazon-ppc-advertising]] — 亚马逊站内付费广告体系，含竞价策略、广告类型与报表优化 + 云飞扬财务决策层（整体盈亏 ACoS / 四象限 / 四层级诊断 / 低毛利无法优化） (2 个来源)
+- [[amazon-pricing-strategy]] — 价格策略：螺旋两轮增长、降价+缩广告、5 种价格形式、防御性 7D、c-访问转化率衡量降价 (1 个来源)
 - [[amazon-product-selection]] — 亚马逊选品五维度分析框架 + 云飞扬财务决策器、垄断分型、市场容量实操与测款方法论 (2 个来源)
 - [[amazon-profit-analysis]] — 亚马逊利润管理全栈财务 SOP：真金白银只有采购+头程、退款≠退货、三种退货精算 (1 个来源)
 - [[amazon-review-management]] — 评论权重体系、差评处理、售后转化与私域流量建立 (1 个来源)
@@ -39,7 +43,7 @@ _最后更新：2026-05-28 — 共 42 页_
 - [[claude-code]] — Anthropic 的 AI 编程 CLI 工具，由 Boris Cherny 创建，支持 loops 和并行 agent (2 个来源)
 - [[fat-skills-thin-harness]] — AI Agent 系统架构原则：智能驻留在技能和数据中，Harness 只做路由 (1 个来源)
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
-- [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 (1 个来源)
+- [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 + 云飞扬文案反直觉取舍 (2 个来源)
 - [[personal-knowledge-base]] — AI 持续写入的运行中知识神经系统，通过实体传播实现复利积累 (1 个来源)
 - [[product-overhang]] — 模型能力超前于产品化程度的战略窗口，AI 产品机会的核心判断框架 (1 个来源)
 - [[skillification]] — 将可重复工作流提取为自积累技能文件的方法论，元技能构建技能 (1 个来源)

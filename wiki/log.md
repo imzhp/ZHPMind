@@ -138,3 +138,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[amazon-new-product-launch]]
 - **Pages updated**: [[amazon-ppc-advertising]]（新增云飞扬财务决策层+优化诊断 SOP 为第 2 源，source_count 1→2）、[[amazon-traffic-sources]]（新增云飞扬购买路径+关联流量打法为第 2 源，source_count 1→2）、[[amazon-moc]]（广告/流量条目补云飞扬层 + 新增“新品推广”子主题）、[[index]]（新增 amazon-new-product-launch + ppc/traffic 转 2 源，总页数 41→42）
 - **Note**: Phase 2（广告 SOP）落地。云飞扬补的是手册之外的财务决策层 + 认知重塑 + 优化诊断 SOP：核心是 §10.2 整体盈亏 ACoS = 毛利率÷广告依赖度（⭐⭐⭐，“盈亏平衡 ACoS=毛利率”的升级，从广告不亏到链接不亏）、§8.3 路径 A 传统 vs 路径 B 战略性亏损、§8.10 四象限黄金法则（横轴 CVR 纵轴 ACoS，先判预算花完没）、§10.7 四层级诊断 L1-L4、§10.8 低毛利无法优化（80% 是选品财务问题）。traffic 页补 §9 购买路径升级（广告主做曝光不做转化 / 门 vs 摆位 / VCPM 半屏 1-1.5 秒 / SD 站内站外陷阱 / SB 同品牌多店铺归因虚高）；9.3 搜索流量 30% 口径冲突 footnote 已于 2026-05-27 预置，本次未重复。new-product-launch 新建页是 §11 集大成（11.9 八项指标预估vs实际全接近=可预测性首次验证⭐⭐、11.10 让产品适应你的标准⭐⭐⭐、全程只动竞价不动投放）。诚实断层：§6.1-6.4 自然/广告排名机制源材料未恢复，未硬编，已在 ppc Sources 标注待补。前向链接 amazon-pricing-strategy 仍待 Phase 3 建。draft 保留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。Phase 3（关键词词库/数据化运营/商机探测器/价格策略）待续。
+
+---
+
+## [2026-05-28] distill | 云飞扬 2023 课程 Phase 3（关键词/工具/方法论/价格）— 全 18 节蒸馏完结
+
+- **Sources touched**: `raw/qwei-amazon-course-2023-v2/`（3.商机探测器推广成本预估产品开发表 / 5.数据化运营入门 / 7.关键词词库文案和广告投放词选择 / 16.价格策略制定和执行 / 小红圈直播3-30关键词调研相关性2.0）
+- **Pages created**: [[amazon-keyword-library]]（§7 + 小红圈相关性 2.0 合一页，2 源）、[[amazon-data-driven-operations]]（§5 方法论枢纽）、[[amazon-opportunity-explorer]]（§3 工具底层）、[[amazon-pricing-strategy]]（§16）
+- **Pages updated**: [[listing-optimization]]（新增云飞扬文案反直觉取舍为第 2 源，source_count 1→2）、[[amazon-moc]]（新增数据化运营/关键词词库/选品工具/价格策略四个子主题 + Listing 补云飞扬文案）、[[index]]（新增 4 条目 + listing 转 2 源，总页数 42→46）
+- **Note**: Phase 3 落地，**整个 18 节 / 915 条目跨源 diff 蒸馏全部完结（Phase 1+2+3）**，amazon-cross-source-diff-draft 使命达成。本期五块：§3 商机探测器（工具操作底层，之前每节引用的“预估”动作的实现；⭐⭐⭐ 转化率 vs 大盘=好/一般/垃圾终极判据 + 总销量倒推 + 搜索转化率高≠蓝海）/ §5 数据化运营（方法论枢纽，80% 难题可数据解释 + 关键词四象限源头 + ACoS 拆解链 + 广告归因 7 天）/ §7 关键词词库（财富+护城河 + SIFT 占位率反推）/ §16 价格策略（螺旋两轮 + 降价缩广告 5.8 万案例 + c-访问转化率=衡量降价唯一指标）/ 小红圈相关性 2.0。**小红圈并入 keyword-library 一页**作工具实操层（Sources 分两条标注 §7 + 小红圈，source_count 2），未单独成页。**建好 pricing-strategy 接通了 Phase 1/2 预埋的 [[amazon-pricing-strategy]] 前向链接（profit-analysis/inventory/patent），红链清零**。§7.5 文案部分增补到 listing-optimization，词库与投放主体在 keyword-library。诚实断层延续：ppc §6.1-6.4 排名机制仍待重读源材料补。draft 保留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。至此 Amazon 簇 15 页（5 篇双源：product-selection/ppc-advertising/traffic-sources/keyword-library/listing-optimization），完整 SOP 链全互链。
