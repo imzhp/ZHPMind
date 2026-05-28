@@ -120,3 +120,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[skill-vault-tidy]]
 - **Pages updated**: [[index]](Skills 区新增 skill-vault-tidy;总页数 36 → 37)
 - **Note**: [self-reviewed] vault-tidy 是 review-digest 的"执行器"对偶——review-digest 报状态,vault-tidy 基于状态生成 + 执行 tidy actions。本次产出:反思页 wiki/pages/skill-vault-tidy.md(status: draft,引入新状态值 draft 表示"设计完成未部署")+ SKILL.md 单文件 draft(在 .tmp-claude-reports/draft-vault-tidy-skill.md,需手动 cp 到 ~/.hermes/skills/vault-tidy.md)。设计要点:Scope 三档(Tier 1 可自动 / Tier 2 只报告 / Tier 3 永不做);三种执行模式(--dry-run/apply/draft,把 v2.6 显式 draft 一等公民做实);跟 review-digest 接口为读 scanner JSON + 24h 时间戳硬阈值检查。失败模式预防表借鉴 review-digest v1→v4 6 条踩坑(含 2026-05-23 反思页查实的 scanner 位置教训)。当前状态 draft,未部署 Hermes,未跑 dogfood,留待下次会话上 Hermes + dogfood 验证。
+
+---
+
+## [2026-05-28] distill | 云飞扬 2023 课程 Phase 1（选品 + 财务铁三角 + 专利）
+
+- **Sources touched**: `raw/qwei-amazon-course-2023-v2/`（2.产品开发方法论 / 如何分析市场容量 / 13.利润管理和利润分析 / 1.1三万块钱还能做亚马逊吗 / 14.库存管理，需求预测和备货节奏 / 4.专利筛查：选品全流程实操）
+- **Pages created**: [[amazon-profit-analysis]]、[[amazon-cashflow-roi]]、[[amazon-inventory-replenishment]]、[[amazon-patent-screening]]
+- **Pages updated**: [[amazon-product-selection]]（新增云飞扬层为第 2 源：财务决策器/垄断分型/市场容量实操/测款方法论/小宠笼实操闭环，source_count 1→2）、[[amazon-moc]]（新增财务与现金流/库存与备货/专利与合规三个子主题）、[[index]]（新增 4 条目 + 更新 product-selection，总页数 37→41）
+- **Note**: 把 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16，云飞扬 2023 课程 18 节 / 915 条目 / 90% 独有，对照国民哥哥手册的跨源 diff）按“主对话直接写 vault 工作流”落地为正式 wiki，分三期，本次为 Phase 1（选品 + 财务铁三角 + 专利）。源材料为通义听悟清洗 v2 版（飞书 v1 作交叉验证）。云飞扬层与国民哥哥手册互补：手册讲选品五维度判断，云飞扬讲财务模型决策器（CPA/毛利额/广告依赖度 → ROI>1 或 毛利率>30% 二选一）+ 现金流铁三角（年化 ROI=单次 ROI×周转次数）。5 个用户点名 ⭐⭐⭐：三种头程 ROI 差一倍 + 毛利率陷阱 + 爆品带中等品 → product-selection；站外判断 → product-selection；超额利润警惕专利 → product-selection + patent-screening。🏢 曜野潜在场景条目未收入 wiki（归曜野 Project），仅收 💡通用 + 🏷️Amazon 专属。前向链接预埋 amazon-pricing-strategy（Phase 3 建）。draft 保留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。Phase 2（广告 SOP）/ Phase 3（关键词/工具/方法论/价格）待续。

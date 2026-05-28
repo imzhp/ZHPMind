@@ -2,14 +2,14 @@
 title: "Wiki Index"
 tags: [meta, index]
 created: 2026-04-12
-updated: 2026-05-23
+updated: 2026-05-28
 sources: []
 source_count: 0
 ---
 
 # Wiki Index
 
-_最后更新：2026-05-23 — 共 37 页_
+_最后更新：2026-05-28 — 共 41 页_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -27,8 +27,12 @@ _最后更新：2026-05-23 — 共 37 页_
 - [[a9-algorithm]] — 亚马逊商品搜索排名的核心算法，包含四大原理和三大支柱 (1 个来源)
 - [[ai-native-startup]] — AI 作为核心基础设施的创业范式，创始人角色从执行者转变为 Agent 调度员 (1 个来源)
 - [[agentic-engineering]] — 在专业质量标准不降前提下用 Agent 大幅提速的工程纪律 (4 个来源)
+- [[amazon-cashflow-roi]] — 现金流与 ROI 模型：年化 ROI = 单次 ROI × 周转次数，盈利 ≠ 账上钱 (1 个来源)
+- [[amazon-inventory-replenishment]] — 库存管理与备货节奏：周转率杠杆、备货决定定价权、安全库存放着不动用 (1 个来源)
+- [[amazon-patent-screening]] — 跨境电商专利筛查：消费者混淆原则、保护越整体范围越窄、规避方法 (1 个来源)
 - [[amazon-ppc-advertising]] — 亚马逊站内付费广告体系，含竞价策略、广告类型与报表优化 (1 个来源)
-- [[amazon-product-selection]] — 亚马逊选品五维度分析框架，含市场结构、差异化与产品淘汰机制 (1 个来源)
+- [[amazon-product-selection]] — 亚马逊选品五维度分析框架 + 云飞扬财务决策器、垄断分型、市场容量实操与测款方法论 (2 个来源)
+- [[amazon-profit-analysis]] — 亚马逊利润管理全栈财务 SOP：真金白银只有采购+头程、退款≠退货、三种退货精算 (1 个来源)
 - [[amazon-review-management]] — 评论权重体系、差评处理、售后转化与私域流量建立 (1 个来源)
 - [[amazon-traffic-sources]] — 亚马逊站内十大流量入口与站外七大流量入口全解析 (1 个来源)
 - [[claude-code]] — Anthropic 的 AI 编程 CLI 工具，由 Boris Cherny 创建，支持 loops 和并行 agent (2 个来源)
