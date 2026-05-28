@@ -129,3 +129,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[amazon-profit-analysis]]、[[amazon-cashflow-roi]]、[[amazon-inventory-replenishment]]、[[amazon-patent-screening]]
 - **Pages updated**: [[amazon-product-selection]]（新增云飞扬层为第 2 源：财务决策器/垄断分型/市场容量实操/测款方法论/小宠笼实操闭环，source_count 1→2）、[[amazon-moc]]（新增财务与现金流/库存与备货/专利与合规三个子主题）、[[index]]（新增 4 条目 + 更新 product-selection，总页数 37→41）
 - **Note**: 把 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16，云飞扬 2023 课程 18 节 / 915 条目 / 90% 独有，对照国民哥哥手册的跨源 diff）按“主对话直接写 vault 工作流”落地为正式 wiki，分三期，本次为 Phase 1（选品 + 财务铁三角 + 专利）。源材料为通义听悟清洗 v2 版（飞书 v1 作交叉验证）。云飞扬层与国民哥哥手册互补：手册讲选品五维度判断，云飞扬讲财务模型决策器（CPA/毛利额/广告依赖度 → ROI>1 或 毛利率>30% 二选一）+ 现金流铁三角（年化 ROI=单次 ROI×周转次数）。5 个用户点名 ⭐⭐⭐：三种头程 ROI 差一倍 + 毛利率陷阱 + 爆品带中等品 → product-selection；站外判断 → product-selection；超额利润警惕专利 → product-selection + patent-screening。🏢 曜野潜在场景条目未收入 wiki（归曜野 Project），仅收 💡通用 + 🏷️Amazon 专属。前向链接预埋 amazon-pricing-strategy（Phase 3 建）。draft 保留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。Phase 2（广告 SOP）/ Phase 3（关键词/工具/方法论/价格）待续。
+
+---
+
+## [2026-05-28] distill | 云飞扬 2023 课程 Phase 2（广告 SOP）
+
+- **Sources touched**: `raw/qwei-amazon-course-2023-v2/`（6.自然排名和广告排名的逻辑 / 8.广告投放全链路拆解 / 9.广告的搜索流量和关联流量 / 10.数据维度理解广告优化和案例实践 / 11.新品推广全流程）
+- **Pages created**: [[amazon-new-product-launch]]
+- **Pages updated**: [[amazon-ppc-advertising]]（新增云飞扬财务决策层+优化诊断 SOP 为第 2 源，source_count 1→2）、[[amazon-traffic-sources]]（新增云飞扬购买路径+关联流量打法为第 2 源，source_count 1→2）、[[amazon-moc]]（广告/流量条目补云飞扬层 + 新增“新品推广”子主题）、[[index]]（新增 amazon-new-product-launch + ppc/traffic 转 2 源，总页数 41→42）
+- **Note**: Phase 2（广告 SOP）落地。云飞扬补的是手册之外的财务决策层 + 认知重塑 + 优化诊断 SOP：核心是 §10.2 整体盈亏 ACoS = 毛利率÷广告依赖度（⭐⭐⭐，“盈亏平衡 ACoS=毛利率”的升级，从广告不亏到链接不亏）、§8.3 路径 A 传统 vs 路径 B 战略性亏损、§8.10 四象限黄金法则（横轴 CVR 纵轴 ACoS，先判预算花完没）、§10.7 四层级诊断 L1-L4、§10.8 低毛利无法优化（80% 是选品财务问题）。traffic 页补 §9 购买路径升级（广告主做曝光不做转化 / 门 vs 摆位 / VCPM 半屏 1-1.5 秒 / SD 站内站外陷阱 / SB 同品牌多店铺归因虚高）；9.3 搜索流量 30% 口径冲突 footnote 已于 2026-05-27 预置，本次未重复。new-product-launch 新建页是 §11 集大成（11.9 八项指标预估vs实际全接近=可预测性首次验证⭐⭐、11.10 让产品适应你的标准⭐⭐⭐、全程只动竞价不动投放）。诚实断层：§6.1-6.4 自然/广告排名机制源材料未恢复，未硬编，已在 ppc Sources 标注待补。前向链接 amazon-pricing-strategy 仍待 Phase 3 建。draft 保留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。Phase 3（关键词词库/数据化运营/商机探测器/价格策略）待续。
