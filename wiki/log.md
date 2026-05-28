@@ -147,3 +147,11 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[amazon-keyword-library]]（§7 + 小红圈相关性 2.0 合一页，2 源）、[[amazon-data-driven-operations]]（§5 方法论枢纽）、[[amazon-opportunity-explorer]]（§3 工具底层）、[[amazon-pricing-strategy]]（§16）
 - **Pages updated**: [[listing-optimization]]（新增云飞扬文案反直觉取舍为第 2 源，source_count 1→2）、[[amazon-moc]]（新增数据化运营/关键词词库/选品工具/价格策略四个子主题 + Listing 补云飞扬文案）、[[index]]（新增 4 条目 + listing 转 2 源，总页数 42→46）
 - **Note**: Phase 3 落地，**整个 18 节 / 915 条目跨源 diff 蒸馏全部完结（Phase 1+2+3）**，amazon-cross-source-diff-draft 使命达成。本期五块：§3 商机探测器（工具操作底层，之前每节引用的“预估”动作的实现；⭐⭐⭐ 转化率 vs 大盘=好/一般/垃圾终极判据 + 总销量倒推 + 搜索转化率高≠蓝海）/ §5 数据化运营（方法论枢纽，80% 难题可数据解释 + 关键词四象限源头 + ACoS 拆解链 + 广告归因 7 天）/ §7 关键词词库（财富+护城河 + SIFT 占位率反推）/ §16 价格策略（螺旋两轮 + 降价缩广告 5.8 万案例 + c-访问转化率=衡量降价唯一指标）/ 小红圈相关性 2.0。**小红圈并入 keyword-library 一页**作工具实操层（Sources 分两条标注 §7 + 小红圈，source_count 2），未单独成页。**建好 pricing-strategy 接通了 Phase 1/2 预埋的 [[amazon-pricing-strategy]] 前向链接（profit-analysis/inventory/patent），红链清零**。§7.5 文案部分增补到 listing-optimization，词库与投放主体在 keyword-library。诚实断层延续：ppc §6.1-6.4 排名机制仍待重读源材料补。draft 保留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。至此 Amazon 簇 15 页（5 篇双源：product-selection/ppc-advertising/traffic-sources/keyword-library/listing-optimization），完整 SOP 链全互链。
+
+---
+
+## [2026-05-28] distill | 收尾补全：ppc §6.1-6.4 排名机制底层
+
+- **Sources touched**: `raw/qwei-amazon-course-2023-v2/6.自然排名和广告排名的逻辑…_原文.docx`（§6.1-6.4，textutil 从 docx 提取为 .tmp-claude-reports/section6-source.txt 后直读蒸馏）
+- **Pages updated**: [[amazon-ppc-advertising]]（补“排名机制：自然排名与广告排名的底层逻辑（§6）”整节 + intro 加“排名机制底层” + Sources 去“未恢复待补”标注）、[[amazon-moc]]（广告体系条目补排名机制）
+- **Note**: 补全 Phase 2 遗留的唯一断层。§6.1-6.4 是整套广告决策的“为什么”：搜索电商赛马机制 / ECPM / **预估 CTR-CVR 模型（非实际值）** / **掷骰子类比 = 历史权重（时间）+ 方差（数据量）**（直接支撑“三句认知底座”的“数据量是相关性基础”+“短期数据骗人”）/ 破老品护城河两大法宝 / A9 相关性三层 / 广告排名=自然分配+bid变量 / **广告 CTR 只看 TOS 才准** / 流量层级 / **广告是流量工具对转化率无能为力** / 农村包围城市也对也不对 / 7D 本质 / 降 TACoS 的重复曝光浪费 + 降 CPC 两种 + 仅降低慎用。与既有“财务决策层”互补：前者讲机制，后者讲决策。§6 后半段欧洲 FBA（泛欧/中欧/EFN）属库存物流，不属广告未收入（如需另归 inventory）。section6-source.txt 留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。**至此云飞扬 2023 全 18 节 + 小红圈一字不漏，跨源 diff 蒸馏项目真正收官。**
