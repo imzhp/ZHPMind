@@ -2,12 +2,12 @@
 title: "People MOC"
 tags: [moc, people]
 created: 2026-05-11
-updated: 2026-05-11
+updated: 2026-05-29
 ---
 
 # People MOC
 
-本 MOC 覆盖 wiki 中全部 `type: person` 页面，并梳理人物之间的思想关联。当前三位人物均来自 AI 工程领域，分别代表**研究者**（理论框架）、**工程师**（极端实践）、**建造者**（知识管理系统）三个视角，共同拼出一张 AI 时代个人工作方式的全景图。
+本 MOC 覆盖 wiki 中全部 `type: person` 页面，并梳理人物之间的思想关联。当前人物分布于两个维度：**AI 工程**（Karpathy、Boris、Garry）和**财富与幸福哲学**（Naval），合并构成一张"在 AI 时代如何积累财富与构建幸福生活"的全景图。
 
 ---
 
@@ -37,6 +37,16 @@ Y Combinator CEO，技术创业者与投资人。2025 年末重拾"建造者"身
 
 ---
 
+---
+
+### [[naval-ravikant]]
+
+企业家、天使投资人，AngelList 联合创始人。以极简推文将财富逻辑和幸福哲学同时带入大众视野。核心主张：财富来自持有（equity）而非出卖时间；幸福是可学习的技能，是消除"缺乏感"后的默认状态。
+
+**核心贡献：** 四种杠杆体系（劳动力/资本/代码/媒体）、专业知识（Specific Knowledge）框架、欲望即痛苦（Desire = Suffering）、理性的佛教（Rational Buddhism）。
+
+---
+
 ## 思想关联图
 
 ```
@@ -46,9 +56,13 @@ Karpathy ──"LLM Wiki" 想法────────────────
                                                │
 Garry Tan ──"Fat Harness / Thin Skills"────────┘
            （架构层面与 Boris "harness 重要性下降"预测同方向）
+
+Naval ──────杠杆×专业知识→财富──────────────────► 与 Garry "Fat Skills / Fat Data" 呼应
+           │                                     （技能积累是护城河的共识）
+           └──幸福是可学的技能──────────────────► 独立于 AI 工程脉络，补充人生哲学维度
 ```
 
-三者的观点在以下几个节点高度汇聚：
-- **Harness 要薄**：Boris 预测 Claude Code 未来可能只需 100 行代码；Garry 的 OpenClaw 只有几千行路由逻辑
-- **技能/知识积累才是护城河**：Garry 的 Fat Skills / Fat Data；与 Boris "领域知识是稀缺资源"论点呼应
-- **人类角色转变**：Karpathy 的"设计师 + 指挥官"；Boris 的"整年不手写代码但仍做决策"；Garry 的"角度（Angles）才是人工检索无法做到的"
+**跨维度汇聚节点：**
+- **技能积累是护城河**：Garry 的 Fat Skills / Fat Data；Naval 的专业知识（无法培训）；Boris 的"领域知识是稀缺资源"——三者共指同一结构
+- **Harness 要薄**：Boris + Garry 共识
+- **人类角色转变**：Karpathy 的"设计师 + 指挥官"；Boris 的"整年不手写代码但仍做决策"；Garry 的"角度（Angles）"；Naval 的"判断力 > 执行力"
