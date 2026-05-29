@@ -1,11 +1,11 @@
 ---
 title: "Listing 优化（Listing Optimization）"
 type: concept
-tags: [amazon, listing, keywords, conversion-rate, images, reviews]
+tags: [amazon, listing, keywords, conversion-rate, images, reviews, copywriting, title-optimization]
 created: 2026-04-12
-updated: 2026-04-19
-sources: ["亚马逊高阶运营培训手册.pdf"]
-source_count: 1
+updated: 2026-05-28
+sources: ["亚马逊高阶运营培训手册.pdf", "qwei-amazon-course-2023-v2/7.关键词词库文案和广告投放词选择"]
+source_count: 2
 ---
 
 # Listing 优化（Listing Optimization）
@@ -163,6 +163,33 @@ Listing 是亚马逊商品详情页的核心载体，是[[a9-algorithm|A9 算法
 
 > 防护建议：设置最大购买量限制，防止竞争对手恶意买空库存制造差评。
 
+---
+
+# 云飞扬视角补充：文案与埋词
+
+手册讲文案"怎么布局关键词、参考竞品高频词"。云飞扬第 7 节给的是**数量级 + 反直觉的取舍**——核心是一条与多数人相反的原则：**文案从词库扒表达，不从自己的中文设计翻译**。本段是 [[amazon-keyword-library]] 词根分析在文案侧的落地。
+
+## 文案的元原则：用顾客搜的词写
+
+**"用顾客搜的词写文案，不用自己的表达。"**（反直觉）多数人中文设计后翻译，云飞扬反向——从词库里扒买家真实搜索表达。多语种更要从词库找词（德语/西语/法语同义词多；英语也有美式 vs 英式差别，jewellery vs jewelry）。
+
+## 标题：数量级与反直觉取舍
+
+- **标题 5 个关键词为佳，囊括 50% 搜索量**（数量级明确）。
+- **≤ 140 字节（最佳 80）**：超 140 移动端隐藏；能 80 不 140。
+- **不堆砸关键词，核心主词 ≤ 3 个**（反直觉）：多数人为打大词不停叠 long-tail 修饰，云飞扬反对。
+- **搜索优化为卖点让路**（反直觉）：多数人认为词要放靠前，云飞扬说**强卖点优先于标题位置**。
+- 缓解焦虑的两条：标题未埋的词，只要五点里有 + 转化高，也能被匹配；关键词靠前与权重只是弱相关（靠前权重高一点，但不是绝对决定因素）。
+- Songmics 示范（标题 93 字节）：3 个主词 + 材质 + 层数 + 容量 + 易组装；缺场景词 closet/garage 可改进。
+
+## 五点：克制埋词 + ChatGPT 协作
+
+- **要点自写 + 扩展交 ChatGPT**：ChatGPT 抓需求不准，手定卖点才能准。
+- 一点一句号，不写小作文；埋词克制，**每点 1 个不堆砸**。
+- **ChatGPT 提示语三要素：角色 + 规则 + 输出格式**——交代越细输出越好（飞鱼数据参谋有模板可不用自写提示语）。
+
 ## Sources
 
 - `raw/亚马逊高阶运营培训手册.pdf` — 第二章（Listing 详讲上）、第三章（Listing 详讲中）、第四章（Listing 深度打造，第 22–153 页）
+- `raw/qwei-amazon-course-2023-v2/7.关键词：词库，文案和广告投放词选择_原文.docx` —— 云飞扬第 7 节文案部分（7.4 词根/7.5 标题+五点），通义听悟清洗版；词库与投放部分见 [[amazon-keyword-library]]
+- 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，云飞扬层为第 2 源（文案的反直觉取舍）。蒸馏模型 Claude Opus 4.7，2026-05-28

@@ -180,5 +180,14 @@ Format: `## [YYYY-MM-DD] operation | Description`
 ## [2026-05-28] distill | 收尾补全：ppc §6.1-6.4 排名机制底层
 
 - **Sources touched**: `raw/qwei-amazon-course-2023-v2/6.自然排名和广告排名的逻辑…_原文.docx`（§6.1-6.4，textutil 从 docx 提取为 .tmp-claude-reports/section6-source.txt 后直读蒸馏）
-- **Pages updated**: [[amazon-ppc-advertising]]（补“排名机制：自然排名与广告排名的底层逻辑（§6）”整节 + intro 加“排名机制底层” + Sources 去“未恢复待补”标注）、[[amazon-moc]]（广告体系条目补排名机制）
-- **Note**: 补全 Phase 2 遗留的唯一断层。§6.1-6.4 是整套广告决策的“为什么”：搜索电商赛马机制 / ECPM / **预估 CTR-CVR 模型（非实际值）** / **掷骰子类比 = 历史权重（时间）+ 方差（数据量）**（直接支撑“三句认知底座”的“数据量是相关性基础”+“短期数据骗人”）/ 破老品护城河两大法宝 / A9 相关性三层 / 广告排名=自然分配+bid变量 / **广告 CTR 只看 TOS 才准** / 流量层级 / **广告是流量工具对转化率无能为力** / 农村包围城市也对也不对 / 7D 本质 / 降 TACoS 的重复曝光浪费 + 降 CPC 两种 + 仅降低慎用。与既有“财务决策层”互补：前者讲机制，后者讲决策。§6 后半段欧洲 FBA（泛欧/中欧/EFN）属库存物流，不属广告未收入（如需另归 inventory）。section6-source.txt 留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。**至此云飞扬 2023 全 18 节 + 小红圈一字不漏，跨源 diff 蒸馏项目真正收官。**
+- **Pages updated**: [[amazon-ppc-advertising]]（补”排名机制：自然排名与广告排名的底层逻辑（§6）”整节 + intro 加”排名机制底层” + Sources 去”未恢复待补”标注）、[[amazon-moc]]（广告体系条目补排名机制）
+- **Note**: 补全 Phase 2 遗留的唯一断层。§6.1-6.4 是整套广告决策的”为什么”：搜索电商赛马机制 / ECPM / **预估 CTR-CVR 模型（非实际值）** / **掷骰子类比 = 历史权重（时间）+ 方差（数据量）**（直接支撑”三句认知底座”的”数据量是相关性基础”+”短期数据骗人”）/ 破老品护城河两大法宝 / A9 相关性三层 / 广告排名=自然分配+bid变量 / **广告 CTR 只看 TOS 才准** / 流量层级 / **广告是流量工具对转化率无能为力** / 农村包围城市也对也不对 / 7D 本质 / 降 TACoS 的重复曝光浪费 + 降 CPC 两种 + 仅降低慎用。与既有”财务决策层”互补：前者讲机制，后者讲决策。§6 后半段欧洲 FBA（泛欧/中欧/EFN）属库存物流，不属广告未收入（如需另归 inventory）。section6-source.txt 留在 .tmp-claude-reports/ 作溯源。蒸馏模型 Claude Opus 4.7。**至此云飞扬 2023 全 18 节 + 小红圈一字不漏，跨源 diff 蒸馏项目真正收官。**
+
+---
+
+## [2026-05-29] distill | 《Affiliate Marketing 完全指南》精校版
+
+- **Sources touched**: `raw/assets/books/《Affiliate Marketing 完全指南》精校版.pdf`（317 页，Affren.com 出品）
+- **Pages created**: [[affiliate-marketing-complete-guide]]（type: book，联盟营销完整知识体系蒸馏）
+- **Pages updated**: [[index]]（新增 1 条目，总页数 49→50）
+- **Note**: [self-reviewed] 全书分六大部分：(1) 行业基础——四方结构（广告主/Affiliate/联盟网络/流量来源）、计费模式（CPA/CPL/CPS/RevShare）、垂直领域（约会/抽奖/金融/游戏/健康）、流量类型（展示/弹窗/原生/搜索/社交）、Lead 质量谱系（低/中/高）、核心指标（CTR/CR/ROI/EPV/EPC）；(2) 工具体系——追踪软件（Voluum/Prosper202）、竞争情报工具（WhatRunsWhere/Adbeat/Anstrex）、联盟网络、流量来源平台矩阵；(3) Campaign 策略体系——确认表/情报采集、Angle 概念（心理切入钩）、多轮测试框架（Angle→Banner→Landing Page）、优化维度（广告位/运营商/设备/Landing Page）、上量策略（纵向/横向）；(4) 三大实战案例——低质量 Lead（ExoClick 约会，澳大利亚，被广告主踢出教训）/ 中等质量 Lead（PopAds sweepstakes，泰国，EPV>CPV 公式，ISP 白名单优化，+72% ROI）/ 高质量 Lead（Content.ad 原生广告，OurTime 约会，软文 Landing Page，Sub ID 追踪转化归因）；(5) 超级 Affiliate 七大原则——竞争优势（情报/执行/创新）/ 变现所有流量 / 上量的艺术 / 邮件列表 / Cloak 意愿（高风险，作者本人不用）/ 团队指数增长 / 精益求精；(6) 未来与退出——移动主导、全球市场分化、退出路径（自有 Offer/Network/流量来源/工具/投资）。Mirror 区预留占位，待 Book Mirror 工作流执行后填充。原始素材已在 `wiki/raw/assets/books/`，无需移动。蒸馏模型 Claude Sonnet 4.5（用户分批上传图片辅助读取水印遮挡页面内容）。

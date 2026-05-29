@@ -1,0 +1,1884 @@
+===== Q1. ~/.hermes 下 *.py(排除 venv / hermes-agent 源码 / .git)=====
+/Users/zhanghaopeng/.hermes/scripts/review-digest-scan.py
+/Users/zhanghaopeng/.hermes/skills/media/youtube-content/scripts/fetch_transcript.py
+/Users/zhanghaopeng/.hermes/skills/research/polymarket/scripts/polymarket.py
+/Users/zhanghaopeng/.hermes/skills/research/arxiv/scripts/search_arxiv.py
+/Users/zhanghaopeng/.hermes/skills/leisure/find-nearby/scripts/find_nearby.py
+/Users/zhanghaopeng/.hermes/skills/productivity/maps/scripts/maps_client.py
+/Users/zhanghaopeng/.hermes/skills/productivity/linear/scripts/linear_api.py
+/Users/zhanghaopeng/.hermes/skills/productivity/powerpoint/scripts/clean.py
+/Users/zhanghaopeng/.hermes/skills/productivity/powerpoint/scripts/add_slide.py
+/Users/zhanghaopeng/.hermes/skills/productivity/powerpoint/scripts/__init__.py
+/Users/zhanghaopeng/.hermes/skills/productivity/google-workspace/scripts/gws_bridge.py
+/Users/zhanghaopeng/.hermes/skills/productivity/google-workspace/scripts/google_api.py
+/Users/zhanghaopeng/.hermes/skills/productivity/google-workspace/scripts/setup.py
+/Users/zhanghaopeng/.hermes/skills/productivity/google-workspace/scripts/_hermes_home.py
+/Users/zhanghaopeng/.hermes/skills/productivity/ocr-and-documents/scripts/extract_pymupdf.py
+/Users/zhanghaopeng/.hermes/skills/productivity/ocr-and-documents/scripts/extract_marker.py
+/Users/zhanghaopeng/.hermes/skills/red-teaming/godmode/scripts/auto_jailbreak.py
+/Users/zhanghaopeng/.hermes/skills/red-teaming/godmode/scripts/load_godmode.py
+/Users/zhanghaopeng/.hermes/skills/red-teaming/godmode/scripts/godmode_race.py
+/Users/zhanghaopeng/.hermes/skills/red-teaming/godmode/scripts/parseltongue.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/tests/conftest.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/tests/test_common.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/tests/test_cloud_integration.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/tests/test_run_workflow.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/tests/test_check_deps.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/tests/test_extract_schema.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/fetch_logs.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/extract_schema.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/check_deps.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/_common.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/hardware_check.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/ws_monitor.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/run_batch.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/auto_fix_deps.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/health_check.py
+/Users/zhanghaopeng/.hermes/skills/creative/comfyui/scripts/run_workflow.py
+/Users/zhanghaopeng/.hermes/skills/creative/excalidraw/scripts/upload.py
+/Users/zhanghaopeng/.hermes/skills/creative/pixel-art/scripts/pixel_art_video.py
+/Users/zhanghaopeng/.hermes/skills/creative/pixel-art/scripts/palettes.py
+/Users/zhanghaopeng/.hermes/skills/creative/pixel-art/scripts/__init__.py
+/Users/zhanghaopeng/.hermes/skills/creative/pixel-art/scripts/pixel_art.py
+/Users/zhanghaopeng/.hermes/skills/mlops/training/grpo-rl-training/templates/basic_grpo_training.py
+/Users/zhanghaopeng/.hermes/skills/productivity/powerpoint/scripts/office/pack.py
+/Users/zhanghaopeng/.hermes/skills/productivity/powerpoint/scripts/office/helpers/__init__.py
+/Users/zhanghaopeng/.hermes/skills/productivity/powerpoint/scripts/office/helpers/simplify_redlines.py
+/Users/zhanghaopeng/.hermes/skills/productivity/powerpoint/scripts/office/helpers/merge_runs.py
+
+===== Q1b. 全域含 'scan' 关键词的 .py(穿透过滤)=====
+/Users/zhanghaopeng/.hermes/scripts/review-digest-scan.py
+/Users/zhanghaopeng/.hermes/hermes-agent/tests/hermes_cli/test_plugin_scanner_recursion.py
+/Users/zhanghaopeng/.hermes/hermes-agent/venv/lib/python3.11/site-packages/pygments/scanner.py
+/Users/zhanghaopeng/.hermes/hermes-agent/venv/lib/python3.11/site-packages/yaml/scanner.py
+/Users/zhanghaopeng/.hermes/hermes-agent/venv/lib/python3.11/site-packages/lark_oapi/api/attendance/v1/model/scan_wifi_info.py
+
+===== Q2. cron 目录 + review-digest job 完整内容 =====
+total 8
+drwx------@  5 zhanghaopeng  staff   160 May 18 09:01 .
+drwx------@ 41 zhanghaopeng  staff  1312 May 24 09:07 ..
+-rw-r--r--   1 zhanghaopeng  staff     0 May 24 09:07 .tick.lock
+-rw-------   1 zhanghaopeng  staff  1649 May 18 09:01 jobs.json
+drwx------@  3 zhanghaopeng  staff    96 May 12 15:23 output
+
+📄 /Users/zhanghaopeng/.hermes/cron/jobs.json:
+{
+  "jobs": [
+    {
+      "id": "4923ff1a9586",
+      "name": "review-digest",
+      "prompt": "\u8bf7\u4e25\u683c\u6309\u7167 ~/.hermes/skills/review-digest.md \u4e2d\u7684\u6307\u4ee4\u6267\u884c\u3002\u8bfb\u53d6\u8be5 skill \u6587\u4ef6\u7684\u5b8c\u6574\u5185\u5bb9\uff0c\u7136\u540e\u6309\u5176\u4e2d\u5b9a\u4e49\u7684 7 \u4e2a\u626b\u63cf\u6b65\u9aa4\u9010\u9879\u6267\u884c\uff0c\u5c06\u7ed3\u679c\u5199\u5165 ZHPMind vault \u7684 inbox/ \u4e0b\uff0c\u6587\u4ef6\u540d\u4e3a review-digest-\u52a0\u5f53\u5929\u65e5\u671f\u3002\u4e0d\u8981\u81ea\u7531\u53d1\u6325\uff0c\u4e25\u683c\u6309 skill \u6587\u4ef6\u4e2d\u7684\u683c\u5f0f\u8f93\u51fa\u3002",
+      "skills": [
+        "review-digest"
+      ],
+      "skill": "review-digest",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "review-digest-scan.py",
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1",
+        "display": "0 9 * * 1"
+      },
+      "schedule_display": "0 9 * * 1",
+      "repeat": {
+        "times": null,
+        "completed": 6
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-12T14:52:59.564095+08:00",
+      "next_run_at": "2026-05-25T09:00:00+08:00",
+      "last_run_at": "2026-05-18T09:01:47.469311+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    }
+  ],
+  "updated_at": "2026-05-18T09:01:47.469919+08:00"
+}----
+📄 /Users/zhanghaopeng/.hermes/cron/output/4923ff1a9586/2026-05-12_23-49-40.md:
+# Cron Job: review-digest
+
+**Job ID:** 4923ff1a9586
+**Run Time:** 2026-05-12 23:49:40
+**Schedule:** 0 9 * * 1
+
+## Prompt
+
+[IMPORTANT: The user has invoked the "review-digest" skill, indicating they want you to follow its instructions. The full skill content is loaded below.]
+
+---
+name: review-digest
+description: ZHPMind vault 健康度周报。扫描 vault 状态，生成结构化 digest 写入 inbox。
+trigger: weekly review, vault health check, 周报, review digest
+created_by: human
+version: 1.1
+---
+
+# Review Digest — ZHPMind 健康度周报
+
+## 目标
+
+扫描 ZHPMind vault，生成一份健康度 digest，写入 `inbox/review-digest-{YYYY-MM-DD}.md`。
+这是认知循环的 **review** 环节——让系统的主人看到系统自身的状态。
+
+## Vault 路径
+
+`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind`
+
+如果路径不存在，报错退出，不要猜测其他路径。
+
+## 扫描步骤
+
+按顺序执行以下检查：
+
+### 1. Inbox 积压
+
+- 统计 `inbox/` 下的 `.md` 文件数量（不含子目录中的 `.obsidian` 等系统文件）
+- 如果 >50，标记为 🔴 警告
+- 如果 20-50，标记为 🟡 注意
+- 如果 <20，标记为 🟢 正常
+
+### 2. Wiki 孤岛率
+
+- 扫描 `wiki/pages/` 下所有 `.md` 文件
+- 对每个文件名（不含 `.md`），在整个 vault 中搜索 `[[文件名]]` 或 `[[文件名|` 形式的引用
+- 如果一个 wiki 页面在 vault 中没有任何其他文件链接到它（0 个 backlink），视为"孤岛"
+- 孤岛率 = 孤岛数 / wiki 总页数
+- >30% 标 🔴，15-30% 标 🟡，<15% 标 🟢
+- 列出所有孤岛页面的文件名
+
+### 3. Projects 僵尸率
+
+- 扫描 `projects/` 下的一级子目录
+- 对每个子目录，找到其中最近修改的 `.md` 文件的修改时间
+- 如果距今 >90 天，视为"僵尸项目"
+- 僵尸率 = 僵尸数 / 活跃项目总数
+- 列出所有僵尸项目及其最后修改日期
+
+### 4. 本周活动
+
+- 扫描 `wiki/pages/` 中过去 7 天内修改过的文件，列出文件名和修改日期
+- 扫描 `wiki/pages/` 中过去 7 天内新建的文件（创建时间在 7 天内），单独标注
+
+### 5. 本周 Capture
+
+- 统计 `inbox/` 中过去 7 天内新增的文件数量
+- 列出文件名
+
+### 6. MOC 候选检测
+
+- 扫描 `wiki/pages/` 所有文件的 frontmatter `tags` 字段
+- 统计每个 tag 被多少个页面使用
+- 如果某 tag 被 ≥5 个页面使用，但 vault 中不存在对应的 `MOC-{tag名}.md` 文件，则标记为 MOC 候选
+- 列出所有 MOC 候选及其页面数
+
+### 7. 修正频率
+
+- 在 `wiki/pages/` 中，统计过去 30 天内被修改过（但不是新建的）的页面数量
+- 如果为 0，标 🔴（认知僵化警告）
+
+## 输出格式
+
+将结果写入 `inbox/review-digest-{YYYY-MM-DD}.md`，使用以下结构：
+
+**Frontmatter（必须）：**
+
+- `type: snapshot`
+- `source: hermes/review-digest`
+- `created: {YYYY-MM-DD}`
+- `tags:` 包含 `system/review`
+
+**正文结构：**
+
+1. 标题：`# ZHPMind 周报 — {YYYY-MM-DD}`
+2. 总览表格：包含 Inbox 积压、Wiki 孤岛率、Projects 僵尸率、本周 wiki 活动、本周 capture、修正频率（30天），每项用 🔴🟡🟢 标注状态
+3. Inbox 积压详情：如果 >20 条，列出最旧的 10 条文件名和创建日期
+4. Wiki 孤岛页面：列出所有孤岛页面文件名
+5. 僵尸项目：列出项目名 + 最后修改日期
+6. MOC 候选：表格列出 Tag 和使用页数
+7. 本周新建 Wiki 页面：列表
+8. 本周修改 Wiki 页面：列表
+
+## 注意事项
+
+- **同一天多次运行，直接覆盖写入**。`review-digest-{YYYY-MM-DD}.md` 是快照文件，用 `write_file` 覆盖旧版本，快照语义就是"最新状态替代旧状态"。
+- 文件名中的日期用 ISO 格式：YYYY-MM-DD
+- frontmatter 中的 `type: snapshot` 和 `source: hermes/review-digest` 是必须的——符合 ZHPMind 的信息三态分类（快照类，定期被新快照替代）
+- 如果 vault 路径不存在或权限不足，报错退出并说明原因
+
+## 实现陷阱（Pitfalls）
+
+### ❌ 不要用 `python3 -c '...'` 执行多行脚本
+execute_code 的 `-c` / `-e` flag 会触发用户审批门控，导致自动化阻塞。
+**做法**：把扫描逻辑写入临时文件（如 `/tmp/vault_scan.py`），用 `terminal('python3 /tmp/vault_scan.py')` 执行。
+
+### ❌ `pyyaml` 在沙箱中不可用
+`import yaml` 会报 `ModuleNotFoundError: No module named 'yaml'`。
+**做法**：内联轻量 frontmatter 解析器，示例见 `references/yaml-lite-parser.md`。
+
+### ❌ 用 `grep -oh "\[\[...\]\]"` 检测反链不可靠
+macOS grep 只匹配单行，且漏掉 `[[name|alias]]` 别名形式，会导致误报孤岛。
+**做法**：用 Python `os.walk` + `re.findall(r'\[\[([^\]|#]+)(?:[|#][^\]]*)?]]', content)` 全文扫描，参见 `references/backlink-scanner.md`。
+
+### ⚠️ 新建页面当天必然是孤岛——属正常现象
+vault 刚搭建期间，大量页面同日新建，彼此还没来得及相互链接，孤岛率会虚高。
+在报告中对"今日新建"的孤岛加注说明，告知用户这是预期状态。
+
+### ⚠️ macOS 上 `os.path.getctime` ≠ 文件创建时间
+`ctime` 在 macOS 上是 inode change time（元数据变更），不是创建时间，iCloud 同步文件尤其不准。
+**做法**：用 `os.stat(fpath).st_birthtime`（macOS 专有）获取真实创建时间。当前实现以 `ctime` 近似，在 iCloud vault 环境下"新建"判断可能有偏差，已知问题，不阻断执行。
+
+The user has provided the following instruction alongside the skill invocation: [IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user — do NOT use send_message or try to deliver the output yourself. Just produce your report/output as your final response and the system handles the rest. SILENT: If there is genuinely nothing new to report, respond with exactly "[SILENT]" (nothing else) to suppress delivery. Never combine [SILENT] with content — either report your findings normally, or say [SILENT] and nothing more.]
+
+请严格按照 ~/.hermes/skills/review-digest.md 中的指令执行。读取该 skill 文件的完整内容，然后按其中定义的 7 个扫描步骤逐项执行，将结果写入 ZHPMind vault 的 inbox/ 下，文件名为 review-digest-加当天日期。不要自由发挥，严格按 skill 文件中的格式输出。
+
+## Response
+
+扫描完成，结果已写入 vault。以下是本次周报摘要：
+
+---
+
+## ZHPMind 健康度周报 — 2026-05-12
+
+### 总览
+
+| 指标 | 数值 | 状态 |
+|------|------|------|
+| Inbox 积压 | 4 条 | 🟢 正常 |
+| Wiki 孤岛率 | 0%（0 / 27 页） | 🟢 正常 |
+| Projects 僵尸率 | N/A（无项目目录） | — |
+| 本周 Wiki 活动 | 21 个文件有变动 | — |
+| 本周 Capture | 1 条 | — |
+| 修正频率（30天） | 0 条 | 🔴 注意* |
+
+**\*修正频率 🔴 说明**：vault 本周 21/27 页面为新建，尚无足够时间积累"回头修改旧页"的行为，不是认知僵化，是初建期正常现象。下周再看此项。
+
+### 关键发现
+
+**✅ 孤岛为零** — 27 个 wiki 页面全部有反链，结构连接质量很好。
+
+**📌 MOC 候选（最紧迫）** — 以下 tag 被大量页面使用，但没有对应 MOC 文件：
+
+| Tag | 使用页数 |
+|-----|---------|
+| `ai` | 16 页 |
+| `llm` | 9 页 |
+| `agents` | 8 页 |
+| `software-engineering` | 8 页 |
+| `amazon` | 8 页 |
+
+`ai` 最值得优先建，已有 16 个页面挂着这个 tag。
+
+**📥 Inbox 有 3 条 4 月旧笔记**（`2026-04-19.md`、`2026-04-20.md`、`2026-04-29.md`），可交给 Claudian 蒸馏入 wiki。
+
+### 文件位置
+`inbox/review-digest-2026-05-12.md`（3.7 KB，已写入）
+----
+📄 /Users/zhanghaopeng/.hermes/cron/output/4923ff1a9586/2026-05-12_23-14-54.md:
+# Cron Job: review-digest
+
+**Job ID:** 4923ff1a9586
+**Run Time:** 2026-05-12 23:14:54
+**Schedule:** 0 9 * * 1
+
+## Prompt
+
+[IMPORTANT: The user has invoked the "review-digest" skill, indicating they want you to follow its instructions. The full skill content is loaded below.]
+
+---
+name: review-digest
+description: ZHPMind vault 健康度周报。扫描 vault 状态，生成结构化 digest 写入 inbox。
+trigger: weekly review, vault health check, 周报, review digest
+created_by: human
+version: 1.0
+---
+
+# Review Digest — ZHPMind 健康度周报
+
+## 目标
+
+扫描 ZHPMind vault，生成一份健康度 digest，写入 `inbox/review-digest-{YYYY-MM-DD}.md`。
+这是认知循环的 **review** 环节——让系统的主人看到系统自身的状态。
+
+## Vault 路径
+
+`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind`
+
+如果路径不存在，报错退出，不要猜测其他路径。
+
+## 扫描步骤
+
+按顺序执行以下检查：
+
+### 1. Inbox 积压
+
+- 统计 `inbox/` 下的 `.md` 文件数量（不含子目录中的 `.obsidian` 等系统文件）
+- 如果 >50，标记为 🔴 警告
+- 如果 20-50，标记为 🟡 注意
+- 如果 <20，标记为 🟢 正常
+
+### 2. Wiki 孤岛率
+
+- 扫描 `wiki/pages/` 下所有 `.md` 文件
+- 对每个文件名（不含 `.md`），在整个 vault 中搜索 `[[文件名]]` 或 `[[文件名|` 形式的引用
+- 如果一个 wiki 页面在 vault 中没有任何其他文件链接到它（0 个 backlink），视为"孤岛"
+- 孤岛率 = 孤岛数 / wiki 总页数
+- >30% 标 🔴，15-30% 标 🟡，<15% 标 🟢
+- 列出所有孤岛页面的文件名
+
+### 3. Projects 僵尸率
+
+- 扫描 `projects/` 下的一级子目录
+- 对每个子目录，找到其中最近修改的 `.md` 文件的修改时间
+- 如果距今 >90 天，视为"僵尸项目"
+- 僵尸率 = 僵尸数 / 活跃项目总数
+- 列出所有僵尸项目及其最后修改日期
+
+### 4. 本周活动
+
+- 扫描 `wiki/pages/` 中过去 7 天内修改过的文件，列出文件名和修改日期
+- 扫描 `wiki/pages/` 中过去 7 天内新建的文件（创建时间在 7 天内），单独标注
+
+### 5. 本周 Capture
+
+- 统计 `inbox/` 中过去 7 天内新增的文件数量
+- 列出文件名
+
+### 6. MOC 候选检测
+
+- 扫描 `wiki/pages/` 所有文件的 frontmatter `tags` 字段
+- 统计每个 tag 被多少个页面使用
+- 如果某 tag 被 ≥5 个页面使用，但 vault 中不存在对应的 `MOC-{tag名}.md` 文件，则标记为 MOC 候选
+- 列出所有 MOC 候选及其页面数
+
+### 7. 修正频率
+
+- 在 `wiki/pages/` 中，统计过去 30 天内被修改过（但不是新建的）的页面数量
+- 如果为 0，标 🔴（认知僵化警告）
+
+## 输出格式
+
+将结果写入 `inbox/review-digest-{YYYY-MM-DD}.md`，使用以下结构：
+
+**Frontmatter（必须）：**
+
+- `type: snapshot`
+- `source: hermes/review-digest`
+- `created: {YYYY-MM-DD}`
+- `tags:` 包含 `system/review`
+
+**正文结构：**
+
+1. 标题：`# ZHPMind 周报 — {YYYY-MM-DD}`
+2. 总览表格：包含 Inbox 积压、Wiki 孤岛率、Projects 僵尸率、本周 wiki 活动、本周 capture、修正频率（30天），每项用 🔴🟡🟢 标注状态
+3. Inbox 积压详情：如果 >20 条，列出最旧的 10 条文件名和创建日期
+4. Wiki 孤岛页面：列出所有孤岛页面文件名
+5. 僵尸项目：列出项目名 + 最后修改日期
+6. MOC 候选：表格列出 Tag 和使用页数
+7. 本周新建 Wiki 页面：列表
+8. 本周修改 Wiki 页面：列表
+
+## 注意事项
+
+- 不要修改 vault 中的任何现有文件——只在 inbox/ 下创建新文件
+- 文件名中的日期用 ISO 格式：YYYY-MM-DD
+- frontmatter 中的 `type: snapshot` 和 `source: hermes/review-digest` 是必须的——符合 ZHPMind 的信息三态分类（快照类，定期被新快照替代）
+- 如果 vault 路径不存在或权限不足，报错退出并说明原因
+
+The user has provided the following instruction alongside the skill invocation: [IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user — do NOT use send_message or try to deliver the output yourself. Just produce your report/output as your final response and the system handles the rest. SILENT: If there is genuinely nothing new to report, respond with exactly "[SILENT]" (nothing else) to suppress delivery. Never combine [SILENT] with content — either report your findings normally, or say [SILENT] and nothing more.]
+
+请严格按照 ~/.hermes/skills/review-digest.md 中的指令执行。读取该 skill 文件的完整内容，然后按其中定义的 7 个扫描步骤逐项执行，将结果写入 ZHPMind vault 的 inbox/ 下，文件名为 review-digest-加当天日期。不要自由发挥，严格按 skill 文件中的格式输出。
+
+## Response
+
+---
+
+## ZHPMind 周报 — 2026-05-12 执行完毕
+
+已写入 `inbox/review-digest-2026-05-12.md`，以下是本次扫描摘要：
+
+---
+
+### 总览
+
+| 指标 | 数值 | 状态 |
+|------|------|------|
+| Inbox 积压 | 4 条 | 🟢 正常 |
+| Wiki 孤岛率 | 1/27 = 3.7% | 🟢 正常 |
+| Projects 僵尸率 | N/A（无项目目录） | — |
+| 本周 Wiki 活动 | 21 页修改，21 页新建 | — |
+| 本周 Capture | 2 条新增 | — |
+| 修正频率（30天）| 0 页被修改 | 🔴 认知僵化警告 |
+
+---
+
+### 需要关注的点
+
+**🔴 修正频率为零**
+过去 30 天内，wiki 中无任何旧页面被回头修改。vault 目前全是"新建"，缺乏对既有认知的迭代修订。建议回头看 4 月创建的 6 个亚马逊相关页面（`a9-algorithm`、`listing-optimization` 等）。
+
+**孤岛：`zhanghaopeng`**
+今日新建的身份锚点页面还没有任何其他文件指向它，建议在 `index.md` 里加上 `[[zhanghaopeng]]`。
+
+**MOC 候选（5 个）**
+- `llm`（9 页）、`agents`（8 页）、`software-engineering`（8 页）尚无对应 MOC 文件，值得建立。
+
+---
+
+### 本周亮点
+本周（5月8-12日）新建了 **21 个 wiki 页面**，vault 从零到有完成了核心知识骨架的搭建，活跃度极高。
+----
+📄 /Users/zhanghaopeng/.hermes/cron/output/4923ff1a9586/2026-05-18_09-01-47.md:
+# Cron Job: review-digest
+
+**Job ID:** 4923ff1a9586
+**Run Time:** 2026-05-18 09:01:47
+**Schedule:** 0 9 * * 1
+
+## Prompt
+
+[IMPORTANT: The user has invoked the "review-digest" skill, indicating they want you to follow its instructions. The full skill content is loaded below.]
+
+---
+name: review-digest
+description: ZHPMind vault 健康度周报。扫描 vault 状态，生成结构化 digest 写入 inbox。
+trigger: weekly review, vault health check, 周报, review digest
+created_by: human
+version: 1.1
+---
+
+# Review Digest — ZHPMind 健康度周报
+
+## 目标
+
+扫描 ZHPMind vault，生成一份健康度 digest，写入 `inbox/review-digest-{YYYY-MM-DD}.md`。
+这是认知循环的 **review** 环节——让系统的主人看到系统自身的状态。
+
+## Vault 路径
+
+`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind`
+
+如果路径不存在，报错退出，不要猜测其他路径。
+
+## 扫描步骤
+
+按顺序执行以下检查：
+
+### 1. Inbox 积压
+
+- 统计 `inbox/` 下的 `.md` 文件数量（不含子目录中的 `.obsidian` 等系统文件）
+- 如果 >50，标记为 🔴 警告
+- 如果 20-50，标记为 🟡 注意
+- 如果 <20，标记为 🟢 正常
+
+### 2. Wiki 孤岛率
+
+- 扫描 `wiki/pages/` 下所有 `.md` 文件
+- 对每个文件名（不含 `.md`），在整个 vault 中搜索 `[[文件名]]` 或 `[[文件名|` 形式的引用
+- 如果一个 wiki 页面在 vault 中没有任何其他文件链接到它（0 个 backlink），视为"孤岛"
+- 孤岛率 = 孤岛数 / wiki 总页数
+- >30% 标 🔴，15-30% 标 🟡，<15% 标 🟢
+- 列出所有孤岛页面的文件名
+
+### 3. Projects 僵尸率
+
+- 扫描 `projects/` 下的一级子目录
+- 对每个子目录，找到其中最近修改的 `.md` 文件的修改时间
+- 如果距今 >90 天，视为"僵尸项目"
+- 僵尸率 = 僵尸数 / 活跃项目总数
+- 列出所有僵尸项目及其最后修改日期
+
+### 4. 本周活动
+
+- 扫描 `wiki/pages/` 中过去 7 天内修改过的文件，列出文件名和修改日期
+- 扫描 `wiki/pages/` 中过去 7 天内新建的文件（创建时间在 7 天内），单独标注
+
+### 5. 本周 Capture
+
+- 统计 `inbox/` 中过去 7 天内新增的文件数量
+- 列出文件名
+
+### 6. MOC 候选检测
+
+- 扫描 `wiki/pages/` 所有文件的 frontmatter `tags` 字段
+- 统计每个 tag 被多少个页面使用
+- 如果某 tag 被 ≥5 个页面使用，但 vault 中不存在对应的 `MOC-{tag名}.md` 文件，则标记为 MOC 候选
+- 列出所有 MOC 候选及其页面数
+
+### 7. 修正频率
+
+- 在 `wiki/pages/` 中，统计过去 30 天内被修改过（但不是新建的）的页面数量
+- 如果为 0，标 🔴（认知僵化警告）
+
+## 输出格式
+
+将结果写入 `inbox/review-digest-{YYYY-MM-DD}.md`，使用以下结构：
+
+**Frontmatter（必须）：**
+
+- `type: snapshot`
+- `source: hermes/review-digest`
+- `created: {YYYY-MM-DD}`
+- `tags:` 包含 `system/review`
+
+**正文结构：**
+
+1. 标题：`# ZHPMind 周报 — {YYYY-MM-DD}`
+2. 总览表格：包含 Inbox 积压、Wiki 孤岛率、Projects 僵尸率、本周 wiki 活动、本周 capture、修正频率（30天），每项用 🔴🟡🟢 标注状态
+3. Inbox 积压详情：如果 >20 条，列出最旧的 10 条文件名和创建日期
+4. Wiki 孤岛页面：列出所有孤岛页面文件名
+5. 僵尸项目：列出项目名 + 最后修改日期
+6. MOC 候选：表格列出 Tag 和使用页数
+7. 本周新建 Wiki 页面：列表
+8. 本周修改 Wiki 页面：列表
+
+## 注意事项
+
+- **同一天多次运行，直接覆盖写入**。`review-digest-{YYYY-MM-DD}.md` 是快照文件，用 `write_file` 覆盖旧版本，快照语义就是"最新状态替代旧状态"。
+- 文件名中的日期用 ISO 格式：YYYY-MM-DD
+- frontmatter 中的 `type: snapshot` 和 `source: hermes/review-digest` 是必须的——符合 ZHPMind 的信息三态分类（快照类，定期被新快照替代）
+- 如果 vault 路径不存在或权限不足，报错退出并说明原因
+
+## 实现陷阱（Pitfalls）
+
+### ❌ 不要用 `python3 -c '...'` 执行多行脚本
+execute_code 的 `-c` / `-e` flag 会触发用户审批门控，导致自动化阻塞。
+**做法**：把扫描逻辑写入临时文件（如 `/tmp/vault_scan.py`），用 `terminal('python3 /tmp/vault_scan.py')` 执行。
+
+### ❌ `pyyaml` 在沙箱中不可用
+`import yaml` 会报 `ModuleNotFoundError: No module named 'yaml'`。
+**做法**：内联轻量 frontmatter 解析器，示例见 `references/yaml-lite-parser.md`。
+
+### ❌ 用 `grep -oh "\[\[...\]\]"` 检测反链不可靠
+macOS grep 只匹配单行，且漏掉 `[[name|alias]]` 别名形式，会导致误报孤岛。
+**做法**：用 Python `os.walk` + `re.findall(r'\[\[([^\]|#]+)(?:[|#][^\]]*)?]]', content)` 全文扫描，参见 `references/backlink-scanner.md`。
+
+### ⚠️ 新建页面当天必然是孤岛——属正常现象
+vault 刚搭建期间，大量页面同日新建，彼此还没来得及相互链接，孤岛率会虚高。
+在报告中对"今日新建"的孤岛加注说明，告知用户这是预期状态。
+
+### ⚠️ macOS 上 `os.path.getctime` ≠ 文件创建时间
+`ctime` 在 macOS 上是 inode change time（元数据变更），不是创建时间，iCloud 同步文件尤其不准。
+**做法**：用 `os.stat(fpath).st_birthtime`（macOS 专有）获取真实创建时间。当前实现以 `ctime` 近似，在 iCloud vault 环境下"新建"判断可能有偏差，已知问题，不阻断执行。
+
+The user has provided the following instruction alongside the skill invocation: [IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user — do NOT use send_message or try to deliver the output yourself. Just produce your report/output as your final response and the system handles the rest. SILENT: If there is genuinely nothing new to report, respond with exactly "[SILENT]" (nothing else) to suppress delivery. Never combine [SILENT] with content — either report your findings normally, or say [SILENT] and nothing more.]
+
+## Script Output
+The following data was collected by a pre-run script. Use it as context for your analysis.
+
+```
+{
+  "scan_date": "2026-05-18",
+  "scan_time": "2026-05-18T09:00:52.451641",
+  "vault_path": "/Users/zhanghaopeng/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind",
+  "metrics": {
+    "inbox": {
+      "count": 3,
+      "status": "green",
+      "files": [
+        {
+          "name": "2026-04-19.md",
+          "created": "2026-04-19",
+          "modified": "2026-04-20"
+        },
+        {
+          "name": "2026-04-20.md",
+          "created": "2026-04-20",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "2026-04-29.md",
+          "created": "2026-04-29",
+          "modified": "2026-05-07"
+        }
+      ],
+      "excluded_system_snapshots": 2
+    },
+    "wiki_orphans": {
+      "total_pages": 27,
+      "orphan_count": 0,
+      "orphan_rate": 0.0,
+      "status": "green",
+      "orphan_pages": []
+    },
+    "projects": {
+      "status": "na",
+      "note": "projects/ 目录为空"
+    },
+    "weekly_activity": {
+      "created_count": 13,
+      "modified_count": 0,
+      "created": [
+        {
+          "name": "ai-engineering-moc",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "amazon-advanced-operations-handbook",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "amazon-moc",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "andrej-karpathy-vibe-coding-to-agentic-engineering",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "andrej-karpathy",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "boris-cherny-coding-is-solved",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "boris-cherny",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "claude-code",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "garry-tan-meta-meta-prompting",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "garry-tan",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "index",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "people-moc",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "zhanghaopeng",
+          "created": "2026-05-12"
+        }
+      ],
+      "modified_only": []
+    },
+    "weekly_capture": {
+      "count": 0,
+      "files": []
+    },
+    "moc_candidates": {
+      "high_freq_tags": {
+        "ai": 16,
+        "llm": 9,
+        "agents": 8,
+        "software-engineering": 8,
+        "amazon": 8
+      },
+      "existing_mocs": {
+        "ai-engineering-moc": {
+          "linked_pages": [
+            "agentic-engineering",
+            "andrej-karpathy-vibe-coding-to-agentic-engineering",
+            "boris-cherny",
+            "boris-cherny-coding-is-solved",
+            "claude-code",
+            "fat-skills-thin-harness",
+            "garry-tan-meta-meta-prompting",
+            "people-moc",
+            "personal-knowledge-base",
+            "product-overhang",
+            "skillification",
+            "software-3-0",
+            "verifiability",
+            "vibe-coding"
+          ],
+          "linked_count": 14,
+          "covers_tags": [
+            "agentic-engineering",
+            "agents",
+            "ai",
+            "anthropic",
+            "architecture",
+            "automation",
+            "claude-code",
+            "cli",
+            "compounding-systems",
+            "engineer",
+            "knowledge-management",
+            "llm",
+            "meta-skill",
+            "moc",
+            "paradigm",
+            "people",
+            "personal-knowledge-base",
+            "product-strategy",
+            "productivity",
+            "reinforcement-learning",
+            "saas",
+            "second-brain",
+            "skillification",
+            "software-engineering",
+            "startup",
+            "tools",
+            "vibe-coding",
+            "workflow"
+          ]
+        },
+        "people-moc": {
+          "linked_pages": [
+            "agentic-engineering",
+            "andrej-karpathy",
+            "boris-cherny",
+            "claude-code",
+            "fat-skills-thin-harness",
+            "garry-tan",
+            "personal-knowledge-base",
+            "product-overhang",
+            "skillification",
+            "software-3-0",
+            "verifiability",
+            "vibe-coding"
+          ],
+          "linked_count": 12,
+          "covers_tags": [
+            "agents",
+            "ai",
+            "anthropic",
+            "architecture",
+            "automation",
+            "builders",
+            "claude-code",
+            "cli",
+            "compounding-systems",
+            "engineer",
+            "founder",
+            "founders",
+            "knowledge-management",
+            "llm",
+            "meta-skill",
+            "moc",
+            "openai",
+            "paradigm",
+            "people",
+            "product-strategy",
+            "productivity",
+            "reinforcement-learning",
+            "researcher",
+            "second-brain",
+            "software-engineering",
+            "startup",
+            "tesla",
+            "tools",
+            "venture-capital",
+            "workflow",
+            "y-combinator"
+          ]
+        },
+        "amazon-moc": {
+          "linked_pages": [
+            "a9-algorithm",
+            "amazon-advanced-operations-handbook",
+            "amazon-ppc-advertising",
+            "amazon-product-selection",
+            "amazon-review-management",
+            "amazon-traffic-sources",
+            "listing-optimization"
+          ],
+          "linked_count": 7,
+          "covers_tags": [
+            "acos",
+            "advertising",
+            "algorithm",
+            "amazon",
+            "bidding",
+            "competitive-analysis",
+            "conversion-rate",
+            "cross-border-ecommerce",
+            "customer-service",
+            "customer-support",
+            "differentiation",
+            "e-commerce",
+            "external-traffic",
+            "images",
+            "influencer",
+            "internal-traffic",
+            "keywords",
+            "listing",
+            "market-analysis",
+            "moc",
+            "operations",
+            "ppc",
+            "private-traffic",
+            "product-development",
+            "product-selection",
+            "ranking",
+            "related-traffic",
+            "reviews",
+            "traffic"
+          ]
+        }
+      },
+      "all_covered_tags": [
+        "acos",
+        "advertising",
+        "agentic-engineering",
+        "agents",
+        "ai",
+        "algorithm",
+        "amazon",
+        "anthropic",
+        "architecture",
+        "automation",
+        "bidding",
+        "builders",
+        "claude-code",
+        "cli",
+        "competitive-analysis",
+        "compounding-systems",
+        "conversion-rate",
+        "cross-border-ecommerce",
+        "customer-service",
+        "customer-support",
+        "differentiation",
+        "e-commerce",
+        "engineer",
+        "external-traffic",
+        "founder",
+        "founders",
+        "images",
+        "influencer",
+        "internal-traffic",
+        "keywords",
+        "knowledge-management",
+        "listing",
+        "llm",
+        "market-analysis",
+        "meta-skill",
+        "moc",
+        "openai",
+        "operations",
+        "paradigm",
+        "people",
+        "personal-knowledge-base",
+        "ppc",
+        "private-traffic",
+        "product-development",
+        "product-selection",
+        "product-strategy",
+        "productivity",
+        "ranking",
+        "reinforcement-learning",
+        "related-traffic",
+        "researcher",
+        "reviews",
+        "saas",
+        "second-brain",
+        "skillification",
+        "software-engineering",
+        "startup",
+        "tesla",
+        "tools",
+        "traffic",
+        "venture-capital",
+        "vibe-coding",
+        "workflow",
+        "y-combinator"
+      ],
+      "true_candidates": {},
+      "candidate_count": 0
+    },
+    "correction_frequency": {
+      "count": 0,
+      "status": "red",
+      "corrected_pages": [],
+      "total_pages": 27,
+      "recent_pages_in_30d": 27,
+      "is_bootstrap_period": true,
+      "oldest_5_pages": [
+        {
+          "name": "a9-algorithm",
+          "created": "2026-04-19"
+        },
+        {
+          "name": "amazon-ppc-advertising",
+          "created": "2026-04-19"
+        },
+        {
+          "name": "amazon-product-selection",
+          "created": "2026-04-19"
+        },
+        {
+          "name": "amazon-review-management",
+          "created": "2026-04-19"
+        },
+        {
+          "name": "amazon-traffic-sources",
+          "created": "2026-04-19"
+        }
+      ]
+    }
+  }
+}
+```
+
+请严格按照 ~/.hermes/skills/review-digest.md 中的指令执行。读取该 skill 文件的完整内容，然后按其中定义的 7 个扫描步骤逐项执行，将结果写入 ZHPMind vault 的 inbox/ 下，文件名为 review-digest-加当天日期。不要自由发挥，严格按 skill 文件中的格式输出。
+
+## Response
+
+## ZHPMind 周报已生成 ✅
+
+**文件路径**：`inbox/review-digest-2026-05-18.md`
+
+---
+
+### 本周快照摘要
+
+| 指标 | 状态 | 结论 |
+|------|------|------|
+| Inbox 积压 | 🟢 正常 | 仅 3 条，无压力 |
+| Wiki 孤岛率 | 🟢 正常 | 0%，27 页全部有 backlink |
+| Projects 僵尸率 | — N/A | 目录为空 |
+| MOC 候选 | 🟢 全覆盖 | 3 个 MOC 覆盖所有高频 tag |
+| 修正频率 | 🔴（Bootstrap免责） | 系统刚建 29 天，尚未进入迭代周期 |
+
+**本周主要动作**：集中建页，5月11-12日新建了 13 个页面（包括 3 个 MOC 和身份锚点 `zhanghaopeng`），vault 结构已基本成型。
+
+**下一个观察点**：2026-06-19 后，修正频率指标才真正有意义，届时若仍为 0 需主动干预。
+----
+📄 /Users/zhanghaopeng/.hermes/cron/output/4923ff1a9586/2026-05-13_00-59-47.md:
+# Cron Job: review-digest
+
+**Job ID:** 4923ff1a9586
+**Run Time:** 2026-05-13 00:59:47
+**Schedule:** 0 9 * * 1
+
+## Prompt
+
+[IMPORTANT: The user has invoked the "review-digest" skill, indicating they want you to follow its instructions. The full skill content is loaded below.]
+
+---
+name: review-digest
+description: ZHPMind vault 健康度周报。扫描 vault 状态，生成结构化 digest 写入 inbox。
+trigger: weekly review, vault health check, 周报, review digest
+created_by: human
+version: 1.1
+---
+
+# Review Digest — ZHPMind 健康度周报
+
+## 目标
+
+扫描 ZHPMind vault，生成一份健康度 digest，写入 `inbox/review-digest-{YYYY-MM-DD}.md`。
+这是认知循环的 **review** 环节——让系统的主人看到系统自身的状态。
+
+## Vault 路径
+
+`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind`
+
+如果路径不存在，报错退出，不要猜测其他路径。
+
+## 扫描步骤
+
+按顺序执行以下检查：
+
+### 1. Inbox 积压
+
+- 统计 `inbox/` 下的 `.md` 文件数量（不含子目录中的 `.obsidian` 等系统文件）
+- 如果 >50，标记为 🔴 警告
+- 如果 20-50，标记为 🟡 注意
+- 如果 <20，标记为 🟢 正常
+
+### 2. Wiki 孤岛率
+
+- 扫描 `wiki/pages/` 下所有 `.md` 文件
+- 对每个文件名（不含 `.md`），在整个 vault 中搜索 `[[文件名]]` 或 `[[文件名|` 形式的引用
+- 如果一个 wiki 页面在 vault 中没有任何其他文件链接到它（0 个 backlink），视为"孤岛"
+- 孤岛率 = 孤岛数 / wiki 总页数
+- >30% 标 🔴，15-30% 标 🟡，<15% 标 🟢
+- 列出所有孤岛页面的文件名
+
+### 3. Projects 僵尸率
+
+- 扫描 `projects/` 下的一级子目录
+- 对每个子目录，找到其中最近修改的 `.md` 文件的修改时间
+- 如果距今 >90 天，视为"僵尸项目"
+- 僵尸率 = 僵尸数 / 活跃项目总数
+- 列出所有僵尸项目及其最后修改日期
+
+### 4. 本周活动
+
+- 扫描 `wiki/pages/` 中过去 7 天内修改过的文件，列出文件名和修改日期
+- 扫描 `wiki/pages/` 中过去 7 天内新建的文件（创建时间在 7 天内），单独标注
+
+### 5. 本周 Capture
+
+- 统计 `inbox/` 中过去 7 天内新增的文件数量
+- 列出文件名
+
+### 6. MOC 候选检测
+
+- 扫描 `wiki/pages/` 所有文件的 frontmatter `tags` 字段
+- 统计每个 tag 被多少个页面使用
+- 如果某 tag 被 ≥5 个页面使用，但 vault 中不存在对应的 `MOC-{tag名}.md` 文件，则标记为 MOC 候选
+- 列出所有 MOC 候选及其页面数
+
+### 7. 修正频率
+
+- 在 `wiki/pages/` 中，统计过去 30 天内被修改过（但不是新建的）的页面数量
+- 如果为 0，标 🔴（认知僵化警告）
+
+## 输出格式
+
+将结果写入 `inbox/review-digest-{YYYY-MM-DD}.md`，使用以下结构：
+
+**Frontmatter（必须）：**
+
+- `type: snapshot`
+- `source: hermes/review-digest`
+- `created: {YYYY-MM-DD}`
+- `tags:` 包含 `system/review`
+
+**正文结构：**
+
+1. 标题：`# ZHPMind 周报 — {YYYY-MM-DD}`
+2. 总览表格：包含 Inbox 积压、Wiki 孤岛率、Projects 僵尸率、本周 wiki 活动、本周 capture、修正频率（30天），每项用 🔴🟡🟢 标注状态
+3. Inbox 积压详情：如果 >20 条，列出最旧的 10 条文件名和创建日期
+4. Wiki 孤岛页面：列出所有孤岛页面文件名
+5. 僵尸项目：列出项目名 + 最后修改日期
+6. MOC 候选：表格列出 Tag 和使用页数
+7. 本周新建 Wiki 页面：列表
+8. 本周修改 Wiki 页面：列表
+
+## 注意事项
+
+- **同一天多次运行，直接覆盖写入**。`review-digest-{YYYY-MM-DD}.md` 是快照文件，用 `write_file` 覆盖旧版本，快照语义就是"最新状态替代旧状态"。
+- 文件名中的日期用 ISO 格式：YYYY-MM-DD
+- frontmatter 中的 `type: snapshot` 和 `source: hermes/review-digest` 是必须的——符合 ZHPMind 的信息三态分类（快照类，定期被新快照替代）
+- 如果 vault 路径不存在或权限不足，报错退出并说明原因
+
+## 实现陷阱（Pitfalls）
+
+### ❌ 不要用 `python3 -c '...'` 执行多行脚本
+execute_code 的 `-c` / `-e` flag 会触发用户审批门控，导致自动化阻塞。
+**做法**：把扫描逻辑写入临时文件（如 `/tmp/vault_scan.py`），用 `terminal('python3 /tmp/vault_scan.py')` 执行。
+
+### ❌ `pyyaml` 在沙箱中不可用
+`import yaml` 会报 `ModuleNotFoundError: No module named 'yaml'`。
+**做法**：内联轻量 frontmatter 解析器，示例见 `references/yaml-lite-parser.md`。
+
+### ❌ 用 `grep -oh "\[\[...\]\]"` 检测反链不可靠
+macOS grep 只匹配单行，且漏掉 `[[name|alias]]` 别名形式，会导致误报孤岛。
+**做法**：用 Python `os.walk` + `re.findall(r'\[\[([^\]|#]+)(?:[|#][^\]]*)?]]', content)` 全文扫描，参见 `references/backlink-scanner.md`。
+
+### ⚠️ 新建页面当天必然是孤岛——属正常现象
+vault 刚搭建期间，大量页面同日新建，彼此还没来得及相互链接，孤岛率会虚高。
+在报告中对"今日新建"的孤岛加注说明，告知用户这是预期状态。
+
+### ⚠️ macOS 上 `os.path.getctime` ≠ 文件创建时间
+`ctime` 在 macOS 上是 inode change time（元数据变更），不是创建时间，iCloud 同步文件尤其不准。
+**做法**：用 `os.stat(fpath).st_birthtime`（macOS 专有）获取真实创建时间。当前实现以 `ctime` 近似，在 iCloud vault 环境下"新建"判断可能有偏差，已知问题，不阻断执行。
+
+The user has provided the following instruction alongside the skill invocation: [IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user — do NOT use send_message or try to deliver the output yourself. Just produce your report/output as your final response and the system handles the rest. SILENT: If there is genuinely nothing new to report, respond with exactly "[SILENT]" (nothing else) to suppress delivery. Never combine [SILENT] with content — either report your findings normally, or say [SILENT] and nothing more.]
+
+## Script Output
+The following data was collected by a pre-run script. Use it as context for your analysis.
+
+```
+{
+  "scan_date": "2026-05-13",
+  "scan_time": "2026-05-13T00:58:39.454039",
+  "vault_path": "/Users/zhanghaopeng/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind",
+  "metrics": {
+    "inbox": {
+      "count": 3,
+      "status": "green",
+      "files": [
+        {
+          "name": "2026-04-19.md",
+          "created": "2026-04-19",
+          "modified": "2026-04-20"
+        },
+        {
+          "name": "2026-04-20.md",
+          "created": "2026-04-20",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "2026-04-29.md",
+          "created": "2026-04-29",
+          "modified": "2026-05-07"
+        }
+      ],
+      "excluded_system_snapshots": 2
+    },
+    "wiki_orphans": {
+      "total_pages": 27,
+      "orphan_count": 0,
+      "orphan_rate": 0.0,
+      "status": "green",
+      "orphan_pages": []
+    },
+    "projects": {
+      "status": "na",
+      "note": "projects/ 目录为空"
+    },
+    "weekly_activity": {
+      "created_count": 21,
+      "modified_count": 0,
+      "created": [
+        {
+          "name": "agentic-engineering",
+          "created": "2026-05-10"
+        },
+        {
+          "name": "ai-engineering-moc",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "amazon-advanced-operations-handbook",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "amazon-moc",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "andrej-karpathy-vibe-coding-to-agentic-engineering",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "andrej-karpathy",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "boris-cherny-coding-is-solved",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "boris-cherny",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "claude-code",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "fat-skills-thin-harness",
+          "created": "2026-05-10"
+        },
+        {
+          "name": "garry-tan-meta-meta-prompting",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "garry-tan",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "index",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "people-moc",
+          "created": "2026-05-11"
+        },
+        {
+          "name": "personal-knowledge-base",
+          "created": "2026-05-10"
+        },
+        {
+          "name": "product-overhang",
+          "created": "2026-05-08"
+        },
+        {
+          "name": "skillification",
+          "created": "2026-05-10"
+        },
+        {
+          "name": "software-3-0",
+          "created": "2026-05-08"
+        },
+        {
+          "name": "verifiability",
+          "created": "2026-05-08"
+        },
+        {
+          "name": "vibe-coding",
+          "created": "2026-05-08"
+        },
+        {
+          "name": "zhanghaopeng",
+          "created": "2026-05-12"
+        }
+      ],
+      "modified_only": []
+    },
+    "weekly_capture": {
+      "count": 0,
+      "files": []
+    },
+    "moc_candidates": {
+      "high_freq_tags": {
+        "ai": 16,
+        "llm": 9,
+        "agents": 8,
+        "software-engineering": 8,
+        "amazon": 8
+      },
+      "existing_mocs": {
+        "ai-engineering-moc": {
+          "linked_pages": [
+            "agentic-engineering",
+            "andrej-karpathy-vibe-coding-to-agentic-engineering",
+            "boris-cherny",
+            "boris-cherny-coding-is-solved",
+            "claude-code",
+            "fat-skills-thin-harness",
+            "garry-tan-meta-meta-prompting",
+            "people-moc",
+            "personal-knowledge-base",
+            "product-overhang",
+            "skillification",
+            "software-3-0",
+            "verifiability",
+            "vibe-coding"
+          ],
+          "linked_count": 14,
+          "covers_tags": [
+            "agentic-engineering",
+            "agents",
+            "ai",
+            "anthropic",
+            "architecture",
+            "automation",
+            "claude-code",
+            "cli",
+            "compounding-systems",
+            "engineer",
+            "knowledge-management",
+            "llm",
+            "meta-skill",
+            "moc",
+            "paradigm",
+            "people",
+            "personal-knowledge-base",
+            "product-strategy",
+            "productivity",
+            "reinforcement-learning",
+            "saas",
+            "second-brain",
+            "skillification",
+            "software-engineering",
+            "startup",
+            "tools",
+            "vibe-coding",
+            "workflow"
+          ]
+        },
+        "people-moc": {
+          "linked_pages": [
+            "agentic-engineering",
+            "andrej-karpathy",
+            "boris-cherny",
+            "claude-code",
+            "fat-skills-thin-harness",
+            "garry-tan",
+            "personal-knowledge-base",
+            "product-overhang",
+            "skillification",
+            "software-3-0",
+            "verifiability",
+            "vibe-coding"
+          ],
+          "linked_count": 12,
+          "covers_tags": [
+            "agents",
+            "ai",
+            "anthropic",
+            "architecture",
+            "automation",
+            "builders",
+            "claude-code",
+            "cli",
+            "compounding-systems",
+            "engineer",
+            "founder",
+            "founders",
+            "knowledge-management",
+            "llm",
+            "meta-skill",
+            "moc",
+            "openai",
+            "paradigm",
+            "people",
+            "product-strategy",
+            "productivity",
+            "reinforcement-learning",
+            "researcher",
+            "second-brain",
+            "software-engineering",
+            "startup",
+            "tesla",
+            "tools",
+            "venture-capital",
+            "workflow",
+            "y-combinator"
+          ]
+        },
+        "amazon-moc": {
+          "linked_pages": [
+            "a9-algorithm",
+            "amazon-advanced-operations-handbook",
+            "amazon-ppc-advertising",
+            "amazon-product-selection",
+            "amazon-review-management",
+            "amazon-traffic-sources",
+            "listing-optimization"
+          ],
+          "linked_count": 7,
+          "covers_tags": [
+            "acos",
+            "advertising",
+            "algorithm",
+            "amazon",
+            "bidding",
+            "competitive-analysis",
+            "conversion-rate",
+            "cross-border-ecommerce",
+            "customer-service",
+            "customer-support",
+            "differentiation",
+            "e-commerce",
+            "external-traffic",
+            "images",
+            "influencer",
+            "internal-traffic",
+            "keywords",
+            "listing",
+            "market-analysis",
+            "moc",
+            "operations",
+            "ppc",
+            "private-traffic",
+            "product-development",
+            "product-selection",
+            "ranking",
+            "related-traffic",
+            "reviews",
+            "traffic"
+          ]
+        }
+      },
+      "all_covered_tags": [
+        "acos",
+        "advertising",
+        "agentic-engineering",
+        "agents",
+        "ai",
+        "algorithm",
+        "amazon",
+        "anthropic",
+        "architecture",
+        "automation",
+        "bidding",
+        "builders",
+        "claude-code",
+        "cli",
+        "competitive-analysis",
+        "compounding-systems",
+        "conversion-rate",
+        "cross-border-ecommerce",
+        "customer-service",
+        "customer-support",
+        "differentiation",
+        "e-commerce",
+        "engineer",
+        "external-traffic",
+        "founder",
+        "founders",
+        "images",
+        "influencer",
+        "internal-traffic",
+        "keywords",
+        "knowledge-management",
+        "listing",
+        "llm",
+        "market-analysis",
+        "meta-skill",
+        "moc",
+        "openai",
+        "operations",
+        "paradigm",
+        "people",
+        "personal-knowledge-base",
+        "ppc",
+        "private-traffic",
+        "product-development",
+        "product-selection",
+        "product-strategy",
+        "productivity",
+        "ranking",
+        "reinforcement-learning",
+        "related-traffic",
+        "researcher",
+        "reviews",
+        "saas",
+        "second-brain",
+        "skillification",
+        "software-engineering",
+        "startup",
+        "tesla",
+        "tools",
+        "traffic",
+        "venture-capital",
+        "vibe-coding",
+        "workflow",
+        "y-combinator"
+      ],
+      "true_candidates": {},
+      "candidate_count": 0
+    },
+    "correction_frequency": {
+      "count": 0,
+      "status": "red",
+      "corrected_pages": [],
+      "total_pages": 27,
+      "recent_pages_in_30d": 27,
+      "is_bootstrap_period": true,
+      "oldest_5_pages": [
+        {
+          "name": "a9-algorithm",
+          "created": "2026-04-19"
+        },
+        {
+          "name": "amazon-ppc-advertising",
+          "created": "2026-04-19"
+        },
+        {
+          "name": "amazon-product-selection",
+          "created": "2026-04-19"
+        },
+        {
+          "name": "amazon-review-management",
+          "created": "2026-04-19"
+        },
+        {
+          "name": "amazon-traffic-sources",
+          "created": "2026-04-19"
+        }
+      ]
+    }
+  }
+}
+```
+
+请严格按照 ~/.hermes/skills/review-digest.md 中的指令执行。读取该 skill 文件的完整内容，然后按其中定义的 7 个扫描步骤逐项执行，将结果写入 ZHPMind vault 的 inbox/ 下，文件名为 review-digest-加当天日期。不要自由发挥，严格按 skill 文件中的格式输出。
+
+## Response
+
+文件已写入，changelog 已更新。以下是本次周报摘要：
+
+---
+
+# ZHPMind 周报 — 2026-05-13
+
+## 总览
+
+| 指标 | 数值 | 状态 |
+|------|------|------|
+| Inbox 积压 | 3 条 | 🟢 正常 |
+| Wiki 孤岛率 | 0 / 27 页 = 0% | 🟢 正常 |
+| Projects 僵尸率 | projects/ 目录为空 | — N/A |
+| 本周 Wiki 新建 | 21 页 | 🚀 建库冲刺 |
+| 本周 Wiki 修改 | 0 页 | — |
+| 本周 Capture | 0 条 | — |
+| 修正频率（30天） | 0 页 | 🔴（启动期正常） |
+
+---
+
+**关键发现：**
+
+1. **🚀 本周建库大爆发** — 21 个新 Wiki 页面入库，涵盖 AI 工程、亚马逊运营、人物页面（Karpathy、Boris Cherny、Garry Tan），以及身份锚点 `zhanghaopeng`，vault 正式从"素材堆"进入"知识图谱"阶段。
+
+2. **✅ MOC 架构健康** — `ai-engineering-moc`、`people-moc`、`amazon-moc` 三个 MOC 已覆盖所有高频 tag（ai×16、llm×9、agents×8），无新 MOC 候选，结构完整。
+
+3. **🔴 修正频率归零 — 但属启动期正常** — 27 页全在30天内新建，尚未进入「回头修订」阶段。建议：当周新建量降至 <5 页时，开始有意识打磨早期亚马逊运营页面（最早批次：2026-04-19）。
+
+4. **⚠️ 本周 Capture 为零** — inbox 过去7天无新增。信号采集管道是否畅通？可检查 RSS/阅读来源。
+
+**文件位置：** `inbox/review-digest-2026-05-13.md`
+----
+📄 /Users/zhanghaopeng/.hermes/cron/output/4923ff1a9586/2026-05-13_00-21-37.md:
+# Cron Job: review-digest
+
+**Job ID:** 4923ff1a9586
+**Run Time:** 2026-05-13 00:21:37
+**Schedule:** 0 9 * * 1
+
+## Prompt
+
+[IMPORTANT: The user has invoked the "review-digest" skill, indicating they want you to follow its instructions. The full skill content is loaded below.]
+
+---
+name: review-digest
+description: ZHPMind vault 健康度周报。扫描 vault 状态，生成结构化 digest 写入 inbox。
+trigger: weekly review, vault health check, 周报, review digest
+created_by: human
+version: 1.1
+---
+
+# Review Digest — ZHPMind 健康度周报
+
+## 目标
+
+扫描 ZHPMind vault，生成一份健康度 digest，写入 `inbox/review-digest-{YYYY-MM-DD}.md`。
+这是认知循环的 **review** 环节——让系统的主人看到系统自身的状态。
+
+## Vault 路径
+
+`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind`
+
+如果路径不存在，报错退出，不要猜测其他路径。
+
+## 扫描步骤
+
+按顺序执行以下检查：
+
+### 1. Inbox 积压
+
+- 统计 `inbox/` 下的 `.md` 文件数量（不含子目录中的 `.obsidian` 等系统文件）
+- 如果 >50，标记为 🔴 警告
+- 如果 20-50，标记为 🟡 注意
+- 如果 <20，标记为 🟢 正常
+
+### 2. Wiki 孤岛率
+
+- 扫描 `wiki/pages/` 下所有 `.md` 文件
+- 对每个文件名（不含 `.md`），在整个 vault 中搜索 `[[文件名]]` 或 `[[文件名|` 形式的引用
+- 如果一个 wiki 页面在 vault 中没有任何其他文件链接到它（0 个 backlink），视为"孤岛"
+- 孤岛率 = 孤岛数 / wiki 总页数
+- >30% 标 🔴，15-30% 标 🟡，<15% 标 🟢
+- 列出所有孤岛页面的文件名
+
+### 3. Projects 僵尸率
+
+- 扫描 `projects/` 下的一级子目录
+- 对每个子目录，找到其中最近修改的 `.md` 文件的修改时间
+- 如果距今 >90 天，视为"僵尸项目"
+- 僵尸率 = 僵尸数 / 活跃项目总数
+- 列出所有僵尸项目及其最后修改日期
+
+### 4. 本周活动
+
+- 扫描 `wiki/pages/` 中过去 7 天内修改过的文件，列出文件名和修改日期
+- 扫描 `wiki/pages/` 中过去 7 天内新建的文件（创建时间在 7 天内），单独标注
+
+### 5. 本周 Capture
+
+- 统计 `inbox/` 中过去 7 天内新增的文件数量
+- 列出文件名
+
+### 6. MOC 候选检测
+
+- 扫描 `wiki/pages/` 所有文件的 frontmatter `tags` 字段
+- 统计每个 tag 被多少个页面使用
+- 如果某 tag 被 ≥5 个页面使用，但 vault 中不存在对应的 `MOC-{tag名}.md` 文件，则标记为 MOC 候选
+- 列出所有 MOC 候选及其页面数
+
+### 7. 修正频率
+
+- 在 `wiki/pages/` 中，统计过去 30 天内被修改过（但不是新建的）的页面数量
+- 如果为 0，标 🔴（认知僵化警告）
+
+## 输出格式
+
+将结果写入 `inbox/review-digest-{YYYY-MM-DD}.md`，使用以下结构：
+
+**Frontmatter（必须）：**
+
+- `type: snapshot`
+- `source: hermes/review-digest`
+- `created: {YYYY-MM-DD}`
+- `tags:` 包含 `system/review`
+
+**正文结构：**
+
+1. 标题：`# ZHPMind 周报 — {YYYY-MM-DD}`
+2. 总览表格：包含 Inbox 积压、Wiki 孤岛率、Projects 僵尸率、本周 wiki 活动、本周 capture、修正频率（30天），每项用 🔴🟡🟢 标注状态
+3. Inbox 积压详情：如果 >20 条，列出最旧的 10 条文件名和创建日期
+4. Wiki 孤岛页面：列出所有孤岛页面文件名
+5. 僵尸项目：列出项目名 + 最后修改日期
+6. MOC 候选：表格列出 Tag 和使用页数
+7. 本周新建 Wiki 页面：列表
+8. 本周修改 Wiki 页面：列表
+
+## 注意事项
+
+- **同一天多次运行，直接覆盖写入**。`review-digest-{YYYY-MM-DD}.md` 是快照文件，用 `write_file` 覆盖旧版本，快照语义就是"最新状态替代旧状态"。
+- 文件名中的日期用 ISO 格式：YYYY-MM-DD
+- frontmatter 中的 `type: snapshot` 和 `source: hermes/review-digest` 是必须的——符合 ZHPMind 的信息三态分类（快照类，定期被新快照替代）
+- 如果 vault 路径不存在或权限不足，报错退出并说明原因
+
+## 实现陷阱（Pitfalls）
+
+### ❌ 不要用 `python3 -c '...'` 执行多行脚本
+execute_code 的 `-c` / `-e` flag 会触发用户审批门控，导致自动化阻塞。
+**做法**：把扫描逻辑写入临时文件（如 `/tmp/vault_scan.py`），用 `terminal('python3 /tmp/vault_scan.py')` 执行。
+
+### ❌ `pyyaml` 在沙箱中不可用
+`import yaml` 会报 `ModuleNotFoundError: No module named 'yaml'`。
+**做法**：内联轻量 frontmatter 解析器，示例见 `references/yaml-lite-parser.md`。
+
+### ❌ 用 `grep -oh "\[\[...\]\]"` 检测反链不可靠
+macOS grep 只匹配单行，且漏掉 `[[name|alias]]` 别名形式，会导致误报孤岛。
+**做法**：用 Python `os.walk` + `re.findall(r'\[\[([^\]|#]+)(?:[|#][^\]]*)?]]', content)` 全文扫描，参见 `references/backlink-scanner.md`。
+
+### ⚠️ 新建页面当天必然是孤岛——属正常现象
+vault 刚搭建期间，大量页面同日新建，彼此还没来得及相互链接，孤岛率会虚高。
+在报告中对"今日新建"的孤岛加注说明，告知用户这是预期状态。
+
+### ⚠️ macOS 上 `os.path.getctime` ≠ 文件创建时间
+`ctime` 在 macOS 上是 inode change time（元数据变更），不是创建时间，iCloud 同步文件尤其不准。
+**做法**：用 `os.stat(fpath).st_birthtime`（macOS 专有）获取真实创建时间。当前实现以 `ctime` 近似，在 iCloud vault 环境下"新建"判断可能有偏差，已知问题，不阻断执行。
+
+The user has provided the following instruction alongside the skill invocation: [IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user — do NOT use send_message or try to deliver the output yourself. Just produce your report/output as your final response and the system handles the rest. SILENT: If there is genuinely nothing new to report, respond with exactly "[SILENT]" (nothing else) to suppress delivery. Never combine [SILENT] with content — either report your findings normally, or say [SILENT] and nothing more.]
+
+请严格按照 ~/.hermes/skills/review-digest.md 中的指令执行。读取该 skill 文件的完整内容，然后按其中定义的 7 个扫描步骤逐项执行，将结果写入 ZHPMind vault 的 inbox/ 下，文件名为 review-digest-加当天日期。不要自由发挥，严格按 skill 文件中的格式输出。
+
+## Response
+
+扫描完成，digest 已写入。以下是本次周报摘要：
+
+---
+
+## ZHPMind 周报 — 2026-05-13
+
+### 总体健康度：🟢 良好（vault 建设期）
+
+| 指标 | 数值 | 状态 |
+|---|---|---|
+| Inbox 积压 | 4 条 | 🟢 正常 |
+| Wiki 孤岛率 | 0% (0/27) | 🟢 优秀 |
+| Projects 僵尸率 | — (无项目目录) | 🟢 正常 |
+| 本周新建页面 | 21 个 | — |
+| 本周 Capture | 1 个 | — |
+| 修正频率（30天） | 0 | 🔴 ⚠️ 建设期正常 |
+
+### 关键发现
+
+**📋 MOC 候选（5个需要建立）：**
+- `ai`（16页）— 最高优先级
+- `amazon`（8页）— 业务主轴
+- `llm`（9页）、`agents`（8页）、`software-engineering`（8页）
+
+**💡 建议行动：**
+1. 为 `ai` 和 `amazon` 各建一个 MOC 页面——这两条主轴已有足够内容支撑
+2. `projects/` 目录为空，如有进行中的项目可考虑建立追踪
+
+**ℹ️ 说明：** 修正频率为 🔴 是因为 vault 大多数页面本周才建立，没有可修改的"旧页面"——这是建设期正常现象，不是真正的认知僵化。
+
+文件已写入：`inbox/review-digest-2026-05-13.md`
+----
+📄 /Users/zhanghaopeng/.hermes/cron/output/4923ff1a9586/2026-05-12_15-23-22.md:
+# Cron Job: review-digest
+
+**Job ID:** 4923ff1a9586
+**Run Time:** 2026-05-12 15:23:22
+**Schedule:** 0 9 * * 1
+
+## Prompt
+
+[IMPORTANT: The user has invoked the "review-digest" skill, indicating they want you to follow its instructions. The full skill content is loaded below.]
+
+---
+name: review-digest
+description: ZHPMind vault 健康度周报。扫描 vault 状态，生成结构化 digest 写入 inbox。
+trigger: weekly review, vault health check, 周报, review digest
+created_by: human
+version: 1.0
+---
+
+# Review Digest — ZHPMind 健康度周报
+
+## 目标
+
+扫描 ZHPMind vault，生成一份健康度 digest，写入 `inbox/review-digest-{YYYY-MM-DD}.md`。
+这是认知循环的 **review** 环节——让系统的主人看到系统自身的状态。
+
+## Vault 路径
+
+`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind`
+
+如果路径不存在，报错退出，不要猜测其他路径。
+
+## 扫描步骤
+
+按顺序执行以下检查：
+
+### 1. Inbox 积压
+
+- 统计 `inbox/` 下的 `.md` 文件数量（不含子目录中的 `.obsidian` 等系统文件）
+- 如果 >50，标记为 🔴 警告
+- 如果 20-50，标记为 🟡 注意
+- 如果 <20，标记为 🟢 正常
+
+### 2. Wiki 孤岛率
+
+- 扫描 `wiki/pages/` 下所有 `.md` 文件
+- 对每个文件名（不含 `.md`），在整个 vault 中搜索 `[[文件名]]` 或 `[[文件名|` 形式的引用
+- 如果一个 wiki 页面在 vault 中没有任何其他文件链接到它（0 个 backlink），视为"孤岛"
+- 孤岛率 = 孤岛数 / wiki 总页数
+- >30% 标 🔴，15-30% 标 🟡，<15% 标 🟢
+- 列出所有孤岛页面的文件名
+
+### 3. Projects 僵尸率
+
+- 扫描 `projects/` 下的一级子目录
+- 对每个子目录，找到其中最近修改的 `.md` 文件的修改时间
+- 如果距今 >90 天，视为"僵尸项目"
+- 僵尸率 = 僵尸数 / 活跃项目总数
+- 列出所有僵尸项目及其最后修改日期
+
+### 4. 本周活动
+
+- 扫描 `wiki/pages/` 中过去 7 天内修改过的文件，列出文件名和修改日期
+- 扫描 `wiki/pages/` 中过去 7 天内新建的文件（创建时间在 7 天内），单独标注
+
+### 5. 本周 Capture
+
+- 统计 `inbox/` 中过去 7 天内新增的文件数量
+- 列出文件名
+
+### 6. MOC 候选检测
+
+- 扫描 `wiki/pages/` 所有文件的 frontmatter `tags` 字段
+- 统计每个 tag 被多少个页面使用
+- 如果某 tag 被 ≥5 个页面使用，但 vault 中不存在对应的 `MOC-{tag名}.md` 文件，则标记为 MOC 候选
+- 列出所有 MOC 候选及其页面数
+
+### 7. 修正频率
+
+- 在 `wiki/pages/` 中，统计过去 30 天内被修改过（但不是新建的）的页面数量
+- 如果为 0，标 🔴（认知僵化警告）
+
+## 输出格式
+
+将结果写入 `inbox/review-digest-{YYYY-MM-DD}.md`，使用以下结构：
+
+**Frontmatter（必须）：**
+
+- `type: snapshot`
+- `source: hermes/review-digest`
+- `created: {YYYY-MM-DD}`
+- `tags:` 包含 `system/review`
+
+**正文结构：**
+
+1. 标题：`# ZHPMind 周报 — {YYYY-MM-DD}`
+2. 总览表格：包含 Inbox 积压、Wiki 孤岛率、Projects 僵尸率、本周 wiki 活动、本周 capture、修正频率（30天），每项用 🔴🟡🟢 标注状态
+3. Inbox 积压详情：如果 >20 条，列出最旧的 10 条文件名和创建日期
+4. Wiki 孤岛页面：列出所有孤岛页面文件名
+5. 僵尸项目：列出项目名 + 最后修改日期
+6. MOC 候选：表格列出 Tag 和使用页数
+7. 本周新建 Wiki 页面：列表
+8. 本周修改 Wiki 页面：列表
+
+## 注意事项
+
+- 不要修改 vault 中的任何现有文件——只在 inbox/ 下创建新文件
+- 文件名中的日期用 ISO 格式：YYYY-MM-DD
+- frontmatter 中的 `type: snapshot` 和 `source: hermes/review-digest` 是必须的——符合 ZHPMind 的信息三态分类（快照类，定期被新快照替代）
+- 如果 vault 路径不存在或权限不足，报错退出并说明原因
+
+The user has provided the following instruction alongside the skill invocation: [IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user — do NOT use send_message or try to deliver the output yourself. Just produce your report/output as your final response and the system handles the rest. SILENT: If there is genuinely nothing new to report, respond with exactly "[SILENT]" (nothing else) to suppress delivery. Never combine [SILENT] with content — either report your findings normally, or say [SILENT] and nothing more.]
+
+请严格按照 ~/.hermes/skills/review-digest.md 中的指令执行。读取该 skill 文件的完整内容，然后按其中定义的 7 个扫描步骤逐项执行，将结果写入 ZHPMind vault 的 inbox/ 下，文件名为 review-digest-加当天日期。不要自由发挥，严格按 skill 文件中的格式输出。
+
+## Response
+
+✅ 周报已写入 `inbox/review-digest-2026-05-12.md`。
+
+---
+
+## ZHPMind 周报摘要 — 2026-05-12
+
+| 指标 | 数值 | 状态 |
+|------|------|------|
+| Inbox 积压 | 4 条 | 🟢 正常 |
+| Wiki 孤岛率 | 0/26 = 0% | 🟢 正常 |
+| Projects 僵尸率 | N/A（无项目目录） | — |
+| 本周 Wiki 活动 | 20 页修改，20 页新建 | — |
+| 本周 Capture | 0 条（用户新增） | — |
+| 修正频率（30天） | 0 页被修改（非新建） | 🔴 认知僵化警告 |
+
+**本周亮点**：知识库爆发式增长，7 天内新建了 20 个 wiki 页面，包括 Garry Tan、Boris Cherny、Andrej Karpathy 的人物条目，以及 AI Engineering MOC、People MOC 等结构性页面。
+
+**需注意**：
+- 🔴 **认知僵化警告**：30 天内无旧页面被回头修订，知识只增不更。建议本周选 2-3 个旧页面（特别是 4 月创建的亚马逊系列）进行迭代。
+- **MOC 候选**：`llm`（9 页）、`software-engineering`（8 页）、`agents`（8 页）已聚集足够多页面，适合新建 MOC 页面。
+----
+
+===== Q3. v4 单文件中 scanner / script 引用 =====
+3:description: ZHPMind vault 健康度周报。基于 scanner 脚本输出的 JSON 数据，格式化为 markdown digest 写入 inbox，并追加 changelog.md。
+8:  - "v4.0 (2026-05-12): 架构重构——确定性扫描逻辑迁移到 review-digest-scanner.py，skill 只负责格式化和解读"
+18:你收到的上下文中包含 `review-digest-scanner.py` 的 JSON 输出——这是 vault 的确定性扫描结果。**数据已经是准确的，你不需要重新扫描。** 你的工作是：
+122:- **不要重新扫描 vault**——所有数据来自 scanner JSON
+
+===== Q4. .bundled_manifest 中 review-digest 段 =====
+
+===== Q5. 5/18 产出前 40 行 =====
+---
+type: snapshot
+source: hermes/review-digest
+created: 2026-05-18
+tags:
+  - system/review
+---
+
+# ZHPMind 周报 — 2026-05-18
+
+## 总览
+
+| 指标           | 状态     | 数值                      |
+| ------------ | ------ | ----------------------- |
+| Inbox 积压     | 🟢 正常  | 3 条                     |
+| Wiki 孤岛率     | 🟢 正常  | 0%（0/27）                |
+| Projects 僵尸率 | — N/A  | projects/ 目录为空          |
+| 本周 Wiki 活动   | —      | 新建 13 页，修改 0 页          |
+| 本周 Capture   | —      | 0 条                     |
+| MOC 候选       | 🟢 全覆盖 | 0 候选                    |
+| 修正频率（30天）    | 🔴 注意  | 0 页被修正（Bootstrap 期，见说明） |
+
+---
+
+## 1. Inbox 积压详情
+
+共 **3** 条，状态 🟢 正常，无需列出最旧条目。
+
+| 文件名 | 创建日期 | 最后修改 |
+|--------|----------|----------|
+| 2026-04-19.md | 2026-04-19 | 2026-04-20 |
+| 2026-04-20.md | 2026-04-20 | 2026-05-12 |
+| 2026-04-29.md | 2026-04-29 | 2026-05-07 |
+
+> 另有 2 个系统快照文件已排除统计。
+
+---
+
+## 2. Wiki 孤岛页面
+
+...
+(总行数:      117)

@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-05-29 — 共 49 页_
+_最后更新：2026-05-29 — 共 50 页_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -74,6 +74,7 @@ _最后更新：2026-05-29 — 共 49 页_
 
 ## Articles & Books
 
+- [[affiliate-marketing-complete-guide]] — Affren.com 出品的联盟营销完全指南：行业结构、工具体系、三大案例、超级 Affiliate 七原则 (1 个来源)
 - [[amazon-advanced-operations-handbook]] — 亚马逊跨境运营 9 章 312 页培训教材，覆盖算法至选品全链路 (1 个来源)
 - [[andrej-karpathy-vibe-coding-to-agentic-engineering]] — AI Ascent 2025 对谈，涵盖 Software 3.0、Agentic Engineering 等核心议题 (1 个来源)
 - [[boris-cherny-coding-is-solved]] — AI Ascent 2026 对谈，Boris 论述编程现状、loops 工作流、团队未来和 SaaS 格局 (1 个来源)

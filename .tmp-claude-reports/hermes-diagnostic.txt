@@ -1,0 +1,141 @@
+===== A. Hermes 自身 =====
+--- A.1 hermes 命令 + 版本 ---
+/Users/zhanghaopeng/.local/bin/hermes
+Hermes Agent v0.13.0 (2026.5.7)
+Project: /Users/zhanghaopeng/.hermes/hermes-agent
+Python: 3.11.15
+OpenAI SDK: 2.31.0
+Update available: 971 commits behind — run 'hermes update'
+
+--- A.2 ~/.hermes 目录 ---
+total 15024
+drwx------@ 41 zhanghaopeng  staff     1312 May 24 04:11 .
+drwxr-x---+ 78 zhanghaopeng  staff     2496 May 24 04:12 ..
+-rw-------@  1 zhanghaopeng  staff    17520 May 12 15:13 .env
+-rw-------@  1 zhanghaopeng  staff    17519 May 12 14:28 .env.bak
+-rw-r--r--@  1 zhanghaopeng  staff      111 May 12 12:16 .hermes_history
+-rw-------   1 zhanghaopeng  staff    61168 May 12 23:16 .skills_prompt_snapshot.json
+-rw-r--r--@  1 zhanghaopeng  staff       53 May 24 04:07 .update_check
+drwxr-xr-x   2 zhanghaopeng  staff       64 Apr 10 15:28 audio_cache
+-rw-------@  1 zhanghaopeng  staff     2048 May 20 16:29 auth.json
+-rw-r--r--@  1 zhanghaopeng  staff        0 Apr 10 15:44 auth.lock
+drwxr-xr-x   3 zhanghaopeng  staff       96 Apr 10 15:52 bin
+drwxr-xr-x   3 zhanghaopeng  staff       96 Apr 10 17:29 cache
+-rw-------   1 zhanghaopeng  staff      637 May 20 17:00 channel_directory.json
+drwxr-xr-x@  4 zhanghaopeng  staff      128 May 12 14:32 checkpoints
+-rw-------@  1 zhanghaopeng  staff    12745 May 12 12:16 config.yaml
+-rw-------@  1 zhanghaopeng  staff    12797 May 12 12:03 config.yaml.bak.20260512_120348
+-rw-r--r--   1 zhanghaopeng  staff      111 Apr 10 17:52 context_length_cache.yaml
+drwx------@  5 zhanghaopeng  staff      160 May 18 09:01 cron
+-rw-r--r--   1 zhanghaopeng  staff      551 May 20 17:00 gateway_state.json
+
+--- A.3 hermes 进程 + launchd ---
+874 /Users/zhanghaopeng/.hermes/hermes-agent/venv/bin/python -m hermes_cli.main gateway run --replace
+874	0	ai.hermes.gateway
+
+===== B. review-digest skill =====
+--- B.1 skills 目录 ---
+total 80
+drwxr-xr-x  38 zhanghaopeng  staff  1216 May 20 17:00 .
+drwx------@ 41 zhanghaopeng  staff  1312 May 24 04:11 ..
+-rw-------   1 zhanghaopeng  staff  3870 May 20 17:00 .bundled_manifest
+drwxr-xr-x   3 zhanghaopeng  staff    96 May 19 12:41 .curator_backups
+-rw-------   1 zhanghaopeng  staff   551 May 19 12:42 .curator_state
+-rw-------   1 zhanghaopeng  staff   413 May 19 12:42 .usage.json
+-rw-r--r--   1 zhanghaopeng  staff     0 May 12 15:19 .usage.json.lock
+drwxr-xr-x   8 zhanghaopeng  staff   256 May 12 12:15 apple
+drwxr-xr-x   7 zhanghaopeng  staff   224 May 12 12:15 autonomous-ai-agents
+drwxr-xr-x  22 zhanghaopeng  staff   704 May 12 12:15 creative
+drwxr-xr-x   4 zhanghaopeng  staff   128 May 12 12:15 data-science
+drwxr-xr-x   5 zhanghaopeng  staff   160 May 12 12:15 devops
+drwxr-xr-x   3 zhanghaopeng  staff    96 Apr 10 15:28 diagramming
+drwxr-xr-x   5 zhanghaopeng  staff   160 May 12 11:51 dogfood
+drwxr-xr-x   3 zhanghaopeng  staff    96 Apr 10 15:28 domain
+drwxr-xr-x   4 zhanghaopeng  staff   128 May 12 12:15 email
+drwxr-xr-x   3 zhanghaopeng  staff    96 Apr 10 15:28 feeds
+drwxr-xr-x   5 zhanghaopeng  staff   160 May 12 12:15 gaming
+drwxr-xr-x   3 zhanghaopeng  staff    96 Apr 10 15:28 gifs
+drwxr-xr-x   9 zhanghaopeng  staff   288 May 12 12:15 github
+drwxr-xr-x   3 zhanghaopeng  staff    96 Apr 10 15:28 inference-sh
+drwxr-xr-x   3 zhanghaopeng  staff    96 Apr 10 15:28 leisure
+drwxr-xr-x   5 zhanghaopeng  staff   160 May 12 12:15 mcp
+drwxr-xr-x   8 zhanghaopeng  staff   256 May 12 12:15 media
+drwxr-xr-x  11 zhanghaopeng  staff   352 May 12 12:15 mlops
+drwxr-xr-x   4 zhanghaopeng  staff   128 May 12 12:15 note-taking
+drwxr-xr-x  12 zhanghaopeng  staff   384 May 12 12:15 productivity
+drwxr-xr-x   3 zhanghaopeng  staff    96 May 12 12:15 red-teaming
+drwxr-xr-x   8 zhanghaopeng  staff   256 May 12 12:15 research
+drwxr-xr-x   4 zhanghaopeng  staff   128 May 12 23:16 review-digest
+-rw-r--r--@  1 zhanghaopeng  staff  4454 May 13 00:54 review-digest.md
+-rw-r--r--@  1 zhanghaopeng  staff  3642 May 12 23:46 review-digest.md.v1.bak
+-rw-r--r--@  1 zhanghaopeng  staff  6432 May 13 00:18 review-digest.md.v2.bak
+-rw-r--r--@  1 zhanghaopeng  staff  4454 May 13 00:54 review-digest.md.v3.bak
+drwxr-xr-x   4 zhanghaopeng  staff   128 May 12 12:15 smart-home
+drwxr-xr-x   5 zhanghaopeng  staff   160 May 12 12:15 social-media
+drwxr-xr-x  13 zhanghaopeng  staff   416 May 12 12:15 software-development
+drwxr-xr-x   3 zhanghaopeng  staff    96 May 12 11:51 yuanbao
+
+--- B.2 review-digest/ 目录形态(v1.1) ---
+✅ 存在
+total 16
+drwxr-xr-x   4 zhanghaopeng  staff   128 May 12 23:16 .
+drwxr-xr-x  38 zhanghaopeng  staff  1216 May 20 17:00 ..
+drwxr-xr-x   4 zhanghaopeng  staff   128 May 12 23:16 references
+-rw-------   1 zhanghaopeng  staff  5235 May 12 23:16 SKILL.md
+--- SKILL.md frontmatter 前 15 行 ---
+---
+name: review-digest
+description: ZHPMind vault 健康度周报。扫描 vault 状态，生成结构化 digest 写入 inbox。
+trigger: weekly review, vault health check, 周报, review digest
+created_by: human
+version: 1.1
+---
+
+# Review Digest — ZHPMind 健康度周报
+
+## 目标
+
+扫描 ZHPMind vault，生成一份健康度 digest，写入 `inbox/review-digest-{YYYY-MM-DD}.md`。
+这是认知循环的 **review** 环节——让系统的主人看到系统自身的状态。
+
+
+--- B.3 review-digest.md 单文件(v4) ---
+✅ 存在 (     124 行)
+---
+name: review-digest
+description: ZHPMind vault 健康度周报。基于 scanner 脚本输出的 JSON 数据，格式化为 markdown digest 写入 inbox，并追加 changelog.md。
+trigger: weekly review, vault health check, 周报, review digest
+created_by: human
+version: 4.0
+changelog:
+  - "v4.0 (2026-05-12): 架构重构——确定性扫描逻辑迁移到 review-digest-scanner.py，skill 只负责格式化和解读"
+  - "v3.0 (2026-05-12): MOC 检测改用 wikilinks-as-source"
+  - "v2.0 (2026-05-12): MOC 检测改为内容扫描；🔴 附建议"
+
+--- B.4 .bak 备份链 ---
+/Users/zhanghaopeng/.hermes/skills/review-digest.md.v1.bak
+/Users/zhanghaopeng/.hermes/skills/review-digest.md.v2.bak
+/Users/zhanghaopeng/.hermes/skills/review-digest.md.v3.bak
+
+===== C. cron + 输出 =====
+--- C.1 cron 任务 ---
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         Scheduled Jobs                                  │
+└─────────────────────────────────────────────────────────────────────────┘
+
+  4923ff1a9586 [active]
+    Name:      review-digest
+    Schedule:  0 9 * * 1
+    Repeat:    ∞
+    Next run:  2026-05-25T09:00:00+08:00
+    Deliver:   local
+    Skills:    review-digest
+    Script:    review-digest-scan.py
+    Last run:  2026-05-18T09:01:47.469311+08:00  ok
+
+
+--- C.2 最近的 review-digest 产出 ---
+-rw-r--r--@ 1 zhanghaopeng  staff  3514 May 19 00:51 review-digest-2026-05-18.md
+-rw-r--r--  1 zhanghaopeng  staff  4266 May 13 00:59 review-digest-2026-05-13.md
+-rw-r--r--@ 1 zhanghaopeng  staff  3749 May 12 23:49 review-digest-2026-05-12.md
