@@ -150,6 +150,15 @@ Format: `## [YYYY-MM-DD] operation | Description`
 
 ---
 
+## [2026-05-29] mirror | Book Mirror: The Almanack of Naval Ravikant
+
+- **Sources touched**: `assets/books/The Almanack of Naval Ravikant.pdf`（间接，通过蒸馏页）
+- **Pages created**: none（Mirror 内容直接写入书籍页）
+- **Pages updated**: [[naval-ravikant-almanack]]（`## Mirror` 区填写，6 个具体映射）
+- **Note**: [self-reviewed] 六个映射均有 Haopeng 的具体事实锚定，无虚构关联：（1）精力瓶颈 = 欲望太多不是能力不足的诊断；（2）Specific Knowledge 识别——跨境供应链×AI×系统设计思维的独特组合，ZHPMind 是实物证明；（3）杠杆迁移——劳动力杠杆→代码杠杆，orchestrator-only 就是 Naval 杠杆理论的实践；（4）陪伴不足的困境——悬在三种选择之外，接受是合法且有力的选项；（5）健康承诺级别差距——"基础设施"vs"第一优先级"的区别；（6）"业务只是容器"与 Naval"从游戏中走出来的赢家"完全重合，但需要在习惯层面维护。候选 reflection 页：欲望多/精力瓶颈诊断——等 Haopeng 确认是否值得单独提炼后再建。mirror 工作流：Claudian。
+
+---
+
 ## [2026-05-29] distill | The Almanack of Naval Ravikant — 财富与幸福哲学蒸馏
 
 - **Sources touched**: `raw/assets/books/The Almanack of Naval Ravikant.pdf`（160 页中文译本，Eric Jorgenson 编著）
