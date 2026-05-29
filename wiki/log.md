@@ -150,6 +150,15 @@ Format: `## [YYYY-MM-DD] operation | Description`
 
 ---
 
+## [2026-05-29] reflect | 欲望过多即精力陷阱 — Mirror 衍生 Reflection
+
+- **Sources touched**: none（对话沉淀产物，Mirror 工作流衍生）
+- **Pages created**: [[desires-energy-trap]]（type: reflection，三段式）
+- **Pages updated**: [[naval-ravikant-almanack]]（Mirror 映射一补 wikilink）、[[index]]（Reflections 分区从"暂无"到第一条，总页数 48→49）
+- **Note**: Haopeng 确认值得固化后立即建页。核心洞察：精力瓶颈 = 欲望过多同时运行，不是能力不足也不是时间管理问题。Compiled Truth 覆盖：诊断框架、降级方式（主动追求→背景设置）、与完美主义的关联、核心自问题。来源锚定：[[naval-ravikant-almanack]] Book Mirror 会话 2026-05-29。
+
+---
+
 ## [2026-05-29] mirror | Book Mirror: The Almanack of Naval Ravikant
 
 - **Sources touched**: `assets/books/The Almanack of Naval Ravikant.pdf`（间接，通过蒸馏页）
