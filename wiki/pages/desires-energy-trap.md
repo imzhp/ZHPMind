@@ -37,6 +37,7 @@ Naval Ravikant 有一个核心洞见：每一个欲望都是你与自己签订�
 
 ## Timeline
 
+- 2026-05-29 [来源:对话-Naval Mirror] Haopeng 回答"如果只能保留一个大欲望"：「曜野要扩张，因为这是能拥有美好生活的物质基础，只有曜野赚钱了，我才可以拥有物质的财富。」——Mirror 注：答案本身清晰有力；"只有…才能"的结构需留意，它可能把现在的幸福抵押给未来的条件
 - 2026-05-29 [来源:对话-Naval Mirror] 蒸馏《The Almanack of Naval Ravikant》并进行 Book Mirror，Naval 的"欲望即合同"框架映射到 Haopeng 当前的精力困境，识别出"精力瓶颈 = 欲望过多同时运行"的诊断
 
 ## References
