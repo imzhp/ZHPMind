@@ -484,7 +484,7 @@ Distill 完成后，执行 §11 Propagation 工作流——检查新写入内容
 ### Step 10 — Git commit
 
 ```bash
-git -C "/Users/zhanghaopeng/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind" add -A && git -C "/Users/zhanghaopeng/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind" commit -m "wiki: distill [文件名] – N pages created, M updated"
+git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add -A && git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" commit -m "wiki: distill [文件名] – N pages created, M updated"
 ```
 
 - `[文件名]` 替换为实际文件名（不含路径）
@@ -768,14 +768,14 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 
 **Setup（在终端运行一次）：**
 ```bash
-git -C "/Users/zhanghaopeng/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind" add wiki/
-git -C "/Users/zhanghaopeng/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind" commit -m "chore: initialize wiki scaffold"
+git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add wiki/
+git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" commit -m "chore: initialize wiki scaffold"
 ```
 
 **每次工作流完成后自动 commit：**
 
 ```bash
-git -C "/Users/zhanghaopeng/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind" add -A && git -C "/Users/zhanghaopeng/Library/Mobile Documents/iCloud~md~obsidian/Documents/ZHPMind" commit -m "wiki: [operation] [描述] – N pages created, M updated"
+git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add -A && git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" commit -m "wiki: [operation] [描述] – N pages created, M updated"
 ```
 
 - `[operation]` 替换为工作流名称：`distill`、`mirror`、`reflect`、`harvest`、`propagation`、`concept-fable`、`lint`
