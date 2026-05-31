@@ -35,6 +35,7 @@ review-digest 是 ZHPMind 的**健康度周报**。它扫描 vault 自身，产�
 | 本周活动 | — | 「在流动吗？」 |
 | MOC 候选 | — | 「该聚合的聚合了吗？」 |
 | 修正频率 | =0 🔴 | 「有修正吗？认知没僵化吧？」 |
+| raw 未引用率 | >0 🟡 / >15% 🔴 | 「raw 是不是淤积了未蒸馏素材？」（inbox↔raw 生命周期）|
 
 ## 演化简史（v1 → v4）
 
@@ -69,7 +70,7 @@ review-digest 是 ZHPMind 的**健康度周报**。它扫描 vault 自身，产�
 
 **2026-05-23 运行时观察结论**：cron output（`~/.hermes/cron/output/4923ff1a9586/`）显示 5/13 起跑的是 **v4 单文件**（prompt 含 scanner JSON 的 `## Script Output` 段），v1.1 目录形态从 5/13 起未再被调用。两版本并存确实是历史遗留，可考虑清理（目录式 v1.1+ 3 个 .bak）。
 
-## 五条实战 Pitfalls（来自 v1.1 SKILL.md）
+## 实战 Pitfalls
 
 这些是 skill 真正变"聪明"的部分——每条都是被 fix 过的踩坑记录，比方法论更有价值。
 
@@ -80,6 +81,7 @@ review-digest 是 ZHPMind 的**健康度周报**。它扫描 vault 自身，产�
 | `grep -oh '[[...]]'` 漏 alias 形式 | 平台约束（macOS grep 单行） | Python `os.walk` + `re.findall` 全文扫描，见 `references/backlink-scanner.md` |
 | 新建页面当天必然是孤岛 | 业务语义校准 | 报告中对「今日新建」的孤岛加注说明为预期状态 |
 | macOS `ctime ≠ 创建时间` | 平台陷阱（iCloud vault 尤甚） | 用 `os.stat(fpath).st_birthtime`（macOS 专有）获取真实创建时间 |
+| raw 引用多为 `raw/路径` 串 + frontmatter sources，少用 `[[]]`（2026-05-30 raw 审计） | 平台/业务语义校准 | scanner 不能只扫 `[[wikilink]]`；须同时匹配 basename(±ext)/子目录相对路径(±ext)/`raw/` 前缀串，否则真被引用的 raw 会被误判成孤儿 |
 
 ## 反思与未解决问题
 

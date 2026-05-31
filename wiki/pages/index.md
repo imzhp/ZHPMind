@@ -2,14 +2,14 @@
 title: "Wiki Index"
 tags: [meta, index]
 created: 2026-04-12
-updated: 2026-05-28
+updated: 2026-05-30
 sources: []
 source_count: 0
 ---
 
 # Wiki Index
 
-_最后更新：2026-05-29 — 共 50 页_
+_最后更新：2026-05-30 — 共 51 页_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -42,6 +42,7 @@ _最后更新：2026-05-29 — 共 50 页_
 - [[amazon-traffic-sources]] — 亚马逊站内十大流量入口与站外七大流量入口全解析 + 云飞扬购买路径与关联流量打法 (2 个来源)
 - [[claude-code]] — Anthropic 的 AI 编程 CLI 工具，由 Boris Cherny 创建，支持 loops 和并行 agent (2 个来源)
 - [[fat-skills-thin-harness]] — AI Agent 系统架构原则：智能驻留在技能和数据中，Harness 只做路由 (1 个来源)
+- [[html-artifacts-presentation-layer]] — 知识系统双层交互：markdown 给 AI/存储，HTML artifacts 给人/呈现；视觉是最高带宽输出通道 (1 个来源)
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
 - [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 + 云飞扬文案反直觉取舍 (2 个来源)
 - [[personal-knowledge-base]] — AI 持续写入的运行中知识神经系统，通过实体传播实现复利积累 (1 个来源)
