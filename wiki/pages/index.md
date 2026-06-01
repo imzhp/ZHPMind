@@ -87,6 +87,9 @@ _最后更新：2026-05-28 — 共 46 页_
 - [[naval-ravikant-almanack]] — Naval Ravikant 的财富与幸福哲学：专业知识×杠杆×问责制，幸福是消除缺乏感后的默认状态 (1 个来源)
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)
 
+- [[何以为父-影响彼此一生的父子关系]] — Michael J. Diamond《何以为父》：父子相互影响、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
+- [[书籍索引-何以为父系列]] — 《何以为父》系列资源索引：主书页 + 核心概念（父亲饥渴/养育同盟/情绪教练角色）导航
+
 ## Reflections
 
 - [[desires-energy-trap]] — 精力瓶颈的真正诊断：同时持有太多大欲望合同，不是能力不足
