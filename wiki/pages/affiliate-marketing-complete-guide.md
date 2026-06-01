@@ -4,7 +4,7 @@ type: book
 tags: [affiliate-marketing, performance-marketing, traffic, cpa, lead-generation, campaign-optimization]
 created: 2026-05-29
 updated: 2026-05-29
-sources: ["assets/books/《Affiliate Marketing 完全指南》精校版.pdf"]
+sources: ["assets/books/Affiliate Marketing 完全指南.pdf"]
 source_count: 1
 discussions: []
 ---
