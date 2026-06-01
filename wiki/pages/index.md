@@ -41,6 +41,10 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 - [[amazon-review-management]] — 评论权重体系、差评处理、售后转化与私域流量建立 (1 个来源)
 - [[amazon-traffic-sources]] — 亚马逊站内十大流量入口与站外七大流量入口全解析 + 云飞扬购买路径与关联流量打法 (2 个来源)
 - [[claude-code]] — Anthropic 的 AI 编程 CLI 工具，由 Boris Cherny 创建，支持 loops 和并行 agent (2 个来源)
+- [[critical-thinking-framework]] — 批判性思维框架：海绵式 vs 淘金式思维、强势 vs 弱势、评估论证的问题序列（源自《学会提问》） (1 个来源)
+- [[critical-thinking-writing-speaking]] — 批判性思维用于写作与表达：清晰陈述论题/结论/理由、精确语言、明示假设、避免谬误、预应反对 (1 个来源)
+- [[obstacles-to-critical-thinking]] — 批判性思维的六大障碍：快思考、刻板印象、确认偏误、自我中心、一厢情愿、基本归因错误及破解 (1 个来源)
+- [[ten-critical-questions]] — 《学会提问》核心：评估任何论证的 10 个关键问题（论题/理由/歧义/假设/谬误/证据/替代因/数据/省略/结论） (1 个来源)
 - [[fat-skills-thin-harness]] — AI Agent 系统架构原则：智能驻留在技能和数据中，Harness 只做路由 (1 个来源)
 - [[html-artifacts-presentation-layer]] — 知识系统双层交互：markdown 给 AI/存储，HTML artifacts 给人/呈现；视觉是最高带宽输出通道 (1 个来源)
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
@@ -61,6 +65,7 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 
 ## Skills
 
+- [[skill-adversarial-review]] — adversarial-review skill 设计与演化：让 AI 扮对立专家挑刺方法论（cross-role eval，cross-modal 之外的增强）（status: draft）
 - [[skill-concept-fable]] — concept-fable skill 的设计意图与演化记录：为 concept/method/framework 页生成直觉锚点寓言
 - [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：vault 健康度周报
 - [[skill-vault-tidy]] — vault-tidy skill 的设计意图与演化记录：vault 执行器，基于 review-digest scanner JSON 生成 tidy actions（status: draft）
