@@ -9,8 +9,8 @@ This pass captures deeper internal Notion pages referenced by previously capture
 - Unresolved before this pass: 14
 - Captured this pass: 0
 - Errors this pass: 14
-- Raw output directory: `wiki/raw/sheep-archive-public/deep-links/`
-- Raw manifest: `wiki/raw/sheep-archive-public/deep-link-capture-manifest.json`
+- Raw output directory: `wiki/raw/assets/archives/sheep-archive-public/deep-links/`
+- Raw manifest: `wiki/raw/assets/archives/sheep-archive-public/deep-link-capture-manifest.json`
 
 ## Highest-Link Source Files
 

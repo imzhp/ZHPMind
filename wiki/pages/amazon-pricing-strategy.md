@@ -4,7 +4,7 @@ type: method
 tags: [amazon, pricing-strategy, spiral, price-spiral, deals, conversion-rate]
 created: 2026-05-28
 updated: 2026-05-28
-sources: ["qwei-amazon-course-2023-v2/16.价格策略制定和执行"]
+sources: ["assets/courses/qwei-amazon-course-2023/文字记录：价格策略制定和执行，以及在推广中的节奏（嘉宾：堂哥） 2026年5月25日.md"]
 source_count: 1
 ---
 
@@ -93,5 +93,5 @@ source_count: 1
 
 ## Sources
 
-- `raw/qwei-amazon-course-2023-v2/16.价格策略制定和执行_原文.docx` —— 云飞扬第 16 节（1:58:00，双讲述者：堂哥反直觉方法论 + 乔价格形式系统），通义听悟清洗版
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：价格策略制定和执行，以及在推广中的节奏（嘉宾：堂哥） 2026年5月25日.md` —— 云飞扬第 16 节（1:58:00，双讲述者：堂哥反直觉方法论 + 乔价格形式系统）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 98% 云飞扬独讲；手册价格策略页几乎空白。蒸馏模型 Claude Opus 4.7，2026-05-28

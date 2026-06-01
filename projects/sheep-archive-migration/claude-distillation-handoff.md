@@ -20,7 +20,7 @@ Codex 已按用户授权完成 raw-only 抓取。用户明确限制过：只允�
 
 Claude 接手时请遵守这个边界：
 
-- 可以阅读 `wiki/raw/sheep-archive-public/` 下的 raw 抓取内容。
+- 可以阅读 `wiki/raw/assets/archives/sheep-archive-public/` 下的 raw 抓取内容。
 - 可以阅读和补充 `projects/sheep-archive-migration/` 下的迁移计划、审计、蒸馏草稿。
 - 不要直接修改 `wiki/pages/`。
 - 不要直接修改 `people-moc.md`。
@@ -35,7 +35,7 @@ Claude 接手时请遵守这个边界：
 Raw 根目录：
 
 ```text
-wiki/raw/sheep-archive-public/
+wiki/raw/assets/archives/sheep-archive-public/
 ```
 
 迁移项目目录：
@@ -49,8 +49,8 @@ projects/sheep-archive-migration/
 文件：
 
 ```text
-wiki/raw/sheep-archive-public/sheep-archive-public-index.md
-wiki/raw/sheep-archive-public/sheep-archive-public-index.json
+wiki/raw/assets/archives/sheep-archive-public/sheep-archive-public-index.md
+wiki/raw/assets/archives/sheep-archive-public/sheep-archive-public-index.json
 ```
 
 内容：
@@ -65,7 +65,7 @@ wiki/raw/sheep-archive-public/sheep-archive-public-index.json
 目录：
 
 ```text
-wiki/raw/sheep-archive-public/subpages/
+wiki/raw/assets/archives/sheep-archive-public/subpages/
 ```
 
 报告：
@@ -86,7 +86,7 @@ projects/sheep-archive-migration/subpage-capture-report.md
 目录：
 
 ```text
-wiki/raw/sheep-archive-public/people-pages/
+wiki/raw/assets/archives/sheep-archive-public/people-pages/
 ```
 
 报告：
@@ -109,7 +109,7 @@ projects/sheep-archive-migration/people-page-capture-report.md
 重要说明：之前用户指出类似 Steve Jobs 的详情页可能没抓到。后来已经补抓。示例：
 
 ```text
-wiki/raw/sheep-archive-public/people-pages/06-史蒂夫-乔布斯.md
+wiki/raw/assets/archives/sheep-archive-public/people-pages/06-史蒂夫-乔布斯.md
 ```
 
 ### 4. 深层内部链接页面
@@ -117,7 +117,7 @@ wiki/raw/sheep-archive-public/people-pages/06-史蒂夫-乔布斯.md
 目录：
 
 ```text
-wiki/raw/sheep-archive-public/deep-links/
+wiki/raw/assets/archives/sheep-archive-public/deep-links/
 ```
 
 报告：
@@ -141,8 +141,8 @@ projects/sheep-archive-migration/deep-link-final-audit.md
 
 ```text
 projects/sheep-archive-migration/deep-link-final-audit.md
-wiki/raw/sheep-archive-public/deep-link-final-audit.md
-wiki/raw/sheep-archive-public/deep-link-final-audit.json
+wiki/raw/assets/archives/sheep-archive-public/deep-link-final-audit.md
+wiki/raw/assets/archives/sheep-archive-public/deep-link-final-audit.json
 ```
 
 ## 重要限制

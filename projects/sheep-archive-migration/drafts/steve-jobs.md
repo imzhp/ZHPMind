@@ -3,7 +3,7 @@ title: "史蒂夫·乔布斯"
 aliases: ["Steve Jobs", "乔布斯"]
 type: person
 status: distillation-draft
-sources: ["wiki/raw/sheep-archive-public/people-pages/06-史蒂夫-乔布斯.md"]
+sources: ["wiki/raw/assets/archives/sheep-archive-public/people-pages/06-史蒂夫-乔布斯.md"]
 source_count: 1
 source_origin: "产品沉思录 / 羔羊计划（fonter 策展，公开页面抓取，非官方导出）"
 distilled_by: claude
@@ -60,7 +60,7 @@ tags: []
 
 ## References
 
-- 主源 raw：`wiki/raw/sheep-archive-public/people-pages/06-史蒂夫-乔布斯.md`（fonter 策展正文、完整访谈问题清单、图片清单都在这里，引用回去看上下文，不在本页复制）
+- 主源 raw：`wiki/raw/assets/archives/sheep-archive-public/people-pages/06-史蒂夫-乔布斯.md`（fonter 策展正文、完整访谈问题清单、图片清单都在这里，引用回去看上下文，不在本页复制）
 - raw 中收录的外部原始链接：1985《花花公子》专访（Playboy / archive.org 拷贝）、《Fearless Genius》摄影集、《Make Something Wonderful》（stevejobsarchive.com）。
 
 ---

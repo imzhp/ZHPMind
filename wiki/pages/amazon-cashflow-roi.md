@@ -4,7 +4,7 @@ type: concept
 tags: [amazon, cash-flow, roi, finance, inventory-turnover, product-selection]
 created: 2026-05-28
 updated: 2026-05-28
-sources: ["qwei-amazon-course-2023-v2/1.1三万块钱还能做亚马逊吗"]
+sources: ["assets/courses/qwei-amazon-course-2023/文字记录：1.1三万块钱还能做亚马逊吗？ 2026年5月25日.md"]
 source_count: 1
 ---
 
@@ -98,5 +98,5 @@ source_count: 1
 
 ## Sources
 
-- `raw/qwei-amazon-course-2023-v2/1.1三万块钱还能做亚马逊吗？_原文.docx` —— 云飞扬 2023 课程第 1.1 扩展节（42 分钟，现金流财务模型），通义听悟清洗版
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：1.1三万块钱还能做亚马逊吗？ 2026年5月25日.md` —— 云飞扬 2023 课程第 1.1 扩展节（42 分钟，现金流财务模型）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 49 条目 95%+ 为云飞扬独讲（国民哥哥手册无现金流/周转模型）。蒸馏模型 Claude Opus 4.7，2026-05-28

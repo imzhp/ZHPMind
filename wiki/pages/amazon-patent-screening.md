@@ -4,7 +4,7 @@ type: method
 tags: [amazon, patent-screening, intellectual-property, design-patent, infringement-avoidance, product-selection]
 created: 2026-05-28
 updated: 2026-05-28
-sources: ["qwei-amazon-course-2023-v2/4.专利筛查：选品全流程实操"]
+sources: ["assets/courses/qwei-amazon-course-2023/4.专利筛查：选品全流程实操（从55分开始)_原文.docx"]
 source_count: 1
 ---
 
@@ -87,5 +87,5 @@ source_count: 1
 
 ## Sources
 
-- `raw/qwei-amazon-course-2023-v2/4.专利筛查：选品全流程实操（从55分开始)_原文.docx` —— 云飞扬 2023 课程第 4 节 Part A（00:01–55:06，约 55 分钟），嘉宾米车（多米知识产权）主讲，通义听悟清洗版
+- `raw/assets/courses/qwei-amazon-course-2023/4.专利筛查：选品全流程实操（从55分开始)_原文.docx` —— 云飞扬 2023 课程第 4 节 Part A（00:01–55:06，约 55 分钟），嘉宾米车（多米知识产权）主讲（v1 飞书妙记无此节转录，保留 v2 通义 docx 作唯一源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 37 条目几乎全为嘉宾米车独讲（国民哥哥手册无知识产权专题）。蒸馏模型 Claude Opus 4.7，2026-05-28

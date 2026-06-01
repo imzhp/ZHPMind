@@ -4,7 +4,7 @@ type: method
 tags: [amazon, new-product-launch, ppc, sop, advertising, decision-philosophy]
 created: 2026-05-28
 updated: 2026-05-28
-sources: ["qwei-amazon-course-2023-v2/11.新品推广全流程"]
+sources: ["assets/courses/qwei-amazon-course-2023/文字记录：11.新品推广全流程 2026年5月25日.md"]
 source_count: 1
 ---
 
@@ -95,5 +95,5 @@ source_count: 1
 
 ## Sources
 
-- `raw/qwei-amazon-course-2023-v2/11.新品推广全流程_原文.docx` —— 云飞扬第 11 节（1:24:00 + 答疑 + PD 调整），通义听悟清洗版；11.9 真实案例已在历史会话完成飞书 v1 + 通义 v2 双源交叉验证（21 项关键数据全过）
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：11.新品推广全流程 2026年5月25日.md` —— 云飞扬第 11 节（1:24:00 + 答疑 + PD 调整）；11.9 真实案例已在历史会话完成飞书 v1 + 通义 v2 双源交叉验证（21 项关键数据全过）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 64 条目几乎全部为云飞扬独有，是 Section 2/7/8/9/10 方法论串联成的 SOP 集大成。蒸馏模型 Claude Opus 4.7，2026-05-28

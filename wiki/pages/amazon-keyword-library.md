@@ -4,7 +4,7 @@ type: method
 tags: [amazon, keyword-library, keyword-research, sift, placement-rate, ppc, moat]
 created: 2026-05-28
 updated: 2026-05-28
-sources: ["qwei-amazon-course-2023-v2/7.关键词词库文案和广告投放词选择", "qwei-amazon-course-2023-v2/小红圈直播3-30关键词调研相关性2.0"]
+sources: ["assets/courses/qwei-amazon-course-2023/文字记录：7.关键词：词库，文案和广告投放词选择 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/文字记录：小红圈直播3-30：关键词调研与分析：相关性2.0 2026年5月25日.md"]
 source_count: 2
 ---
 
@@ -122,6 +122,6 @@ source_count: 2
 
 ## Sources
 
-- `raw/qwei-amazon-course-2023-v2/7.关键词：词库，文案和广告投放词选择_原文.docx` —— 云飞扬第 7 节（1:41:35，词库战略/三步法/SIFT 占位率/词根分析/四象限/VLOOKUP/词根测词），通义听悟清洗版
-- `raw/qwei-amazon-course-2023-v2/小红圈直播3-30关键词调研相关性2.0...` —— 小红圈知识星球第 3-30 期直播（1:30:00，云飞扬 + 嘉宾琴琴），相关性 2.0 工具原理 + 苹果表带 demo + 装饰品跨类目 ASIN 定投案例；飞书清洗版（通义 v2 作备份）
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：7.关键词：词库，文案和广告投放词选择 2026年5月25日.md` —— 云飞扬第 7 节（1:41:35，词库战略/三步法/SIFT 占位率/词根分析/四象限/VLOOKUP/词根测词）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：小红圈直播3-30：关键词调研与分析：相关性2.0 2026年5月25日.md` —— 小红圈知识星球第 3-30 期直播（1:30:00，云飞扬 + 嘉宾琴琴），相关性 2.0 工具原理 + 苹果表带 demo + 装饰品跨类目 ASIN 定投案例；飞书妙记主源（本节原本即以飞书为源，路径已重指向 v1 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，两节几乎全为云飞扬独讲（手册关键词页只讲"重要"不讲"怎么做成资产"）。蒸馏模型 Claude Opus 4.7，2026-05-28

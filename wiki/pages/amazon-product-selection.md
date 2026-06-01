@@ -4,7 +4,7 @@ type: concept
 tags: [amazon, product-selection, product-development, market-analysis, differentiation, competitive-analysis, financial-model, sample-testing, market-capacity]
 created: 2026-04-12
 updated: 2026-05-28
-sources: ["亚马逊高阶运营培训手册.pdf", "qwei-amazon-course-2023-v2/2.产品开发方法论", "qwei-amazon-course-2023-v2/如何分析市场容量", "qwei-amazon-course-2023-v2/4.专利筛查：选品全流程实操"]
+sources: ["亚马逊高阶运营培训手册.pdf", "assets/courses/qwei-amazon-course-2023/文字记录：2.产品开发方法论 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/文字记录：如何分析市场容量 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/4.专利筛查：选品全流程实操（从55分开始)_原文.docx"]
 source_count: 2
 ---
 
@@ -352,7 +352,7 @@ $$\text{店铺 GMV} = \text{爆款转化率} \times \text{爆款流量} + \text{
 ## Sources
 
 - `raw/亚马逊高阶运营培训手册.pdf` — 第九章：运营如何培养产品思维（第 275–301 页）
-- `raw/qwei-amazon-course-2023-v2/2.产品开发方法论_原文.docx` —— 云飞扬 2023 课程第 2 节（1:35:00），通义听悟清洗版（元框架/财务模型三角/垄断分型/测款方法论）
-- `raw/qwei-amazon-course-2023-v2/如何分析市场容量_原文.docx` —— 云飞扬 2023 课程第 15 节（60+ 分钟），市场容量分析实操
-- `raw/qwei-amazon-course-2023-v2/4.专利筛查：选品全流程实操（从55分开始)_原文.docx` —— 第 4 节 Part B（55:06–end），云飞扬选品全流程实操（小宠笼案例）
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：2.产品开发方法论 2026年5月25日.md` —— 云飞扬 2023 课程第 2 节（1:35:00）（元框架/财务模型三角/垄断分型/测款方法论）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：如何分析市场容量 2026年5月25日.md` —— 云飞扬 2023 课程第 15 节（60+ 分钟），市场容量分析实操（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
+- `raw/assets/courses/qwei-amazon-course-2023/4.专利筛查：选品全流程实操（从55分开始)_原文.docx` —— 第 4 节 Part B（55:06–end），云飞扬选品全流程实操（小宠笼案例）（v1 飞书妙记无此节转录，保留 v2 通义 docx 作唯一源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，云飞扬层为第 2 源，与国民哥哥手册互补。蒸馏模型 Claude Opus 4.7，2026-05-28

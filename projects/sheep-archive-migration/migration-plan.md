@@ -12,7 +12,7 @@ status: raw-captured
 
 User-approved scope for this pass:
 
-- Allowed: create raw source files under `wiki/raw/sheep-archive-public/`.
+- Allowed: create raw source files under `wiki/raw/assets/archives/sheep-archive-public/`.
 - Allowed: create migration planning files under `projects/sheep-archive-migration/`.
 - Not allowed in this pass: modify `wiki/pages/`, `people-moc.md`, `index.md`, `wiki/log.md`, or any existing ZHPMind page.
 
@@ -24,9 +24,9 @@ User-approved scope for this pass:
 
 ## Raw Files Created
 
-- `wiki/raw/sheep-archive-public/README.md`
-- `wiki/raw/sheep-archive-public/sheep-archive-public-index.md`
-- `wiki/raw/sheep-archive-public/sheep-archive-public-index.json`
+- `wiki/raw/assets/archives/sheep-archive-public/README.md`
+- `wiki/raw/assets/archives/sheep-archive-public/sheep-archive-public-index.md`
+- `wiki/raw/assets/archives/sheep-archive-public/sheep-archive-public-index.json`
 
 ## Captured Content
 
@@ -87,7 +87,7 @@ Do not apply this template in the current raw-only pass. Use it only after expli
 title: "Person Name"
 type: person
 tags: []
-sources: ["sheep-archive-public/sheep-archive-public-index.md"]
+sources: ["assets/archives/sheep-archive-public/sheep-archive-public-index.md"]
 source_count: 1
 ---
 
@@ -106,4 +106,4 @@ source_count: 1
 
 ## Next Safe Step
 
-If approved later, capture public subpages for Batch 1 into `wiki/raw/sheep-archive-public/subpages/` first. Only after those raw subpages exist should any selected people be distilled into `wiki/pages/`.
+If approved later, capture public subpages for Batch 1 into `wiki/raw/assets/archives/sheep-archive-public/subpages/` first. Only after those raw subpages exist should any selected people be distilled into `wiki/pages/`.

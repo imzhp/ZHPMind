@@ -4,7 +4,7 @@ type: concept
 tags: [amazon, traffic, internal-traffic, external-traffic, related-traffic, purchase-path, related-traffic-tactics, sd-advertising]
 created: 2026-04-12
 updated: 2026-05-28
-sources: ["亚马逊高阶运营培训手册.pdf", "qwei-amazon-course-2023-v2/9.广告的搜索流量和关联流量"]
+sources: ["亚马逊高阶运营培训手册.pdf", "assets/courses/qwei-amazon-course-2023/文字记录：9.广告的搜索流量和关联流量 2026年5月25日.md"]
 source_count: 2
 ---
 
@@ -228,5 +228,5 @@ $$\text{产品总流量} = \text{广告流量} + \text{搜索流量} + \text{排
 ## Sources
 
 - `raw/亚马逊高阶运营培训手册.pdf` — 第一章 §2.4（站内十大流量入口、站外七大流量入口，第 4–9 页）；第四章（超链接玩法，第 110–119 页）
-- `raw/qwei-amazon-course-2023-v2/9.广告的搜索流量和关联流量_原文.docx` —— 云飞扬第 9 节（1:48:00 + 答疑，购买路径 / SD 广告 / 关联流量打法），通义听悟清洗版
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：9.广告的搜索流量和关联流量 2026年5月25日.md` —— 云飞扬第 9 节（1:48:00 + 答疑，购买路径 / SD 广告 / 关联流量打法）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，云飞扬层为第 2 源；9.3 搜索流量 30% 口径冲突已在本页 footnote 标注（2026-05-27）。蒸馏模型 Claude Opus 4.7，2026-05-28

@@ -4,7 +4,7 @@ type: concept
 tags: [amazon, advertising, ppc, bidding, keywords, acos, break-even-acos, tacos, ad-optimization, financial-model]
 created: 2026-04-12
 updated: 2026-05-28
-sources: ["亚马逊高阶运营培训手册.pdf", "qwei-amazon-course-2023-v2/8.广告投放全链路拆解", "qwei-amazon-course-2023-v2/10.数据维度理解广告优化和案例实践", "qwei-amazon-course-2023-v2/6.自然排名和广告排名的逻辑"]
+sources: ["亚马逊高阶运营培训手册.pdf", "assets/courses/qwei-amazon-course-2023/文字记录：8.广告投放全链路拆解 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/文字记录：10.数据维度理解广告优化和案例实践 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/文字记录：6.自然排名和广告排名的逻辑，自然流量和付费流量的关系；降低广告花费占比的原理 2026年5月25日.md"]
 source_count: 2
 ---
 
@@ -322,7 +322,7 @@ $$\text{广告排名得分} = \text{广告出价 (Bid)} \times \text{广告质�
 ## Sources
 
 - `raw/亚马逊高阶运营培训手册.pdf` — 第五章（玩转亚马逊广告·上）、第六章（玩转亚马逊广告·中）、第七章（玩转亚马逊广告·下），第 163–244 页
-- `raw/qwei-amazon-course-2023-v2/8.广告投放全链路拆解_原文.docx` —— 云飞扬第 8 节（1:24:00，目标→架构→预算→优化全链路），通义听悟清洗版
-- `raw/qwei-amazon-course-2023-v2/10.数据维度理解广告优化和案例实践_原文.docx` —— 云飞扬第 10 节（1:24:52，整体盈亏 ACoS / 四层级诊断 / 低毛利困境）
-- `raw/qwei-amazon-course-2023-v2/6.自然排名和广告排名的逻辑，自然流量和付费流量的关系；降低广告花费占比的原理_原文.docx` —— 云飞扬第 6 节（自然排名/广告排名机制底层 + 广告 3 种基本目的 + 降 TACoS 两路径；§6.1-6.4 已于 2026-05-28 经 textutil 从 docx 提取源材料补全。§6 后半段欧洲 FBA 泛欧/中欧/EFN 属库存物流不属广告，未收入）
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：8.广告投放全链路拆解 2026年5月25日.md` —— 云飞扬第 8 节（1:24:00，目标→架构→预算→优化全链路）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：10.数据维度理解广告优化和案例实践 2026年5月25日.md` —— 云飞扬第 10 节（1:24:52，整体盈亏 ACoS / 四层级诊断 / 低毛利困境）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：6.自然排名和广告排名的逻辑，自然流量和付费流量的关系；降低广告花费占比的原理 2026年5月25日.md` —— 云飞扬第 6 节（自然排名/广告排名机制底层 + 广告 3 种基本目的 + 降 TACoS 两路径；§6.1-6.4 已于 2026-05-28 经 textutil 从 docx 提取源材料补全。§6 后半段欧洲 FBA 泛欧/中欧/EFN 属库存物流不属广告，未收入）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，云飞扬层为第 2 源（财务决策层 + 优化诊断 SOP）。蒸馏模型 Claude Opus 4.7，2026-05-28

@@ -4,7 +4,7 @@ type: method
 tags: [amazon, opportunity-explorer, market-research, cost-estimation, product-development, sift]
 created: 2026-05-28
 updated: 2026-05-28
-sources: ["qwei-amazon-course-2023-v2/3.商机探测器推广成本预估产品开发表"]
+sources: ["assets/courses/qwei-amazon-course-2023/文字记录：3.商机探测器；推广成本预估和产品开发表 2026年5月25日.md"]
 source_count: 1
 ---
 
@@ -95,5 +95,5 @@ source_count: 1
 
 ## Sources
 
-- `raw/qwei-amazon-course-2023-v2/3.商机探测器...产品开发表_原文.docx` —— 云飞扬第 3 节（1:55:00，商机探测器结构 + 推广成本预估 + 产品开发表实操 + 答疑），通义听悟清洗版
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：3.商机探测器；推广成本预估和产品开发表 2026年5月25日.md` —— 云飞扬第 3 节（1:55:00，商机探测器结构 + 推广成本预估 + 产品开发表实操 + 答疑）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 98% 云飞扬独讲；手册商机探测器/推广成本预估/产品开发表三块几乎空白。蒸馏模型 Claude Opus 4.7，2026-05-28

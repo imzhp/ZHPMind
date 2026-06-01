@@ -4,7 +4,7 @@ type: method
 tags: [amazon, inventory-management, replenishment, demand-forecasting, inventory-turnover, supply-chain]
 created: 2026-05-28
 updated: 2026-05-28
-sources: ["qwei-amazon-course-2023-v2/14.库存管理，需求预测和备货节奏"]
+sources: ["assets/courses/qwei-amazon-course-2023/文字记录：14.库存管理，需求预测和备货节奏 2026年5月25日.md"]
 source_count: 1
 ---
 
@@ -123,5 +123,5 @@ source_count: 1
 
 ## Sources
 
-- `raw/qwei-amazon-course-2023-v2/14.库存管理，需求预测和备货节奏_原文.docx` —— 云飞扬 2023 课程第 14 节（1:44:10），通义听悟清洗版
+- `raw/assets/courses/qwei-amazon-course-2023/文字记录：14.库存管理，需求预测和备货节奏 2026年5月25日.md` —— 云飞扬 2023 课程第 14 节（1:44:10）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
 - 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 63 条目几乎全部为云飞扬独有（国民哥哥手册库存/备货页空白）；含 1 处现场表格 `=TODAY()` 公式失效的诚实断层。蒸馏模型 Claude Opus 4.7，2026-05-28
