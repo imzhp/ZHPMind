@@ -2,16 +2,14 @@
 title: "Wiki Index"
 tags: [meta, index]
 created: 2026-04-12
-updated: 2026-05-30
-updated: 2026-05-28
+updated: 2026-06-01
 sources: []
 source_count: 0
 ---
 
 # Wiki Index
 
-_最后更新：2026-05-31 — 共 52 页_
-_最后更新：2026-05-28 — 共 46 页_
+_最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群入库；页数待重新统计_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -89,6 +87,9 @@ _最后更新：2026-05-28 — 共 46 页_
 
 - [[何以为父-影响彼此一生的父子关系]] — Michael J. Diamond《何以为父》：父子相互影响、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
 - [[书籍索引-何以为父系列]] — 《何以为父》系列资源索引：主书页 + 核心概念（父亲饥渴/养育同盟/情绪教练角色）导航
+
+- [[The Yes Brain - Open Brain Parenting]] — Daniel Siegel & Tina Bryson《The Yes Brain》（如何让孩子自觉又主动）：开放脑 vs 防御脑、四能力（平衡/复原/洞察/共情）的神经科学育儿框架（阅读进行中） (1 个来源)
+- [[Open Brain - Navigation Hub]] — Yes Brain / 开放式大脑集群导航中枢：四能力深潜 + 章节 + 速查 + 应用场景入口
 
 ## Reflections
 
