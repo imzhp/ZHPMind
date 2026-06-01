@@ -185,6 +185,15 @@ Format: `## [YYYY-MM-DD] operation | Description`
 
 ---
 
+## [2026-05-31] distill | 第一性原理 — 哲科思维与破界创新系统化讲述
+
+- **Sources touched**: `raw/第一性原理.epub`（李善友著，人民邮电出版社，2021 年 1 月）
+- **Pages created**: [[first-principles]]（type: book，全书 8 章 150 千字蒸馏完整）
+- **Pages updated**: [[critical-thinking-framework]]（新增"相关阅读"分区链接，source_count 0→0 不变）、[[index]]（新增 1 条目，总页数 51→52）
+- **Note**: [self-reviewed] 书籍采用"英雄之旅"框架，从思维方法论（归纳vs演绎vs公理化思维）→ 破界创新应用 → 认知困困境反思的完整体系。核心观点映射：**第一性原理 = 系统之外、之前的元前提**，是创新/决策/组织变革的根基；**连续性假设的隐含性**揭示了"求存不求真"的人类困局（阿喀琉斯之踵）；**破界创新三部曲** = 质疑假设 → 推翻建立新假设 → 从新假设推导新体系；**组织刷新微软案例** = 使命刷新 + 文化刷新 + 战略刷新的完整闭环；**爱因斯坦相对论案例** = 伟大创新来自对既有假设的彻底质疑而非细节改进；**从众效应与信息茧房** = 个人理性 ≠ 集体理性；**批判性思维** = 永恒谦卑与激进质疑的平衡。Propagation：critical-thinking-framework 补充链接（第八章与现有框架高度呼应）。**候选新增 person 页面**：[[爱因斯坦]]（第六章相对论详细案例）、[[乔布斯]]（第三章破界创新商业案例）、[[埃隆·马斯克]]（第三、五章创新典范）、[[查理·芒格]]（第五章多元思维模型）——暂不建独立页面，内容已在 first-principles 页充分讨论，等后续有针对这些人物的专门来源时再创建。原始素材已从 inbox/ 移入 wiki/raw/。蒸馏模型 Claude Opus 4.7 + 子 agent 协助。
+
+---
+
 ## [2026-05-29] distill | 《Affiliate Marketing 完全指南》精校版
 
 - **Sources touched**: `raw/assets/books/《Affiliate Marketing 完全指南》精校版.pdf`（317 页，Affren.com 出品）

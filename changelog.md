@@ -36,3 +36,7 @@
 - 更新 ~/.hermes/scripts/review-digest-scan.py（新增 scan_raw_unreferenced，挂入 metrics）
 - 丢弃 wiki/raw/Obsidian + Claude Code…第二大脑（全教程）.md（外部入门剪藏，已被超越；由 Haopeng 执行 git rm）
 - raw 审计完整记录见 .tmp-claude-reports/draft-raw-audit-2026-05-30.md
+
+## [2026-06-01] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-06-01.md

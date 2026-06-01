@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-05-30 — 共 51 页_
+_最后更新：2026-05-31 — 共 52 页_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -79,6 +79,7 @@ _最后更新：2026-05-30 — 共 51 页_
 - [[amazon-advanced-operations-handbook]] — 亚马逊跨境运营 9 章 312 页培训教材，覆盖算法至选品全链路 (1 个来源)
 - [[andrej-karpathy-vibe-coding-to-agentic-engineering]] — AI Ascent 2025 对谈，涵盖 Software 3.0、Agentic Engineering 等核心议题 (1 个来源)
 - [[boris-cherny-coding-is-solved]] — AI Ascent 2026 对谈，Boris 论述编程现状、loops 工作流、团队未来和 SaaS 格局 (1 个来源)
+- [[first-principles]] — 李善友著，系统阐述第一性原理、公理化思维、破界创新在企业创新中的应用（2021） (1 个来源)
 - [[garry-tan-meta-meta-prompting]] — Garry Tan 阐述技能化方法论、书镜工作流、10 万页 GBrain 和 AI 复利系统 (1 个来源)
 - [[naval-ravikant-almanack]] — Naval Ravikant 的财富与幸福哲学：专业知识×杠杆×问责制，幸福是消除缺乏感后的默认状态 (1 个来源)
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)

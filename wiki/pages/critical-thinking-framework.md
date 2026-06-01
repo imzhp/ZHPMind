@@ -238,3 +238,7 @@ tags: [framework, critical-thinking, methodology, thinking-model]
 - [[论证谬误|Logical Fallacies]] - 无效的推理
 - [[证据质量|Evidence Quality]] - 如何评估证据
 - [[二分思维|Binary Thinking]] vs [[灰度思维|Gray Thinking]]
+
+## 相关阅读
+
+- [[first-principles]]（李善友著）— 第八章《批判性思维》深入探讨批判性思维在创新实践中的应用；第七章《从众效应》讨论集体理性陷阱

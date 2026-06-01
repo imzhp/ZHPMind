@@ -36,3 +36,10 @@
 
 # iCloud Optimize Storage 占位符
 *.icloud
+
+# claude-drafts: 跨机交接草稿,仅跟踪 README
+claude-drafts/*
+!claude-drafts/README.md
+
+# 电子书源:二进制不进 git
+*.epub
