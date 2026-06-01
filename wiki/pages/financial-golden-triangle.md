@@ -1,11 +1,17 @@
 ---
-title: 经营者的财务金三角 - 蒸馏版
-source: inbox/经营者的财务金三角.epub
-distilled_date: 2026-05-31
+type: book
+title: 经营者的财务金三角
+aliases:
+  - 财务金三角
+author: 闻静
+sources:
+  - assets/books/经营者的财务金三角-闻静.epub
+created: 2026-05-31
+updated: 2026-06-01
 tags:
   - finance
   - business
-  - frameworks
+  - framework
   - operator-mindset
 ---
 
@@ -274,5 +280,10 @@ ROE = 净利润率 × 资产周转率 × 财务杠杆
 
 ---
 
-*提炼于《经营者的财务金三角》*  
-*最后更新：2026-05-31*
+---
+
+## Sources
+
+- `raw/assets/books/经营者的财务金三角-闻静.epub` — 闻静《经营者的财务金三角》，机械工业出版社 2021 新版（421 页）。本页为 2026-05-31 通读后蒸馏。
+
+*提炼于《经营者的财务金三角》（闻静）*
