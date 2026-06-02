@@ -541,12 +541,14 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 
 1. 读取目标 book/article 页面，理解核心观点
 2. 读取 wiki 中与 Haopeng 生活相关的页面（person、reflection、projects 等），建立上下文
-3. 生成映射——对每个核心观点，找到它在 Haopeng 实际经历/决策/处境中的对应
-4. 将映射写入该 book 页面的 `## Mirror` 区，使用 `> [!mirror] YYYY-MM-DD` callout
-5. 如果映射产生了独立的新洞察，可新建 `type: reflection` 页面
-6. 更新相关页面的 `[[wikilinks]]`
-7. 追加 `log.md`：`mirror | Book Mirror: [书名]`
-8. Git commit
+3. 生成 staging 草稿——对每个核心观点，找到它在 Haopeng 实际经历/决策/处境中的对应；草稿先不写入 `wiki/pages/`
+4. 运行 Hermes `cross-eval`：喂「raw 原文 + staging 草稿 + 丢弃候选（若有）」，报告写入 `inbox/cross-eval-*.md`
+5. Haopeng 审报告：红旗必须修；镜射列的"是否真成立"由 Haopeng 定
+6. 通过 gate 后，将映射写入该 book 页面的 `## Mirror` 区，使用 `> [!mirror] YYYY-MM-DD` callout
+7. 如果映射产生了独立的新洞察，可新建 `type: reflection` 页面
+8. 更新相关页面的 `[[wikilinks]]`
+9. 追加 `log.md`：`mirror | Book Mirror: [书名]`
+10. Git commit
 
 ### 8.2 Life Mirror（内 → 外）
 
@@ -752,9 +754,9 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 
 **原则：** AI 写入应通过至少两个模型的交叉评审。
 
-**当前实现（过渡方案）：** Claudian 在写入前进行 self-review——以批评者视角审查自己的产出，检查事实准确性、逻辑一致性、与已有 wiki 内容的兼容性。在日志中标注 `[self-reviewed]`。
+**当前实现：** Claudian 在写入前进行 self-review——以批评者视角审查自己的产出，检查事实准确性、逻辑一致性、与已有 wiki 内容的兼容性。在日志中标注 `[self-reviewed]`。
 
-**目标实现（Hermes 多 profile）：** Hermes Agent 调用第二个家系模型（如 qwen worker profile）对 Claudian 的写入进行独立评审，结果标注在日志中。
+**目标执行体：** Hermes `cross-eval` skill 调用至少两个非 Claude 家系模型，对「raw 原文 + staging 草稿（+ 丢弃候选）」做独立评审，报告写入 `inbox/`，作为定稿 gate。执行体已落在 `~/.hermes/skills/cross-eval.md` + `~/.hermes/scripts/cross-eval-run.py`；正式启用前需保证多模型 API 认证可用。
 
 ### 13.3 可回滚
 
