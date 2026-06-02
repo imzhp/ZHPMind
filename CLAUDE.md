@@ -46,3 +46,24 @@ ZHPMind 的 git 只为「可回滚 + GitHub 备份」服务(design-principles �
 2. **提交前先 fetch/merge。** 每次提交前先 `git fetch origin && git merge origin/main`(或 `git pull --no-rebase`),把远端变更并进来再提交。理由:即便只在 mini 提交,GitHub 端仍可能存在手动改动;先合后提,避免 non-fast-forward 被拒后病急乱投医。
 3. **不拿 `git reset --hard origin/main` 当创可贴。** 工作树乱了 / 提交错了,先用 `git status`、`git diff`、`git stash`、`git restore <file>` 定点处理。`reset --hard` 到远端等于「丢弃本地全部未推送改动」的核武器,只在确认本地确无任何要保留内容时才用。理由:历史上曾用 reset-to-origin 抹平表面问题,连带丢失过未提交的蒸馏产物。
 4. **二进制源(epub / pdf / docx)不入 git。** 电子书 / 课程 / PDF 等二进制源材料一律由 `.gitignore` 排除(`*.epub` / `*.pdf` / `*.docx`,2026-06-01 用 filter-repo 瘦身后立规),仅靠「本地留盘 + Obsidian Sync」保存,不进 git 历史。理由:二进制不可 diff、体积大、撑爆仓库且无版本控制价值——git 只管可读可 diff 的 markdown。日后新增其他二进制格式(如 .mobi / .azw3)时,同步往 `.gitignore` 补对应 glob。
+
+---
+
+## 智能层分工与 handoff 约定
+
+本 vault 由多个 AI 角色协作。读到这里的你,先认清自己是哪个角色、只做本 lane 的事;跨 lane 的活按下方 handoff 约定转交,别硬扛。
+
+| 角色 | 在哪 | 接什么 |
+|---|---|---|
+| **Codex / Claude Code** | mini(原生 shell/git/python/文件) | 默认执行者:脚本开发、git、批量/多文件/大文件改动、结构迁移、文件归位、dogfood、落地已定方案。能想能做——优先一个脑子走全程(设计→执行→自检),不事事外包 |
+| **Claudian** | Obsidian 内 | vault 内知识深加工:distill / mirror / propagation / reflect |
+| **chat 里的 Claude** | claude.ai(有 web + 跨会话 memory;MCP 执行不稳) | 按需顾问,由 Haopeng 主动 pull,限三件:① web 研究;② 独立评审(要"没写过这段"的第二脑子时);③ 开放式策略/设计。不接 vault 批量/重活 |
+| **Hermes** | mini(gateway + cron) | vault 外信号采集 + 定时自动化(review-digest / vault-tidy / signal)。只写 inbox |
+
+**handoff(跨角色转交,走文件不走人肉复制):**
+
+- 任务书 → `.tmp-claude-reports/handoff-{task}.md`(出题方写:目标 / 约束 / 验收标准 / 已知坑)。
+- 结果或复核请求 → `.tmp-claude-reports/result-{task}.md`(执行方写)。
+- 转交只说一句("按 handoff-{task} 做" / "读 result-{task} 复核"),内容靠文件传递,Haopeng 不当人肉总线。两类文件按现行 `.gitignore` 策略入 git(随 Sync 跨机)。
+
+**默认偏置:能在 Codex 一处闭环的,就别切到 chat;切 chat 是 Haopeng 主动 pull,且限上面三件。**
