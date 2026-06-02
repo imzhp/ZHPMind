@@ -209,3 +209,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: none
 - **Pages updated**: [[index]]（移除 html-artifacts-presentation-layer 死链条目 + 更新最后更新 note，页数仍 70）
 - **Note**: 孤儿迁移后「其余善后」收尾，机器 Mac mini。(1) **CLAUDE.md 治根**——root CLAUDE.md 新增「Git 操作纪律」节四条：只在 mini 提交、提交前 fetch/merge、不拿 reset-to-origin 当创可贴、二进制（epub/pdf/docx）不入库（理由固化，策略本身 2026-06-01 filter-repo 后已在 .gitignore 落地）。(2) **skill-concept-fable 去重**——wiki/ 根的 v0.1 draft 副本（created 2026-05-25）git rm 删除，正本保留 wiki/pages/（active v1.0，含三轮 dogfood Pitfalls）；内联 prompt 已在 .claude/skills/concept-fable/references/prompt-template.md 留存，无内容损失。(3) **html-artifacts-presentation-layer 死链**——git 历史核查（git log --all -- '*html-artifacts*' 空 + 6a53c59 --stat 仅删 superseded 教程）确认该页从未真正 git add 入库，工作树副本疑在 iCloud→Sync 迁移中遗失，不可恢复；移除 index 死链条目，标记为重蒸馏候选（需原始素材重走 distill）。(4) **reorg 提交范围核查**——5c57e46 等 pre-merge sweep --stat 仅含 .gitignore/changelog/log/critical-thinking-framework/index 5 文件，无 CLAUDE.md、raw 等无关文件混入；带 130MB PDF 的 git add -A 当时已 reset 未入历史，迁移以 scoped 小提交完成，无需拆分。(5) **同步冲突副本**——e6237ee 历史已删，全 vault `* 1.md` 零残留。(6) **log.md 时序错位**（05-28 收尾补全块在 05-29 后）经评估违反本文件 append-only 不变量，不重排——物理顺序=写入顺序，日期 header 已承载真相。
+
+---
+
+## [2026-06-02] distill | 《死亡否认》（Ernest Becker，1973/普利策奖）
+
+- **Sources touched**: `raw/死亡否认.epub`（繁体中文译本，林和生译，大家出版 2023）
+- **Pages created**: [[the-denial-of-death]]（type: book）、[[ernest-becker]]（type: person）、[[immortality-project]]（type: concept）、[[causa-sui]]（type: concept）
+- **Pages updated**: [[people-moc]]（新增 Ernest Becker 条目，更新思想关联图）、[[father-hunger]]（新增 causa-sui 的精神分析联结）、[[index]]（新增 4 条目，70→74 篇）
+- **Note**: [self-reviewed] Becker 的核心框架：死亡恐惧是人类行为的终极底层驱动，人格是"生命的必要谎言"（压抑死亡焦虑的防卫盔甲），所有文化活动本质上都是各类不朽筹划（immortality project）。全书融合齐克果存在焦虑、兰克历史性精神官能症、布朗对精神分析的修正、以及对弗洛伊德系统性重读。关键判断：弗洛伊德将原初压抑归结为"性"是错的，真正的原初压抑是对死亡的压抑；伊底帕斯式筹划的本质是"自因筹划"（causa sui project），不是对母亲的性占有。英雄主义既是文明的动力，也是战争和种族灭绝的深层来源。Propagation：father-hunger 页补充 causa-sui 精神分析联结（父亲饥渴 = 自因冲动悬空）；people-moc 新增存在主义心理学脉络。候选待建 person 页：齐克果（Kierkegaard）、奥托·兰克（Otto Rank）——两人在书中均有专章深度讨论，等后续有独立来源时创建。原始素材已从 inbox/ 移入 wiki/raw/。子 agent 协助提取全书文本（277K 字），主 agent 完成蒸馏写入。

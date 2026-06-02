@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-02 — 旧结构孤儿迁移收官：学会提问 / 何以为父 / Yes Brain 三簇平铺规范化，新建 critical-thinking-moc + parenting-moc；清理 html-artifacts-presentation-layer 死链（从未入库、迁移中遗失，标记为重蒸馏候选）；wiki/pages 现 70 篇_
+_最后更新：2026-06-02 — 蒸馏 Ernest Becker《死亡否认》（1973/普利策），新建 the-denial-of-death、ernest-becker、immortality-project、causa-sui 共 4 页；propagation 更新 people-moc、father-hunger；wiki/pages 现 74 篇_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -42,12 +42,14 @@ _最后更新：2026-06-02 — 旧结构孤儿迁移收官：学会提问 / 何�
 - [[amazon-profit-analysis]] — 亚马逊利润管理全栈财务 SOP：真金白银只有采购+头程、退款≠退货、三种退货精算 (1 个来源)
 - [[amazon-review-management]] — 评论权重体系、差评处理、售后转化与私域流量建立 (1 个来源)
 - [[amazon-traffic-sources]] — 亚马逊站内十大流量入口与站外七大流量入口全解析 + 云飞扬购买路径与关联流量打法 (2 个来源)
+- [[causa-sui]] — 自因：人类渴望成为自己命运创造者的冲动，贝克尔重读伊底帕斯式筹划的核心概念 (1 个来源)
 - [[claude-code]] — Anthropic 的 AI 编程 CLI 工具，由 Boris Cherny 创建，支持 loops 和并行 agent (2 个来源)
 - [[critical-thinking-framework]] — 批判性思维框架：海绵式 vs 淘金式思维、强势 vs 弱势、评估论证的问题序列（源自《学会提问》） (1 个来源)
 - [[critical-thinking-writing-speaking]] — 批判性思维用于写作与表达：清晰陈述论题/结论/理由、精确语言、明示假设、避免谬误、预应反对 (1 个来源)
 - [[obstacles-to-critical-thinking]] — 批判性思维的六大障碍：快思考、刻板印象、确认偏误、自我中心、一厢情愿、基本归因错误及破解 (1 个来源)
 - [[ten-critical-questions]] — 《学会提问》核心：评估任何论证的 10 个关键问题（论题/理由/歧义/假设/谬误/证据/替代因/数据/省略/结论） (1 个来源)
 - [[fat-skills-thin-harness]] — AI Agent 系统架构原则：智能驻留在技能和数据中，Harness 只做路由 (1 个来源)
+- [[immortality-project]] — 不朽筹划：个体投身于永恒价值事业以超越死亡的英雄主义核心机制，贝克尔框架 (1 个来源)
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
 - [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 + 云飞扬文案反直觉取舍 (2 个来源)
 - [[personal-knowledge-base]] — AI 持续写入的运行中知识神经系统，通过实体传播实现复利积累 (1 个来源)
@@ -83,6 +85,7 @@ _最后更新：2026-06-02 — 旧结构孤儿迁移收官：学会提问 / 何�
 
 - [[andrej-karpathy]] — OpenAI 联合创始人、Tesla AI 前负责人，提出 Vibe Coding 和 Software 3.0 (1 个来源)
 - [[boris-cherny]] — Anthropic 工程师，Claude Code 创造者，主张编程已被 AI 解决 (1 个来源)
+- [[ernest-becker]] — 美国存在主义心理学家，《死亡否认》作者，死亡恐惧即英雄主义的奠基者 (1 个来源)
 - [[garry-tan]] — Y Combinator CEO，开源个人 AI 操作系统（GBrain/GStack/OpenClaw）的建造者 (1 个来源)
 - [[naval-ravikant]] — AngelList 联合创始人，财富×幸福哲学家，理性的佛教实践者 (1 个来源)
 - [[zhanghaopeng]] — 曜野跨境供应链创始人、ZHPMind 系统搭建者，vault 的身份锚点 (3 个来源)
@@ -97,6 +100,7 @@ _最后更新：2026-06-02 — 旧结构孤儿迁移收官：学会提问 / 何�
 - [[first-principles]] — 李善友著，系统阐述第一性原理、公理化思维、破界创新在企业创新中的应用（2021） (1 个来源)
 - [[garry-tan-meta-meta-prompting]] — Garry Tan 阐述技能化方法论、书镜工作流、10 万页 GBrain 和 AI 复利系统 (1 个来源)
 - [[naval-ravikant-almanack]] — Naval Ravikant 的财富与幸福哲学：专业知识×杠杆×问责制，幸福是消除缺乏感后的默认状态 (1 个来源)
+- [[the-denial-of-death]] — Ernest Becker《死亡否认》（1973/普利策奖）：死亡恐惧是人类行为的终极驱动力，一切文化都是英雄主义的不朽筹划 (1 个来源)
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)
 - [[asking-the-right-questions]] — Neil Browne & Stuart Keeley《学会提问》：为什么需要批判性思维、海绵式 vs 淘金式、提问序列（批判性思维主题书源） (1 个来源)
 
