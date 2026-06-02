@@ -1,5 +1,5 @@
 ---
-title: "准父亲的情绪教练角色 (Expectant Father as Emotional Coach)"
+title: 准父亲的情绪教练角色 (Expectant Father as Emotional Coach)
 aliases:
   - Expectant Father as Emotional Coach
   - 准父亲的情绪教练角色

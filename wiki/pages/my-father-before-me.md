@@ -13,7 +13,7 @@ tags:
 created: 2026-05-31
 updated: 2026-06-02
 sources:
-  - 何以为父-迈克尔·戴蒙德.epub
+  - assets/books/何以为父-迈克尔·戴蒙德.epub
 source_count: 1
 discussions: []
 ---
