@@ -261,3 +261,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[raising-boys]], [[boys-development-phases]], [[steve-biddulph]]
 - **Pages updated**: [[parenting-moc]]（新增《养育男孩》分区），[[index]]（新增 3 条目，总页数 77→80）
 - **Note**: 全书约 10 万字符，14 个文件（前言 2 + 正文 10 章 + 附录 + 致谢），由子 agent 用 zipfile + html.parser 提取后主 agent 写入。核心新概念：三阶段成长框架（boys-development-phases）独立成页，判断依据——这是全书组织框架，跨越育儿其他书目复用可能性高。作者页（steve-biddulph）新建，与[[my-father-before-me]]（精神分析视角）、[[the-yes-brain]]（神经生物学）形成对比：比达尔夫是社会生态学视角，关注家庭结构与社区支持网络。Propagation 自检：parenting-moc 已更新；[[father-hunger]]和[[parenting-alliance]]页面与本书有关联但内容不冲突，无需更新。epub 已移入 wiki/raw/，inbox 清空。[self-reviewed]
+
+---
+
+## [2026-06-02] distill | 多 Agent 的本质不是分工，而是注意力治理.md
+
+- **Sources touched**: `raw/多 Agent 的本质不是分工，而是注意力治理.md`
+- **Pages created**: [[multi-agent-attention-governance]], [[attention-governance]]
+- **Pages updated**: [[agentic-engineering]]（新增"Agent 边界设计：注意力治理框架"段，updated 刷新），[[ai-engineering-moc]]（Agent 架构区补 attention-governance 条目，来源文章区补 multi-agent-attention-governance 条目），[[index]]（Frameworks 新增 attention-governance，Articles & Books 新增 multi-agent-attention-governance，总页数 83→85）
+- **Note**: [self-reviewed] 原文为中文长文，七节论述，约 300 行。核心论断：多 Agent 系统的本质不是分工（角色化），而是注意力治理——通过六种边界（上下文/工具/状态/环境/反馈/记忆）的显式设计决定系统真实能力。提取框架页 [[attention-governance]]（type: framework）独立成页，判断依据：六边界模型是可复用的设计工具，未来任何 Agent 架构讨论都会引用；文章页 [[multi-agent-attention-governance]]（type: article）承载原文完整论证链。Propagation：[[agentic-engineering]] 中"人类定义系统边界"职责与注意力治理框架高度对应，补充链接；[[fat-skills-thin-harness]] 无需改动（已在 attention-governance 页中引用）；[[ai-engineering-moc]] Agent 架构区新增条目。source 文件已在 wiki/raw/，无需移动。

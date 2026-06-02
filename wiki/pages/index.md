@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-02 — 完整蒸馏 Diamond《何以为父》全书（10章），重写 my-father-before-me；修复 father-hunger、parenting-alliance、expectant-father-emotional-coach frontmatter；propagation 更新 parenting-moc、zhanghaopeng；wiki/pages 现 83 篇_
+_最后更新：2026-06-02 — distill 多 Agent 注意力治理文章，新建 multi-agent-attention-governance（article）+ attention-governance（framework），propagation 更新 agentic-engineering、ai-engineering-moc；wiki/pages 现 85 篇_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -72,6 +72,7 @@ _最后更新：2026-06-02 — 完整蒸馏 Diamond《何以为父》全书（10
 
 ## Frameworks
 
+- [[attention-governance]] — 多 Agent 系统设计框架：注意力治理 vs 角色分工，六种边界（上下文/工具/状态/环境/反馈/记忆）决定 Agent 真实能力 (1 个来源)
 - [[boys-development-phases]] — 男孩成长三阶段：0-6岁（母亲）/ 6-13岁（父亲关键期）/ 14岁+（引导者），比达尔夫核心框架 (1 个来源)
 - [[prospect-theory]] — 前景理论：S形价值函数+决策权重，损失规避是行为经济学核心框架（卡尼曼和特韦尔斯基，1979） (1 个来源)
 - [[wildlume-business-architecture]] — 曜野业务架构与价值链全景：参与者图谱、战略骨架、价值主张、信息流盘点 (0 个来源)
@@ -106,6 +107,7 @@ _最后更新：2026-06-02 — 完整蒸馏 Diamond《何以为父》全书（10
 - [[first-principles]] — 李善友著，系统阐述第一性原理、公理化思维、破界创新在企业创新中的应用（2021） (1 个来源)
 - [[garry-tan-meta-meta-prompting]] — Garry Tan 阐述技能化方法论、书镜工作流、10 万页 GBrain 和 AI 复利系统 (1 个来源)
 - [[judgment-and-decision-making]] — 斯科特·普劳斯《决策与判断》：从知觉偏差到群体决策的完整认知偏误实验图谱 (1 个来源)
+- [[multi-agent-attention-governance]] — 多 Agent 系统设计误区拆解：角色化陷阱、六种边界框架、操作系统隐喻 (1 个来源)
 - [[naval-ravikant-almanack]] — Naval Ravikant 的财富与幸福哲学：专业知识×杠杆×问责制，幸福是消除缺乏感后的默认状态 (1 个来源)
 - [[the-denial-of-death]] — Ernest Becker《死亡否认》（1973/普利策奖）：死亡恐惧是人类行为的终极驱动力，一切文化都是英雄主义的不朽筹划 (1 个来源)
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)

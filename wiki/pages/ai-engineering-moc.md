@@ -2,7 +2,7 @@
 title: "AI Engineering MOC"
 tags: [moc, ai, llm, agents, software-engineering]
 created: 2026-05-11
-updated: 2026-05-11
+updated: 2026-06-02
 ---
 
 # AI Engineering MOC
@@ -41,6 +41,8 @@ updated: 2026-05-11
 
 **[[skillification]]** — 技能化方法论：将值得重复的工作流提取为自包含技能文件，技能可组合、修复自动全局生效。Skillify 是元技能（关于如何提取技能的技能），是个人 AI 复利飞轮的操作工具。
 
+**[[attention-governance]]** — 注意力治理框架：多 Agent 系统的本质不是分工（角色），而是六种边界的显式设计（上下文/工具/状态/环境/反馈/记忆）。Agent 是注意力状态，不是身份标识。
+
 ---
 
 ## 知识管理
@@ -60,3 +62,4 @@ updated: 2026-05-11
 - [[andrej-karpathy-vibe-coding-to-agentic-engineering]] — Karpathy 在 AI Ascent 2025 的完整对谈蒸馏，覆盖 Software 3.0、Vibe Coding、Agentic Engineering、可验证性等核心框架
 - [[boris-cherny-coding-is-solved]] — Boris 在 AI Ascent 2026 的对谈蒸馏，覆盖编程已被解决、loops 工作流、跨学科通才、SaaS 护城河重塑
 - [[garry-tan-meta-meta-prompting]] — Garry Tan 文章的完整蒸馏，覆盖技能化、书镜工作流、Fat Skills / Thin Harness、GBrain 复利系统
+- [[multi-agent-attention-governance]] — 多 Agent 系统设计误区拆解：角色化 vs 注意力治理，六种边界定义，操作系统隐喻

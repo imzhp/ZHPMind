@@ -3,7 +3,7 @@ title: "Agentic Engineering（代理工程）"
 type: concept
 tags: [ai, software-engineering, agents, llm, productivity]
 created: 2026-05-08
-updated: 2026-05-19
+updated: 2026-06-02
 sources: ["Andrej Karpathy From Vibe Coding to Agentic Engineering.md", "Boris Cherny Why Coding Is Solved, and What Comes Next.md", "Meta-Meta-Prompting The Secret to Making AI Agents Work.md", "assets/references/The-Founders-Playbook-05062026_v3.pdf"]
 source_count: 4
 discussions: []
@@ -126,6 +126,16 @@ Garry 的核心论断与 Karpathy 的 Agentic Engineering 高度呼应：
 - AI 生成的变更与之前的设计决策不一致
 - 同一个问题在不同会话中被以不同方式解决
 - 很难向新加入的人（或 AI）解释代码库为什么是现在这个样子
+
+## Agent 边界设计：注意力治理框架
+
+[[attention-governance]]（注意力治理）从另一角度回答了 Agentic Engineering 中"人类定义系统边界"的操作问题：多 Agent 系统的本质不是分工（角色分配），而是对注意力状态的治理。
+
+核心主张：Agent 的能力不取决于它叫什么，而取决于它的六种边界——上下文边界（能看什么）、工具边界（能调用什么）、状态边界（能修改什么）、环境边界（在哪里执行）、反馈边界（如何知道自己错了）和记忆边界（什么进入下一轮）。
+
+这与 Karpathy 的"规格说明与顶层设计"原则直接对应：Agent 会犯系统级设计错误，人类必须定义正确的边界，而非只给 Agent 命名。一个叫"Review Agent"的 Agent 如果只能看到成稿、没有阻止发布的权力，制造的是安全感，不是安全性。
+
+**判据**：只有边界真正不同时才值得拆 Agent——上下文相同、工具相同、状态相同，只是说话风格不同，那不是多 Agent，那只是多 Prompt。
 
 ## Sources
 
