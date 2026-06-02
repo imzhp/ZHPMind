@@ -21,6 +21,7 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 - [[amazon-moc]] — 亚马逊跨境电商运营体系导航：算法、Listing、广告、流量、评论、选品
 - [[ai-engineering-moc]] — AI / LLM / Agent 工程体系导航：范式、开发方式、工具链、架构、知识管理
 - [[people-moc]] — 所有人物页导航，含思想关联图
+- [[critical-thinking-moc]] — 批判性思维主题导航：《学会提问》书源 + 框架 + 10 问 + 障碍 + 写作应用
 
 ## Concepts & Methods
 
@@ -89,6 +90,7 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 - [[garry-tan-meta-meta-prompting]] — Garry Tan 阐述技能化方法论、书镜工作流、10 万页 GBrain 和 AI 复利系统 (1 个来源)
 - [[naval-ravikant-almanack]] — Naval Ravikant 的财富与幸福哲学：专业知识×杠杆×问责制，幸福是消除缺乏感后的默认状态 (1 个来源)
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)
+- [[asking-the-right-questions]] — Neil Browne & Stuart Keeley《学会提问》：为什么需要批判性思维、海绵式 vs 淘金式、提问序列（批判性思维主题书源） (1 个来源)
 
 - [[何以为父-影响彼此一生的父子关系]] — Michael J. Diamond《何以为父》：父子相互影响、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
 - [[书籍索引-何以为父系列]] — 《何以为父》系列资源索引：主书页 + 核心概念（父亲饥渴/养育同盟/情绪教练角色）导航

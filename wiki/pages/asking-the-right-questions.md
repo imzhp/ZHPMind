@@ -1,12 +1,23 @@
 ---
-title: 学会提问 - Asking the Right Questions
-author: Neil Browne, Stuart Keeley (尼尔·布朗, 斯图尔特·基利)
+type: book
+title: 学会提问
+aliases:
+  - Asking the Right Questions
+  - 学会提问
+author: Neil Browne, Stuart Keeley
 translator: 许蔚翰, 吴礼敬
 edition: 12th Edition
-year: 2021
 publisher: 机械工业出版社
-tags: [critical-thinking, questioning, reasoning, decision-making]
-source: "[[wiki/raw/assets/books/学会提问.pdf]]"
+publication_year: 2021
+sources:
+  - assets/books/学会提问.pdf
+created: 2026-05-31
+updated: 2026-06-02
+tags:
+  - critical-thinking
+  - questioning
+  - reasoning
+  - decision-making
 ---
 
 # 学会提问：批判性思维完全指南
@@ -101,9 +112,9 @@ source: "[[wiki/raw/assets/books/学会提问.pdf]]"
 ## 相关链接
 
 - [[critical-thinking-framework|批判性思维框架]]
-- [[asking-right-questions-10-questions|10个批判性问题清单]]
-- [[weak-vs-strong-critical-thinking|弱势 vs 强势批判性思维]]
-- [[sponge-vs-panning-thinking|海绵式 vs 淘金式思维]]
+- [[ten-critical-questions|10个批判性问题清单]]
+- [[critical-thinking-framework|弱势 vs 强势批判性思维]]
+- [[critical-thinking-framework|海绵式 vs 淘金式思维]]
 
 ## 进阶资源
 
