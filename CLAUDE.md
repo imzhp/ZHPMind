@@ -24,6 +24,8 @@
 6. **走完整 distill 工作流**(`wiki/CLAUDE.md` §6):正确 frontmatter、更新 `wiki/pages/index.md` 与 `wiki/log.md`、最后 git commit。
 7. **来源太大读不下时,自动用子 agent / 工具提取并分块读取——这是机器该干的活,不要回头问 Haopeng 手动拆。但子 agent 只负责返回提取的文本 / 分块摘要,最终页面一律由你(受本规范约束的主 agent)写入 `wiki/pages/`。绝不让子 agent 直接写文件、也绝不让它自行决定存放位置。** 即「自动分块读取,受控统一写入」。
 
+8. **书 / 文档源材料统一归 `wiki/raw/assets/books/`,命名 `书名-作者.{epub,pdf,docx}`;页面 `sources:` 写 raw 相对路径 `assets/books/书名-作者.ext`。** 蒸馏时从 inbox 或别处读取的源材料,读完**必须落到 `wiki/raw/assets/books/`**——绝不留在 `wiki/raw/` 顶层或任何其他位置。`wiki/raw/` 顶层只放文章 / 讨论类 raw(`.md`);书 / 课程的二进制源(epub / pdf / docx)一律进 `assets/books/`。作者从你的知识判定、直接写进文件名(如 `死亡否认-厄内斯特·贝克尔.epub`),不必反问 Haopeng。理由:源归位 + `sources:` 路径稳定 = 溯源不断;历史上反复把 epub 丢在 `raw/` 顶层、`sources:` 写裸文件名,造成归档散乱、移动即断链(2026-06-02 一次性归位 6 本后立此规)。
+
 ## 写入前自检(每次写 `wiki/pages/` 前过一遍)
 
 - [ ] 我已经读过 `wiki/CLAUDE.md` 了吗?
@@ -31,6 +33,7 @@
 - [ ] 文件名是否小写连字符英文 slug?tag 是否纯英文?
 - [ ] `type` 是否取自 §3.1 的 10 个合法值?
 - [ ] 若用了子 agent 提取:最终写入是不是由我主 agent 完成、且落在 `wiki/pages/`?
+- [ ] 若涉及书 / 文档源:源是否已归 `wiki/raw/assets/books/`(命名 `书名-作者`)、`sources:` 写的是否为 `assets/books/...` 相对路径?
 - [ ] 是否更新了 `index.md` / `log.md` 并准备 commit?
 
 ---
