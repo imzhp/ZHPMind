@@ -246,6 +246,15 @@ Format: `## [YYYY-MM-DD] operation | Description`
 
 ---
 
+## [2026-06-02] distill | 何以为父-迈克尔·戴蒙德.epub — Michael J. Diamond《何以为父》全书完整蒸馏
+
+- **Sources touched**: `raw/何以为父-迈克尔·戴蒙德.epub`
+- **Pages created**: none（前序蒸馏已建书籍页和概念页）
+- **Pages updated**: [[my-father-before-me]]（完整重写，原为"阅读进行中"仅覆盖前30页，现为全书10章完整蒸馏）；[[father-hunger]]、[[parenting-alliance]]、[[expectant-father-emotional-coach]]（frontmatter 规范化：补 `sources`/`source_count`/`discussions`，移除非标字段 `source`/`related_concepts`/`practical_use`/`difficulty`，补 Sources 区）；[[parenting-moc]]（更新 my-father-before-me 条目描述，补 frontmatter sources 字段，移除"阅读进行中"）；[[zhanghaopeng]]（References 补父子关系阅读参考）；[[index]]（更新 my-father-before-me 摘要及日志行）
+- **Note**: [self-reviewed] EPUB 由 unzip 提取为 16 个 XHTML 文件（~159,000 字符），读各章后主 agent 完成全书蒸馏。全书核心论点：父子关系是**双向的、贯穿一生的发展过程**，不是单向的父→子影响。十个发展阶段（孕期/婴儿期/学步期/童年早期/童年中期/青春期/成年早期/成年中期/老年期/结语）分别对应父亲角色的演化：情绪教练→父亲的诞生→第二他者→俄狄浦斯引路者→导师→承受跌落→场边教练→男人对男人→角色反转→遗产传递。核心警示：强迫性重复（compulsion to repeat）是父代创伤传递机制；觉察→不退场→打破重复是解法。Propagation 自检：parenting-moc 已更新；boys-development-phases 已有 `[[my-father-before-me]]` 交叉引用（前序蒸馏时已建）；causa-sui/father-hunger 交叉链接在位；zhanghaopeng 已补 References。epub 已移入 wiki/raw/，inbox 原文件已清除。
+
+---
+
 ## [2026-06-02] distill | 养育男孩.epub — Steve Biddulph《养育男孩》
 
 - **Sources touched**: `raw/养育男孩.epub`

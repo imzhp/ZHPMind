@@ -1,21 +1,20 @@
 ---
-type: concept
-title: 父亲饥渴 (Father Hunger)
+title: "父亲饥渴 (Father Hunger)"
 aliases:
   - Father Hunger
   - 父亲饥渴
-source: "[[my-father-before-me]]"
-created: 2026-05-31
-updated: 2026-06-02
+type: concept
 tags:
   - psychology
   - father-son-relationship
   - male-psychology
   - psychoanalysis
-related_concepts:
-  - 父亲身份认同
-  - 男性创伤
-  - 代际传递
+created: 2026-05-31
+updated: 2026-06-02
+sources:
+  - 何以为父-迈克尔·戴蒙德.epub
+source_count: 1
+discussions: []
 ---
 
 # 父亲饥渴 (Father Hunger)
@@ -166,12 +165,6 @@ related_concepts:
   - 社会期待父亲是"顶梁柱"，同时又要求他"温柔陪伴"
   - 许多父亲不知道如何在这两个角色之间平衡
 
-## 相关阅读
+## Sources
 
-- [[my-father-before-me]] —— 原书
-- [[男性身份的整合]] —— 如何建立完整的男性认同
-- [[父亲在家庭中的心理功能]] —— 理论基础
-
----
-
-**关键认知：** 父亲饥渴不是个别男性的问题，而是深层的心理现象，影响着家庭关系的一代代传递。认识和治疗这种饥渴，是建立健康父子关系的第一步。
+- `何以为父-迈克尔·戴蒙德.epub` — [[my-father-before-me]] 原书；译者孙平序言与正文均有阐述此概念

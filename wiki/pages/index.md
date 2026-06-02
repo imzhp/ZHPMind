@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-02 — 蒸馏普劳斯《决策与判断》，新建 judgment-and-decision-making、prospect-theory、cognitive-dissonance 共 3 页；propagation 更新 critical-thinking-moc；wiki/pages 现 83 篇_
+_最后更新：2026-06-02 — 完整蒸馏 Diamond《何以为父》全书（10章），重写 my-father-before-me；修复 father-hunger、parenting-alliance、expectant-father-emotional-coach frontmatter；propagation 更新 parenting-moc、zhanghaopeng；wiki/pages 现 83 篇_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -111,7 +111,7 @@ _最后更新：2026-06-02 — 蒸馏普劳斯《决策与判断》，新建 jud
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)
 - [[asking-the-right-questions]] — Neil Browne & Stuart Keeley《学会提问》：为什么需要批判性思维、海绵式 vs 淘金式、提问序列（批判性思维主题书源） (1 个来源)
 
-- [[my-father-before-me]] — Michael J. Diamond《何以为父》：父子相互影响、好父亲三标准、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
+- [[my-father-before-me]] — Michael J. Diamond《何以为父》：父子双向塑造、十个发展阶段、强迫性重复的代际打破（精神分析视角，全书蒸馏完整） (1 个来源)
 - [[raising-boys]] — Steve Biddulph《养育男孩》：三阶段成长框架、睾丸激素节律、大脑差异、父母角色切换、性教育、学校与社区支持 (1 个来源)
 
 - [[the-pyramid-principle]] — 芭芭拉·明托《金字塔原理》：结构化表达的麦肯锡标准，金字塔结构、SCQA 序言、MECE 分组、演绎与归纳横向逻辑全解 (1 个来源)

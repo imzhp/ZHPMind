@@ -156,3 +156,4 @@ source_count: 3
 - 口述原文：你怎么定义自己现在的人生阶段？（2026-05-12 语音转录）
 - 业务数据：[[wildlume-business-reference]]
 - 讨论记录：zhpmind-discussion-2026-05-12
+- 父子关系理论：[[my-father-before-me]]（Diamond 精神分析视角）、[[raising-boys]]（Biddulph 社会生态学视角）

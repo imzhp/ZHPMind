@@ -1,21 +1,20 @@
 ---
-type: concept
-title: 养育同盟 (Parenting Alliance)
+title: "养育同盟 (Parenting Alliance)"
 aliases:
   - Parenting Alliance
   - 养育同盟
-source: "[[my-father-before-me]]"
-created: 2026-05-31
-updated: 2026-06-02
+type: concept
 tags:
   - family-relationships
   - parenting
   - partner-relationship
   - psychology
-related_concepts:
-  - 准父亲的角色
-  - 夫妻合作养育
-  - 孩子的安全感基础
+created: 2026-05-31
+updated: 2026-06-02
+sources:
+  - 何以为父-迈克尔·戴蒙德.epub
+source_count: 1
+discussions: []
 ---
 
 # 养育同盟 (Parenting Alliance)
@@ -220,6 +219,6 @@ related_concepts:
 - **父亲的教育缺乏** —— 很少有关于"如何做父亲"的讨论
 - **女性的双重负担** —— 职业和家务的同时承担减少了养育同盟的可能性
 
----
+## Sources
 
-**核心认知：** 养育同盟不是自动形成的。它需要意识、努力和相互的承诺。但当它形成时，它为孩子和父母都创造了深刻的安全、意义和满足。
+- `何以为父-迈克尔·戴蒙德.epub` — [[my-father-before-me]] 第1章核心概念，孕期养育同盟建立的完整论述

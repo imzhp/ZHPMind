@@ -1,19 +1,20 @@
 ---
-type: method
-title: 准父亲的情绪教练角色 (Expectant Father as Emotional Coach)
+title: "准父亲的情绪教练角色 (Expectant Father as Emotional Coach)"
 aliases:
   - Expectant Father as Emotional Coach
   - 准父亲的情绪教练角色
-source: "[[my-father-before-me]]"
-created: 2026-05-31
-updated: 2026-06-02
+type: method
 tags:
-  - parenting-method
+  - parenting
   - pregnancy-preparation
   - partner-support
   - emotion-management
-practical_use: yes
-difficulty: medium
+created: 2026-05-31
+updated: 2026-06-02
+sources:
+  - 何以为父-迈克尔·戴蒙德.epub
+source_count: 1
+discussions: []
 ---
 
 # 准父亲的情绪教练角色
@@ -301,6 +302,6 @@ difficulty: medium
 - ☐ 制定一个育儿哲学的初步版本
 - ☐ 同意如何在困难时刻相互支持
 
----
+## Sources
 
-**最后的话：** 成为一个情绪教练不需要你是完美的、有所有答案或从不感到害怕。它需要的是：你的存在、你的注意力、你的心。当妻子感到这三样时，她就被照顾了，你就完成了任务。
+- `何以为父-迈克尔·戴蒙德.epub` — [[my-father-before-me]] 第1章，准父亲在孕期的四项核心能力
