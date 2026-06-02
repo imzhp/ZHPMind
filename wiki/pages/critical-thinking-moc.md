@@ -29,9 +29,18 @@ updated: 2026-06-02
 - [[obstacles-to-critical-thinking]] — 六大认知障碍及破解：快思考、刻板印象、确认偏误、自我中心、一厢情愿、基本归因错误
 - [[critical-thinking-writing-speaking]] — 把批判性思维用于自己的写作与表达：清晰论题、精确语言、明示假设、避免谬误、预应反对
 
+## 决策心理学扩展
+
+批判性思维的障碍（确认偏误、基本归因误差等）在行为决策心理学中有更深入的实验证据：
+
+- [[judgment-and-decision-making]] — 普劳斯《决策与判断》：21个认知偏差与决策陷阱的实验图谱，与本 MOC 互补
+- [[cognitive-dissonance]] — 认知不协调：行为如何改变态度（费斯汀格，1957）
+- [[prospect-theory]] — 前景理论：损失厌恶与框架效应的决策框架（卡尼曼和特韦尔斯基，1979）
+
 ## 如何使用
 
 - **评估一个论证** → 从 [[ten-critical-questions]] 逐题过
 - **理解整套方法** → 从 [[critical-thinking-framework]] 入手
 - **发现自己的思维盲点** → 查 [[obstacles-to-critical-thinking]]
 - **改进自己的论证/写作** → 用 [[critical-thinking-writing-speaking]] 的检查清单
+- **理解偏差的实验根源** → 读 [[judgment-and-decision-making]]

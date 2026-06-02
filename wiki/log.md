@@ -237,6 +237,15 @@ Format: `## [YYYY-MM-DD] operation | Description`
 
 ---
 
+## [2026-06-02] distill | 决策与判断.epub — 斯科特·普劳斯《决策与判断》
+
+- **Sources touched**: `raw/决策与判断.epub`
+- **Pages created**: [[judgment-and-decision-making]], [[prospect-theory]], [[cognitive-dissonance]]
+- **Pages updated**: [[critical-thinking-moc]]（新增"决策心理学扩展"区块，交叉引用三个新页），[[index]]（新增 3 条目，总页数 80→83）
+- **Note**: [self-reviewed] 全书 18 个 XHTML 章节文件，共 1945 行，约 546KB 文本；子 agent 并行提取各部分，主 agent 完成蒸馏写入。核心框架：普劳斯系统整理了卡尼曼/特韦尔斯基两人的全部直觉与偏差研究（代表性/易得性/锚定/框架），并拓展到社会决策（从众/群体极化/群体盲思）和行为陷阱（沉没成本/囚徒困境/共有地悲剧）。选取两个重要概念单独成页：**前景理论**（prospect-theory，type: framework，行为经济学核心框架，Kahneman/Tversky 1979，高复用率）；**认知不协调**（cognitive-dissonance，type: concept，费斯汀格 1957，与沉没成本/承诺升级密切相关）。其余 19 个概念（锚定效应、易得性直觉、代表性直觉、结合谬论、控制错觉、群体盲思、行为陷阱等）以"候选页面"待建方式记录在书籍主页中；判断依据——这些概念虽重要，但目前在 wiki 中仅本书一个来源，暂以书籍页面承载为宜，待二次来源出现时再提取为独立页面。Propagation：critical-thinking-moc 中 obstacles-to-critical-thinking（含确认偏误、基本归因错误）与新蒸馏内容高度相关，在 MOC 末补"决策心理学扩展"区块。epub 已移入 wiki/raw/，inbox 清空。
+
+---
+
 ## [2026-06-02] distill | 养育男孩.epub — Steve Biddulph《养育男孩》
 
 - **Sources touched**: `raw/养育男孩.epub`
