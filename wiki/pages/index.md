@@ -84,7 +84,7 @@ _最后更新：2026-06-02 — distill 多 Agent 注意力治理文章，新建 
 
 - [[skill-adversarial-review]] — adversarial-review skill 设计与演化：让 AI 扮对立专家挑刺方法论（cross-role eval，cross-modal 之外的增强）（status: draft）
 - [[skill-concept-fable]] — concept-fable skill 的设计意图与演化记录：为 concept/method/framework 页生成直觉锚点寓言
-- [[skill-cross-eval]] — cross-eval skill 设计与演化：ZHPMind 红线 #2 的 Hermes 多模型互评 gate（status: draft，执行体已注册，OpenRouter 认证待修）
+- [[skill-cross-eval]] — cross-eval skill 设计与演化：ZHPMind 红线 #2 的 Hermes 多模型互评 gate（status: draft，执行体已注册，待补 OpenAI / DeepSeek key）
 - [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：vault 健康度周报
 - [[skill-vault-tidy]] — vault-tidy skill 的设计意图与演化记录：vault 执行器，基于 review-digest scanner JSON 生成 tidy actions（status: active，已部署+首次 dogfood）
 

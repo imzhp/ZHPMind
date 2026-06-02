@@ -4,139 +4,226 @@ from: codex
 to: chat-claude
 task: hermes-cross-eval
 created: 2026-06-02
+updated: 2026-06-02
 ---
 
-# Result — Hermes cross-eval
+# Result — Hermes cross-eval review 1-4
 
 ## 总裁决
 
-**部分落地,正式 gate 暂不可用。**
+已按 `claude-drafts/review-hermes-cross-eval.md` 的 1-4 打包处理。第 5 项 Telegram token rejected 按要求单独排,本轮不修。
 
-已完成:
+当前状态:**代码/执行体已按 Claude / GPT / DeepSeek 原生三模型方案改完,但正式 gate 仍被凭据阻塞。**
 
-- Hermes gateway launchd 持久化确认 + restart
-- `vault-tidy --draft` dogfood 通过,证明 Hermes CLI + skill 执行链能跑通
-- `cross-eval` skill 执行体安装到 Hermes
-- `cross-eval-run.py` 确定性脚本安装并可静态检测 GPT / DeepSeek / Qwen 三家系候选
-- Book Mirror 工作流已接入 cross-eval gate 文档
-- skillify 反思页已落 `wiki/pages/skill-cross-eval.md`
+阻塞原因不是脚本逻辑,而是本机缺少:
 
-阻塞:
+- `OPENAI_API_KEY`
+- `DEEPSEEK_API_KEY`
 
-- OpenRouter 真实调用返回 `HTTP 401: User not found`,所以三模型 eval 不能正式启用
-- gateway launchd 是 running,但 gateway error log 显示 Telegram token rejected;消息平台健康未通过
+因此本轮无法提供「GPT + DeepSeek 两家真实返回」。我实际跑了 `/private/tmp` dogfood:Claude/Anthropic 精确位真实返回 pass;OpenAI/DeepSeek 因没有 key 不进入模型列表,gate 正确红旗阻断。
 
-## 1. Hermes 平台冒烟
+## 1. 模型认证 + Garry 三模型
 
-### gateway
+已改 `~/.hermes/scripts/cross-eval-run.py`:
 
-- `hermes --version`:Hermes Agent v0.13.0
-- launchd plist:`~/Library/LaunchAgents/ai.hermes.gateway.plist`
-- `launchctl print gui/501/ai.hermes.gateway`:state = running
-- 执行 `hermes gateway restart`:成功,`runs = 2`,新 pid 可见
+- 新增 Anthropic messages API 路径:
+  - endpoint:`https://api.anthropic.com/v1/messages`
+  - header:`x-api-key`, `anthropic-version: 2023-06-01`
+  - payload:system 单独传,`max_tokens` 必填
+  - response:`content[].text`
+- 默认模型集改为:
+  - Claude / Anthropic:role=`精确`,family=`claude`,默认模型 `claude-opus-4-6`
+  - GPT / OpenAI:role=`遗漏`,family=`openai`,默认模型 `gpt-4o-mini`
+  - DeepSeek:role=`太泛`,family=`deepseek`,默认模型 `deepseek-chat`
+- 移除默认 Qwen / DashScope 分支
+- OpenRouter 改为显式 fallback:
+  - 只有设置 `CROSS_EVAL_ENABLE_OPENROUTER=1` 才启用
+  - 默认不走 OpenRouter,避免单聚合器单点故障
+- gate 语义保持 fail-safe:
+  - Claude 精确位不计入跨家系下限
+  - GPT/OpenAI + DeepSeek 两家非 Claude 都成功才满足 gate
+  - 少于两个非 Claude 成功返回 → `红旗阻断`
 
-### vault-tidy dogfood
+## 2. Book Mirror 按章评审
 
-命令:
+已改 `cross-eval-run.py`:
 
-```bash
-hermes chat -Q -s vault-tidy -q "运行 vault-tidy --draft..."
+- 新增 `--chapter-id`
+- `content_type=mirror` 默认不允许 head/tail 裁切
+- mirror 输入超过 `--max-chars` 时直接退出,提示拆成「每章 draft + 每章 source」再跑
+- 只有显式传 `--allow-clip` 才允许裁切,且文档注明不用于 Book Mirror
+- 报告 frontmatter 增加 `chapter_id`
+- 报告配置段增加 `clipped_inputs`
+
+本地裁切 gate 验证:
+
+```text
+python3 ~/.hermes/scripts/cross-eval-run.py ... --content-type mirror --max-chars 10
+/private/tmp/cross-eval-source-smoke.md is 107 chars, above --max-chars=10. For Book Mirror / mirror eval, split by chapter and run one chapter draft + one chapter source per eval, or pass --allow-clip only for non-book short-form review.
 ```
 
-结果:
+已更新 `wiki/CLAUDE.md`:
 
-- PASS(vault 正式内容未被 Hermes 写入)
-- session_id:`20260602_203010_7630ee`
-- 生成了旧路径 `.tmp-claude-reports/draft-tidy-2026-06-02_2030.md`
-- 该旧目录只含本次 dogfood 草稿,已清理,避免退役通道回流
+- Book Mirror 流程改成每章 staging → Hermes cross-eval → Haopeng 审报告 → 通过 gate 后写 `## Mirror`
 
-dogfood 暴露的 drift:
+## 3. skill 权威收敛
 
-- `~/.hermes/skills/vault-tidy.md` 的 `--draft` 段仍写 `.tmp-claude-reports/`,应后续改到 `claude-drafts/result-tidy-*.md`
+已执行:
 
-## 2. 多模型接入状态
+- 删除 `~/.hermes/skills/cross-eval.md`
+- 保留并定义唯一权威:`~/.hermes/skills/cross-eval/SKILL.md`
+- 脚本仍在:`~/.hermes/scripts/cross-eval-run.py`
 
-静态配置:
+验证:
+
+```text
+hermes skills list | rg -n "cross-eval|review-digest|vault-tidy"
+5:│ cross-eval              │                      │ local   │ local   │ enabled │
+7:│ review-digest           │                      │ local   │ local   │ enabled │
+8:│ vault-tidy              │                      │ local   │ local   │ enabled │
+```
+
+## 4. vault-tidy --draft 落点
+
+已改:
+
+- `~/.hermes/skills/vault-tidy.md`
+- `~/.hermes/skills/vault-tidy/SKILL.md`
+
+`--draft` 落点从:
+
+```text
+.tmp-claude-reports/draft-tidy-{timestamp}.md
+```
+
+改为:
+
+```text
+claude-drafts/result-tidy-{timestamp}.md
+```
+
+## --check-config 输出
+
+当前本机真实输出:
 
 ```json
 {
   "available_models": [
-    {"role": "遗漏", "family": "openai", "provider": "openrouter", "model": "openai/gpt-4o-mini"},
-    {"role": "太泛", "family": "deepseek", "provider": "openrouter", "model": "deepseek/deepseek-chat"},
-    {"role": "精确", "family": "qwen", "provider": "openrouter", "model": "qwen/qwen-2.5-72b-instruct"}
+    {
+      "role": "精确",
+      "family": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-6"
+    }
   ],
-  "non_claude_families": ["deepseek", "openai", "qwen"],
-  "static_gate_configured": true
+  "non_claude_families": [],
+  "static_gate_configured": false
 }
 ```
 
-真实 dogfood:
+解释:
 
-- 使用 `/private/tmp/cross-eval-draft-smoke.md` + `/private/tmp/cross-eval-source-smoke.md`
-- 首次普通沙箱调用失败:`URLError(PermissionError(1, 'Operation not permitted'))`
-- 提升网络权限后真实调用 OpenRouter,三路均失败:`HTTP 401: {"error":{"message":"User not found.","code":401}}`
+- Anthropic key 可用,Claude 精确位进入候选
+- `OPENAI_API_KEY` 未配置
+- `DEEPSEEK_API_KEY` 未配置
+- 因此 GPT + DeepSeek 两家非 Claude 不满足 gate
 
-结论:
+Hermes `status` 也确认:
 
-- 配置候选足够,但 OpenRouter key / 账户 / 路由不可用
-- 正式启用前需要修 OpenRouter,或补原生 `OPENAI_API_KEY` / `DEEPSEEK_API_KEY` / `DASHSCOPE_API_KEY`
-
-## 3. cross-eval skill 已安装
-
-安装位置:
-
-- `~/.hermes/skills/cross-eval.md`
-- `~/.hermes/scripts/cross-eval-run.py`
-- `~/.hermes/skills/cross-eval/SKILL.md`
-
-说明:
-
-- handoff 指定 flat siblings:`cross-eval.md` + `scripts/cross-eval-run.py`
-- 但 Hermes 当前 skill prompt 快照只扫描目录式 `SKILL.md` / `DESCRIPTION.md`
-- 因此保留 handoff 指定单文件,同时加一个目录式注册镜像;脚本仍放 `~/.hermes/scripts/`,不嵌到 skill 目录
-
-验证:
-
-```bash
-hermes skills list | rg "cross-eval|review-digest|vault-tidy"
+```text
+OpenRouter    ✓ sk-o...a667
+OpenAI        ✗ (not set)
+DeepSeek      ✗ (not set)
+Anthropic     ✓ sk-a...QQAA
 ```
 
-结果:
+## /tmp dogfood 证据
 
-- `cross-eval` local enabled
-- `review-digest` local enabled
-- `vault-tidy` local enabled
+命令:
 
-脚本行为:
+```bash
+python3 ~/.hermes/scripts/cross-eval-run.py \
+  --draft-path /private/tmp/cross-eval-draft-smoke.md \
+  --source-ref /private/tmp/cross-eval-source-smoke.md \
+  --content-type mirror \
+  --chapter-id smoke-ch01 \
+  --output-dir /private/tmp \
+  --timeout 90
+```
 
-- `--check-config` 是静态体检,只验证候选模型数量
-- 正式 eval 会实际调用模型;成功评审的非 Claude 家系少于两个时,报告总裁决为 `红旗阻断`
-- 报告默认写 `inbox/cross-eval-{draft-name}-{YYYY-MM-DD}.md`
+结果文件:
 
-## 4. 书镜已接入 gate
+```text
+/private/tmp/cross-eval-cross-eval-draft-smoke-2026-06-02-234745.md
+```
 
-已更新 `wiki/CLAUDE.md`:
+总裁决:
 
-- Book Mirror 不再直接写 `wiki/pages/`
-- 新流程:staging 草稿 → Hermes cross-eval → Haopeng 审报告 → 通过 gate 后写 `## Mirror`
-- §13.2 记录 Hermes `cross-eval` 作为目标执行体,并标明正式启用前需保证多模型认证可用
+```text
+verdict: 红旗阻断 (成功评审的非 Claude 家系只有 0 个: none)
+```
 
-## 5. skillify
+Claude/Anthropic 真实返回证据:
 
-新增:
+```text
+## 模型: 精确 / claude / anthropic / claude-opus-4-6
 
+裁决: pass
+
+摘要列问题:
+未发现实质性问题。摘要列与 source 中 "the launch had two phases: research first, then pricing" 一致。
+
+镜射列问题:
+未发现问题。镜射列明确声明这是 smoke test,不是关于 Haopeng 的断言。
+
+红旗:
+虚构来源: 未发现
+编造的关于 Haopeng 的事实: 未发现
+事实错误: 未发现
+```
+
+未能提供两家非 Claude 真实返回的原因:
+
+- `OPENAI_API_KEY` 缺失 → GPT 不进入模型列表
+- `DEEPSEEK_API_KEY` 缺失 → DeepSeek 不进入模型列表
+- 按 review 要求已默认弃用 OpenRouter,所以不再用 OpenRouter 401 的聚合器路径凑数
+
+## Vault 文档同步
+
+已更新:
+
+- `wiki/CLAUDE.md`
+  - cross-eval 目标执行体改为 Claude / GPT / DeepSeek
+  - 权威路径改为 `~/.hermes/skills/cross-eval/SKILL.md`
+  - 说明 OpenAI / DeepSeek 原生认证仍待补齐
 - `wiki/pages/skill-cross-eval.md`
+  - 权威执行体、按章评审、凭据状态、Pitfalls 全部同步
+- `wiki/pages/index.md`
+  - skill-cross-eval 状态改为待补 OpenAI / DeepSeek key
 
-更新:
+## 未处理
 
-- `wiki/pages/index.md` Skills 区加入 `[[skill-cross-eval]]`
+- review 第 5 项 Telegram token rejected:按用户要求单独排,本轮未处理。
 
-`skill-cross-eval.md` 当前状态为 `draft`,因为执行体已注册,但三模型真实调用被 OpenRouter 401 阻塞。
+## 下一步
 
-## 后续修复清单
+补齐以下两个 key 后重跑 dogfood:
 
-1. 修 OpenRouter key / 账户状态,或补原生 OpenAI / DeepSeek / DashScope key。
-2. 再跑一次 `/private/tmp` 最小 dogfood,要求至少两个非 Claude 家系成功返回。
-3. 用真实 Book Mirror staging 草稿跑一次 cross-eval,检查 inbox 报告可读性。
-4. 修 `vault-tidy --draft` 的旧落点 `.tmp-claude-reports/`。
-5. 修 gateway Telegram token rejected,否则 launchd running 但消息平台不可用。
+```bash
+OPENAI_API_KEY=...
+DEEPSEEK_API_KEY=...
+```
+
+然后再次运行:
+
+```bash
+python3 ~/.hermes/scripts/cross-eval-run.py \
+  --draft-path /private/tmp/cross-eval-draft-smoke.md \
+  --source-ref /private/tmp/cross-eval-source-smoke.md \
+  --content-type mirror \
+  --chapter-id smoke-ch01 \
+  --output-dir /private/tmp \
+  --timeout 90
+```
+
+验收条件:报告里至少出现 `openai` 与 `deepseek` 两个 `ok` 模型分节,总裁决不因模型数不足而红旗阻断。
