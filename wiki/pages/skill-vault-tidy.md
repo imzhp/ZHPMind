@@ -1,9 +1,9 @@
 ---
 type: skill
 title: vault-tidy
-status: draft
+status: active
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-06-02
 tags:
   - system/skill
   - tool/hermes
@@ -22,7 +22,7 @@ vault 的「**执行器**」,跟 [[skill-review-digest|review-digest]] 是"诊�
 - **执行体位置**:`~/.hermes/skills/vault-tidy.md`(单文件,跟 review-digest v4 同模式)
 - **触发**:cron 周一 9:30(review-digest 9:00 之后半小时)+ on-demand `hermes chat -q "运行 vault-tidy"`
 - **关系**:接收 review-digest 的 scanner JSON 作为输入,生成 tidy actions 输出到 vault
-- **当前状态**:`status: draft`——反思页 + SKILL.md 已写,未部署到 Hermes,未跑过 dogfood
+- **当前状态**:`status: active`——已部署到 Hermes 并注册成功(2026-06-02),首次 `--draft` dogfood 通过;`--apply` 暂被 Pitfall #4(scanner 缺 distill 字段)挡住,且需先有 <24h 新鲜 scanner JSON
 
 ## Scope 三档
 
@@ -74,6 +74,20 @@ vault-tidy **不重新扫描 vault**——读 `~/.hermes/cron/output/4923ff1a958
 | 自递归(扫描时把 digest 自己也算上) | 输入是 scanner JSON,不重新扫描;天然规避自递归 |
 | pyyaml 不可用 / grep 漏 alias / ctime 错 | 不读 vault 文件,所有数据来自 scanner JSON;天然规避底层陷阱 |
 
+## 实战 Pitfalls(2026-06-02 部署 + 首次 --draft dogfood)
+
+首次部署即注册失败,排查链:`status` 撞车 → gateway 重载方式 → 观测点不可靠;dogfood 用了 30h 陈旧 JSON,意外成了 24h gate 的活体验证。
+
+| Pitfall | 性质 | 应对 |
+|---|---|---|
+| **#1 ZHPMind 的 `status: draft` 抄进执行体 frontmatter → Hermes skill loader 静默跳过、不注册** | 部署 / 平台陷阱 | 执行体 `~/.hermes/skills/vault-tidy.md` frontmatter **不带 `status` 字段**;draft 状态只留本反思页。对照:review-digest 无 status 故正常注册。已修(删该行)。 |
+| **#2 `launchctl kickstart -k` 杀掉 gateway 后未及时恢复 → `hermes skills list` 空 → 误判"未注册"(假阴性)** | 操作陷阱 | 重载用**不带 `-k`** 的 `launchctl kickstart` + 轮询 `hermes skills list` 非空再判。 |
+| **#3 本机观测点不可靠** | 平台陷阱 | `launchctl list` 会空 → 用 `launchctl print gui/$(id -u)/ai.hermes.gateway`;`hermes skills list \| tail -1` 抓 Rich 尾随空行 → 用 `tail -5`。 |
+| **#4 scanner JSON 缺 distill 状态字段 → Tier 1「inbox 老化归档」核心条件"无 distill 痕迹"无法判定** | 设计缺陷(挡 --apply) | --apply 做 inbox 归档前**先扩展 review-digest scanner 增 distill 状态检测**;此前该 action 只能产"待人工确认"候选,不可自动执行。 |
+| **#5 30h stale JSON 产生假阳性**(`critical-thinking-moc` 已存在却报候选、页数 57 vs 实际 70、已删的 `多 Agent…治理 1.md` 仍上榜) | 生成偏差(数据时效) | 24h gate 在 dry-run/apply 会中止(正确),draft 放行但产物不可 apply。**改进**:24h 警告触发时对所有 state-derived 结论(MOC 存在性 / 孤岛率 / 页数 / raw 清单)**统一降权**,而非零散 caveat——本次反在「已知局限 #4」声称候选"可信",过度自信。 |
+
+**dogfood 同时验证到位(正向)**:三档 scope 守住、**Tier 3 零违规**、诚实 caveat 段到位、sheep-archive-public(251 文件 100% 未引用)正确判为越界并交还人类、vault 零改动、24h gate 逻辑正确。
+
 ## 触发节奏
 
 | 频率 | 内容 |
@@ -90,7 +104,8 @@ vault-tidy **不重新扫描 vault**——读 `~/.hermes/cron/output/4923ff1a958
 - **跟 Curator 的对接**:Curator 可能合并/重命名 skill 文件,vault-tidy 的输出引用如何稳定
 - **Tier 2 的"建议"输出格式**:用什么 markdown 结构让 review 最快?待 dogfood 检验
 - **多次 `--draft` dogfood 之间**:产物如何避免冲突(用时间戳还是序号?)
-- 留 placeholder 等首次 dogfood 后填实战 Pitfalls
+- **(挡 --apply)给 review-digest scanner 加 distill 状态字段**——见 Pitfall #4,是 inbox 老化归档安全自动执行的前置
+- **--apply 端到端仍未验证**:首次 dogfood 是 --draft + stale 数据;需在 <24h 新鲜 scanner JSON 上跑 --dry-run 产 actionable plan,人勾选后再试 --apply
 
 ## References
 
