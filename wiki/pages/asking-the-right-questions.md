@@ -10,7 +10,7 @@ edition: 12th Edition
 publisher: 机械工业出版社
 publication_year: 2021
 sources:
-  - assets/books/学会提问.pdf
+  - assets/books/学会提问-尼尔·布朗.epub
 created: 2026-05-31
 updated: 2026-06-02
 tags:

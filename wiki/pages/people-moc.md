@@ -2,7 +2,7 @@
 title: "People MOC"
 tags: [moc, people]
 created: 2026-05-11
-updated: 2026-05-29
+updated: 2026-06-02
 ---
 
 # People MOC
@@ -12,6 +12,12 @@ updated: 2026-05-29
 ---
 
 ## 人物索引
+
+### [[zhanghaopeng]]
+
+vault 的主人与身份锚点。曜野（Wildlume）跨境供应链创始人、ZHPMind 系统的设计者与唯一操作者。与下面几位思想家不同——他是这个体系的主体，所有知识最终服务于他的认知循环。
+
+---
 
 ### [[andrej-karpathy]]
 

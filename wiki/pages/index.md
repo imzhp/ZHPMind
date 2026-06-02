@@ -2,14 +2,14 @@
 title: "Wiki Index"
 tags: [meta, index]
 created: 2026-04-12
-updated: 2026-06-01
+updated: 2026-06-02
 sources: []
 source_count: 0
 ---
 
 # Wiki Index
 
-_最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群入库；页数待重新统计_
+_最后更新：2026-06-02 — 旧结构孤儿迁移收官：学会提问 / 何以为父 / Yes Brain 三簇平铺规范化，新建 critical-thinking-moc + parenting-moc；wiki/pages 现 70 篇_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
