@@ -6,7 +6,7 @@ type: book
 tags: [first-principles, innovation, critical-thinking, strategic-thinking]
 created: 2026-05-31
 updated: 2026-06-01
-sources: ["第一性原理.epub"]
+sources: ["assets/books/第一性原理-李善友.epub"]
 source_count: 1
 discussions: []
 ---

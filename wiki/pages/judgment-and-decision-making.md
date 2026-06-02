@@ -5,7 +5,7 @@ type: book
 tags: [cognitive-psychology, decision-making, behavioral-economics, cognitive-bias, judgment, behavioral-science]
 created: 2026-06-02
 updated: 2026-06-02
-sources: ["决策与判断.epub"]
+sources: ["assets/books/决策与判断-斯科特·普劳斯.epub"]
 source_count: 1
 discussions: []
 ---

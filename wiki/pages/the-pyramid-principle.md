@@ -5,7 +5,7 @@ type: book
 tags: [communication, writing, structured-thinking, consulting, pyramid-principle]
 created: 2026-06-02
 updated: 2026-06-02
-sources: ["金字塔原理.epub"]
+sources: ["assets/books/金字塔原理-芭芭拉·明托.epub"]
 source_count: 1
 discussions: []
 ---

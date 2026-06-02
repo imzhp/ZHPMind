@@ -5,7 +5,7 @@ type: book
 tags: [existential-psychology, death-anxiety, heroism, psychoanalysis, philosophy, mortality]
 created: 2026-06-02
 updated: 2026-06-02
-sources: ["死亡否认.epub"]
+sources: ["assets/books/死亡否认-厄内斯特·贝克尔.epub"]
 source_count: 1
 discussions: []
 ---

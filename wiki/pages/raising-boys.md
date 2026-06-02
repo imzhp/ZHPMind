@@ -5,7 +5,7 @@ type: book
 tags: [parenting, child-development, boys, gender, family, psychology]
 created: 2026-06-02
 updated: 2026-06-02
-sources: ["养育男孩.epub"]
+sources: ["assets/books/养育男孩-史蒂夫·比达尔夫.epub"]
 source_count: 1
 discussions: []
 ---

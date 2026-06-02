@@ -40,3 +40,7 @@
 ## [2026-06-01] review-digest | 健康度周报
 
 - 新建 inbox/review-digest-2026-06-01.md
+
+## [2026-06-02] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-06-02.md（扫描 75 个 wiki 页面、3 个项目、11 条 inbox）
