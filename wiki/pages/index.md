@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-02 — 蒸馏 Ernest Becker《死亡否认》（1973/普利策），新建 the-denial-of-death、ernest-becker、immortality-project、causa-sui 共 4 页；propagation 更新 people-moc、father-hunger；wiki/pages 现 74 篇_
+_最后更新：2026-06-02 — 蒸馏 Barbara Minto《金字塔原理》，新建 the-pyramid-principle、mece、scqa 共 3 页；wiki/pages 现 77 篇_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -52,9 +52,11 @@ _最后更新：2026-06-02 — 蒸馏 Ernest Becker《死亡否认》（1973/普
 - [[immortality-project]] — 不朽筹划：个体投身于永恒价值事业以超越死亡的英雄主义核心机制，贝克尔框架 (1 个来源)
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
 - [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 + 云飞扬文案反直觉取舍 (2 个来源)
+- [[mece]] — MECE 原则（相互独立，完全穷尽）：麦肯锡结构化分析的基础逻辑，分组无重叠无遗漏 (1 个来源)
 - [[personal-knowledge-base]] — AI 持续写入的运行中知识神经系统，通过实体传播实现复利积累 (1 个来源)
 - [[product-overhang]] — 模型能力超前于产品化程度的战略窗口，AI 产品机会的核心判断框架 (1 个来源)
 - [[skillification]] — 将可重复工作流提取为自积累技能文件的方法论，元技能构建技能 (1 个来源)
+- [[scqa]] — SCQA 框架（背景→冲突→疑问→回答）：金字塔原理序言写作模板，讲故事式拉住读者注意力 (1 个来源)
 - [[software-3-0]] — LLM 作为可编程计算机的新范式，Prompt = 代码，Context = 控制杆 (1 个来源)
 - [[verifiability]] — 可验证性框架解释 LLM 锯齿形能力分布及自动化进程 (1 个来源)
 - [[vibe-coding]] — 完全依赖 AI 生成代码的开发方式，降低软件开发门槛 (2 个来源)
@@ -79,7 +81,7 @@ _最后更新：2026-06-02 — 蒸馏 Ernest Becker《死亡否认》（1973/普
 - [[skill-adversarial-review]] — adversarial-review skill 设计与演化：让 AI 扮对立专家挑刺方法论（cross-role eval，cross-modal 之外的增强）（status: draft）
 - [[skill-concept-fable]] — concept-fable skill 的设计意图与演化记录：为 concept/method/framework 页生成直觉锚点寓言
 - [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：vault 健康度周报
-- [[skill-vault-tidy]] — vault-tidy skill 的设计意图与演化记录：vault 执行器，基于 review-digest scanner JSON 生成 tidy actions（status: draft）
+- [[skill-vault-tidy]] — vault-tidy skill 的设计意图与演化记录：vault 执行器，基于 review-digest scanner JSON 生成 tidy actions（status: active，已部署+首次 dogfood）
 
 ## People
 
@@ -106,6 +108,7 @@ _最后更新：2026-06-02 — 蒸馏 Ernest Becker《死亡否认》（1973/普
 
 - [[my-father-before-me]] — Michael J. Diamond《何以为父》：父子相互影响、好父亲三标准、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
 
+- [[the-pyramid-principle]] — 芭芭拉·明托《金字塔原理》：结构化表达的麦肯锡标准，金字塔结构、SCQA 序言、MECE 分组、演绎与归纳横向逻辑全解 (1 个来源)
 - [[the-yes-brain]] — Daniel Siegel & Tina Bryson《The Yes Brain》（如何让孩子自觉又主动）：开放脑 vs 防御脑、四能力（平衡/复原/洞察/共情）的神经科学育儿框架（阅读进行中） (1 个来源)
 
 ## Reflections

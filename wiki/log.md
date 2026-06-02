@@ -212,6 +212,13 @@ Format: `## [YYYY-MM-DD] operation | Description`
 
 ---
 
+## [2026-06-02] distill | 《金字塔原理》（Barbara Minto，麦肯锡结构化表达方法论）
+
+- **Sources touched**: `raw/金字塔原理.epub`（简体中文，约 6000 行）
+- **Pages created**: [[the-pyramid-principle]]（type: book）、[[mece]]（type: concept）、[[scqa]]（type: method）
+- **Pages updated**: [[index]]（新增 3 条目，74→77 篇）
+- **Note**: [self-reviewed] 金字塔原理核心：任何清晰的书面/口头表达，其思想必然组成金字塔结构——单一顶端思想统领，纵向任意层次是对下层的概括，横向同组思想属同一逻辑范畴且有明确顺序。四个基本原则：结论先行、以上统下、归类分组、逻辑递进。两种横向逻辑：演绎（线性推进，重结论）和归纳（同类归组，概括共性），关键句层次优先用归纳。序言必须用 SCQA 讲故事结构。分析问题用 MECE 诊断框架 + 逻辑树。Propagation 检查：pyramid principle 与 critical-thinking-moc 主题不同（后者专属《学会提问》批判性评估范式），无需更新现有 MOC；三个新页面已相互 wikilink；Barbara Minto 不需要独立 person 页。原始素材已从 inbox/ 移入 wiki/raw/。
+
 ## [2026-06-02] distill | 《死亡否认》（Ernest Becker，1973/普利策奖）
 
 - **Sources touched**: `raw/死亡否认.epub`（繁体中文译本，林和生译，大家出版 2023）
