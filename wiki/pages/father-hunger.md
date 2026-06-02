@@ -1,12 +1,17 @@
 ---
 type: concept
 title: 父亲饥渴 (Father Hunger)
-source: 《何以为父》- Michael J. Diamond
+aliases:
+  - Father Hunger
+  - 父亲饥渴
+source: "[[my-father-before-me]]"
+created: 2026-05-31
+updated: 2026-06-02
 tags:
-  - 心理学
-  - 父子关系
-  - 男性心理
-  - 精神分析
+  - psychology
+  - father-son-relationship
+  - male-psychology
+  - psychoanalysis
 related_concepts:
   - 父亲身份认同
   - 男性创伤
@@ -162,7 +167,7 @@ related_concepts:
 
 ## 相关阅读
 
-- [[何以为父-影响彼此一生的父子关系]] —— 原书
+- [[my-father-before-me]] —— 原书
 - [[男性身份的整合]] —— 如何建立完整的男性认同
 - [[父亲在家庭中的心理功能]] —— 理论基础
 

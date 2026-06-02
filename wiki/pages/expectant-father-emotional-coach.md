@@ -1,13 +1,17 @@
 ---
 type: method
 title: 准父亲的情绪教练角色 (Expectant Father as Emotional Coach)
-source: 《何以为父》- Michael J. Diamond / 第1章
+aliases:
+  - Expectant Father as Emotional Coach
+  - 准父亲的情绪教练角色
+source: "[[my-father-before-me]]"
+created: 2026-05-31
+updated: 2026-06-02
 tags:
-  - 养育方法
-  - 怀孕准备
-  - 伴侣支持
-  - 情绪管理
-  - 准父亲指南
+  - parenting-method
+  - pregnancy-preparation
+  - partner-support
+  - emotion-management
 practical_use: yes
 difficulty: medium
 ---

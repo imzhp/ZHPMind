@@ -1,20 +1,26 @@
 ---
 type: book
 title: 何以为父：影响彼此一生的父子关系
+aliases:
+  - My Father Before Me
+  - 何以为父
 subtitle: How Fathers and Sons Influence Each Other Throughout Their Lives
 author: Michael J. Diamond (迈克尔·J·戴蒙德)
 translator: 孙平
 publisher: 机械工业出版社
-original_language: English
 original_title: My Father Before Me
 pages: 214
 publication_year: 2022
-tags: 
-  - 心理学
-  - 父亲
-  - 家庭关系
-  - 男性成长
-  - 精神分析
+sources:
+  - assets/books/何以为父-迈克尔·戴蒙德.epub
+created: 2026-05-31
+updated: 2026-06-02
+tags:
+  - psychology
+  - fatherhood
+  - family-relationships
+  - masculinity
+  - psychoanalysis
 status: ingesting
 ---
 
@@ -176,10 +182,10 @@ status: ingesting
 
 ## 相关笔记
 
-- [[20.areas/family/fatherhood/父亲身份的心理学基础]]
-- [[20.areas/family/parenting/父子关系中的情感连接]]
-- [[20.areas/personal-growth/masculinity/男性身份的整合]]
-- [[30.areas/psychology/psychoanalysis/精神分析视角的家庭动力]]
+- [[father-hunger]] —— 父亲饥渴：男性对父爱的深层渴望
+- [[parenting-alliance]] —— 养育同盟：父母共同养育的有意识合作
+- [[expectant-father-emotional-coach]] —— 准父亲的情绪教练角色
+- [[parenting-moc]] —— 育儿主题导航
 
 ## 阅读进度
 

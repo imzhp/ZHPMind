@@ -1,12 +1,17 @@
 ---
 type: concept
 title: 养育同盟 (Parenting Alliance)
-source: 《何以为父》- Michael J. Diamond
+aliases:
+  - Parenting Alliance
+  - 养育同盟
+source: "[[my-father-before-me]]"
+created: 2026-05-31
+updated: 2026-06-02
 tags:
-  - 家庭关系
-  - 亲子教育
-  - 伴侣关系
-  - 心理学
+  - family-relationships
+  - parenting
+  - partner-relationship
+  - psychology
 related_concepts:
   - 准父亲的角色
   - 夫妻合作养育

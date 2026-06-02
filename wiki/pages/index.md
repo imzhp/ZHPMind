@@ -22,6 +22,7 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 - [[ai-engineering-moc]] — AI / LLM / Agent 工程体系导航：范式、开发方式、工具链、架构、知识管理
 - [[people-moc]] — 所有人物页导航，含思想关联图
 - [[critical-thinking-moc]] — 批判性思维主题导航：《学会提问》书源 + 框架 + 10 问 + 障碍 + 写作应用
+- [[parenting-moc]] — 育儿与亲子关系主题导航：《何以为父》系列（后续纳入 Yes Brain）
 
 ## Concepts & Methods
 
@@ -56,6 +57,9 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 - [[software-3-0]] — LLM 作为可编程计算机的新范式，Prompt = 代码，Context = 控制杆 (1 个来源)
 - [[verifiability]] — 可验证性框架解释 LLM 锯齿形能力分布及自动化进程 (1 个来源)
 - [[vibe-coding]] — 完全依赖 AI 生成代码的开发方式，降低软件开发门槛 (2 个来源)
+- [[father-hunger]] — 父亲饥渴：男性对父爱与认可的深层渴望，及其代际传递与转化愈合（《何以为父》概念页） (1 个来源)
+- [[parenting-alliance]] — 养育同盟：父母共同养育的有意识合作，从怀孕期建立，孩子安全感基础（《何以为父》概念页） (1 个来源)
+- [[expectant-father-emotional-coach]] — 准父亲的情绪教练角色：怀孕期见证/倾听/教导/建立信心四能力（《何以为父》方法页） (1 个来源)
 
 ## Frameworks
 
@@ -92,8 +96,7 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)
 - [[asking-the-right-questions]] — Neil Browne & Stuart Keeley《学会提问》：为什么需要批判性思维、海绵式 vs 淘金式、提问序列（批判性思维主题书源） (1 个来源)
 
-- [[何以为父-影响彼此一生的父子关系]] — Michael J. Diamond《何以为父》：父子相互影响、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
-- [[书籍索引-何以为父系列]] — 《何以为父》系列资源索引：主书页 + 核心概念（父亲饥渴/养育同盟/情绪教练角色）导航
+- [[my-father-before-me]] — Michael J. Diamond《何以为父》：父子相互影响、好父亲三标准、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
 
 - [[The Yes Brain - Open Brain Parenting]] — Daniel Siegel & Tina Bryson《The Yes Brain》（如何让孩子自觉又主动）：开放脑 vs 防御脑、四能力（平衡/复原/洞察/共情）的神经科学育儿框架（阅读进行中） (1 个来源)
 - [[Open Brain - Navigation Hub]] — Yes Brain / 开放式大脑集群导航中枢：四能力深潜 + 章节 + 速查 + 应用场景入口
