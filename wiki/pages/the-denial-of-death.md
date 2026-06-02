@@ -1,6 +1,7 @@
 ---
 title: "死亡否认"
 aliases: ["The Denial of Death", "死亡否認"]
+author: "厄内斯特·贝克尔"
 type: book
 tags: [existential-psychology, death-anxiety, heroism, psychoanalysis, philosophy, mortality]
 created: 2026-06-02

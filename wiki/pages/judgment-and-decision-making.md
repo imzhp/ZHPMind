@@ -1,6 +1,7 @@
 ---
 title: "决策与判断"
 aliases: ["决策与判断", "Judgment and Decision Making"]
+author: "斯科特·普劳斯"
 type: book
 tags: [cognitive-psychology, decision-making, behavioral-economics, cognitive-bias, judgment, behavioral-science]
 created: 2026-06-02

@@ -1,6 +1,7 @@
 ---
 title: "金字塔原理"
 aliases: [金字塔原理, The Pyramid Principle, 芭芭拉·明托]
+author: "芭芭拉·明托"
 type: book
 tags: [communication, writing, structured-thinking, consulting, pyramid-principle]
 created: 2026-06-02

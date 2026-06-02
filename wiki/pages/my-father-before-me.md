@@ -3,6 +3,7 @@ title: "何以为父：影响彼此一生的父子关系"
 aliases:
   - My Father Before Me
   - 何以为父
+author: "迈克尔·戴蒙德"
 type: book
 tags:
   - psychology

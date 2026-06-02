@@ -1,6 +1,7 @@
 ---
 title: "养育男孩（Raising Boys）"
 aliases: ["Raising Boys", "养育男孩"]
+author: "史蒂夫·比达尔夫"
 type: book
 tags: [parenting, child-development, boys, gender, family, psychology]
 created: 2026-06-02
