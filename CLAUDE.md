@@ -62,8 +62,8 @@ ZHPMind 的 git 只为「可回滚 + GitHub 备份」服务(design-principles �
 
 **handoff(跨角色转交,走文件不走人肉复制):**
 
-- 任务书 → `.tmp-claude-reports/handoff-{task}.md`(出题方写:目标 / 约束 / 验收标准 / 已知坑)。
-- 结果或复核请求 → `.tmp-claude-reports/result-{task}.md`(执行方写)。
+- 任务书 → `claude-drafts/handoff-{task}.md`(出题方写:目标 / 约束 / 验收标准 / 已知坑)。
+- 结果或复核请求 → `claude-drafts/result-{task}.md`(执行方写)。
 - 转交只说一句("按 handoff-{task} 做" / "读 result-{task} 复核"),内容靠文件传递,Haopeng 不当人肉总线。两类文件按现行 `.gitignore` 策略入 git(随 Sync 跨机)。
 
 **默认偏置:能在 Codex 一处闭环的,就别切到 chat;切 chat 是 Haopeng 主动 pull,且限上面三件。**

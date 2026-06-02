@@ -65,7 +65,7 @@ ZHPMind/
 └── archive/               ← 按原结构镜像归档（含 archive/timeline/）
 ```
 
-`.tmp-claude-reports/` 存在但 git-ignored，作 Claude Code ↔ 主对话传输通道。
+`claude-drafts/` 作 Codex / Claude Code ↔ chat-Claude 的跨机 handoff 通道，跟踪 `handoff-*.md` 与 `result-*.md`。
 
 ### 2.2 Ownership Contract
 
@@ -781,7 +781,7 @@ git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add -A && git -C "/Users/zhanghaop
 - `[operation]` 替换为工作流名称：`distill`、`mirror`、`reflect`、`harvest`、`propagation`、`concept-fable`、`lint`
 - 无文件变更时跳过 commit
 
-**`.gitignore`：** 全量跟踪——raw 和 pages 都值得版本控制。`.tmp-claude-reports/` 内容（除 README.md）git-ignored。
+**`.gitignore`：** 全量跟踪——raw 和 pages 都值得版本控制。`claude-drafts/` 跟踪 README 与 handoff/result 文件，其他草稿默认忽略。
 
 ---
 
@@ -851,7 +851,7 @@ git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add -A && git -C "/Users/zhanghaop
 - **新增 §12.5 AI 心法**（事中约束）：三心法 + 检查不能省
 - §13 标题改为「AI 红线（事后约束）」，跟心法层级分开
 - §17 加反膨胀提示
-- §14 git commit message operation 加 `concept-fable`；提及 `.tmp-claude-reports/` git-ignore
+- §14 git commit message operation 加 `concept-fable`；提及临时报告目录 git-ignore
 - **自审补全(2026-05-23 主对话 self-review 发现)**:§1.1 受众契约表「wiki/pages 主体」行加注「含 skill 反思页」,跟 design-principles 受众分层表一致;§3.6 补 MOC 页命名约定(`{topic}-moc.md`);§3.8 references 字段说明 `.claude/skills/` 路径同样合法(skill-concept-fable.md 实际使用)
 
 **2026-05-22 v2.1（含于 v2.4-X commit cbdb7b0）** — Phase D 下游审计：

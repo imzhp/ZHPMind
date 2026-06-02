@@ -26,7 +26,7 @@
 
 #### A.1 三层光谱(选哪类概念用 fable)
 
-三轮 dogfood(陌生化 / jobs-to-be-done / 库存周转率,2026-05-23)实测确认。详见 `.tmp-claude-reports/concept-fable-dogfood.md`「三层光谱」段。
+三轮 dogfood(陌生化 / jobs-to-be-done / 库存周转率,2026-05-23)实测确认。详见历史草稿 `concept-fable-dogfood.md`「三层光谱」段（已随旧草稿目录退役，见 git history）。
 
 | 概念档位 | SKILL 边界表 | 寓言能锁的部分 | 寓言锁不到的部分 |
 |---|---|---|---|

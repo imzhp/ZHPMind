@@ -93,4 +93,4 @@ source_count: 1
 ## Sources
 
 - `raw/assets/courses/qwei-amazon-course-2023/文字记录：5.数据化运营入门 2026年5月25日.md` —— 云飞扬第 5 节（1:42:00，单源无 v1/v2 双源对照），整门课方法论枢纽（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
-- 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 73% 云飞扬独讲 + 27% 跨章衔接（与 1.4/3.x/7.x/8.x/10.x/11.x 等 18 处衔接）；手册数据分析方法论/关键词四象限/问题归类法几乎空白。蒸馏模型 Claude Opus 4.7，2026-05-28
+- 蒸馏溯源：经历史草稿 `amazon-cross-source-diff-draft.md`（v0.9.16，已随旧草稿目录退役，见 git history）跨源对照后提炼，本节 73% 云飞扬独讲 + 27% 跨章衔接（与 1.4/3.x/7.x/8.x/10.x/11.x 等 18 处衔接）；手册数据分析方法论/关键词四象限/问题归类法几乎空白。蒸馏模型 Claude Opus 4.7，2026-05-28

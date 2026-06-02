@@ -124,4 +124,4 @@ source_count: 1
 ## Sources
 
 - `raw/assets/courses/qwei-amazon-course-2023/文字记录：14.库存管理，需求预测和备货节奏 2026年5月25日.md` —— 云飞扬 2023 课程第 14 节（1:44:10）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
-- 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 63 条目几乎全部为云飞扬独有（国民哥哥手册库存/备货页空白）；含 1 处现场表格 `=TODAY()` 公式失效的诚实断层。蒸馏模型 Claude Opus 4.7，2026-05-28
+- 蒸馏溯源：经历史草稿 `amazon-cross-source-diff-draft.md`（v0.9.16，已随旧草稿目录退役，见 git history）跨源对照后提炼，本节 63 条目几乎全部为云飞扬独有（国民哥哥手册库存/备货页空白）；含 1 处现场表格 `=TODAY()` 公式失效的诚实断层。蒸馏模型 Claude Opus 4.7，2026-05-28

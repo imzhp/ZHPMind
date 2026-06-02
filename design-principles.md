@@ -430,7 +430,7 @@ ZHPMind/
 └── archive/         ← 按原结构镜像归档(含 archive/timeline/)
 ```
 
-`.tmp-claude-reports/` 存在但 git-ignored,作 Claude Code ↔ 主对话传输通道,不算正式结构。
+`claude-drafts/` 作 Codex / Claude Code ↔ chat-Claude 的跨机 handoff 通道,跟踪 `handoff-*.md` 与 `result-*.md`,不算正式知识结构。
 
 **inbox 和 raw 的区别是生命周期**:inbox 是"未来的可能性"(会被清空);raw 是"过去的记忆"(作为引用源永久保留)。
 
@@ -456,11 +456,17 @@ ZHPMind/
 
 **存储层 = markdown + git(ZHPMind vault)**:source of truth;git 化保护 AI 写入;开放格式保证长期存活。
 
-**智能层 = Claudian(vault 内)+ Hermes Agent(vault 外)**
+**智能层 = Claudian + Codex / Claude Code + chat-Claude + Hermes**
 
-Claudian 负责 vault 内的深度加工:distill / query / reflect / mirror / lint / **concept-fable**(生成/审查直觉锚点)。详细 spec 见 `wiki/CLAUDE.md`。
+Claudian(Obsidian 内)负责 vault 内深加工:distill / mirror / propagation / reflect。
 
-Hermes 负责 vault 外的信号采集和自动化:Push 信号采集 → inbox/、review-digest、健康度监测、cron 自动化、skillify 执行层。
+Codex / Claude Code(mini,原生 shell/git/python/文件)是默认执行者:脚本、git、批量/结构性/大文件改动、落地已定方案,优先一处闭环(设计→执行→自检)。
+
+chat 里的 Claude(claude.ai,有 web + 跨会话 memory)是按需顾问,由 Haopeng 主动 pull:web 研究、独立评审、开放式策略;不接 vault 批量/重活。
+
+Hermes(mini,gateway + cron)负责 vault 外信号采集和定时自动化:Push 信号采集 → inbox/、review-digest、健康度监测、cron 自动化、skillify 执行层,只写 inbox。
+
+两类接口分工:Hermes ↔ Claudian 走 **inbox/**;Codex / Claude Code ↔ chat-Claude 走 **handoff 文件**。操作细节见根 `CLAUDE.md`「智能层分工与 handoff 约定」,宪法不重复。
 
 **Cross-modal eval 技术实现**:Hermes 支持多 profile(同一台机器跑多个独立 agent 实例,各自的模型、记忆、skill 完全隔离)。蒸馏类任务用主 profile + worker profile 双跑——主 profile 跑 Claude 做 distill,worker profile 跑不同家系模型(如 qwen)做 eval。结果不一致进入人工裁决。这就是 AI 红线"互评"在工具层的落地路径。
 

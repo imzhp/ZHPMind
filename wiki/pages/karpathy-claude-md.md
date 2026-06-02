@@ -83,11 +83,11 @@ ZHPMind v2.5 落地后,Think Before Coding 和 Simplicity First 已经基本对�
 
 **真正的补漏点是 Goal-Driven Execution**:ZHPMind 现 AI 红线管的是"AI **写什么**"(三条件:溯源 / 互评 / 可回滚),Goal-Driven Execution 管的是"AI **怎么写**"的行为方式层——把模糊任务转成可验证标准。这条不进 design-principles v2.7+ 是认知盲区。
 
-这条不立即修——等积累 2-3 个完整工作流再决定如何形式化(同 Pitfall #7/#8 backlog 逻辑,见 `.tmp-claude-reports/concept-fable-dogfood.md` v2.7 backlog 段)。
+这条不立即修——等积累 2-3 个完整工作流再决定如何形式化(同 Pitfall #7/#8 backlog 逻辑,见历史草稿 `concept-fable-dogfood.md`（已随旧草稿目录退役，见 git history） v2.7 backlog 段)。
 
 ## 活样本:v2.6 concept-fable dogfood
 
-2026-05-23 v2.6 二轮验证 dogfood 会话对 Karpathy 4 原则各有具体体现。下面 5 个 case 引自 `.tmp-claude-reports/concept-fable-dogfood.md`(暂存,git-ignored)。
+2026-05-23 v2.6 二轮验证 dogfood 会话对 Karpathy 4 原则各有具体体现。下面 5 个 case 引自历史草稿 `concept-fable-dogfood.md`（已随旧草稿目录退役，见 git history）。
 
 ### Case 1 — Think Before Coding:`--draft` 模式切换的显式化
 
@@ -128,5 +128,5 @@ Karpathy CLAUDE.md 4 原则在 ZHPMind 协作上下文里**基本可迁移,且 v
 - [[karpathy-claude-md-original]] — 原文 verbatim 抓取(2026-05-23)
 - [[design-principles]] — ZHPMind 设计宪法(对照对象)
 - [[skill-concept-fable]] — v2.6 dogfood 反思页(§5 活样本素材源)
-- `.tmp-claude-reports/concept-fable-dogfood.md` — v2.5-v2.6 dogfood 实测记录(暂存,git-ignored)
+- 历史草稿 `concept-fable-dogfood.md` — v2.5-v2.6 dogfood 实测记录(已随旧草稿目录退役，见 git history)
 - `multica-ai/andrej-karpathy-skills` GitHub 仓库(148K stars,MIT license)

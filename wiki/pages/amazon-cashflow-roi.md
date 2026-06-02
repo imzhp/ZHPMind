@@ -99,4 +99,4 @@ source_count: 1
 ## Sources
 
 - `raw/assets/courses/qwei-amazon-course-2023/文字记录：1.1三万块钱还能做亚马逊吗？ 2026年5月25日.md` —— 云飞扬 2023 课程第 1.1 扩展节（42 分钟，现金流财务模型）（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
-- 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，本节 49 条目 95%+ 为云飞扬独讲（国民哥哥手册无现金流/周转模型）。蒸馏模型 Claude Opus 4.7，2026-05-28
+- 蒸馏溯源：经历史草稿 `amazon-cross-source-diff-draft.md`（v0.9.16，已随旧草稿目录退役，见 git history）跨源对照后提炼，本节 49 条目 95%+ 为云飞扬独讲（国民哥哥手册无现金流/周转模型）。蒸馏模型 Claude Opus 4.7，2026-05-28

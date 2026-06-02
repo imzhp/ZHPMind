@@ -42,7 +42,7 @@ vault 的「**执行器**」,跟 [[skill-review-digest|review-digest]] 是"诊�
 |---|---|---|
 | `--dry-run`(默认) | vault `inbox/tidy-plan-{date}.md` | 标准用法:产计划,人审完再 apply |
 | `--apply` | 真实 vault,每个 action = 1 个 git commit | 接受人在 plan 里勾选 ✅ 的项,真实执行 |
-| `--draft` | `.tmp-claude-reports/draft-tidy-*.md`,vault 完全不动 | dogfood 模式:测 skill 本身行为,产物不进 vault |
+| `--draft` | `claude-drafts/result-tidy-*.md`,vault 完全不动 | dogfood 模式:测 skill 本身行为,产物不进 vault |
 
 ## 跟 review-digest 的接口
 

@@ -192,4 +192,4 @@ Listing 是亚马逊商品详情页的核心载体，是[[a9-algorithm|A9 算法
 
 - `raw/亚马逊高阶运营培训手册.pdf` — 第二章（Listing 详讲上）、第三章（Listing 详讲中）、第四章（Listing 深度打造，第 22–153 页）
 - `raw/assets/courses/qwei-amazon-course-2023/文字记录：7.关键词：词库，文案和广告投放词选择 2026年5月25日.md` —— 云飞扬第 7 节文案部分（7.4 词根/7.5 标题+五点）；词库与投放部分见 [[amazon-keyword-library]]（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
-- 蒸馏溯源：经 `.tmp-claude-reports/amazon-cross-source-diff-draft.md`（v0.9.16）跨源对照后提炼，云飞扬层为第 2 源（文案的反直觉取舍）。蒸馏模型 Claude Opus 4.7，2026-05-28
+- 蒸馏溯源：经历史草稿 `amazon-cross-source-diff-draft.md`（v0.9.16，已随旧草稿目录退役，见 git history）跨源对照后提炼，云飞扬层为第 2 源（文案的反直觉取舍）。蒸馏模型 Claude Opus 4.7，2026-05-28
