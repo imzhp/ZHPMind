@@ -57,7 +57,7 @@ ZHPMind/
 │   ├── CLAUDE.md          ← 本文件（Haopeng 维护）
 │   ├── log.md             ← Append-only 操作日志（Claudian 写入）
 │   ├── raw/               ← 已被 wiki 引用的原始素材（永久保留）
-│   │   └── assets/        ← 图片和媒体文件
+│   │   └── assets/        ← 图片/媒体（assets/books/ 放书/文档源，命名 书名-作者）
 │   └── pages/             ← Claudian 的主要工作区（平铺，tag + MOC 导航）
 │       └── index.md       ← 主目录（每次写入后更新）
 ├── projects/              ← 活的工作（每个项目一个子文件夹）
@@ -71,7 +71,7 @@ ZHPMind/
 
 | Path | Owner | Claudian 角色 |
 |------|-------|--------------|
-| `inbox/` | Haopeng + Hermes | **读取**；distill 完成后将原始素材**移入** `wiki/raw/` |
+| `inbox/` | Haopeng + Hermes | **读取**；distill 完成后将原始素材**移入** `wiki/raw/`——书/文档源（epub/pdf/docx）移入 `wiki/raw/assets/books/`、命名 `书名-作者.ext`，页面 `sources:` 写 `assets/books/书名-作者.ext`；文章/讨论类 `.md` 留 `wiki/raw/` 顶层 |
 | `wiki/raw/**` | Claudian（写入） | 接收从 inbox 移入的素材；已有文件**只读不改** |
 | `wiki/pages/**` | Claudian | 创建、更新、维护所有文件 |
 | `wiki/log.md` | Claudian | **Append-only**——只追加，不删不改已有条目 |
