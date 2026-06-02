@@ -32,3 +32,14 @@
 - [ ] `type` 是否取自 §3.1 的 10 个合法值?
 - [ ] 若用了子 agent 提取:最终写入是不是由我主 agent 完成、且落在 `wiki/pages/`?
 - [ ] 是否更新了 `index.md` / `log.md` 并准备 commit?
+
+---
+
+## Git 操作纪律(commit 卫生)
+
+ZHPMind 的 git 只为「可回滚 + GitHub 备份」服务(design-principles 第一层「开放格式」),不是日常跨设备同步通道——同步走 Obsidian Sync。基于此,以下纪律覆盖你的默认 git 习惯:
+
+1. **只在 Mac mini 提交。** 所有 `git commit` / `git push` 一律在 Mac mini 上执行;MacBook Air 等其他设备只读、只靠 Obsidian Sync 同步,绝不在其上提交。理由:单一提交点,避免多设备并行提交制造分叉与同步冲突副本(`xxx 1.md` 一类)。
+2. **提交前先 fetch/merge。** 每次提交前先 `git fetch origin && git merge origin/main`(或 `git pull --no-rebase`),把远端变更并进来再提交。理由:即便只在 mini 提交,GitHub 端仍可能存在手动改动;先合后提,避免 non-fast-forward 被拒后病急乱投医。
+3. **不拿 `git reset --hard origin/main` 当创可贴。** 工作树乱了 / 提交错了,先用 `git status`、`git diff`、`git stash`、`git restore <file>` 定点处理。`reset --hard` 到远端等于「丢弃本地全部未推送改动」的核武器,只在确认本地确无任何要保留内容时才用。理由:历史上曾用 reset-to-origin 抹平表面问题,连带丢失过未提交的蒸馏产物。
+4. **二进制源(epub / pdf / docx)不入 git。** 电子书 / 课程 / PDF 等二进制源材料一律由 `.gitignore` 排除(`*.epub` / `*.pdf` / `*.docx`,2026-06-01 用 filter-repo 瘦身后立规),仅靠「本地留盘 + Obsidian Sync」保存,不进 git 历史。理由:二进制不可 diff、体积大、撑爆仓库且无版本控制价值——git 只管可读可 diff 的 markdown。日后新增其他二进制格式(如 .mobi / .azw3)时,同步往 `.gitignore` 补对应 glob。

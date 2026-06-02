@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-02 — 旧结构孤儿迁移收官：学会提问 / 何以为父 / Yes Brain 三簇平铺规范化，新建 critical-thinking-moc + parenting-moc；wiki/pages 现 70 篇_
+_最后更新：2026-06-02 — 旧结构孤儿迁移收官：学会提问 / 何以为父 / Yes Brain 三簇平铺规范化，新建 critical-thinking-moc + parenting-moc；清理 html-artifacts-presentation-layer 死链（从未入库、迁移中遗失，标记为重蒸馏候选）；wiki/pages 现 70 篇_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -48,7 +48,6 @@ _最后更新：2026-06-02 — 旧结构孤儿迁移收官：学会提问 / 何�
 - [[obstacles-to-critical-thinking]] — 批判性思维的六大障碍：快思考、刻板印象、确认偏误、自我中心、一厢情愿、基本归因错误及破解 (1 个来源)
 - [[ten-critical-questions]] — 《学会提问》核心：评估任何论证的 10 个关键问题（论题/理由/歧义/假设/谬误/证据/替代因/数据/省略/结论） (1 个来源)
 - [[fat-skills-thin-harness]] — AI Agent 系统架构原则：智能驻留在技能和数据中，Harness 只做路由 (1 个来源)
-- [[html-artifacts-presentation-layer]] — 知识系统双层交互：markdown 给 AI/存储，HTML artifacts 给人/呈现；视觉是最高带宽输出通道 (1 个来源)
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
 - [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 + 云飞扬文案反直觉取舍 (2 个来源)
 - [[personal-knowledge-base]] — AI 持续写入的运行中知识神经系统，通过实体传播实现复利积累 (1 个来源)

@@ -200,3 +200,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[affiliate-marketing-complete-guide]]（type: book，联盟营销完整知识体系蒸馏）
 - **Pages updated**: [[index]]（新增 1 条目，总页数 49→50）
 - **Note**: [self-reviewed] 全书分六大部分：(1) 行业基础——四方结构（广告主/Affiliate/联盟网络/流量来源）、计费模式（CPA/CPL/CPS/RevShare）、垂直领域（约会/抽奖/金融/游戏/健康）、流量类型（展示/弹窗/原生/搜索/社交）、Lead 质量谱系（低/中/高）、核心指标（CTR/CR/ROI/EPV/EPC）；(2) 工具体系——追踪软件（Voluum/Prosper202）、竞争情报工具（WhatRunsWhere/Adbeat/Anstrex）、联盟网络、流量来源平台矩阵；(3) Campaign 策略体系——确认表/情报采集、Angle 概念（心理切入钩）、多轮测试框架（Angle→Banner→Landing Page）、优化维度（广告位/运营商/设备/Landing Page）、上量策略（纵向/横向）；(4) 三大实战案例——低质量 Lead（ExoClick 约会，澳大利亚，被广告主踢出教训）/ 中等质量 Lead（PopAds sweepstakes，泰国，EPV>CPV 公式，ISP 白名单优化，+72% ROI）/ 高质量 Lead（Content.ad 原生广告，OurTime 约会，软文 Landing Page，Sub ID 追踪转化归因）；(5) 超级 Affiliate 七大原则——竞争优势（情报/执行/创新）/ 变现所有流量 / 上量的艺术 / 邮件列表 / Cloak 意愿（高风险，作者本人不用）/ 团队指数增长 / 精益求精；(6) 未来与退出——移动主导、全球市场分化、退出路径（自有 Offer/Network/流量来源/工具/投资）。Mirror 区预留占位，待 Book Mirror 工作流执行后填充。原始素材已在 `wiki/raw/assets/books/`，无需移动。蒸馏模型 Claude Sonnet 4.5（用户分批上传图片辅助读取水印遮挡页面内容）。
+
+---
+
+## [2026-06-02] chore | backlog 善后收尾：CLAUDE.md Git 纪律 + skill-concept-fable 去重 + html-artifacts 死链清理
+
+- **Sources touched**: none（治理 / 结构维护，无新来源）
+- **Pages created**: none
+- **Pages updated**: [[index]]（移除 html-artifacts-presentation-layer 死链条目 + 更新最后更新 note，页数仍 70）
+- **Note**: 孤儿迁移后「其余善后」收尾，机器 Mac mini。(1) **CLAUDE.md 治根**——root CLAUDE.md 新增「Git 操作纪律」节四条：只在 mini 提交、提交前 fetch/merge、不拿 reset-to-origin 当创可贴、二进制（epub/pdf/docx）不入库（理由固化，策略本身 2026-06-01 filter-repo 后已在 .gitignore 落地）。(2) **skill-concept-fable 去重**——wiki/ 根的 v0.1 draft 副本（created 2026-05-25）git rm 删除，正本保留 wiki/pages/（active v1.0，含三轮 dogfood Pitfalls）；内联 prompt 已在 .claude/skills/concept-fable/references/prompt-template.md 留存，无内容损失。(3) **html-artifacts-presentation-layer 死链**——git 历史核查（git log --all -- '*html-artifacts*' 空 + 6a53c59 --stat 仅删 superseded 教程）确认该页从未真正 git add 入库，工作树副本疑在 iCloud→Sync 迁移中遗失，不可恢复；移除 index 死链条目，标记为重蒸馏候选（需原始素材重走 distill）。(4) **reorg 提交范围核查**——5c57e46 等 pre-merge sweep --stat 仅含 .gitignore/changelog/log/critical-thinking-framework/index 5 文件，无 CLAUDE.md、raw 等无关文件混入；带 130MB PDF 的 git add -A 当时已 reset 未入历史，迁移以 scoped 小提交完成，无需拆分。(5) **同步冲突副本**——e6237ee 历史已删，全 vault `* 1.md` 零残留。(6) **log.md 时序错位**（05-28 收尾补全块在 05-29 后）经评估违反本文件 append-only 不变量，不重排——物理顺序=写入顺序，日期 header 已承载真相。
