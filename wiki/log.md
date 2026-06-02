@@ -225,3 +225,21 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[the-denial-of-death]]（type: book）、[[ernest-becker]]（type: person）、[[immortality-project]]（type: concept）、[[causa-sui]]（type: concept）
 - **Pages updated**: [[people-moc]]（新增 Ernest Becker 条目，更新思想关联图）、[[father-hunger]]（新增 causa-sui 的精神分析联结）、[[index]]（新增 4 条目，70→74 篇）
 - **Note**: [self-reviewed] Becker 的核心框架：死亡恐惧是人类行为的终极底层驱动，人格是"生命的必要谎言"（压抑死亡焦虑的防卫盔甲），所有文化活动本质上都是各类不朽筹划（immortality project）。全书融合齐克果存在焦虑、兰克历史性精神官能症、布朗对精神分析的修正、以及对弗洛伊德系统性重读。关键判断：弗洛伊德将原初压抑归结为"性"是错的，真正的原初压抑是对死亡的压抑；伊底帕斯式筹划的本质是"自因筹划"（causa sui project），不是对母亲的性占有。英雄主义既是文明的动力，也是战争和种族灭绝的深层来源。Propagation：father-hunger 页补充 causa-sui 精神分析联结（父亲饥渴 = 自因冲动悬空）；people-moc 新增存在主义心理学脉络。候选待建 person 页：齐克果（Kierkegaard）、奥托·兰克（Otto Rank）——两人在书中均有专章深度讨论，等后续有独立来源时创建。原始素材已从 inbox/ 移入 wiki/raw/。子 agent 协助提取全书文本（277K 字），主 agent 完成蒸馏写入。
+
+---
+
+## [2026-06-02] chore | vault-tidy 上 Hermes 注册 + 首次 --draft dogfood + Pitfalls 回填
+
+- **Sources touched**: none（Hermes 工具层 + 反思页维护，无新来源）
+- **Pages created**: none
+- **Pages updated**: [[skill-vault-tidy]]（status draft→active；回填 5 条实战 Pitfalls + dogfood 结论；待解决问题更新）、[[index]]（skill-vault-tidy 注解 draft→active）
+- **Note**: vault-tidy 执行器从“已部署未注册”推进到注册 + 首次 dogfood。**注册卡点根因**:执行体 `~/.hermes/skills/vault-tidy.md` frontmatter 抄了 ZHPMind 的 `status: draft`，撞 Hermes loader 语义被静默跳过（对照 review-digest 无 status 正常注册）；删该行 + 不带 -k 的 kickstart 重载后注册成功（22 local）。首次 dogfood 走 --draft（vault 零改动），因现有 scanner JSON 已 30h>24h，产物用陈旧数据、不可 apply，但恰好活体验证了 24h gate。验证到位:三档 scope、Tier 3 零违规、诚实 caveat、sheep-archive 越界正确交还人类。**挡 --apply 的真缺陷**:scanner JSON 缺 distill 状态字段，inbox 老化归档无法判“无 distill 痕迹”——需先扩展 review-digest scanner。详见 [[skill-vault-tidy]] 实战 Pitfalls 表（#1-#5）。本轮 vault 改动（本页 + index + 本 log）git 提交在 mini，提交前 fetch/merge（CLAUDE.md Git 纪律）。
+
+---
+
+## [2026-06-02] distill | 养育男孩.epub — Steve Biddulph《养育男孩》
+
+- **Sources touched**: `raw/养育男孩.epub`
+- **Pages created**: [[raising-boys]], [[boys-development-phases]], [[steve-biddulph]]
+- **Pages updated**: [[parenting-moc]]（新增《养育男孩》分区），[[index]]（新增 3 条目，总页数 77→80）
+- **Note**: 全书约 10 万字符，14 个文件（前言 2 + 正文 10 章 + 附录 + 致谢），由子 agent 用 zipfile + html.parser 提取后主 agent 写入。核心新概念：三阶段成长框架（boys-development-phases）独立成页，判断依据——这是全书组织框架，跨越育儿其他书目复用可能性高。作者页（steve-biddulph）新建，与[[my-father-before-me]]（精神分析视角）、[[the-yes-brain]]（神经生物学）形成对比：比达尔夫是社会生态学视角，关注家庭结构与社区支持网络。Propagation 自检：parenting-moc 已更新；[[father-hunger]]和[[parenting-alliance]]页面与本书有关联但内容不冲突，无需更新。epub 已移入 wiki/raw/，inbox 清空。[self-reviewed]

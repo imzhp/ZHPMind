@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-02 — 蒸馏 Barbara Minto《金字塔原理》，新建 the-pyramid-principle、mece、scqa 共 3 页；wiki/pages 现 77 篇_
+_最后更新：2026-06-02 — 蒸馏 Steve Biddulph《养育男孩》，新建 raising-boys、boys-development-phases、steve-biddulph 共 3 页；wiki/pages 现 80 篇_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -71,6 +71,7 @@ _最后更新：2026-06-02 — 蒸馏 Barbara Minto《金字塔原理》，新�
 
 ## Frameworks
 
+- [[boys-development-phases]] — 男孩成长三阶段：0-6岁（母亲）/ 6-13岁（父亲关键期）/ 14岁+（引导者），比达尔夫核心框架 (1 个来源)
 - [[wildlume-business-architecture]] — 曜野业务架构与价值链全景：参与者图谱、战略骨架、价值主张、信息流盘点 (0 个来源)
 - [[wildlume-feedback-listing]] — C 端反馈反哺 Listing 运营与分销商的机制设计（B 方向）(0 个来源)
 - [[wildlume-feedback-product]] — C 端反馈反哺产品改良与工厂研发的机制设计（A 方向）(0 个来源)
@@ -86,6 +87,7 @@ _最后更新：2026-06-02 — 蒸馏 Barbara Minto《金字塔原理》，新�
 ## People
 
 - [[andrej-karpathy]] — OpenAI 联合创始人、Tesla AI 前负责人，提出 Vibe Coding 和 Software 3.0 (1 个来源)
+- [[steve-biddulph]] — 澳大利亚家庭治疗师，《养育男孩》作者，男孩成长三阶段理论提出者 (1 个来源)
 - [[boris-cherny]] — Anthropic 工程师，Claude Code 创造者，主张编程已被 AI 解决 (1 个来源)
 - [[ernest-becker]] — 美国存在主义心理学家，《死亡否认》作者，死亡恐惧即英雄主义的奠基者 (1 个来源)
 - [[garry-tan]] — Y Combinator CEO，开源个人 AI 操作系统（GBrain/GStack/OpenClaw）的建造者 (1 个来源)
@@ -107,6 +109,7 @@ _最后更新：2026-06-02 — 蒸馏 Barbara Minto《金字塔原理》，新�
 - [[asking-the-right-questions]] — Neil Browne & Stuart Keeley《学会提问》：为什么需要批判性思维、海绵式 vs 淘金式、提问序列（批判性思维主题书源） (1 个来源)
 
 - [[my-father-before-me]] — Michael J. Diamond《何以为父》：父子相互影响、好父亲三标准、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
+- [[raising-boys]] — Steve Biddulph《养育男孩》：三阶段成长框架、睾丸激素节律、大脑差异、父母角色切换、性教育、学校与社区支持 (1 个来源)
 
 - [[the-pyramid-principle]] — 芭芭拉·明托《金字塔原理》：结构化表达的麦肯锡标准，金字塔结构、SCQA 序言、MECE 分组、演绎与归纳横向逻辑全解 (1 个来源)
 - [[the-yes-brain]] — Daniel Siegel & Tina Bryson《The Yes Brain》（如何让孩子自觉又主动）：开放脑 vs 防御脑、四能力（平衡/复原/洞察/共情）的神经科学育儿框架（阅读进行中） (1 个来源)
