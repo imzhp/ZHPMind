@@ -22,7 +22,7 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 - [[ai-engineering-moc]] — AI / LLM / Agent 工程体系导航：范式、开发方式、工具链、架构、知识管理
 - [[people-moc]] — 所有人物页导航，含思想关联图
 - [[critical-thinking-moc]] — 批判性思维主题导航：《学会提问》书源 + 框架 + 10 问 + 障碍 + 写作应用
-- [[parenting-moc]] — 育儿与亲子关系主题导航：《何以为父》系列（后续纳入 Yes Brain）
+- [[parenting-moc]] — 育儿与亲子关系主题导航：《何以为父》系列 + 《The Yes Brain》系列
 
 ## Concepts & Methods
 
@@ -60,6 +60,11 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 - [[father-hunger]] — 父亲饥渴：男性对父爱与认可的深层渴望，及其代际传递与转化愈合（《何以为父》概念页） (1 个来源)
 - [[parenting-alliance]] — 养育同盟：父母共同养育的有意识合作，从怀孕期建立，孩子安全感基础（《何以为父》概念页） (1 个来源)
 - [[expectant-father-emotional-coach]] — 准父亲的情绪教练角色：怀孕期见证/倾听/教导/建立信心四能力（《何以为父》方法页） (1 个来源)
+- [[open-brain-vs-defensive-brain]] — 开放脑 vs 防御脑：状态决定能力，整合脑 vs 失整合脑（《The Yes Brain》基础概念） (1 个来源)
+- [[yes-brain-balance]] — 平衡力：管理情绪与行为，感受充分同时思维在线（《The Yes Brain》概念页） (1 个来源)
+- [[yes-brain-resilience]] — 复原力：从挑战中恢复，可控难度中建立而非回避（《The Yes Brain》概念页） (1 个来源)
+- [[yes-brain-insight]] — 洞察力：观察自己的思维与模式，从反应转向有意识选择（《The Yes Brain》概念页） (1 个来源)
+- [[yes-brain-empathy]] — 共情力：理解并连接他人，认知共情 + 情感共情（《The Yes Brain》概念页） (1 个来源)
 
 ## Frameworks
 
@@ -98,8 +103,7 @@ _最后更新：2026-06-01 — 财务金三角 + 何以为父 + Yes Brain 集群
 
 - [[my-father-before-me]] — Michael J. Diamond《何以为父》：父子相互影响、好父亲三标准、父亲饥渴、养育同盟、准父亲做妻子的情绪教练（精神分析视角，阅读进行中） (1 个来源)
 
-- [[The Yes Brain - Open Brain Parenting]] — Daniel Siegel & Tina Bryson《The Yes Brain》（如何让孩子自觉又主动）：开放脑 vs 防御脑、四能力（平衡/复原/洞察/共情）的神经科学育儿框架（阅读进行中） (1 个来源)
-- [[Open Brain - Navigation Hub]] — Yes Brain / 开放式大脑集群导航中枢：四能力深潜 + 章节 + 速查 + 应用场景入口
+- [[the-yes-brain]] — Daniel Siegel & Tina Bryson《The Yes Brain》（如何让孩子自觉又主动）：开放脑 vs 防御脑、四能力（平衡/复原/洞察/共情）的神经科学育儿框架（阅读进行中） (1 个来源)
 
 ## Reflections
 

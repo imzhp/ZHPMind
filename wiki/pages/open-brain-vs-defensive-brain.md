@@ -3,8 +3,8 @@ title: "The Yes Brain: Chapter 1 - What is an Open Brain?"
 aliases:
   - Yes Brain Chapter 1
   - Open vs Defensive Brain
-type: method/chapter-summary
-book: "[[The Yes Brain - Open Brain Parenting]]"
+type: concept
+book: "[[the-yes-brain]]"
 chapter: 1
 tags:
   - open-brain
@@ -115,10 +115,10 @@ Chapter 1 introduces the four qualities children develop when their brains are i
 
 | Quality | Focus | Develops |
 |---------|-------|----------|
-| **[[Balance (Open Brain)\|平衡力]]** | Managing emotions and behavior | Prevents losing wisdom to reactivity |
-| **[[Resilience (Open Brain)\|复原力]]** | Bouncing back from challenges | Capacity to handle inevitable difficulties |
-| **[[Insight (Open Brain)\|洞察力]]** | Understanding yourself | Agency and intentional choice |
-| **[[Empathy (Open Brain)\|共情力]]** | Connecting with others | Genuine relationships and understanding |
+| **[[yes-brain-balance\|平衡力]]** | Managing emotions and behavior | Prevents losing wisdom to reactivity |
+| **[[yes-brain-resilience\|复原力]]** | Bouncing back from challenges | Capacity to handle inevitable difficulties |
+| **[[yes-brain-insight\|洞察力]]** | Understanding yourself | Agency and intentional choice |
+| **[[yes-brain-empathy\|共情力]]** | Connecting with others | Genuine relationships and understanding |
 
 **These aren't separate skills to teach; they naturally develop when the brain is in an open state.**
 
@@ -296,10 +296,10 @@ After understanding Chapter 1:
 
 ## Related Chapters & Concepts
 
-- [[The Yes Brain - Chapter 2|Chapter 2: Balance]] - Building the first quality in an open brain
-- [[The Yes Brain - Chapter 3|Chapter 3: Resilience]] - Building capacity for challenges
-- [[The Yes Brain - Chapter 4|Chapter 4: Insight]] - Building self-understanding
-- [[The Yes Brain - Chapter 5|Chapter 5: Empathy]] - Building genuine connection
+- [[yes-brain-balance|平衡力 Balance]] - Building the first quality in an open brain
+- [[yes-brain-resilience|复原力 Resilience]] - Building capacity for challenges
+- [[yes-brain-insight|洞察力 Insight]] - Building self-understanding
+- [[yes-brain-empathy|共情力 Empathy]] - Building genuine connection
 
 ---
 

@@ -1,25 +1,26 @@
 ---
-title: "The Yes Brain: How to Cultivate an Open Brain in Children"
+type: book
+title: "The Yes Brain：如何让孩子自觉又主动"
 aliases:
+  - The Yes Brain
   - Yes Brain
   - Open Brain Parenting
   - 如何让孩子自觉又主动
-type: method/framework
-authors:
-  - Daniel J. Siegel, M.D.
-  - Tina Payne Bryson, Ph.D.
+author: Daniel J. Siegel, Tina Payne Bryson
 translator: 黄钰平
 publisher: Zhejiang Education Publishing
-publish_date: 2020-07-01
+publication_year: 2020
 original_publish_date: 2018
-language: Chinese (translation)
+sources:
+  - assets/books/如何让孩子自觉又主动-丹尼尔·西格尔.epub
+created: 2026-05-31
+updated: 2026-06-02
 tags:
   - parenting
   - neuroscience
   - child-development
   - brain-integration
 status: ingested
-source: PDF (202 pages, 33.2MB)
 ---
 
 # The Yes Brain: Open Brain Parenting Method
@@ -38,22 +39,22 @@ The authors' answer: Cultivate the **open brain** - a neurological state where c
 
 The open brain develops through cultivating four essential abilities in children:
 
-### 1. [[The Yes Brain - Balance|平衡力 (Balance)]]
+### 1. [[yes-brain-balance|平衡力 (Balance)]]
 **The ability to manage emotions and behavior**  
 - Prevents children from easily losing their wisdom
 - Creates a stable foundation for self-regulation
 
-### 2. [[The Yes Brain - Resilience|复原力 (Resilience)]]  
+### 2. [[yes-brain-resilience|复原力 (Resilience)]]  
 **The ability to bounce back and adapt**
 - When facing unavoidable problems and challenges
 - Building capacity to respond rather than react
 
-### 3. [[The Yes Brain - Insight|洞察力 (Insight)]]
+### 3. [[yes-brain-insight|洞察力 (Insight)]]
 **The ability to observe and reflect on oneself**
 - Understanding one's own feelings, choices, and patterns
 - Using self-knowledge to better control life direction
 
-### 4. [[The Yes Brain - Empathy|共情力 (Empathy)]]
+### 4. [[yes-brain-empathy|共情力 (Empathy)]]
 **The ability to understand and connect with others**
 - Reading others' perspectives and emotions
 - Taking action to improve relationships and situations
@@ -64,11 +65,11 @@ The open brain develops through cultivating four essential abilities in children
 
 | Chapter | Topic | Focus |
 |---------|-------|-------|
-| 1 | [[The Yes Brain - Chapter 1\|What is an Open Brain?]] | Foundations of the open brain vs. defensive brain |
-| 2 | [[The Yes Brain - Chapter 2\|Balance]] | Managing emotions and behavior through neural integration |
-| 3 | [[The Yes Brain - Chapter 3\|Resilience]] | Building capacity to handle challenges |
-| 4 | [[The Yes Brain - Chapter 4\|Insight]] | Self-awareness and understanding |
-| 5 | [[The Yes Brain - Chapter 5\|Empathy]] | Connecting with others and building relationships |
+| 1 | [[open-brain-vs-defensive-brain\|What is an Open Brain?]] | Foundations of the open brain vs. defensive brain |
+| 2 | [[yes-brain-balance\|Balance]] | Managing emotions and behavior through neural integration |
+| 3 | [[yes-brain-resilience\|Resilience]] | Building capacity to handle challenges |
+| 4 | [[yes-brain-insight\|Insight]] | Self-awareness and understanding |
+| 5 | [[yes-brain-empathy\|Empathy]] | Connecting with others and building relationships |
 
 ---
 
@@ -171,6 +172,6 @@ Together, these books provide a comprehensive framework for understanding how ch
 *Generated as part of digital vault ingestion: 2026-05-31*
 
 **Navigation**: 
-- Start with [[The Yes Brain - Chapter 1]] for foundations
-- Jump to specific qualities: [[The Yes Brain - Balance]], [[The Yes Brain - Resilience]], [[The Yes Brain - Insight]], [[The Yes Brain - Empathy]]
+- Start with [[open-brain-vs-defensive-brain]] for foundations
+- Jump to specific qualities: [[yes-brain-balance]], [[yes-brain-resilience]], [[yes-brain-insight]], [[yes-brain-empathy]]
 - For practical strategies, see individual chapter guides

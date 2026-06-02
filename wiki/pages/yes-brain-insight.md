@@ -7,8 +7,8 @@ aliases:
   - Interoception
 type: concept
 relates_to:
-  - "[[The Yes Brain - Open Brain Parenting]]"
-  - "[[Balance (Open Brain)]]"
+  - "[[the-yes-brain]]"
+  - "[[yes-brain-balance]]"
   - "[[Interpersonal Neurobiology]]"
 tags:
   - open-brain
@@ -329,10 +329,10 @@ A child who understands their own mind is less controlled by it.
 
 ## Related Concepts
 
-- [[Balance (Open Brain)]]: Insight helps you manage emotions by understanding them
-- [[Empathy (Open Brain)]]: Understanding yourself leads to understanding others
+- [[yes-brain-balance]]: Insight helps you manage emotions by understanding them
+- [[yes-brain-empathy]]: Understanding yourself leads to understanding others
 - [[Interpersonal Neurobiology]]: The science of how reflection changes the brain
-- [[The Yes Brain - Chapter 4]]: Detailed insight-building strategies
+- [[open-brain-vs-defensive-brain]]：开放脑 vs 防御脑的基础概念
 - **Metacognition**: Thinking about your own thinking
 
 ---

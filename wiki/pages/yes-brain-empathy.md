@@ -7,8 +7,8 @@ aliases:
   - Social Connection
 type: concept
 relates_to:
-  - "[[The Yes Brain - Open Brain Parenting]]"
-  - "[[Insight (Open Brain)]]"
+  - "[[the-yes-brain]]"
+  - "[[yes-brain-insight]]"
   - "[[Interpersonal Neurobiology]]"
 tags:
   - open-brain
@@ -377,8 +377,8 @@ Children who develop empathy:
 
 ## Related Concepts
 
-- [[Insight (Open Brain)]]: Understanding yourself leads to understanding others
-- [[The Yes Brain - Chapter 5]]: Detailed empathy-building strategies
+- [[yes-brain-insight]]: Understanding yourself leads to understanding others
+- [[open-brain-vs-defensive-brain]]：开放脑 vs 防御脑的基础概念
 - [[Interpersonal Neurobiology]]: The science of how relationships shape the brain
 - **Mirror neurons**: The biological basis of empathy
 - **Theory of mind**: Ability to understand others have different mental states

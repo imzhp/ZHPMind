@@ -6,7 +6,7 @@ aliases:
   - Self-Regulation
 type: concept
 relates_to:
-  - "[[The Yes Brain - Open Brain Parenting]]"
+  - "[[the-yes-brain]]"
   - "[[Interpersonal Neurobiology]]"
 tags:
   - open-brain
@@ -218,9 +218,9 @@ When you stay balanced:
 
 ## Related Concepts
 
-- [[The Yes Brain - Resilience]]: Building from balance to handling bigger challenges
+- [[yes-brain-resilience]]: Building from balance to handling bigger challenges
 - [[Interpersonal Neurobiology]]: The science behind how this works
-- [[The Yes Brain - Chapter 2]]: Detailed chapter on balance strategies
+- [[open-brain-vs-defensive-brain]]：开放脑 vs 防御脑——平衡是其基础
 - **Polyvagal theory**: Understanding the nervous system's role in regulation
 
 ---

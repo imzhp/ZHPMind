@@ -6,8 +6,8 @@ aliases:
   - Adaptation Capacity
 type: concept
 relates_to:
-  - "[[The Yes Brain - Open Brain Parenting]]"
-  - "[[Balance (Open Brain)]]"
+  - "[[the-yes-brain]]"
+  - "[[yes-brain-balance]]"
 tags:
   - open-brain
   - resilience
@@ -307,9 +307,9 @@ Children who develop resilience:
 
 ## Related Concepts
 
-- [[Balance (Open Brain)]]: Foundation for handling challenges
-- [[The Yes Brain - Insight]]: Understanding what resilience requires
-- [[The Yes Brain - Chapter 3]]: Detailed resilience-building strategies
+- [[yes-brain-balance]]: Foundation for handling challenges
+- [[yes-brain-insight]]: Understanding what resilience requires
+- [[open-brain-vs-defensive-brain]]：开放脑 vs 防御脑——复原力的前提
 - **Growth mindset**: The belief system that supports resilience
 - **Post-traumatic growth**: Resilience after serious challenges
 
