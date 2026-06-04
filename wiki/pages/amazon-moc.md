@@ -2,7 +2,7 @@
 title: "Amazon MOC"
 tags: [moc, amazon, e-commerce]
 created: 2026-05-11
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Amazon MOC
@@ -80,6 +80,8 @@ updated: 2026-06-04
 [[amazon-unit-economics]] — 单 SKU 预测与决策模型：拆分固定成本和随售价变化的成本，计算单件净利润、盈亏平衡价格与目标利润率售价。与利润分析分工为“单件预测决策 vs 店铺实际经营复盘”。
 
 [[amazon-tariff-landed-cost]] — 从贸易路线、HS Code、关税、VAT/GST、清关和目的地物流计算单件落地成本；所有税率、归类和规则都必须实时核验。
+
+[[amazon-fee-rates-snapshot]] — Amazon FBA 费率、类目佣金与对华进口关税的 2026-06-05 快照。方法论页只保留计算结构，具体数值集中在本页并随时点替换。
 
 ---
 

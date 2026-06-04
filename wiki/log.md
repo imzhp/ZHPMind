@@ -297,3 +297,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[amazon-unit-economics]]、[[amazon-tariff-landed-cost]]、[[amazon-listing-build-and-audit]]、[[amazon-listing-visual-planning]]、[[amazon-backend-keywords]]、[[amazon-ppc-campaign-management]]、[[amazon-fba-prep]]
 - **Pages updated**: [[amazon-moc]]（按利润 / Listing / 广告 / 供应链挂载 7 页）；[[index]]（登记 7 页并校正页面数）
 - **Note**: [self-reviewed] 本批性质为 **distill，非 skillify**：从 9 个上游 `SKILL.md` 提取评分维度、公式与方法步骤，剥离安装、脚本、营销和付费引流；合并利润测算（profit-margin + FBA calculator）与 Listing 视觉规划（images + photography）两组重叠。动态费率、税率、平台规则与启发式阈值仅保留计算结构并标注实时核验。新页通过双链接回现有利润、Listing、广告、关键词、库存等知识页，MOC 与 index 均已登记，无孤岛。
+
+---
+
+## [2026-06-05] snapshot | Amazon 费率与关税数据时点
+
+- **Sources touched**: chat-Claude web 调研（数据时点 2026-06-05）
+- **Pages created**: [[amazon-fee-rates-snapshot]]（type: snapshot）
+- **Pages updated**: [[amazon-unit-economics]]、[[amazon-tariff-landed-cost]]、[[amazon-fba-prep]]（只加快照引用句）；[[amazon-moc]]（挂入财务与现金流）；[[index]]（登记 snapshot，页面数 94→95）
+- **Note**: 将高频过期的 FBA 费率、类目佣金、入仓配置费和对华进口关税数值从稳定方法论结构中分离，集中到带 2026-06-05 数据时点的 snapshot 页。三个方法论页继续只保留计算 / 检查结构，具体数值通过 `[[amazon-fee-rates-snapshot]]` 读取；快照过期时替换快照，不重写方法论。
