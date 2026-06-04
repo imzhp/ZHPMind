@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-04 — 修正 Haopeng 杭州/深圳时间线与曜野成立日期，并补齐 Book Mirror 镜射锚点 source-ref 规则；wiki/pages 现 86 篇_
+_最后更新：2026-06-04 — 从 Nexscope MIT 仓库 distill 7 个 Amazon 运营专项方法页（非 skillify）；wiki/pages 现 94 篇（不含 index）_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -29,19 +29,26 @@ _最后更新：2026-06-04 — 修正 Haopeng 杭州/深圳时间线与曜野成
 - [[a9-algorithm]] — 亚马逊商品搜索排名的核心算法，包含四大原理和三大支柱 (1 个来源)
 - [[ai-native-startup]] — AI 作为核心基础设施的创业范式，创始人角色从执行者转变为 Agent 调度员 (1 个来源)
 - [[agentic-engineering]] — 在专业质量标准不降前提下用 Agent 大幅提速的工程纪律 (4 个来源)
+- [[amazon-backend-keywords]] — 后端关键词去重、筛选、排序、字节压缩与动态规则核验框架 (0 个来源)
 - [[amazon-cashflow-roi]] — 现金流与 ROI 模型：年化 ROI = 单次 ROI × 周转次数，盈利 ≠ 账上钱 (1 个来源)
 - [[amazon-data-driven-operations]] — 数据化运营方法论枢纽：80% 难题可数据解释、问题归类四象限、ACoS 拆解链、广告归因 7 天 (1 个来源)
+- [[amazon-fba-prep]] — FBA 入仓贴标、包装、装箱、Shipment Plan 与拒收风险检查框架 (0 个来源)
 - [[amazon-inventory-replenishment]] — 库存管理与备货节奏：周转率杠杆、备货决定定价权、安全库存放着不动用 (1 个来源)
 - [[amazon-keyword-library]] — 关键词词库 = 财富+护城河：SIFT 占位率筛选、词根分析、投放四象限、相关性 2.0 与跨类目 ASIN 定投 (2 个来源)
+- [[amazon-listing-build-and-audit]] — Listing 构建双模式、关键词覆盖与八维百分制审计框架 (0 个来源)
+- [[amazon-listing-visual-planning]] — 主图、信息图、场景图、拍摄清单与 A/B 测试的视觉规划框架 (0 个来源)
 - [[amazon-new-product-launch]] — 新品推广全流程 SOP：立项三件闭环、投放评级 ABCD、整体盈亏 ACoS 作上限、让产品适应你的标准 (1 个来源)
 - [[amazon-opportunity-explorer]] — 商机探测器与推广成本预估：总销量倒推、活跃商品数=真竞争、转化率高≠蓝海、转化率 vs 大盘终极判据 (1 个来源)
 - [[amazon-patent-screening]] — 跨境电商专利筛查：消费者混淆原则、保护越整体范围越窄、规避方法 (1 个来源)
 - [[amazon-ppc-advertising]] — 亚马逊站内付费广告体系，含竞价策略、广告类型与报表优化 + 云飞扬财务决策层（整体盈亏 ACoS / 四象限 / 四层级诊断 / 低毛利无法优化） (2 个来源)
+- [[amazon-ppc-campaign-management]] — PPC 财务边界、四类 Campaign、关键词漏斗、否词与周期调价框架 (0 个来源)
 - [[amazon-pricing-strategy]] — 价格策略：螺旋两轮增长、降价+缩广告、5 种价格形式、防御性 7D、c-访问转化率衡量降价 (1 个来源)
 - [[amazon-product-selection]] — 亚马逊选品五维度分析框架 + 云飞扬财务决策器、垄断分型、市场容量实操与测款方法论 (2 个来源)
 - [[amazon-profit-analysis]] — 亚马逊利润管理全栈财务 SOP：真金白银只有采购+头程、退款≠退货、三种退货精算 (1 个来源)
 - [[amazon-review-management]] — 评论权重体系、差评处理、售后转化与私域流量建立 (1 个来源)
+- [[amazon-tariff-landed-cost]] — HS Code、关税、VAT/GST 与单件落地成本计算框架 (0 个来源)
 - [[amazon-traffic-sources]] — 亚马逊站内十大流量入口与站外七大流量入口全解析 + 云飞扬购买路径与关联流量打法 (2 个来源)
+- [[amazon-unit-economics]] — 单 SKU 成本拆解、盈亏平衡与目标利润率定价模型 (0 个来源)
 - [[causa-sui]] — 自因：人类渴望成为自己命运创造者的冲动，贝克尔重读伊底帕斯式筹划的核心概念 (1 个来源)
 - [[claude-code]] — Anthropic 的 AI 编程 CLI 工具，由 Boris Cherny 创建，支持 loops 和并行 agent (2 个来源)
 - [[cognitive-dissonance]] — 认知不协调：行为改变可引发态度改变，减少不协调是决策的隐性驱动力（费斯汀格，1957） (1 个来源)

@@ -288,3 +288,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: none
 - **Pages updated**: [[zhanghaopeng]]（杭州阶段改为 2021-08~2022-08，补 2023-03 搬深圳）；[[wildlume-business-reference]]（业务事实源补成立日期 2022-11-16）；[[skill-book-mirror]]（cross-eval 必须同时读取身份锚点和各行来源文件）；[[index]]
 - **Note**: 保留已确认的营业执照注册日 `2022-11-16`，修正旧“2023 年底成立”叙述及其导致的 Book Mirror 推导。镜射评审的证据链从“只喂书章原文”升级为“书章原文 + `wiki/pages/zhanghaopeng.md` + draft 每条 `[来源:]` 文件”，均作为重复 `--source-ref` 传入；缺任一事实锚点即阻断。原始口述 raw 与历史 inbox cross-eval 报告不改，保留为纠错前证据。
+
+---
+
+## [2026-06-04] distill | Nexscope Amazon 运营纯框架第一批
+
+- **Sources touched**: `nexscope-ai/Amazon-Skills@40e6bb6c3b6bcb9fa2e6298d34733997b40e12d8`；`nexscope-ai/eCommerce-Skills@edd175af8ca7f4c00f9b0d9ac64bc32dff17d4c6`（均为 Nexscope AI MIT）
+- **Pages created**: [[amazon-unit-economics]]、[[amazon-tariff-landed-cost]]、[[amazon-listing-build-and-audit]]、[[amazon-listing-visual-planning]]、[[amazon-backend-keywords]]、[[amazon-ppc-campaign-management]]、[[amazon-fba-prep]]
+- **Pages updated**: [[amazon-moc]]（按利润 / Listing / 广告 / 供应链挂载 7 页）；[[index]]（登记 7 页并校正页面数）
+- **Note**: [self-reviewed] 本批性质为 **distill，非 skillify**：从 9 个上游 `SKILL.md` 提取评分维度、公式与方法步骤，剥离安装、脚本、营销和付费引流；合并利润测算（profit-margin + FBA calculator）与 Listing 视觉规划（images + photography）两组重叠。动态费率、税率、平台规则与启发式阈值仅保留计算结构并标注实时核验。新页通过双链接回现有利润、Listing、广告、关键词、库存等知识页，MOC 与 index 均已登记，无孤岛。
