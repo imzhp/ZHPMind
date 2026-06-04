@@ -6,7 +6,7 @@ tags:
   - cross-border-ecommerce
   - amazon
 created: 2026-05-12
-updated: 2026-05-29
+updated: 2026-06-04
 sources: []
 source_count: 0
 discussions: []
@@ -31,6 +31,8 @@ aliases: [曜野业务参考, 业务参考, yaoye-business-reference]
 | 吕海锋 | 15% | 有运营团队，同时是分销商 |
 
 注册资本：100 万人民币，已实缴。
+
+成立日期：2022-11-16（营业执照注册）。
 
 协作结构：股东主要负责出资和销售，张昊鹏负责曜野业务的一切。
 
@@ -166,4 +168,3 @@ aliases: [曜野业务参考, 业务参考, yaoye-business-reference]
 | 维护    | 1 名工程师                          |
 | 代码库   | Gitee（计划清理敏感凭据后迁移至 GitHub）      |
 | 品牌色   | 主绿#008C5C、红#EB192E、黑#33383A     |
-

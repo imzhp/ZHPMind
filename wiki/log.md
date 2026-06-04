@@ -270,3 +270,21 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[multi-agent-attention-governance]], [[attention-governance]]
 - **Pages updated**: [[agentic-engineering]]（新增"Agent 边界设计：注意力治理框架"段，updated 刷新），[[ai-engineering-moc]]（Agent 架构区补 attention-governance 条目，来源文章区补 multi-agent-attention-governance 条目），[[index]]（Frameworks 新增 attention-governance，Articles & Books 新增 multi-agent-attention-governance，总页数 83→85）
 - **Note**: [self-reviewed] 原文为中文长文，七节论述，约 300 行。核心论断：多 Agent 系统的本质不是分工（角色化），而是注意力治理——通过六种边界（上下文/工具/状态/环境/反馈/记忆）的显式设计决定系统真实能力。提取框架页 [[attention-governance]]（type: framework）独立成页，判断依据：六边界模型是可复用的设计工具，未来任何 Agent 架构讨论都会引用；文章页 [[multi-agent-attention-governance]]（type: article）承载原文完整论证链。Propagation：[[agentic-engineering]] 中"人类定义系统边界"职责与注意力治理框架高度对应，补充链接；[[fat-skills-thin-harness]] 无需改动（已在 attention-governance 页中引用）；[[ai-engineering-moc]] Agent 架构区新增条目。source 文件已在 wiki/raw/，无需移动。
+
+---
+
+## [2026-06-03] skillify | book-mirror 组装规则定稿 + skill 反思页
+
+- **Sources touched**: `claude-drafts/handoff-book-mirror.md`
+- **Pages created**: [[skill-book-mirror]]
+- **Pages updated**: [[index]]
+- **Note**: 将 Book Mirror Part A #4 已定方案落入 Claudian 执行体与 skillify 页：正式 book 页默认按 B 结构组装，即 `## 核心总览`（既有摘要收缩为几段，理解层、可重写）+ `## 镜射（按章）`（主体，按章双栏，右栏带日期 append）。移除“遇到摘要 vs 镜射未决就停下确认”的旧规则；仅人生 / 心理 / 哲学书默认适合 mirror，方法书 / 业务书不默认走 mirror。cross-eval 仍是按章 gate，GPT key 到位前不跑首本。
+
+---
+
+## [2026-06-04] propagation + skillify | 身份时间线校准 + Book Mirror 锚点证据链
+
+- **Sources touched**: [[zhanghaopeng]] 本人口述校准；`claude-drafts/handoff-book-mirror.md`
+- **Pages created**: none
+- **Pages updated**: [[zhanghaopeng]]（杭州阶段改为 2021-08~2022-08，补 2023-03 搬深圳）；[[wildlume-business-reference]]（业务事实源补成立日期 2022-11-16）；[[skill-book-mirror]]（cross-eval 必须同时读取身份锚点和各行来源文件）；[[index]]
+- **Note**: 保留已确认的营业执照注册日 `2022-11-16`，修正旧“2023 年底成立”叙述及其导致的 Book Mirror 推导。镜射评审的证据链从“只喂书章原文”升级为“书章原文 + `wiki/pages/zhanghaopeng.md` + draft 每条 `[来源:]` 文件”，均作为重复 `--source-ref` 传入；缺任一事实锚点即阻断。原始口述 raw 与历史 inbox cross-eval 报告不改，保留为纠错前证据。

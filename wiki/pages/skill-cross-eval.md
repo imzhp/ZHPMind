@@ -3,10 +3,10 @@ type: skill
 title: cross-eval
 status: draft
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-06-04
 tags:
-  - system/skill
-  - tool/hermes
+  - system-skill
+  - tool-hermes
   - quality-check
 references:
   - design-principles.md

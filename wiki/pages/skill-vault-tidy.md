@@ -3,10 +3,10 @@ type: skill
 title: vault-tidy
 status: active
 created: 2026-05-23
-updated: 2026-06-02
+updated: 2026-06-04
 tags:
-  - system/skill
-  - tool/hermes
+  - system-skill
+  - tool-hermes
 references:
   - design-principles.md
   - skill-review-digest.md

@@ -3,10 +3,10 @@ type: skill
 title: review-digest
 status: active
 created: 2026-05-11
-updated: 2026-05-23
+updated: 2026-06-04
 tags:
-  - system/skill
-  - tool/hermes
+  - system-skill
+  - tool-hermes
 references:
   - "~/.hermes/skills/review-digest/SKILL.md"
   - "~/.hermes/skills/review-digest/references/"

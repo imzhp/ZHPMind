@@ -2,14 +2,14 @@
 title: "Wiki Index"
 tags: [meta, index]
 created: 2026-04-12
-updated: 2026-06-02
+updated: 2026-06-04
 sources: []
 source_count: 0
 ---
 
 # Wiki Index
 
-_最后更新：2026-06-02 — distill 多 Agent 注意力治理文章，新建 multi-agent-attention-governance（article）+ attention-governance（framework），propagation 更新 agentic-engineering、ai-engineering-moc；wiki/pages 现 85 篇_
+_最后更新：2026-06-04 — 修正 Haopeng 杭州/深圳时间线与曜野成立日期，并补齐 Book Mirror 镜射锚点 source-ref 规则；wiki/pages 现 86 篇_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -83,6 +83,7 @@ _最后更新：2026-06-02 — distill 多 Agent 注意力治理文章，新建 
 ## Skills
 
 - [[skill-adversarial-review]] — adversarial-review skill 设计与演化：让 AI 扮对立专家挑刺方法论（cross-role eval，cross-modal 之外的增强）（status: draft）
+- [[skill-book-mirror]] — book-mirror skill 设计与演化：按章拆书、双栏镜射、cross-eval gate 与 B 结构组装（status: draft）
 - [[skill-concept-fable]] — concept-fable skill 的设计意图与演化记录：为 concept/method/framework 页生成直觉锚点寓言
 - [[skill-cross-eval]] — cross-eval skill 设计与演化：ZHPMind 红线 #2 的 Hermes 多模型互评 gate（status: draft，执行体已注册，待补 OpenAI / DeepSeek key）
 - [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：vault 健康度周报
