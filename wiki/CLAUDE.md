@@ -441,9 +441,9 @@ _Last updated: YYYY-MM-DD — N pages total_
 
 完整阅读来源文件。如果是图片或 PDF 且无法完整读取，说明限制并尽可能读取。
 
-### Step 3 — 讨论（可选）
+### Step 3 — 确定蒸馏范围（默认自决，不预审）
 
-除非 Haopeng 明确要求跳过讨论，先输出 3–5 条核心要点摘要，询问是否按此范围蒸馏，或调整侧重。
+按最合理的范围直接蒸馏，不预先征求确认——信任靠可回滚建立（§13.3），不靠事前人审。范围、type、建哪些 entity/concept 页（依 Step 5 标准）由 Claudian 自决，landed 后在 Step 11 Report 说明并标注候选，Haopeng 事后 diff / git revert 修正。仅当来源有多种差异显著、无法择一的合理拆法时，仍先落地其中一种、在 Report 注明另一种——以"做 + 标注"代替"停 + 问"。
 
 ### Step 4 — 写蒸馏页
 
@@ -589,7 +589,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 ### 执行步骤
 
 1. **Review** — 回顾当前对话，提取尚未记录在 wiki 中的洞察
-2. **提出更新清单** — 每条洞察注明要更新哪个页面（或新建页面）、添加什么内容，等待 Haopeng 确认
+2. **确定更新范围** — 每条洞察注明要更新哪个页面（或新建页面）、添加什么内容。Haopeng 命令触发的 reflect 直接进入第 3 步执行，不预先征求确认（信任靠可回滚，§13.3），范围在 log + Report 说明、事后可回滚；仅当 reflect 由 Claudian 主动发起（非命令）时，先列清单等 Haopeng 确认——那是未经请求的写入
 3. **执行更新：**
    - 在现有页面中，用 `> [!reflect]` callout 写入洞察，标题含日期：`> [!reflect] YYYY-MM-DD`
    - 将日期追加进该页面 frontmatter 的 `discussions` 列表
@@ -620,7 +620,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 
 1. **读取项目内容** — 阅读 `projects/[project-name]/` 下的相关文件
 2. **提取经验** — 识别可泛化的知识点（概念、方法、框架、人物认知、反思）
-3. **提出更新清单** — 列出拟更新/新建的 wiki 页面，等待 Haopeng 确认
+3. **确定更新范围** — 列出拟更新/新建的 wiki 页面。harvest 由 Haopeng 命令触发（harvest [project]），直接执行不预先征求确认（同 §6 Step 3 口径），范围在 log + Report 说明、事后可回滚
 4. **执行写入** — 更新已有页面或创建新页面，选择正确的 `type`
 5. **Propagation** — 执行 §11 Propagation 工作流
 6. **更新 `index.md`**
@@ -841,6 +841,11 @@ git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add -A && git -C "/Users/zhanghaop
 ---
 
 ## Changelog
+
+**2026-06-07 v3.1** — 取消命令触发工作流的事前人审，对齐 design-principles AI 红线「不事前人审，信任靠可回滚」：
+- §6 Distill Step 3「讨论（可选）」→「确定蒸馏范围（默认自决，不预审）」：默认直接蒸馏，landed 后在 Report 说明并标注候选，事后 diff / revert 修正
+- §9 Reflect Step 2：Haopeng 命令触发时直接执行；仅 Claudian 主动发起时列清单等确认
+- §10 Harvest Step 3：命令触发直接执行，不预先征求确认
 
 **2026-05-23 v3** — 配合 design-principles v2.5 同步修订：
 - §1 新增「受众契约」段，明确本文件归入"给当前 AI 看"那层；列出与其他 AI 规则文件的关系
