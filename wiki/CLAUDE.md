@@ -481,14 +481,12 @@ Distill 完成后，执行 §11 Propagation 工作流——检查新写入内容
 
 写一条 `distill` 日志，覆盖本次所有操作。
 
-### Step 10 — Git commit
+### Step 10 — 停手，git 交下游
 
-```bash
-git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add -A && git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" commit -m "wiki: distill [文件名] – N pages created, M updated"
-```
+写完内容（页面 + index + log）后 Claudian **不自跑 git**，把改动留在工作树，由 Codex 或 Haopeng commit/push（见 §14）。§13.3「每次写入对应一个 commit」由可靠执行者落地，不由 Claudian。
 
-- `[文件名]` 替换为实际文件名（不含路径）
-- 若本次 distill 无文件变更（空操作），跳过 commit
+- 供下游参考的 message：`wiki: distill [文件名] – N pages created, M updated`
+- 无文件变更（空操作）则无需 commit
 
 ### Step 11 — Report
 
@@ -548,7 +546,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 7. 如果映射产生了独立的新洞察，可新建 `type: reflection` 页面
 8. 更新相关页面的 `[[wikilinks]]`
 9. 追加 `log.md`：`mirror | Book Mirror: [书名]`
-10. Git commit
+10. 停手——git commit/push 交 Codex 或 Haopeng（见 §14），Claudian 不自跑 git
 
 ### 8.2 Life Mirror（内 → 外）
 
@@ -564,7 +562,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 4. 产出写入新的 `type: reflection` 页面（三段式：Compiled Truth 是反思结论，Timeline 记录触发事件）
 5. 在相关 wiki 页面添加 `[[wikilinks]]` 指向新 reflection
 6. 追加 `log.md`：`mirror | Life Mirror: [主题]`
-7. Git commit
+7. 停手——git commit/push 交 Codex 或 Haopeng（见 §14），Claudian 不自跑 git
 
 **Mirror 的红线：**
 - 不做价值判断——映射，不说教
@@ -599,7 +597,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 4. **Propagation** — 执行 §11 Propagation 工作流
 5. **更新 `index.md`** — 将新建页面加入对应分类
 6. **追加 `log.md`** — 格式为 `## [YYYY-MM-DD] reflect | <主题摘要>`
-7. **Git commit**
+7. **停手** — git commit/push 交 Codex 或 Haopeng（见 §14），Claudian 不自跑 git
 
 ### 规则
 
@@ -625,7 +623,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 5. **Propagation** — 执行 §11 Propagation 工作流
 6. **更新 `index.md`**
 7. **追加 `log.md`** — `harvest | [project-name]: [摘要]`
-8. **Git commit**
+8. **停手** — git commit/push 交 Codex 或 Haopeng（见 §14），Claudian 不自跑 git
 
 ### 规则
 
@@ -766,22 +764,15 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 
 ## 14. Git 版本控制
 
-`wiki/` 的变更通过 vault 根目录的 `.git` 仓库跟踪。
+`wiki/` 的变更通过 vault 根目录的 `.git` 仓库跟踪。**git 操作（add/commit/push）由 Codex 或 Haopeng 执行，不由 Claudian。** Claudian 完成内容写入后停手、把改动留在工作树并报告清单；每次 AI 写入仍对应一个 commit（§13.3），由可靠执行者落地。
 
-**Setup（在终端运行一次）：**
-```bash
-git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add wiki/
-git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" commit -m "chore: initialize wiki scaffold"
+原因：按多 Agent 分工，git/批量/结构性操作属 Codex；且 Claudian 的 git 操作历史上多次虚报（假 commit hash、假 unrelated-histories 分叉），不可信。
+
+**Commit message 约定**（供 Codex/Haopeng 参考）：
 ```
-
-**每次工作流完成后自动 commit：**
-
-```bash
-git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add -A && git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" commit -m "wiki: [operation] [描述] – N pages created, M updated"
+wiki: [operation] [描述] – N pages created, M updated
 ```
-
-- `[operation]` 替换为工作流名称：`distill`、`mirror`、`reflect`、`harvest`、`propagation`、`concept-fable`、`lint`
-- 无文件变更时跳过 commit
+`[operation]` 取工作流名：`distill`、`mirror`、`reflect`、`harvest`、`propagation`、`concept-fable`、`lint`。无文件变更时跳过 commit。
 
 **`.gitignore`：** 全量跟踪——raw 和 pages 都值得版本控制。`claude-drafts/` 跟踪 README 与 handoff/result 文件，其他草稿默认忽略。
 
@@ -841,6 +832,10 @@ git -C "/Users/zhanghaopeng/Obsidian/ZHPMind" add -A && git -C "/Users/zhanghaop
 ---
 
 ## Changelog
+
+**2026-06-08 v3.2** — git 操作移出 Claudian，交 Codex/Haopeng（Claudian 多次虚报 git 状态，且 git 本属 Codex 分工）：
+- §6 Distill Step 10、§8 Mirror、§9 Reflect、§10 Harvest 的 commit 步 → 改为「停手，git 交下游」
+- §14 重述：git add/commit/push 由 Codex/Haopeng 执行；Claudian 写完内容停手、报告清单；§13.3 由可靠执行者落地
 
 **2026-06-07 v3.1** — 取消命令触发工作流的事前人审，对齐 design-principles AI 红线「不事前人审，信任靠可回滚」：
 - §6 Distill Step 3「讨论（可选）」→「确定蒸馏范围（默认自决，不预审）」：默认直接蒸馏，landed 后在 Report 说明并标注候选，事后 diff / revert 修正
