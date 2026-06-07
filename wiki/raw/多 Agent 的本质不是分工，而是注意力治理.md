@@ -1,4 +1,15 @@
-![Cover image](https://pbs.twimg.com/media/HJYJ878aMAACbzT.jpg)
+---
+title: "多 Agent 的本质不是分工，而是注意力治理"
+source: "https://x.com/ZeroZ_JQ/status/2059842898125095363"
+author:
+  - "[[@ZeroZ_JQ]]"
+published: 2026-05-28
+created: 2026-05-30
+description: "很多 AI 产品把 Agent 设计成角色，但真正决定系统能力的，是上下文、工具、状态和环境隔离。很多多 Agent 产品，都在试图把 AI 做成一个小公司。打开产品介绍页，你很容易看到类似配置：Research Agent 找资料，Writer Agent 写内容，Review..."
+tags:
+  - "clippings"
+---
+![图像](https://pbs.twimg.com/media/HJYJ878aMAACbzT?format=jpg&name=large)
 
 **很多 AI 产品把 Agent 设计成角色，但真正决定系统能力的，是上下文、工具、状态和环境隔离。**
 
@@ -48,11 +59,11 @@
 
 过去我们习惯这样写提示词：
 
-你是一名资深产品经理。 你是一名经验丰富的律师。 你是一名顶级架构师。
+> 你是一名资深产品经理。 你是一名经验丰富的律师。 你是一名顶级架构师。
 
 到了 Agent 时代，这种写法自然变成了：
 
-你是 Research Agent。 你是 Coding Agent。 你是 Review Agent。
+> 你是 Research Agent。 你是 Coding Agent。 你是 Review Agent。
 
 所以，角色化不是愚蠢。
 
@@ -138,11 +149,11 @@ Review Agent 最能暴露这个问题。
 
 角色分工问的是：
 
-谁负责什么？
+> 谁负责什么？
 
 注意力治理问的是：
 
-当前系统最应该关注什么？
+> 当前系统最应该关注什么？
 
 更具体地说，是这些问题：
 
@@ -180,7 +191,7 @@ Review Agent 最能暴露这个问题。
 
 更准确地说：
 
-**Agent = Attention Scope + Context Scope + Tool Scope + State Scope + Environment Scope + Feedback Scope**
+> **Agent = Attention Scope + Context Scope + Tool Scope + State Scope + Environment Scope + Feedback Scope**
 
 一个 Agent 的本质，不是它叫什么，而是它被允许关注什么、读取什么、调用什么、修改什么、在哪里执行，以及如何根据反馈调整下一步行动。
 
@@ -226,11 +237,11 @@ Review Agent 最能暴露这个问题。
 
 公司组织图关心的是责任分配：
 
-谁负责什么？
+> 谁负责什么？
 
 操作系统关心的是资源治理：
 
-资源如何调度，权限如何分配，进程如何隔离，异常如何恢复。
+> 资源如何调度，权限如何分配，进程如何隔离，异常如何恢复。
 
 真正可靠的 Agent 系统，更接近后者。
 
@@ -276,11 +287,11 @@ Review Agent 最能暴露这个问题。
 
 所以，多 Agent 真正的问题不是：
 
-我们需要几个角色？
+> 我们需要几个角色？
 
 而是：
 
-这个任务需要几种不同的注意力状态？
+> 这个任务需要几种不同的注意力状态？
 
 进一步说，是这些问题：
 
