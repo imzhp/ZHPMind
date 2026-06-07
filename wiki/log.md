@@ -300,6 +300,15 @@ Format: `## [YYYY-MM-DD] operation | Description`
 
 ---
 
+## [2026-06-08] distill | 刻意练习——艾利克森专业技能获取研究集大成著作
+
+- **Sources touched**: `raw/assets/books/刻意练习：如何从新手到大师-安德斯·艾利克森.epub`（已从 inbox 归位）
+- **Pages created**: [[peak]]（type: book）、[[mental-representation]]（type: concept）、[[anders-ericsson]]（type: person）
+- **Pages updated**: [[people-moc]]（加 Ericsson 章节 + 思想关联图扩展）；[[index]]（+3 页，总数 102→105）
+- **Note**: [self-reviewed] 全书 9 章覆盖完整：三层练习质量梯度（天真/有目的/刻意）、心理表征机制（象棋大师实验）、大脑无限适应能力（海马体/小提琴家大脑）、黄金标准（柏林音乐学院研究 + Top Gun 职场案例）、杰出人物四阶段路线图（波尔加实验）、系统破解天才神话（莫扎特/帕格尼尼/1万小时法则误读）。新建 concept 页 mental-representation 聚焦五大功能和正向循环机制；person 页 anders-ericsson 含完整 Timeline（1947→2021）。Propagation 自动执行：people-moc 更新维度描述和思想关联图（Ericsson × Naval / Ericsson × Kahneman 两条新节点），index 登记 3 页。
+
+---
+
 ## [2026-06-07] distill | 思考，快与慢——卡尼曼行为经济学集大成著作
 
 - **Sources touched**: `raw/assets/books/思考快与慢-丹尼尔·卡尼曼.epub`（已从 inbox 归位）

@@ -2,12 +2,12 @@
 title: "People MOC"
 tags: [moc, people]
 created: 2026-05-11
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # People MOC
 
-本 MOC 覆盖 wiki 中全部 `type: person` 页面，并梳理人物之间的思想关联。当前人物分布于四个维度：**AI 工程**（Karpathy、Boris、Garry）、**财富与幸福哲学**（Naval）、**存在主义心理学**（Becker），以及**行为经济学与认知心理学**（Kahneman），合并构成一张"在 AI 时代如何积累财富与构建幸福生活、理解人类行为深层驱动力"的全景图。
+本 MOC 覆盖 wiki 中全部 `type: person` 页面，并梳理人物之间的思想关联。当前人物分布于五个维度：**AI 工程**（Karpathy、Boris、Garry）、**财富与幸福哲学**（Naval）、**存在主义心理学**（Becker）、**行为经济学与认知心理学**（Kahneman），以及**专业技能获取**（Ericsson），合并构成一张"在 AI 时代如何积累财富与构建幸福生活、理解人类行为深层驱动力、以正确方式培养真正的能力"的全景图。
 
 ---
 
@@ -61,6 +61,14 @@ Y Combinator CEO，技术创业者与投资人。2025 年末重拾"建造者"身
 
 ---
 
+### [[anders-ericsson]]
+
+瑞典裔美国心理学家（1947–2021），佛罗里达州立大学教授，刻意练习（Deliberate Practice）理论的创立者。用三十余年实证研究证明：杰出成就主要由后天训练决定，而非先天才能；专家与新手的真正差距在于[[mental-representation|心理表征]]的密度与精度。
+
+**核心贡献：** [[peak|刻意练习框架]]（三层练习质量梯度：天真练习 / 有目的练习 / 刻意练习）、[[mental-representation|心理表征]]（专家优势的机制解释）、杰出人物四阶段路线图、对"1万小时法则"的质量修正。
+
+---
+
 ### [[ernest-becker]]
 
 美国文化人类学家兼存在主义心理学家（1924–1974）。核心命题：对死亡的恐惧是人类行为的终极驱动力，人类一切文化活动本质上都是为了在象征层面否认死亡。
@@ -89,6 +97,8 @@ Becker ─────死亡恐惧是一切行为的底层───────�
 ```
 
 **跨维度汇聚节点：**
-- **技能积累是护城河**：Garry 的 Fat Skills / Fat Data；Naval 的专业知识（无法培训）；Boris 的"领域知识是稀缺资源"——三者共指同一结构
+- **技能积累是护城河**：Garry 的 Fat Skills / Fat Data；Naval 的专业知识（无法培训）；Boris 的"领域知识是稀缺资源"；Ericsson 的[[mental-representation|心理表征]]积累——四者共指同一结构
 - **Harness 要薄**：Boris + Garry 共识
 - **人类角色转变**：Karpathy 的"设计师 + 指挥官"；Boris 的"整年不手写代码但仍做决策"；Garry 的"角度（Angles）"；Naval 的"判断力 > 执行力"
+- **Ericsson × Naval**：Naval 的"专业知识无法被培训"说明了目标（specific knowledge）；Ericsson 的刻意练习说明了方法（如何系统获得该知识）——互为表里
+- **Ericsson × Kahneman**：都是挑战"常识"的实证心理学家。Kahneman 证明人类决策系统性偏离理性（[[dual-process-theory|双系统]]）；Ericsson 证明人类能力系统性超越先天限制（刻意练习）——一个揭示人类认知的上限偏差，一个揭示人类潜能的下限误判

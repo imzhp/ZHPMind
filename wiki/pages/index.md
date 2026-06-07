@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-07 — 蒸馏《思考，快与慢》卡尼曼：新建 thinking-fast-and-slow、dual-process-theory、daniel-kahneman、availability-heuristic、anchoring-effect、peak-end-rule、planning-fallacy 共 7 页，更新 prospect-theory；wiki/pages 现 102 篇（不含 index）_
+_最后更新：2026-06-08 — 蒸馏《刻意练习》艾利克森：新建 peak、mental-representation、anders-ericsson 共 3 页，更新 people-moc；wiki/pages 现 105 篇（不含 index）_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -63,6 +63,7 @@ _最后更新：2026-06-07 — 蒸馏《思考，快与慢》卡尼曼：新建 
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
 - [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 + 云飞扬文案反直觉取舍 (2 个来源)
 - [[mece]] — MECE 原则（相互独立，完全穷尽）：麦肯锡结构化分析的基础逻辑，分组无重叠无遗漏 (1 个来源)
+- [[mental-representation]] — 心理表征：专家脑内对模式/关系的压缩编码，刻意练习的核心机制与目标产物 (1 个来源)
 - [[peak-end-rule]] — 对经历的记忆评分由峰值与结尾决定，时长无关：经历自我 vs 记忆自我的核心矛盾 (1 个来源)
 - [[personal-knowledge-base]] — AI 持续写入的运行中知识神经系统，通过实体传播实现复利积累 (1 个来源)
 - [[planning-fallacy]] — 内部视角导致系统性低估时间/成本/风险，修正靠参照类预测（卡尼曼） (1 个来源)
@@ -103,6 +104,7 @@ _最后更新：2026-06-07 — 蒸馏《思考，快与慢》卡尼曼：新建 
 
 ## People
 
+- [[anders-ericsson]] — 刻意练习理论创立者，三十年实证证明杰出成就由训练而非天赋决定 (1 个来源)
 - [[andrej-karpathy]] — OpenAI 联合创始人、Tesla AI 前负责人，提出 Vibe Coding 和 Software 3.0 (1 个来源)
 - [[steve-biddulph]] — 澳大利亚家庭治疗师，《养育男孩》作者，男孩成长三阶段理论提出者 (1 个来源)
 - [[boris-cherny]] — Anthropic 工程师，Claude Code 创造者，主张编程已被 AI 解决 (1 个来源)
@@ -124,6 +126,7 @@ _最后更新：2026-06-07 — 蒸馏《思考，快与慢》卡尼曼：新建 
 - [[judgment-and-decision-making]] — 斯科特·普劳斯《决策与判断》：从知觉偏差到群体决策的完整认知偏误实验图谱 (1 个来源)
 - [[multi-agent-attention-governance]] — 多 Agent 系统设计误区拆解：角色化陷阱、六种边界框架、操作系统隐喻 (1 个来源)
 - [[naval-ravikant-almanack]] — Naval Ravikant 的财富与幸福哲学：专业知识×杠杆×问责制，幸福是消除缺乏感后的默认状态 (1 个来源)
+- [[peak]] — 安德斯·艾利克森《刻意练习》：三层练习质量梯度、心理表征机制、杰出人物四阶段路线图 (1 个来源)
 - [[the-denial-of-death]] — Ernest Becker《死亡否认》（1973/普利策奖）：死亡恐惧是人类行为的终极驱动力，一切文化都是英雄主义的不朽筹划 (1 个来源)
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)
 - [[asking-the-right-questions]] — Neil Browne & Stuart Keeley《学会提问》：为什么需要批判性思维、海绵式 vs 淘金式、提问序列（批判性思维主题书源） (1 个来源)
