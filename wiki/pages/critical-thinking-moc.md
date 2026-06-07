@@ -8,7 +8,7 @@ tags:
   - moc
   - critical-thinking
 created: 2026-05-31
-updated: 2026-06-02
+updated: 2026-06-07
 ---
 
 # 批判性思维 MOC
@@ -34,6 +34,10 @@ updated: 2026-06-02
 批判性思维的障碍（确认偏误、基本归因误差等）在行为决策心理学中有更深入的实验证据：
 
 - [[judgment-and-decision-making]] — 普劳斯《决策与判断》：21个认知偏差与决策陷阱的实验图谱，与本 MOC 互补
+- [[thinking-fast-and-slow]] — 卡尼曼《思考，快与慢》：行为经济学集大成著作，双系统框架统一解释全部认知偏差
+- [[dual-process-theory]] — 系统一（快思考）vs 系统二（慢思考）：批判性思维障碍的认知根源框架
+- [[availability-heuristic]] — 可得性启发：批判性思维中"生动案例压制统计数据"的机制解释
+- [[anchoring-effect]] — 锚定效应：初始信息如何系统性扭曲后续判断
 - [[cognitive-dissonance]] — 认知不协调：行为如何改变态度（费斯汀格，1957）
 - [[prospect-theory]] — 前景理论：损失厌恶与框架效应的决策框架（卡尼曼和特韦尔斯基，1979）
 

@@ -4,9 +4,9 @@ aliases: ["prospect theory", "前景理论"]
 type: framework
 tags: [behavioral-economics, decision-making, cognitive-bias, kahneman-tversky]
 created: 2026-06-02
-updated: 2026-06-02
-sources: ["决策与判断.epub"]
-source_count: 1
+updated: 2026-06-07
+sources: ["决策与判断.epub", "assets/books/思考快与慢-丹尼尔·卡尼曼.epub"]
+source_count: 2
 discussions: []
 ---
 
@@ -69,3 +69,4 @@ discussions: []
 ## Sources
 
 - `raw/决策与判断.epub` — 第9章系统阐述前景理论，源自 Kahneman & Tversky (1979)「Prospect Theory: An Analysis of Decision under Risk」
+- `raw/assets/books/思考快与慢-丹尼尔·卡尼曼.epub` — 第四部分原著全面展开，含附录 B（1984年 APA 演讲原文）；参见 [[thinking-fast-and-slow]] 主蒸馏页与 [[daniel-kahneman]] 作者页

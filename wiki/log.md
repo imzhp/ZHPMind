@@ -300,6 +300,15 @@ Format: `## [YYYY-MM-DD] operation | Description`
 
 ---
 
+## [2026-06-07] distill | 思考，快与慢——卡尼曼行为经济学集大成著作
+
+- **Sources touched**: `raw/assets/books/思考快与慢-丹尼尔·卡尼曼.epub`（已从 inbox 归位）
+- **Pages created**: [[thinking-fast-and-slow]]（type: book）、[[dual-process-theory]]（type: framework）、[[daniel-kahneman]]（type: person）、[[availability-heuristic]]（type: concept）、[[anchoring-effect]]（type: concept）、[[peak-end-rule]]（type: concept）、[[planning-fallacy]]（type: concept）
+- **Pages updated**: [[prospect-theory]]（加本书为第 2 来源，补 [[thinking-fast-and-slow]] 与 [[daniel-kahneman]] 链接）；[[judgment-and-decision-making]]（加 [[availability-heuristic]]、[[anchoring-effect]]、[[daniel-kahneman]] wikilink）；[[people-moc]]（加 Kahneman 章节）；[[critical-thinking-moc]]（决策心理学扩展区加 4 个新页链接）；[[obstacles-to-critical-thinking]]（修复断链 `快思考与慢思考` → `[[dual-process-theory]]`）；[[index]]（+7 页，总数 95→102）
+- **Note**: [self-reviewed] 全书五部分覆盖完整：双系统框架、启发法偏见（代表性/可得性/锚定）、过度自信（规划谬误/叙事谬误）、前景理论（S形价值函数/框架效应）、两个自我（峰终定律/经历-记忆矛盾）。prospect-theory 已有完整页面（来自《决策与判断》），本次加入卡尼曼原著为第二来源并补深化内容。daniel-kahneman 人物页为全新创建，含完整 Timeline（1974 科学论文 → 1979 前景理论 → 2002 诺奖 → 2024 辞世）。Propagation 自动执行：4 页 MOC/关联书页更新，修复 1 处断链。
+
+---
+
 ## [2026-06-05] snapshot | Amazon 费率与关税数据时点
 
 - **Sources touched**: chat-Claude web 调研（数据时点 2026-06-05）

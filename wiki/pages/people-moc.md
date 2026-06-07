@@ -2,12 +2,12 @@
 title: "People MOC"
 tags: [moc, people]
 created: 2026-05-11
-updated: 2026-06-02
+updated: 2026-06-07
 ---
 
 # People MOC
 
-本 MOC 覆盖 wiki 中全部 `type: person` 页面，并梳理人物之间的思想关联。当前人物分布于三个维度：**AI 工程**（Karpathy、Boris、Garry）、**财富与幸福哲学**（Naval），以及**存在主义心理学**（Becker），合并构成一张"在 AI 时代如何积累财富与构建幸福生活、并理解人类行为深层驱动力"的全景图。
+本 MOC 覆盖 wiki 中全部 `type: person` 页面，并梳理人物之间的思想关联。当前人物分布于四个维度：**AI 工程**（Karpathy、Boris、Garry）、**财富与幸福哲学**（Naval）、**存在主义心理学**（Becker），以及**行为经济学与认知心理学**（Kahneman），合并构成一张"在 AI 时代如何积累财富与构建幸福生活、理解人类行为深层驱动力"的全景图。
 
 ---
 
@@ -50,6 +50,14 @@ Y Combinator CEO，技术创业者与投资人。2025 年末重拾"建造者"身
 企业家、天使投资人，AngelList 联合创始人。以极简推文将财富逻辑和幸福哲学同时带入大众视野。核心主张：财富来自持有（equity）而非出卖时间；幸福是可学习的技能，是消除"缺乏感"后的默认状态。
 
 **核心贡献：** 四种杠杆体系（劳动力/资本/代码/媒体）、专业知识（Specific Knowledge）框架、欲望即痛苦（Desire = Suffering）、理性的佛教（Rational Buddhism）。
+
+---
+
+### [[daniel-kahneman]]
+
+2002 年诺贝尔经济学奖得主，行为经济学奠基人（1934–2024）。以心理学实验方法证明人类决策系统性偏离理性经济人假设。
+
+**核心贡献：** [[prospect-theory|前景理论]]（与 Tversky 合作，1979）、[[dual-process-theory|双系统理论]]（系统一/系统二框架）、[[availability-heuristic|可得性启发]]、[[anchoring-effect|锚定效应]]、[[peak-end-rule|峰终定律]]、[[planning-fallacy|规划谬误]]。
 
 ---
 

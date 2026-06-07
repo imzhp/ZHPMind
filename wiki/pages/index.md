@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-05 — 新增 Amazon 费率与关税快照，连接单位经济、落地成本与 FBA 入仓方法页；wiki/pages 现 95 篇（不含 index）_
+_最后更新：2026-06-07 — 蒸馏《思考，快与慢》卡尼曼：新建 thinking-fast-and-slow、dual-process-theory、daniel-kahneman、availability-heuristic、anchoring-effect、peak-end-rule、planning-fallacy 共 7 页，更新 prospect-theory；wiki/pages 现 102 篇（不含 index）_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -49,6 +49,8 @@ _最后更新：2026-06-05 — 新增 Amazon 费率与关税快照，连接单�
 - [[amazon-tariff-landed-cost]] — HS Code、关税、VAT/GST 与单件落地成本计算框架 (0 个来源)
 - [[amazon-traffic-sources]] — 亚马逊站内十大流量入口与站外七大流量入口全解析 + 云飞扬购买路径与关联流量打法 (2 个来源)
 - [[amazon-unit-economics]] — 单 SKU 成本拆解、盈亏平衡与目标利润率定价模型 (0 个来源)
+- [[anchoring-effect]] — 初始数字对估值的强烈牵引，谈判、定价、量刑中普遍存在（卡尼曼） (1 个来源)
+- [[availability-heuristic]] — 用"脑海中案例的可得性"替代真实频率，媒体曝光与情绪显著扭曲判断（卡尼曼） (1 个来源)
 - [[causa-sui]] — 自因：人类渴望成为自己命运创造者的冲动，贝克尔重读伊底帕斯式筹划的核心概念 (1 个来源)
 - [[claude-code]] — Anthropic 的 AI 编程 CLI 工具，由 Boris Cherny 创建，支持 loops 和并行 agent (2 个来源)
 - [[cognitive-dissonance]] — 认知不协调：行为改变可引发态度改变，减少不协调是决策的隐性驱动力（费斯汀格，1957） (1 个来源)
@@ -61,7 +63,9 @@ _最后更新：2026-06-05 — 新增 Amazon 费率与关税快照，连接单�
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
 - [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 + 云飞扬文案反直觉取舍 (2 个来源)
 - [[mece]] — MECE 原则（相互独立，完全穷尽）：麦肯锡结构化分析的基础逻辑，分组无重叠无遗漏 (1 个来源)
+- [[peak-end-rule]] — 对经历的记忆评分由峰值与结尾决定，时长无关：经历自我 vs 记忆自我的核心矛盾 (1 个来源)
 - [[personal-knowledge-base]] — AI 持续写入的运行中知识神经系统，通过实体传播实现复利积累 (1 个来源)
+- [[planning-fallacy]] — 内部视角导致系统性低估时间/成本/风险，修正靠参照类预测（卡尼曼） (1 个来源)
 - [[product-overhang]] — 模型能力超前于产品化程度的战略窗口，AI 产品机会的核心判断框架 (1 个来源)
 - [[skillification]] — 将可重复工作流提取为自积累技能文件的方法论，元技能构建技能 (1 个来源)
 - [[scqa]] — SCQA 框架（背景→冲突→疑问→回答）：金字塔原理序言写作模板，讲故事式拉住读者注意力 (1 个来源)
@@ -81,7 +85,8 @@ _最后更新：2026-06-05 — 新增 Amazon 费率与关税快照，连接单�
 
 - [[attention-governance]] — 多 Agent 系统设计框架：注意力治理 vs 角色分工，六种边界（上下文/工具/状态/环境/反馈/记忆）决定 Agent 真实能力 (1 个来源)
 - [[boys-development-phases]] — 男孩成长三阶段：0-6岁（母亲）/ 6-13岁（父亲关键期）/ 14岁+（引导者），比达尔夫核心框架 (1 个来源)
-- [[prospect-theory]] — 前景理论：S形价值函数+决策权重，损失规避是行为经济学核心框架（卡尼曼和特韦尔斯基，1979） (1 个来源)
+- [[dual-process-theory]] — 系统一（快思考）与系统二（慢思考）认知架构，行为经济学偏差的统一解释框架（卡尼曼） (1 个来源)
+- [[prospect-theory]] — 前景理论：S形价值函数+决策权重，损失规避是行为经济学核心框架（卡尼曼和特韦尔斯基，1979） (2 个来源)
 - [[wildlume-business-architecture]] — 曜野业务架构与价值链全景：参与者图谱、战略骨架、价值主张、信息流盘点 (0 个来源)
 - [[wildlume-feedback-listing]] — C 端反馈反哺 Listing 运营与分销商的机制设计（B 方向）(0 个来源)
 - [[wildlume-feedback-product]] — C 端反馈反哺产品改良与工厂研发的机制设计（A 方向）(0 个来源)
@@ -101,6 +106,7 @@ _最后更新：2026-06-05 — 新增 Amazon 费率与关税快照，连接单�
 - [[andrej-karpathy]] — OpenAI 联合创始人、Tesla AI 前负责人，提出 Vibe Coding 和 Software 3.0 (1 个来源)
 - [[steve-biddulph]] — 澳大利亚家庭治疗师，《养育男孩》作者，男孩成长三阶段理论提出者 (1 个来源)
 - [[boris-cherny]] — Anthropic 工程师，Claude Code 创造者，主张编程已被 AI 解决 (1 个来源)
+- [[daniel-kahneman]] — 行为经济学奠基人，2002 年诺贝尔经济学奖得主，前景理论与双系统理论创建者 (1 个来源)
 - [[ernest-becker]] — 美国存在主义心理学家，《死亡否认》作者，死亡恐惧即英雄主义的奠基者 (1 个来源)
 - [[garry-tan]] — Y Combinator CEO，开源个人 AI 操作系统（GBrain/GStack/OpenClaw）的建造者 (1 个来源)
 - [[naval-ravikant]] — AngelList 联合创始人，财富×幸福哲学家，理性的佛教实践者 (1 个来源)
@@ -127,6 +133,7 @@ _最后更新：2026-06-05 — 新增 Amazon 费率与关税快照，连接单�
 
 - [[the-pyramid-principle]] — 芭芭拉·明托《金字塔原理》：结构化表达的麦肯锡标准，金字塔结构、SCQA 序言、MECE 分组、演绎与归纳横向逻辑全解 (1 个来源)
 - [[the-yes-brain]] — Daniel Siegel & Tina Bryson《The Yes Brain》（如何让孩子自觉又主动）：开放脑 vs 防御脑、四能力（平衡/复原/洞察/共情）的神经科学育儿框架（阅读进行中） (1 个来源)
+- [[thinking-fast-and-slow]] — 卡尼曼毕生研究集大成：双系统框架、启发法偏见、前景理论、峰终定律，行为经济学最重要著作 (1 个来源)
 
 ## Reflections
 

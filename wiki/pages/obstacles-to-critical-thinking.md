@@ -539,5 +539,5 @@ tags: [critical-thinking, psychology, decision-making, obstacles, mindset]
 
 - [[critical-thinking-framework|批判性思维框架]]
 - [[ten-critical-questions|10个批判性问题]]
-- [[快思考与慢思考|Fast vs Slow Thinking]]
+- [[dual-process-theory|快思考与慢思考（双系统理论）]]
 - [[偏见和假设|Biases and Assumptions]]
