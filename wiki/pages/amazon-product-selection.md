@@ -3,9 +3,9 @@ title: "亚马逊选品思维（Amazon Product Selection）"
 type: concept
 tags: [amazon, product-selection, product-development, market-analysis, differentiation, competitive-analysis, financial-model, sample-testing, market-capacity]
 created: 2026-04-12
-updated: 2026-05-28
-sources: ["亚马逊高阶运营培训手册.pdf", "assets/courses/qwei-amazon-course-2023/文字记录：2.产品开发方法论 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/文字记录：如何分析市场容量 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/4.专利筛查：选品全流程实操（从55分开始)_原文.docx"]
-source_count: 2
+updated: 2026-06-08
+sources: ["亚马逊高阶运营培训手册.pdf", "assets/courses/qwei-amazon-course-2023/文字记录：2.产品开发方法论 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/文字记录：如何分析市场容量 2026年5月25日.md", "assets/courses/qwei-amazon-course-2023/4.专利筛查：选品全流程实操（从55分开始)_原文.docx", "亚马逊产品线全链路运营实战手册.md"]
+source_count: 5
 ---
 
 # 亚马逊选品思维（Amazon Product Selection）
@@ -271,7 +271,7 @@ $$\text{店铺 GMV} = \text{爆款转化率} \times \text{爆款流量} + \text{
 - **换算公式**：综合转化率 × 1.2 ≈ 广告转化率（流量通投拉满 + 数据量大时）。
 - **最终二选一标准：ROI > 1 或 毛利率 > 30%（占一个即可，两个都不占就 pass）**。精铺模式可放低；小件 + 周转快 + 空派/快递可达（成本占比 <10% + 投佣占比 <2%）时净利率低也可做。
 
-> 广告依赖度通过 SIFT 流量时光机预估（工具底层详见商机探测器方法论）。ROI 与周转次数的关系见 [[amazon-cashflow-roi]]；完整成本结构见 [[amazon-profit-analysis]]。
+> 广告依赖度通过 Sif 流量时光机预估（工具底层详见商机探测器方法论）。ROI 与周转次数的关系见 [[amazon-cashflow-roi]]；完整成本结构见 [[amazon-profit-analysis]]。
 
 ## 五种垄断分型（卖家竞争格局）
 
@@ -349,6 +349,37 @@ $$\text{店铺 GMV} = \text{爆款转化率} \times \text{爆款流量} + \text{
 
 **店铺产品组合的真实生态（⭐⭐⭐）**：**1–2 个爆品带 7–8 个中等品**（1–2 个链接占 70% 销量）。这套方法**能选出不差的产品，但选不出 top 爆品（超额利润靠运气）**，20 个/10 个里选出 1 个爆。所以**必须有试错成本**：推广成功率约 30% → 选 2–4 款留容错。天天调研但不动手 = 选不出好产品。
 
+## 商品集：选品的真正决策单元（拓跋勇框架补充）
+
+> 来源：[[amazon-product-line-operations-handbook]]（2026-06-08）
+
+上述框架基于单个 ASIN 或大品类思维。拓跋勇 V10 手册引入**商品集（Commodity Set）**作为选品的真正决策单元——它不是单个 ASIN，也不是大品类，而是一组"用户任务/产品形态/搜索意图/价格带高度接近"的产品集合。商品集是产品 Brief、词库、竞品库、定价模型的共同上游，单个 ASIN 只是证据样本。
+
+**从节点到商品集的操作漏斗**：
+1. 定义市场边界（品类/国家/价格带/人群）
+2. 拆搜索入口（核心词/属性词/场景词/痛点词）
+3. 抓 ASIN 原始池（10–30 个代表 ASIN，含头部、新品、弱竞品）
+4. 清洗去重（父 ASIN/产品族去重、捆绑单列、形态修正、剔除审计）
+5. 页面深抓 + 图片 OCR（参数/材质/认证/使用步骤等关键证据往往在背标、规格表、A+ 图片里）
+6. 商品集矩阵（用户任务/核心机制/产品形态/代表 ASIN）
+7. 价格容忍度结构（低/中/高价销量占比、P25/P50/P75）
+8. Go/Conditional Go/Pivot/Hold/No-Go 闸口
+
+**ASIN 清洗不能省的关键动作**：
+- 父 ASIN/产品族去重——一个变体家族不能算多个机会
+- 捆绑/套装单独标注——不和单品混算价格和销量
+- 不用标题关键词直接下分类结论——`pro/kit/set/compatible` 等词不代表同一商品集
+
+**价格容忍度判断规则**：
+
+| 判断 | 条件 | 动作 |
+|-----|-----|-----|
+| 低价主导 | 低价销量 ≥70%，高价 <8% | 慎做中高价，除非有材质/证据链差异 |
+| 容忍度中等 | 中高价销量 ≥45%，中位价 ≥$18 | 进入开发池，先算毛利和广告容忍度 |
+| 容忍度强 | 中高价销量 ≥60%，P75 接近 $30+ | 优先验证 |
+
+**与云飞扬财务决策器的关系**：云飞扬的"ROI ≥1 或毛利率 ≥30%"是最终决策器；商品集价格容忍度分析是其前置输入——先确认市场是否接受中高价，再算能不能做出利润。
+
 ## Sources
 
 - `raw/亚马逊高阶运营培训手册.pdf` — 第九章：运营如何培养产品思维（第 275–301 页）
@@ -356,3 +387,4 @@ $$\text{店铺 GMV} = \text{爆款转化率} \times \text{爆款流量} + \text{
 - `raw/assets/courses/qwei-amazon-course-2023/文字记录：如何分析市场容量 2026年5月25日.md` —— 云飞扬 2023 课程第 15 节（60+ 分钟），市场容量分析实操（原蒸馏自 v2 通义听悟 docx，已重指向 v1 飞书妙记主源 / 2026-06-01）
 - `raw/assets/courses/qwei-amazon-course-2023/4.专利筛查：选品全流程实操（从55分开始)_原文.docx` —— 第 4 节 Part B（55:06–end），云飞扬选品全流程实操（小宠笼案例）（v1 飞书妙记无此节转录，保留 v2 通义 docx 作唯一源 / 2026-06-01）
 - 蒸馏溯源：经历史草稿 `amazon-cross-source-diff-draft.md`（v0.9.16，已随旧草稿目录退役，见 git history）跨源对照后提炼，云飞扬层为第 2 源，与国民哥哥手册互补。蒸馏模型 Claude Opus 4.7，2026-05-28
+- `raw/亚马逊产品线全链路运营实战手册.md` — 拓跋勇 V10 手册，补充商品集框架、ASIN 清洗规则、价格容忍度结构（2026-06-08） 
