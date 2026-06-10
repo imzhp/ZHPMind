@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-08 — 蒸馏《刻意练习》艾利克森：新建 peak、mental-representation、anders-ericsson 共 3 页，更新 people-moc；wiki/pages 现 105 篇（不含 index）_
+_最后更新：2026-06-10 — 补登记 8 个早先已蒸馏但漏登记的页面：关系心理学（沟通分析/蛤蟆先生/戈特曼四骑士/依恋类型/亲密关系）+ 辩证法（矛盾论/主要矛盾）+ 拓跋勇全链路运营手册_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -50,6 +50,7 @@ _最后更新：2026-06-08 — 蒸馏《刻意练习》艾利克森：新建 pea
 - [[amazon-traffic-sources]] — 亚马逊站内十大流量入口与站外七大流量入口全解析 + 云飞扬购买路径与关联流量打法 (2 个来源)
 - [[amazon-unit-economics]] — 单 SKU 成本拆解、盈亏平衡与目标利润率定价模型 (0 个来源)
 - [[anchoring-effect]] — 初始数字对估值的强烈牵引，谈判、定价、量刑中普遍存在（卡尼曼） (1 个来源)
+- [[attachment-styles]] — 依恋类型：焦虑×回避两维度定义的四种成人依恋模式（安全/焦虑/回避/恐惧），预测爱情风格、冲突应对与关系结局 (1 个来源)
 - [[availability-heuristic]] — 用"脑海中案例的可得性"替代真实频率，媒体曝光与情绪显著扭曲判断（卡尼曼） (1 个来源)
 - [[causa-sui]] — 自因：人类渴望成为自己命运创造者的冲动，贝克尔重读伊底帕斯式筹划的核心概念 (1 个来源)
 - [[claude-code]] — Anthropic 的 AI 编程 CLI 工具，由 Boris Cherny 创建，支持 loops 和并行 agent (2 个来源)
@@ -59,6 +60,7 @@ _最后更新：2026-06-08 — 蒸馏《刻意练习》艾利克森：新建 pea
 - [[obstacles-to-critical-thinking]] — 批判性思维的六大障碍：快思考、刻板印象、确认偏误、自我中心、一厢情愿、基本归因错误及破解 (1 个来源)
 - [[ten-critical-questions]] — 《学会提问》核心：评估任何论证的 10 个关键问题（论题/理由/歧义/假设/谬误/证据/替代因/数据/省略/结论） (1 个来源)
 - [[fat-skills-thin-harness]] — AI Agent 系统架构原则：智能驻留在技能和数据中，Harness 只做路由 (1 个来源)
+- [[gottman-four-horsemen]] — 戈特曼四骑士：批评/蔑视/防御/退避四种破坏关系的沟通行为，预测离婚准确率超 80%，蔑视破坏力最强 (1 个来源)
 - [[immortality-project]] — 不朽筹划：个体投身于永恒价值事业以超越死亡的英雄主义核心机制，贝克尔框架 (1 个来源)
 - [[karpathy-claude-md]] — Karpathy CLAUDE.md 4 原则及其与 ZHPMind 规则的对照分析 (1 个来源)
 - [[listing-optimization]] — 亚马逊商品详情页全链路优化，覆盖标题、图片、关键词、评论 + 云飞扬文案反直觉取舍 (2 个来源)
@@ -67,6 +69,7 @@ _最后更新：2026-06-08 — 蒸馏《刻意练习》艾利克森：新建 pea
 - [[peak-end-rule]] — 对经历的记忆评分由峰值与结尾决定，时长无关：经历自我 vs 记忆自我的核心矛盾 (1 个来源)
 - [[personal-knowledge-base]] — AI 持续写入的运行中知识神经系统，通过实体传播实现复利积累 (1 个来源)
 - [[planning-fallacy]] — 内部视角导致系统性低估时间/成本/风险，修正靠参照类预测（卡尼曼） (1 个来源)
+- [[principal-contradiction]] — 主要矛盾：复杂过程中起决定作用的那对矛盾，集中资源先解决它；超出哲学用于战略分析（毛泽东《矛盾论》） (1 个来源)
 - [[product-overhang]] — 模型能力超前于产品化程度的战略窗口，AI 产品机会的核心判断框架 (1 个来源)
 - [[skillification]] — 将可重复工作流提取为自积累技能文件的方法论，元技能构建技能 (1 个来源)
 - [[scqa]] — SCQA 框架（背景→冲突→疑问→回答）：金字塔原理序言写作模板，讲故事式拉住读者注意力 (1 个来源)
@@ -88,6 +91,7 @@ _最后更新：2026-06-08 — 蒸馏《刻意练习》艾利克森：新建 pea
 - [[boys-development-phases]] — 男孩成长三阶段：0-6岁（母亲）/ 6-13岁（父亲关键期）/ 14岁+（引导者），比达尔夫核心框架 (1 个来源)
 - [[dual-process-theory]] — 系统一（快思考）与系统二（慢思考）认知架构，行为经济学偏差的统一解释框架（卡尼曼） (1 个来源)
 - [[prospect-theory]] — 前景理论：S形价值函数+决策权重，损失规避是行为经济学核心框架（卡尼曼和特韦尔斯基，1979） (2 个来源)
+- [[transactional-analysis]] — 沟通分析（TA）：儿童/父母/成人三种自我状态（PAC 模型）+ 人生坐标 + 心理游戏，强化成人状态实现有意识选择 (1 个来源)
 - [[wildlume-business-architecture]] — 曜野业务架构与价值链全景：参与者图谱、战略骨架、价值主张、信息流盘点 (0 个来源)
 - [[wildlume-feedback-listing]] — C 端反馈反哺 Listing 运营与分销商的机制设计（B 方向）(0 个来源)
 - [[wildlume-feedback-product]] — C 端反馈反哺产品改良与工厂研发的机制设计（A 方向）(0 个来源)
@@ -118,14 +122,18 @@ _最后更新：2026-06-08 — 蒸馏《刻意练习》艾利克森：新建 pea
 
 - [[affiliate-marketing-complete-guide]] — Affren.com 出品的联盟营销完全指南：行业结构、工具体系、三大案例、超级 Affiliate 七原则 (1 个来源)
 - [[amazon-advanced-operations-handbook]] — 亚马逊跨境运营 9 章 312 页培训教材，覆盖算法至选品全链路 (1 个来源)
+- [[amazon-product-line-operations-handbook]] — 拓跋勇 V10 全链路运营 SOP：D-60→D90 时间节点经营、七道门控、商品集决策、5D 词库、G-M-R 广告架构、Go/Pivot/Kill (1 个来源)
 - [[andrej-karpathy-vibe-coding-to-agentic-engineering]] — AI Ascent 2025 对谈，涵盖 Software 3.0、Agentic Engineering 等核心议题 (1 个来源)
 - [[boris-cherny-coding-is-solved]] — AI Ascent 2026 对谈，Boris 论述编程现状、loops 工作流、团队未来和 SaaS 格局 (1 个来源)
+- [[counselling-for-toads]] — 罗伯特·戴博德《蛤蟆先生去看心理医生》：以蛤蟆十次咨询叙事呈现 TA 理论，自我状态/人生坐标/心理游戏 (1 个来源)
 - [[financial-golden-triangle]] — 闻静《经营者的财务金三角》：经营/融资/投资三维战略三角 + 杜邦 ROE 分解 + 黑字倒闭 + 20% ROE 底线 (1 个来源)
 - [[first-principles]] — 李善友著，系统阐述第一性原理、公理化思维、破界创新在企业创新中的应用（2021） (1 个来源)
 - [[garry-tan-meta-meta-prompting]] — Garry Tan 阐述技能化方法论、书镜工作流、10 万页 GBrain 和 AI 复利系统 (1 个来源)
+- [[intimate-relationships]] — 罗兰·米勒《亲密关系》：关系科学教材，吸引/沟通/相互依赖/爱情/性/冲突/权力/解体全景，实证导向 (1 个来源)
 - [[judgment-and-decision-making]] — 斯科特·普劳斯《决策与判断》：从知觉偏差到群体决策的完整认知偏误实验图谱 (1 个来源)
 - [[multi-agent-attention-governance]] — 多 Agent 系统设计误区拆解：角色化陷阱、六种边界框架、操作系统隐喻 (1 个来源)
 - [[naval-ravikant-almanack]] — Naval Ravikant 的财富与幸福哲学：专业知识×杠杆×问责制，幸福是消除缺乏感后的默认状态 (1 个来源)
+- [[on-contradiction]] — 毛泽东《矛盾论》（1937）：对立统一法则，矛盾普遍性/特殊性、主次矛盾、同一性与斗争性，反教条主义 (1 个来源)
 - [[peak]] — 安德斯·艾利克森《刻意练习》：三层练习质量梯度、心理表征机制、杰出人物四阶段路线图 (1 个来源)
 - [[the-denial-of-death]] — Ernest Becker《死亡否认》（1973/普利策奖）：死亡恐惧是人类行为的终极驱动力，一切文化都是英雄主义的不朽筹划 (1 个来源)
 - [[the-founders-playbook]] — Anthropic 的 AI 原生创业四阶段指南（Idea/MVP/Launch/Scale），含 Claude 工具矩阵 (1 个来源)
