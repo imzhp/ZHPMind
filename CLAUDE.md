@@ -21,7 +21,7 @@
 3. **文件名**:小写连字符英文 slug,无日期,无下划线前缀(`asking-the-right-questions.md`,不是 `经营者的财务金三角-蒸馏版.md`)。
 4. **标签**:纯英文、小写、连字符。中文书名 / 别名放进 frontmatter 的 `aliases`,绝不作为 tag。
 5. **正文语言**:简体中文(见 `wiki/CLAUDE.md` §16)。wiki 页面里不用 emoji。
-6. **走完整 distill 工作流**(`wiki/CLAUDE.md` §6):正确 frontmatter、更新 `wiki/pages/index.md` 与 `wiki/log.md`、最后 git commit。
+6. **走完整 distill 工作流**(`wiki/CLAUDE.md` §6):正确 frontmatter、更新 `wiki/pages/index.md` 与 `wiki/log.md`、最后交给 git 单写者机制入库；只有明确 handoff 要求 Codex 手动 git 时才直接 commit / push。
 7. **来源太大读不下时,自动用子 agent / 工具提取并分块读取——这是机器该干的活,不要回头问 Haopeng 手动拆。但子 agent 只负责返回提取的文本 / 分块摘要,最终页面一律由你(受本规范约束的主 agent)写入 `wiki/pages/`。绝不让子 agent 直接写文件、也绝不让它自行决定存放位置。** 即「自动分块读取,受控统一写入」。
 
 8. **书 / 文档源材料统一归 `wiki/raw/assets/books/`,命名 `书名-作者.{epub,pdf,docx}`;页面 `sources:` 写 raw 相对路径 `assets/books/书名-作者.ext`。** 蒸馏时从 inbox 或别处读取的源材料,读完**必须落到 `wiki/raw/assets/books/`**——绝不留在 `wiki/raw/` 顶层或任何其他位置。`wiki/raw/` 顶层只放文章 / 讨论类 raw(`.md`);书 / 课程的二进制源(epub / pdf / docx)一律进 `assets/books/`。作者从你的知识判定、直接写进文件名(如 `死亡否认-厄内斯特·贝克尔.epub`),不必反问 Haopeng。理由:源归位 + `sources:` 路径稳定 = 溯源不断;历史上反复把 epub 丢在 `raw/` 顶层、`sources:` 写裸文件名,造成归档散乱、移动即断链(2026-06-02 一次性归位 6 本后立此规)。
@@ -34,7 +34,7 @@
 - [ ] `type` 是否取自 §3.1 的 10 个合法值?
 - [ ] 若用了子 agent 提取:最终写入是不是由我主 agent 完成、且落在 `wiki/pages/`?
 - [ ] 若涉及书 / 文档源:源是否已归 `wiki/raw/assets/books/`(命名 `书名-作者`)、`sources:` 写的是否为 `assets/books/...` 相对路径?
-- [ ] 是否更新了 `index.md` / `log.md` 并准备 commit?
+- [ ] 是否更新了 `index.md` / `log.md`,并确认会由 Mac mini auto-commit watcher 入库?若 handoff 明确要求我手动 git,是否先确认 watcher 安全门状态?
 
 ---
 
@@ -42,10 +42,12 @@
 
 ZHPMind 的 git 只为「可回滚 + GitHub 备份」服务(design-principles 第一层「开放格式」),不是日常跨设备同步通道——同步走 Obsidian Sync。基于此,以下纪律覆盖你的默认 git 习惯:
 
-1. **只在 Mac mini 提交。** 所有 `git commit` / `git push` 一律在 Mac mini 上执行;MacBook Air 等其他设备只读、只靠 Obsidian Sync 同步,绝不在其上提交。理由:单一提交点,避免多设备并行提交制造分叉与同步冲突副本(`xxx 1.md` 一类)。
-2. **提交前先 fetch/merge。** 每次提交前先 `git fetch origin && git merge origin/main`(或 `git pull --no-rebase`),把远端变更并进来再提交。理由:即便只在 mini 提交,GitHub 端仍可能存在手动改动;先合后提,避免 non-fast-forward 被拒后病急乱投医。
-3. **不拿 `git reset --hard origin/main` 当创可贴。** 工作树乱了 / 提交错了,先用 `git status`、`git diff`、`git stash`、`git restore <file>` 定点处理。`reset --hard` 到远端等于「丢弃本地全部未推送改动」的核武器,只在确认本地确无任何要保留内容时才用。理由:历史上曾用 reset-to-origin 抹平表面问题,连带丢失过未提交的蒸馏产物。
-4. **二进制源(epub / pdf / docx)不入 git。** 电子书 / 课程 / PDF 等二进制源材料一律由 `.gitignore` 排除(`*.epub` / `*.pdf` / `*.docx`,2026-06-01 用 filter-repo 瘦身后立规),仅靠「本地留盘 + Obsidian Sync」保存,不进 git 历史。理由:二进制不可 diff、体积大、撑爆仓库且无版本控制价值——git 只管可读可 diff 的 markdown。日后新增其他二进制格式(如 .mobi / .azw3)时,同步往 `.gitignore` 补对应 glob。
+1. **git commit / push 的默认执行者是 Mac mini 上的 auto-commit watcher。** ZHPMind 的日常写入由 Obsidian Sync 在编辑层同步,由 mini 上的常驻 watcher 每约 10 分钟统一 `pull --rebase --autostash`、commit、push。理由:提交点单一,避免 Air 与 mini 双头提交同一批内容造成 push 冲突。
+2. **任何 agent 默认不手动 commit / push。** Claudian、Hermes、Codex 日常操作都只写文件,不主动 git;例外是 Codex 执行明确包含 git 步骤的 handoff,且操作前后必须确认 watcher 安全门状态(无 `.git/index.lock`、无 rebase / merge 进行中,必要时查看 watcher 日志),避免跟自动提交撞车。
+3. **MacBook Air clone 只读。** Air 侧只通过 Obsidian Sync 参与编辑,git push 已禁用或应禁用;Air 上的 agent 不承担提交职责。
+4. **回滚粒度是 watcher 批次,不是每次 AI 写入一个 commit。** auto-commit 的粒度约等于 10 分钟静默窗口;若需要追溯具体来源,依赖页面 frontmatter、`wiki/log.md`、`claude-drafts/handoff-*` / `result-*` 和正文 sources,不要再宣称"每次 AI 写入都对应一个独立 commit"。
+5. **不拿 `git reset --hard origin/main` 当创可贴。** 工作树乱了 / 提交错了,先用 `git status`、`git diff`、`git stash`、`git restore <file>` 定点处理。`reset --hard` 到远端等于「丢弃本地全部未推送改动」的核武器,只在确认本地确无任何要保留内容时才用。理由:历史上曾用 reset-to-origin 抹平表面问题,连带丢失过未提交的蒸馏产物。
+6. **二进制源(epub / pdf / docx)不入 git。** 电子书 / 课程 / PDF 等二进制源材料一律由 `.gitignore` 排除(`*.epub` / `*.pdf` / `*.docx`,2026-06-01 用 filter-repo 瘦身后立规),仅靠「本地留盘 + Obsidian Sync」保存,不进 git 历史。理由:二进制不可 diff、体积大、撑爆仓库且无版本控制价值——git 只管可读可 diff 的 markdown。日后新增其他二进制格式(如 .mobi / .azw3)时,同步往 `.gitignore` 补对应 glob。
 
 ---
 

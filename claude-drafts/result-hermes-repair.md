@@ -705,3 +705,36 @@ Duration:       2m 55s
 Messages:       24 (1 user, 22 tool calls)
 
 -rw-------@ 1 zhanghaopeng  staff  6090 Jun 10 15:52 /Users/zhanghaopeng/Obsidian/ZHPMind/inbox/review-digest-2026-06-10.md
+
+===== push 被拒诊断 =====
+From github.com:imzhp/ZHPMind
+   3fd351d..3ab9330  main       -> origin/main
+--- 远端有、本地没有的 commit ---
+3ab9330 wiki: index 补登记 8 个页面（关系心理学/辩证法/全链路运营手册）
+d223147 wiki: 补提交未入库页面 — 关系心理学（TA/蛤蟆先生/Gottman/依恋/亲密关系）+ 辩证法（矛盾论/主要矛盾）+ 拓跋勇全链路运营手册 + raw 源
+--- 本地有、远端没有的 commit ---
+c35350f chore: Obsidian 插件 manifest 更新
+c075598 content: 亚马逊产品线手册 + 心理学/矛盾论集群入库(8 页 + raw)
+d0e6dd1 system: 2026-06-10 健康度周报 + changelog/index 同步
+2fb14a1 chore: maintain Hermes review digest and watchdog
+--- 远端那侧动了哪些文件 ---
+ .../amazon-product-line-operations-handbook.md     |  180 +
+ wiki/pages/attachment-styles.md                    |   86 +
+ wiki/pages/counselling-for-toads.md                |  108 +
+ wiki/pages/gottman-four-horsemen.md                |   88 +
+ wiki/pages/index.md                                |   10 +-
+ wiki/pages/intimate-relationships.md               |  170 +
+ wiki/pages/on-contradiction.md                     |  101 +
+ wiki/pages/principal-contradiction.md              |   54 +
+ wiki/pages/transactional-analysis.md               |  125 +
+ ...256\236\346\210\230\346\211\213\345\206\214.md" | 3888 ++++++++++++++++++++
+ 10 files changed, 4809 insertions(+), 1 deletion(-)
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+===== rebase 前的未暂存改动 =====
+ M claude-drafts/result-hermes-repair.md
+?? claude-drafts/handoff-zhpmind-autocommit.md
+===== autostash rebase =====
+From github.com:imzhp/ZHPMind
+ * branch            main       -> FETCH_HEAD
