@@ -44,3 +44,8 @@
 ## [2026-06-02] review-digest | 健康度周报
 
 - 新建 inbox/review-digest-2026-06-02.md（扫描 75 个 wiki 页面、3 个项目、11 条 inbox）
+
+## [2026-06-10] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-06-10.md
+- 数据摘要：114 wiki 页、0 孤岛、0 僵尸项目、18 个 MOC 候选、本周新建 31 页修改 30 页；🔴 修正频率（初建期正常，7月后重评）
