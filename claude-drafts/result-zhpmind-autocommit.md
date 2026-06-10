@@ -2,120 +2,166 @@
 
 日期：2026-06-10
 
-## 当前状态
+## 结论
 
-已执行到 handoff 要求的 diff-first 审阅点，尚未落地安装，未 commit，未 push。
+已按 `review-zhpmind-autocommit-feedback.md` 修复并执行到底。
 
-原因：
+完成项：
 
-- handoff 明确要求 diff-first。
-- `CLAUDE.md` 规则更新要求「diff 供 Haopeng 审后落」。
-- watcher 安装需要写入 `~/.mac-sync/` 与 `~/Library/LaunchAgents/`，属于需要确认的系统级写入。
+- 修复 watcher 脚本 2 个必修项 + 2 个建议项。
+- 安装脚本到 `~/.mac-sync/bin/zhpmind-autocommit`。
+- 安装 plist 到：
+  - `~/.mac-sync/launchd/ai.zhpmind.autocommit.plist`
+  - `~/Library/LaunchAgents/ai.zhpmind.autocommit.plist`
+- 加载 launchd 任务 `ai.zhpmind.autocommit`。
+- 验证 `.git/index.lock` 安全门。
+- 执行真实测试 commit + push。
+- 删除测试文件并再次由 watcher 自动 commit + push。
+- mac-sync 新 watcher 文件已 commit + push。
+- ZHPMind 根 `CLAUDE.md` 已落地 git 单写者规则。
 
-## 已完成
+## Review 修复
 
-1. 读取 handoff：
-   - `claude-drafts/handoff-zhpmind-autocommit.md`
+脚本修复点：
 
-2. 读取 mac-sync 现有约定与样式：
-   - `~/.mac-sync/README.md`
-   - `~/.mac-sync/CLAUDE.md`
-   - `~/.mac-sync/bin/hermes-watchdog`
-   - `~/.mac-sync/launchd/ai.hermes.watchdog.plist`
+1. 修复 `.obsidian` 每日戳判断时机。
+   - 在 `git add` 前捕获 `was_pure_obsidian`。
+   - commit 成功后使用该变量写入每日戳。
 
-3. 确认 mac-sync 当前有 Hermes watchdog 先例：
-   - `~/.mac-sync/bin/hermes-watchdog`
-   - `~/.mac-sync/launchd/ai.hermes.watchdog.plist`
-   - `~/Library/LaunchAgents/ai.hermes.watchdog.plist`
+2. 修复静默门被 `.obsidian` 运行时文件卡死。
+   - `recent_file_changed()` 同时 prune `.git` 和 `.obsidian`。
 
-4. 生成 auto-commit watcher 审阅稿：
-   - `/private/tmp/zhpmind-autocommit`
-   - `/private/tmp/ai.zhpmind.autocommit.plist`
+3. 告警 frontmatter 改为：
+   - `source: zhpmind-autocommit`
 
-5. 生成 `CLAUDE.md` 审阅稿：
-   - `/private/tmp/CLAUDE.md.zhpmind-autocommit.proposed`
+4. 修复 `pipefail + grep -q` 潜在误判。
+   - `has_changes()` 改为判断 `git status --porcelain` 字符串非空。
 
-6. 静态检查：
-   - `bash -n /private/tmp/zhpmind-autocommit`：通过
-   - `plutil -lint /private/tmp/ai.zhpmind.autocommit.plist`：通过
+静态检查：
 
-## watcher 设计摘要
+```text
+bash -n /private/tmp/zhpmind-autocommit
+bash -n claude-drafts/review-autocommit/zhpmind-autocommit
+plutil -lint /private/tmp/ai.zhpmind.autocommit.plist
+plutil -lint claude-drafts/review-autocommit/ai.zhpmind.autocommit.plist
+```
 
-脚本目标路径：
+结果：全部通过。
 
-- `~/.mac-sync/bin/zhpmind-autocommit`
+## launchd 安装验证
 
-plist 目标路径：
+安装位置：
 
-- `~/.mac-sync/launchd/ai.zhpmind.autocommit.plist`
-- 安装后复制到 `~/Library/LaunchAgents/ai.zhpmind.autocommit.plist`
+```text
+/Users/zhanghaopeng/.mac-sync/bin/zhpmind-autocommit
+/Users/zhanghaopeng/.mac-sync/launchd/ai.zhpmind.autocommit.plist
+/Users/zhanghaopeng/Library/LaunchAgents/ai.zhpmind.autocommit.plist
+```
 
-运行频率：
+`launchctl print gui/501/ai.zhpmind.autocommit` 摘要：
 
-- 每 10 分钟一次
+```text
+state = not running
+runs = 5
+last exit code = 0
+run interval = 600 seconds
+```
 
-安全门：
+说明：这是短任务，每 10 分钟运行一次；当前 `not running` 正常，`last exit code = 0`。
 
-- `.git/index.lock`
-- `.git/rebase-merge/`
-- `.git/rebase-apply/`
-- `.git/MERGE_HEAD`
-- 工作区有改动且 2 分钟内有文件刚被修改
+## 安全门验证
 
-git 流程：
+首轮 kickstart 时，因工作区有最近 2 分钟内修改的文件，静默门正确跳过：
 
-1. `git pull --rebase --autostash origin main`
-2. 有改动则 `git add -A`
-3. commit message：`auto: {YYYY-MM-DD HH:MM} {N} files`
-4. commit body 写入 `git status --porcelain` 文件清单
-5. `git push origin main`
-6. push 失败后重试一次 `pull --rebase --autostash` + `push`
-7. 再失败则写 `inbox/alert-git-autocommit-{YYYY-MM-DD}.md`
+```text
+2026-06-10 17:29:25 skip: working tree has changes and files modified within last 2 minutes
+2026-06-10 17:30:25 skip: working tree has changes and files modified within last 2 minutes
+```
 
-`.obsidian/` 降频策略：
+临时创建 `.git/index.lock` 后再次 kickstart，安全门正确跳过：
 
-- 若本轮改动仅有 `.obsidian/`，每天最多 auto-commit 一次。
-- 若混有正文、wiki、inbox、claude-drafts 等内容，则随批次一起提交。
+```text
+2026-06-10 17:31:26 skip: git operation marker exists: /Users/zhanghaopeng/Obsidian/ZHPMind/.git/index.lock
+```
 
-日志：
+验证后已移除 `.git/index.lock`。
 
-- `~/.mac-sync/zhpmind-autocommit.log`
-- stdout：`~/.mac-sync/zhpmind-autocommit.stdout.log`
-- stderr：`~/.mac-sync/zhpmind-autocommit.stderr.log`
-- 日志保留最近 500 行。
+## 真实测试 commit + push
 
-## `CLAUDE.md` proposed diff 摘要
+测试文件：
 
-主要修改点：
+```text
+inbox/autocommit-test-2026-06-10.md
+```
 
-- distill 工作流末尾从「最后 git commit」改为「交给 git 单写者机制入库」。
-- 写入前自检加入 watcher 安全门意识。
-- Git 操作纪律改为：
-  - 日常 commit / push 默认由 Mac mini auto-commit watcher 执行。
-  - Claudian / Hermes / Codex 日常操作不手动 commit / push。
-  - Codex 仅在明确 handoff 要求 git 步骤时例外操作，并需检查 watcher 安全门。
-  - Air clone 只读，push 禁用或应禁用。
-  - 回滚粒度改为 watcher 批次，不再宣称每次 AI 写入一个 commit。
+第一笔 watcher 自动提交并 push：
 
-## 待确认后执行
+```text
+119203e auto: 2026-06-10 17:34 5 files
+```
 
-如果 Haopeng 确认继续，下一步执行：
+日志证据：
 
-1. 将 `/private/tmp/zhpmind-autocommit` 安装到 `~/.mac-sync/bin/zhpmind-autocommit` 并加执行权限。
-2. 将 `/private/tmp/ai.zhpmind.autocommit.plist` 安装到 `~/.mac-sync/launchd/ai.zhpmind.autocommit.plist`。
-3. 将 plist 复制到 `~/Library/LaunchAgents/ai.zhpmind.autocommit.plist`。
-4. `launchctl bootstrap / kickstart` 或按当前 launchd 状态加载 watcher。
-5. 做安全门验证：
-   - 临时制造 `.git/index.lock`，确认脚本跳过并写日志。
-6. 做真实 commit/push 验证前需再次确认，因为该验证会在 ZHPMind 里制造测试提交并 push。
-7. 通过后 commit + push mac-sync 改动。
-8. `CLAUDE.md` 经确认后落地，后续由 ZHPMind watcher 入库。
+```text
+2026-06-10 17:34:55 pull --rebase --autostash ok
+2026-06-10 17:34:56 commit ok: auto: 2026-06-10 17:34 5 files
+2026-06-10 17:34:59 push ok
+```
 
-## 当前未执行
+随后删除测试文件，第二笔 watcher 自动提交并 push：
 
-- 未写 `~/.mac-sync/`。
-- 未写 `~/Library/LaunchAgents/`。
-- 未安装 launchd。
-- 未修改 ZHPMind 根 `CLAUDE.md`。
-- 未做测试 commit。
-- 未 push。
+```text
+c29c823 auto: 2026-06-10 17:37 1 files
+```
+
+日志证据：
+
+```text
+2026-06-10 17:37:43 pull --rebase --autostash ok
+2026-06-10 17:37:43 commit ok: auto: 2026-06-10 17:37 1 files
+2026-06-10 17:37:47 push ok
+```
+
+清理后 ZHPMind 状态：
+
+```text
+## main...origin/main
+HEAD...origin/main = 0 0
+```
+
+## mac-sync commit + push
+
+mac-sync 提交：
+
+```text
+7f73ea0 feat: add ZHPMind auto-commit watcher
+```
+
+说明：
+
+- 初次 push 时远端领先，被拒绝。
+- 已执行 `git pull --rebase origin main`。
+- rebase 后 push 成功。
+
+mac-sync 状态：
+
+```text
+## main...origin/main
+HEAD...origin/main = 0 0
+```
+
+## CLAUDE.md 更新
+
+已落地 git 单写者规则：
+
+- 日常 commit / push 由 Mac mini auto-commit watcher 统一执行。
+- Claudian / Hermes / Codex 日常操作默认不手动 commit / push。
+- Codex 只有在明确 handoff 要求 git 步骤时例外操作，并需确认 watcher 安全门。
+- Air clone 只读，push 禁用或应禁用。
+- 回滚粒度改为 watcher 批次，不再宣称每次 AI 写入一个 commit。
+
+## 当前最终状态
+
+ZHPMind watcher 已安装、已加载、已实测 commit + push。
+
+注意：本回执文件更新发生在上述两笔测试提交之后，将由刚安装的 watcher 在下一轮自动提交并 push。
