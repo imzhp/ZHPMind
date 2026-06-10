@@ -22,13 +22,13 @@ vault 的「**执行器**」,跟 [[skill-review-digest|review-digest]] 是"诊�
 - **执行体位置**:`~/.hermes/skills/vault-tidy.md`(单文件,跟 review-digest v4 同模式)
 - **触发**:cron 周一 9:30(review-digest 9:00 之后半小时)+ on-demand `hermes chat -q "运行 vault-tidy"`
 - **关系**:接收 review-digest 固定路径 scanner JSON 作为输入,生成 tidy actions 输出到 vault
-- **当前状态**:`status: active`——已部署到 Hermes 并注册成功(2026-06-02),首次 `--draft` dogfood 通过;`--apply` 暂被 Pitfall #4(scanner 缺 distill 字段)挡住,且需先有 <24h 新鲜 scanner JSON
+- **当前状态**:`status: active`——已部署到 Hermes 并注册成功(2026-06-02),首次 `--draft` dogfood 通过;2026-06-10 已切到固定 scanner JSON 并补齐 distill 状态,但 `--apply` 仍需先有人审 plan 并勾选动作
 
 ## Scope 三档
 
 | 档位 | 动作 | 风险 | 默认模式 |
 |---|---|---|---|
-| **Tier 1(低风险,可自动)** | inbox 老化归档(>30 天未蒸馏 → `archive/inbox-{date}/`);projects 僵尸打标(>90 天加 `status: dormant` frontmatter,**不 move**);MOC 草稿生成(tag ≥5 页未有 MOC) | 低 | dry-run → apply |
+| **Tier 1(低风险,可自动)** | inbox 老化归档(>30 天未蒸馏 → `archive/inbox-{date}/`);projects 僵尸打标(>90 天加 `status: dormant` frontmatter,**不 move**);MOC 草稿生成(tag ≥5 且未被同名/语义相关 MOC 覆盖) | 低 | dry-run → apply |
 | **Tier 2(中风险,只报不动)** | wiki 孤岛归属建议(列出每个孤岛 + 建议 merge/archive);raw/ 未引用文件清单 | 中 | 仅 dry-run 产 report,人决定后手动处理 |
 | **Tier 3(高风险,永不做)** | 自动 merge wiki pages;自动 delete 有 backlink 的页;自动重写 wiki 内容;改动 vault 治理文件(design-principles / CLAUDE.md / index / log)| 高 | ❌ 硬拒绝 |
 
@@ -54,6 +54,22 @@ vault-tidy **不重新扫描 vault**——读固定 JSON `~/.hermes/scratch/revi
 **24h 时间戳检查**:如果最新 scanner JSON 的 `scan_date` ISO 时间戳距今 >24 小时,vault-tidy **立即报错并退出**,提示先跑 `python3 ~/.hermes/scripts/review-digest-scan.py` 或 `~/.hermes/scripts/run-digest.sh`。避免基于过时数据生成 actions。
 
 **为什么不直接 invoke scanner**:避免跟 review-digest cron 产生 race;让 review-digest 保持 scanner 唯一调用者的清晰角色。这也对应 Karpathy「Surgical Changes」——vault-tidy 只动 vault-tidy 该动的事,不染指 scanner 的职责。
+
+## v1.1 MOC 候选判定
+
+2026-06-10 dogfood 后,`vault-tidy` 的 MOC 候选规则从"没有同名 `<tag>-moc.md`"升级为"没有同名 MOC,且未被语义相关 MOC 实质覆盖"。
+
+判定顺序:
+
+| 层级 | 判定 | 结果 |
+|---|---|---|
+| 同名覆盖 | 已存在 `<tag>-moc.md` 或等价命名 MOC | 不算候选 |
+| 语义覆盖 | 现有 MOC 的主题、链接页面、覆盖标签与该 tag 的页面集合高度重叠 | 不算候选,但输出覆盖理由 |
+| 缺口候选 | 无同名 MOC,也无语义相关 MOC 承接 | true candidate,可生成草稿 |
+
+dogfood 里的关键例子:`psychology`、`decision-making`、`behavioral-economics`、`cognitive-psychology`、`kahneman`、`philosophy` 被人物/育儿/批判性思维等 MOC 实质覆盖,不应生成一堆薄 MOC；`wildlume` 因缺少业务/Wildlume MOC 承接,仍是候选。
+
+输出 plan 时必须给出透明表格:tag、页数、覆盖 MOC、覆盖理由、candidate?。这条规则已经写入执行体 `~/.hermes/skills/vault-tidy.md` v1.1。
 
 ## AI 红线对接(v2.5 三条件)
 
@@ -88,6 +104,7 @@ vault-tidy **不重新扫描 vault**——读固定 JSON `~/.hermes/scratch/revi
 | **#6 P1 管线死结**:vault-tidy 读 cron output + 24h 门，但 chat review-digest 不写 cron output | 架构陷阱 | 输入源改为 `~/.hermes/scratch/review-digest-latest.json`；任何时候可先跑 `python3 ~/.hermes/scripts/review-digest-scan.py` 刷新 |
 | **#7 P2 skill 加载不可靠**:手动 `hermes chat` 可能加载内建 obsidian 而不是 review-digest | 路由陷阱 | 手动入口改用 `~/.hermes/scripts/run-digest.sh`，显式引用 `~/.hermes/skills/review-digest.md` |
 | **#8 P3 上游假绿灯**:review-digest 把"本周修改页数"误当修正频率 | 上游语义漂移 | vault-tidy 只相信固定 JSON 内 `metrics.correction_frequency`；首轮 dogfood 中 vault-tidy 自身行为符合 spec，24h 门按设计拒绝 stale 数据 |
+| **#9 MOC 同名主义误报**:高频 tag 没有 `<tag>-moc.md` 不等于真的需要新 MOC | 语义覆盖陷阱 | v1.1 要求先判断现有 MOC 是否实质覆盖该 tag 的页面集合；被覆盖则只记录覆盖理由,不生成候选 |
 
 **dogfood 同时验证到位(正向)**:三档 scope 守住、**Tier 3 零违规**、诚实 caveat 段到位、sheep-archive-public(251 文件 100% 未引用)正确判为越界并交还人类、vault 零改动、24h gate 逻辑正确。
 
@@ -123,7 +140,6 @@ vault-tidy **不重新扫描 vault**——读固定 JSON `~/.hermes/scratch/revi
 - **跟 Curator 的对接**:Curator 可能合并/重命名 skill 文件,vault-tidy 的输出引用如何稳定
 - **Tier 2 的"建议"输出格式**:用什么 markdown 结构让 review 最快?待 dogfood 检验
 - **多次 `--draft` dogfood 之间**:产物如何避免冲突(用时间戳还是序号?)
-- **(挡 --apply)给 review-digest scanner 加 distill 状态字段**——见 Pitfall #4,是 inbox 老化归档安全自动执行的前置
 - **--apply 端到端仍未验证**:首次 dogfood 是 --draft + stale 数据;需在 <24h 新鲜 scanner JSON 上跑 --dry-run 产 actionable plan,人勾选后再试 --apply
 
 ## References

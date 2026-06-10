@@ -324,3 +324,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[amazon-fee-rates-snapshot]]（type: snapshot）
 - **Pages updated**: [[amazon-unit-economics]]、[[amazon-tariff-landed-cost]]、[[amazon-fba-prep]]（只加快照引用句）；[[amazon-moc]]（挂入财务与现金流）；[[index]]（登记 snapshot，页面数 94→95）
 - **Note**: 将高频过期的 FBA 费率、类目佣金、入仓配置费和对华进口关税数值从稳定方法论结构中分离，集中到带 2026-06-05 数据时点的 snapshot 页。三个方法论页继续只保留计算 / 检查结构，具体数值通过 `[[amazon-fee-rates-snapshot]]` 读取；快照过期时替换快照，不重写方法论。
+
+---
+
+## [2026-06-10] skillify | policy-monitor Stage 0 + vault-tidy v1.1
+
+- **Sources touched**: `claude-drafts/handoff-policy-monitor.md`、`claude-drafts/draft-policy-monitor-sources.md`
+- **Pages created**: [[skill-policy-monitor]]
+- **Pages updated**: [[skill-vault-tidy]]（MOC 候选判定升 v1.1：语义相关 MOC 实质覆盖即不算候选）、[[index]]（Skills 区登记 skill-policy-monitor）
+- **Note**: [dogfood] policy-monitor 作为首个 Push skill 试点进入 draft 期。Stage 0 结论：Hermes `blogwatcher` 可借鉴但不直接依赖；`feeds` 只有 DESCRIPTION 不可执行；本机无 Docker/Podman/Colima/OrbStack，RSSHub 公共 docs/实例返回 403，因此首版不以 RSSHub 为前置，gov.cn/雨果网/gs.amazon.cn 按 page-diff 处理。GOV.UK Atom 实测 200，可首版接入；Consilium/EUR-Lex/海关总署一类 WAF/403 源失败不中断，写入 scanner source health。新增执行体 `~/.hermes/skills/policy-monitor.md`、scanner `~/.hermes/scripts/policy-scan.py`、源配置 `~/.hermes/scripts/policy-monitor-sources.yaml`；首跑固定 JSON 为 13 源、11 OK、2 failed、首跑 baseline 候选 0，未写 inbox。

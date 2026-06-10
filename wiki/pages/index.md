@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-10 — 补登记 8 个早先已蒸馏但漏登记的页面：关系心理学（沟通分析/蛤蟆先生/戈特曼四骑士/依恋类型/亲密关系）+ 辩证法（矛盾论/主要矛盾）+ 拓跋勇全链路运营手册_
+_最后更新：2026-06-10 — 新增 policy-monitor Push skill 反思页，vault-tidy 升 v1.1_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -103,6 +103,7 @@ _最后更新：2026-06-10 — 补登记 8 个早先已蒸馏但漏登记的页�
 - [[skill-book-mirror]] — book-mirror skill 设计与演化：按章拆书、双栏镜射、cross-eval gate 与 B 结构组装（status: draft）
 - [[skill-concept-fable]] — concept-fable skill 的设计意图与演化记录：为 concept/method/framework 页生成直觉锚点寓言
 - [[skill-cross-eval]] — cross-eval skill 设计与演化：ZHPMind 红线 #2 的 Hermes 多模型互评 gate（status: draft，执行体已注册，待补 OpenAI / DeepSeek key）
+- [[skill-policy-monitor]] — policy-monitor Push skill 设计与演化：欧洲政策/平台规则监控，确定性 scanner 固定 JSON + 7 天 draft dogfood（status: draft）
 - [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：vault 健康度周报
 - [[skill-vault-tidy]] — vault-tidy skill 的设计意图与演化记录：vault 执行器，基于 review-digest scanner JSON 生成 tidy actions（status: active，已部署+首次 dogfood）
 
