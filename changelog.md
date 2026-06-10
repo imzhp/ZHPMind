@@ -47,5 +47,10 @@
 
 ## [2026-06-10] review-digest | 健康度周报
 
-- 新建 inbox/review-digest-2026-06-10.md
-- 数据摘要：114 wiki 页、0 孤岛、0 僵尸项目、18 个 MOC 候选、本周新建 31 页修改 30 页；🔴 修正频率（初建期正常，7月后重评）
+- 新建 inbox/review-digest-2026-06-10.md（覆盖写入，快照语义）
+- 数据摘要：114 wiki 页（+30 vs 上周）、0 孤岛、0 僵尸项目、本周新建 34 页 / 修正 34 页；🟢 修正频率上周警报解除；psychology-moc 和 decision-making-moc 为最紧迫缺口
+
+## [2026-06-10] review-digest | 更正
+
+- 覆盖 inbox/review-digest-2026-06-10.md：基于正式 scanner 固定 JSON 重新生成完整快照
+- 数据摘要：114 wiki 页、0 孤岛、0 僵尸项目、1 MOC 候选（wildlume）、🔴 修正频率 0（初建期语境）、🔴 raw 未引用率 25%（2/8 顶层文件）

@@ -21,7 +21,7 @@ vault 的「**执行器**」,跟 [[skill-review-digest|review-digest]] 是"诊�
 
 - **执行体位置**:`~/.hermes/skills/vault-tidy.md`(单文件,跟 review-digest v4 同模式)
 - **触发**:cron 周一 9:30(review-digest 9:00 之后半小时)+ on-demand `hermes chat -q "运行 vault-tidy"`
-- **关系**:接收 review-digest 的 scanner JSON 作为输入,生成 tidy actions 输出到 vault
+- **关系**:接收 review-digest 固定路径 scanner JSON 作为输入,生成 tidy actions 输出到 vault
 - **当前状态**:`status: active`——已部署到 Hermes 并注册成功(2026-06-02),首次 `--draft` dogfood 通过;`--apply` 暂被 Pitfall #4(scanner 缺 distill 字段)挡住,且需先有 <24h 新鲜 scanner JSON
 
 ## Scope 三档
@@ -46,12 +46,12 @@ vault 的「**执行器**」,跟 [[skill-review-digest|review-digest]] 是"诊�
 
 ## 跟 review-digest 的接口
 
-vault-tidy **不重新扫描 vault**——读 `~/.hermes/cron/output/4923ff1a9586/<latest>.md` 的 `## Script Output` 段(scanner JSON)作为输入,职责分清:
+vault-tidy **不重新扫描 vault**——读固定 JSON `~/.hermes/scratch/review-digest-latest.json` 作为输入,职责分清:
 
 - **review-digest** = ground truth(看到了什么)
 - **vault-tidy** = action plan(基于看到的做什么)
 
-**24h 时间戳检查**:如果最新 scanner JSON 的 `scan_date` 字段距今 >24 小时,vault-tidy **立即报错并退出**,提示"先跑 `hermes chat -q '运行 review-digest'`"。避免基于过时数据生成 actions。
+**24h 时间戳检查**:如果最新 scanner JSON 的 `scan_date` ISO 时间戳距今 >24 小时,vault-tidy **立即报错并退出**,提示先跑 `python3 ~/.hermes/scripts/review-digest-scan.py` 或 `~/.hermes/scripts/run-digest.sh`。避免基于过时数据生成 actions。
 
 **为什么不直接 invoke scanner**:避免跟 review-digest cron 产生 race;让 review-digest 保持 scanner 唯一调用者的清晰角色。这也对应 Karpathy「Surgical Changes」——vault-tidy 只动 vault-tidy 该动的事,不染指 scanner 的职责。
 
@@ -71,7 +71,7 @@ vault-tidy **不重新扫描 vault**——读 `~/.hermes/cron/output/4923ff1a958
 | changelog 命名漂移(scanner vs scan) | SKILL.md 里所有脚本路径用"实际文件名"而非"语义命名",避免文档跟实现漂移 |
 | 两版本并存是遗留不是设计 | 单文件结构从 day 1,不允许后续升级到目录式 |
 | `created_by` 不被 Curator 用 | 不依赖 Curator,dry-run/apply 分离自带 ground truth |
-| 自递归(扫描时把 digest 自己也算上) | 输入是 scanner JSON,不重新扫描;天然规避自递归 |
+| 自递归(扫描时把 digest 自己也算上) | 输入是固定路径 scanner JSON,不重新扫描;天然规避自递归 |
 | pyyaml 不可用 / grep 漏 alias / ctime 错 | 不读 vault 文件,所有数据来自 scanner JSON;天然规避底层陷阱 |
 
 ## 实战 Pitfalls(2026-06-02 部署 + 首次 --draft dogfood)
@@ -85,6 +85,9 @@ vault-tidy **不重新扫描 vault**——读 `~/.hermes/cron/output/4923ff1a958
 | **#3 本机观测点不可靠** | 平台陷阱 | `launchctl list` 会空 → 用 `launchctl print gui/$(id -u)/ai.hermes.gateway`;`hermes skills list \| tail -1` 抓 Rich 尾随空行 → 用 `tail -5`。 |
 | **#4 scanner JSON 缺 distill 状态字段 → Tier 1「inbox 老化归档」核心条件"无 distill 痕迹"无法判定** | 设计缺陷(挡 --apply) | --apply 做 inbox 归档前**先扩展 review-digest scanner 增 distill 状态检测**;此前该 action 只能产"待人工确认"候选,不可自动执行。 |
 | **#5 30h stale JSON 产生假阳性**(`critical-thinking-moc` 已存在却报候选、页数 57 vs 实际 70、已删的 `多 Agent…治理 1.md` 仍上榜) | 生成偏差(数据时效) | 24h gate 在 dry-run/apply 会中止(正确),draft 放行但产物不可 apply。**改进**:24h 警告触发时对所有 state-derived 结论(MOC 存在性 / 孤岛率 / 页数 / raw 清单)**统一降权**,而非零散 caveat——本次反在「已知局限 #4」声称候选"可信",过度自信。 |
+| **#6 P1 管线死结**:vault-tidy 读 cron output + 24h 门，但 chat review-digest 不写 cron output | 架构陷阱 | 输入源改为 `~/.hermes/scratch/review-digest-latest.json`；任何时候可先跑 `python3 ~/.hermes/scripts/review-digest-scan.py` 刷新 |
+| **#7 P2 skill 加载不可靠**:手动 `hermes chat` 可能加载内建 obsidian 而不是 review-digest | 路由陷阱 | 手动入口改用 `~/.hermes/scripts/run-digest.sh`，显式引用 `~/.hermes/skills/review-digest.md` |
+| **#8 P3 上游假绿灯**:review-digest 把"本周修改页数"误当修正频率 | 上游语义漂移 | vault-tidy 只相信固定 JSON 内 `metrics.correction_frequency`；首轮 dogfood 中 vault-tidy 自身行为符合 spec，24h 门按设计拒绝 stale 数据 |
 
 **dogfood 同时验证到位(正向)**:三档 scope 守住、**Tier 3 零违规**、诚实 caveat 段到位、sheep-archive-public(251 文件 100% 未引用)正确判为越界并交还人类、vault 零改动、24h gate 逻辑正确。
 
@@ -93,6 +96,16 @@ vault-tidy **不重新扫描 vault**——读 `~/.hermes/cron/output/4923ff1a958
 - 清理重复部署形态：删除 `~/.hermes/skills/vault-tidy/` 目录版，只保留权威单文件 `~/.hermes/skills/vault-tidy.md`
 - 验证 `hermes chat -q` 可唯一读取 `vault-tidy` skill，`--draft` 输出边界仍为 `claude-drafts/result-tidy-{timestamp}.md`
 - 再次确认 `--draft` 不允许修改 `wiki/pages`；Tier 3 对 `wiki/pages/*` 自动重写仍为硬拒绝
+
+## 2026-06-10 dogfood 管线修复
+
+首轮 dogfood 证明 vault-tidy 的三档 scope、Tier 3 拒绝、24h 新鲜度门和 `--draft` 边界均符合 spec；问题出在上游 review-digest 数据管线。修复后 vault-tidy 的输入从 cron output 目录切换为固定 JSON：
+
+```text
+~/.hermes/scratch/review-digest-latest.json
+```
+
+这让 review-digest 的 chat 运行、cron 运行和 vault-tidy 的 draft/apply 共享同一个确定性数据源。cron output 只保留为历史兼容，不再承担下游接口职责。
 
 ## 触发节奏
 
@@ -119,4 +132,4 @@ vault-tidy **不重新扫描 vault**——读 `~/.hermes/cron/output/4923ff1a958
 - [[design-principles]] — ZHPMind 设计宪法(AI 心法、AI 红线、Skill 系统设计三节)
 - [[karpathy-claude-md]] — Karpathy 4 原则(Surgical Changes + Goal-Driven Execution 是 vault-tidy 设计基础)
 - 执行体位置:`~/.hermes/skills/vault-tidy.md`
-- scanner JSON 来源:`~/.hermes/cron/output/4923ff1a9586/<latest>.md` 的 `## Script Output` 段
+- scanner JSON 来源:`~/.hermes/scratch/review-digest-latest.json`

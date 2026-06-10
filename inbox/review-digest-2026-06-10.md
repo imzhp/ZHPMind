@@ -3,7 +3,7 @@ type: snapshot
 source: hermes/review-digest
 created: 2026-06-10
 tags:
-  - system/review
+  - system-review
 ---
 
 # ZHPMind 周报 — 2026-06-10
@@ -11,168 +11,88 @@ tags:
 ## 总览
 
 | 指标 | 数值 | 状态 |
-|------|------|------|
-| Inbox 积压（不含系统快照） | 8 条 | 🟢 正常 |
-| Wiki 孤岛率 | 0.0%（0/114 页） | 🟢 完美 |
-| Projects 僵尸率 | 0.0%（0/3 个） | 🟢 正常 |
-| 本周 Wiki 活动 | 31 页新建，30 页修改 | — 爆发周 |
-| 本周 Capture（不含系统快照） | 5 条 | — |
-| MOC 候选 | 18 个 tag 未覆盖 | 🟡 注意 |
+|---|---|---|
+| Inbox 积压（不含系统快照） | 5 条 | 🟢 正常 |
+| Wiki 孤岛率 | 0.0%（0/114 页） | 🟢 健康 |
+| Projects 僵尸率 | 0.0%（0/3 项） | 🟢 健康 |
+| 本周 Wiki 活动 | 33 页新建，28 页修改 | — |
+| 本周 Capture（不含系统快照） | 2 条 | — |
 | 修正频率（30 天） | 0 页 | 🔴 认知僵化警告 |
+| raw 未引用率 | 25.0%（2/8 顶层） | 🔴 raw 淤积 |
 
 ---
 
 ## Inbox 积压详情
 
-共 8 条用户 capture（另有 6 个系统快照不计入）：
+5 条用户 capture（另有 11 条系统快照已排除），全部尚无蒸馏痕迹（`no_trace`）：
 
-| 文件名 | 入库日期 |
-|--------|----------|
-| 1随记.md | 2026-04-19 |
-| Every Claude Code Hack I Know (March 2026).md | 2026-05-30 |
-| vault-maintenance-backlog-2026-06-01.md | 2026-06-01 |
-| cross-eval-ch-04-2026-06-04.md | 2026-06-04 |
-| cross-eval-ch-04-2026-06-04-021639.md | 2026-06-04 |
-| cross-eval-ch-04-2026-06-04-105114.md | 2026-06-04 |
-| reflection-2026-06-04-fatherhood.md | 2026-06-04 |
-| cross-eval-ch-04-2026-06-04-182450.md | 2026-06-04 |
-
-> 注意：`1随记.md` 已积压近 7 周，是最老的待处理 capture。`vault-maintenance-backlog-2026-06-01.md` 也有 9 天，命名暗示有维护待办项。建议下一次 Claudian session 优先处理这两条。
+| 文件 | 创建 | 最后修改 | 蒸馏状态 |
+|---|---|---|---|
+| 1随记.md | 2026-04-19 | 2026-06-02 | no_trace |
+| Every Claude Code Hack I Know (March 2026).md | 2026-05-30 | 2026-05-30 | no_trace |
+| alert-git-autocommit-2026-06-10.md | 2026-06-10 | 2026-06-10 | no_trace |
+| reflection-2026-06-04-fatherhood.md | 2026-06-04 | 2026-06-04 | no_trace |
+| vault-maintenance-backlog-2026-06-01.md | 2026-06-01 | 2026-06-01 | no_trace |
 
 ---
 
 ## Wiki 孤岛页面
 
-无孤岛。114 个 wiki 页面均有至少一条 backlink。
+无孤岛。114 页 wiki 全部具有 wikilink 反链覆盖。
 
 ---
 
-## 僵尸项目
+## Projects 僵尸率
 
-无僵尸。3 个活跃项目均在 90 天内有更新：
+3 个活跃项目，无僵尸（最后修改均在 90 天内）：
 
-- amazon-learning：最后修改 2026-06-10
-- sheep-archive-migration：最后修改 2026-06-01
-- hermes：最后修改 2026-05-20
-
----
-
-## 修正频率（30 天）— 🔴
-
-过去 30 天内，**创建时间早于 30 天前**、且被修改过的页面数量：0。
-
-> 📝 **语境说明**：这个 🔴 很可能是 vault 初建期的正常现象，而非认知僵化。扫描显示本周新建 31 页、修改 30 页，活跃度极高。但绝大多数现有页面都是近期才入库的，因此还没有"存在超过 30 天、且被重新修订"的页面。当 vault 进入稳定运营期（多数页面创建时间超过一个月）后，再重新评估此指标。预期在 2026 年 7 月后此数值会自然上升。
+| 项目 | 最后修改 | 状态 |
+|---|---|---|
+| amazon-learning | 2026-06-10 | 活跃 |
+| sheep-archive-migration | 2026-06-01 | 活跃 |
+| hermes | 2026-05-20 | 活跃 |
 
 ---
 
 ## MOC 候选
 
-以下 18 个 tag 被 ≥5 个页面使用，但 vault 中不存在对应 MOC 文件：
+当前 5 个 MOC（`ai-engineering-moc`、`parenting-moc`、`people-moc`、`critical-thinking-moc`、`amazon-moc`）共覆盖 200+ 个 tag。高频 tag 中有 1 个尚未被任何现有 MOC 的 wikilink 覆盖：
 
-| Tag | 使用页面数 |
-|-----|-----------|
-| ai | 18 |
-| psychology | 13 |
-| decision-making | 12 |
-| llm | 11 |
-| agents | 9 |
-| behavioral-economics | 9 |
-| software-engineering | 8 |
-| cognitive-psychology | 6 |
-| kahneman | 6 |
-| philosophy | 6 |
-| wildlume | 6 |
-| moc | 5 |
-| ppc | 5 |
-| open-brain | 5 |
-| communication | 5 |
-| cognitive-bias | 5 |
-| listing | 5 |
-| psychoanalysis | 5 |
+- **wildlume**：tag 使用频次 6，未被任何 MOC 覆盖。
 
-### 现有 MOC 覆盖透明度
-
-| MOC 文件 | vault 内链接页面数 |
-|----------|------------------|
-| ai-engineering-moc | 16 |
-| amazon-moc | 25 |
-| critical-thinking-moc | 17 |
-| parenting-moc | 14 |
-| people-moc | 32 |
-
-> **解读**：`ai`（18 页）和 `llm`（11 页）是最大的空白，但 `ai-engineering-moc` 已经链接了 16 个页面，很可能已在实际上覆盖了这些内容——只是 MOC 文件名和 tag 名不一致，导致自动检测无法匹配。`psychology`（13 页）目前没有对应 MOC，`decision-making`（12 页）可能部分被 `critical-thinking-moc` 覆盖。优先级最高的 MOC 候选：**psychology-moc** 和 **decision-making-moc**（或直接扩展 critical-thinking-moc 的链接范围）。
+可考虑新建 `wildlume-moc` 或在 `amazon-moc` / 相关业务页面中增加跨链来关联曜野业务节点。
 
 ---
 
-## 本周新建 Wiki 页面（31 页）
+## 本周 Wiki 活动
 
-| 页面 | 创建日期 |
-|------|---------|
-| amazon-keyword-library | 2026-06-10 |
-| amazon-new-product-launch | 2026-06-08 |
-| mental-representation | 2026-06-08 |
-| on-contradiction | 2026-06-08 |
-| peak | 2026-06-08 |
-| gottman-four-horsemen | 2026-06-08 |
-| amazon-ppc-campaign-management | 2026-06-08 |
-| amazon-product-selection | 2026-06-08 |
-| intimate-relationships | 2026-06-08 |
-| counselling-for-toads | 2026-06-08 |
-| attachment-styles | 2026-06-08 |
-| anders-ericsson | 2026-06-08 |
-| principal-contradiction | 2026-06-08 |
-| amazon-product-line-operations-handbook | 2026-06-08 |
-| amazon-moc | 2026-06-08 |
-| transactional-analysis | 2026-06-08 |
-| dual-process-theory | 2026-06-07 |
-| peak-end-rule | 2026-06-07 |
-| thinking-fast-and-slow | 2026-06-07 |
-| availability-heuristic | 2026-06-07 |
-| daniel-kahneman | 2026-06-07 |
-| anchoring-effect | 2026-06-07 |
-| planning-fallacy | 2026-06-07 |
-| amazon-fba-prep | 2026-06-05 |
-| amazon-fee-rates-snapshot | 2026-06-05 |
-| amazon-backend-keywords | 2026-06-05 |
-| amazon-tariff-landed-cost | 2026-06-05 |
-| amazon-listing-build-and-audit | 2026-06-05 |
-| amazon-unit-economics | 2026-06-05 |
-| amazon-listing-visual-planning | 2026-06-05 |
-| zhanghaopeng | 2026-06-04 |
+本周新建 33 页，修改（非本周新建）28 页，合计 61 次写入动作。
+
+**新建页面（33 页）：**
+
+amazon-backend-keywords、amazon-fba-prep、amazon-fee-rates-snapshot、amazon-keyword-library、amazon-listing-build-and-audit、amazon-listing-visual-planning、amazon-moc、amazon-new-product-launch、amazon-ppc-campaign-management、amazon-product-line-operations-handbook、amazon-product-selection、amazon-tariff-landed-cost、amazon-unit-economics、anchoring-effect、anders-ericsson、attachment-styles、availability-heuristic、counselling-for-toads、daniel-kahneman、dual-process-theory、gottman-four-horsemen、intimate-relationships、mental-representation、on-contradiction、peak、peak-end-rule、planning-fallacy、principal-contradiction、skill-review-digest、skill-vault-tidy、thinking-fast-and-slow、transactional-analysis、zhanghaopeng
+
+**修改页面（28 页，非本周新建）：**
+
+affiliate-marketing-complete-guide、agentic-engineering、ai-engineering-moc、amazon-cashflow-roi、amazon-data-driven-operations、amazon-inventory-replenishment、amazon-opportunity-explorer、amazon-patent-screening、amazon-ppc-advertising、amazon-pricing-strategy、amazon-profit-analysis、amazon-traffic-sources、critical-thinking-moc、first-principles、index、judgment-and-decision-making、karpathy-claude-md、listing-optimization、my-father-before-me、obstacles-to-critical-thinking、parenting-alliance、parenting-moc、people-moc、prospect-theory、skill-book-mirror、skill-concept-fable、skill-cross-eval、wildlume-business-reference
 
 ---
 
-## 本周修改 Wiki 页面（30 页）
+## 修正频率（30 天）
 
-| 页面 | 修改日期 |
-|------|---------|
-| ai-engineering-moc | 2026-06-10 |
-| first-principles | 2026-06-10 |
-| amazon-ppc-advertising | 2026-06-10 |
-| parenting-moc | 2026-06-10 |
-| skill-review-digest | 2026-06-10 |
-| agentic-engineering | 2026-06-10 |
-| amazon-patent-screening | 2026-06-10 |
-| wildlume-business-reference | 2026-06-10 |
-| amazon-pricing-strategy | 2026-06-10 |
-| skill-vault-tidy | 2026-06-10 |
-| karpathy-claude-md | 2026-06-10 |
-| amazon-cashflow-roi | 2026-06-10 |
-| amazon-inventory-replenishment | 2026-06-10 |
-| index | 2026-06-10 |
-| my-father-before-me | 2026-06-10 |
-| parenting-alliance | 2026-06-10 |
-| affiliate-marketing-complete-guide | 2026-06-10 |
-| listing-optimization | 2026-06-10 |
-| skill-concept-fable | 2026-06-10 |
-| amazon-traffic-sources | 2026-06-10 |
-| amazon-profit-analysis | 2026-06-10 |
-| amazon-data-driven-operations | 2026-06-10 |
-| amazon-opportunity-explorer | 2026-06-09 |
-| people-moc | 2026-06-08 |
-| prospect-theory | 2026-06-07 |
-| judgment-and-decision-making | 2026-06-07 |
-| critical-thinking-moc | 2026-06-07 |
-| obstacles-to-critical-thinking | 2026-06-07 |
-| skill-cross-eval | 2026-06-04 |
-| skill-book-mirror | 2026-06-04 |
+🔴 触发「认知僵化警告」（count = 0）
+
+> **语境说明**：当前 vault 处于初建期（`initial_build_phase = true`）。114 页中有 105 页创建于过去 30 天内，能满足「创建时间早于 30 天前且 mtime-ctime ≥ 1 天」的页面极少，修正频率为 0 是结构性必然，不代表知识已固化或停止迭代。建议在 vault 多数页面创建时间超过 30 天后（预计 2026 年 8 月前后）重新评估该指标的有效性。届时若仍为 0，才需要真正关注认知僵化风险。
+
+---
+
+## raw 未引用率
+
+🔴 25.0%（顶层 8 个 raw 文件中有 2 个未被 wiki/pages 引用）
+
+未被引用的文件：
+
+- `Matt Van Horn Every Claude Code Hack I Know March 2026.md`
+- `karpathy-llm-wiki-vs-zhpmind.md`
+
+> **建议**：上述 2 个 raw 文件有蒸馏价值但尚未链入 wiki/pages。建议 Claudian 下次处理时优先蒸馏，或在相关页面（如 `claude-code`、`karpathy-llm-wiki-vs-zhpmind` 对应概念页）的 `sources:` 字段中补充引用，避免 raw 层持续淤积。

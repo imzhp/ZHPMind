@@ -82,6 +82,9 @@ review-digest 是 ZHPMind 的**健康度周报**。它扫描 vault 自身，产�
 | 新建页面当天必然是孤岛 | 业务语义校准 | 报告中对「今日新建」的孤岛加注说明为预期状态 |
 | macOS `ctime ≠ 创建时间` | 平台陷阱（iCloud vault 尤甚） | 用 `os.stat(fpath).st_birthtime`（macOS 专有）获取真实创建时间 |
 | raw 引用多为 `raw/路径` 串 + frontmatter sources，少用 `[[]]`（2026-05-30 raw 审计） | 平台/业务语义校准 | scanner 不能只扫 `[[wikilink]]`；须同时匹配 basename(±ext)/子目录相对路径(±ext)/`raw/` 前缀串，否则真被引用的 raw 会被误判成孤儿 |
+| P1 管线死结：chat 运行 review-digest 不写 cron output，vault-tidy 却只读 cron output + 24h 门 | 架构陷阱 | scanner 每次运行都原子写固定 JSON：`~/.hermes/scratch/review-digest-latest.json`；cron stdout 只保留兼容，不再作为下游唯一数据源 |
+| P2 skill 加载不可靠：`hermes chat -q "运行 review-digest skill"` 可能加载内建 `obsidian` 而非本地 skill | 路由陷阱 | 增加 `~/.hermes/scripts/run-digest.sh`：先跑 scanner，再用显式 skill 文件路径提示 Hermes；skill 文本也要求第一步执行正式 scanner |
+| P3 指标定义漂移：把"本周修改页数"误当"修正频率"导致假绿灯 | 语义陷阱 | 指标定义下沉并内联进 scanner/skill；修正频率固定为"过去 30 天内被修改、创建早于 30 天前且 mtime-ctime >= 1 天的 wiki 页数"，解读层不得重定义 |
 
 ## 反思与未解决问题
 
@@ -126,10 +129,23 @@ SKILL.md v1.1 frontmatter 明明写 `created_by: human`，但 Curator 看到的�
 
 验证结果：`hermes chat -q` 读取 `review-digest` 时唯一解析到该 skill，并返回正式脚本路径 `~/.hermes/scripts/review-digest-scan.py`；未触发重新扫描或写入。
 
+## 2026-06-10 管线确定性化
+
+dogfood 第一轮暴露出 review-digest → vault-tidy 的上游管线问题：cron output 不是稳定数据接口，chat 运行 review-digest 可能不写 cron output，且 skill 路由不稳定会导致 agent 临场重写 scanner。修复后接口改为：
+
+1. `~/.hermes/scripts/review-digest-scan.py` 每次运行都输出 stdout，并原子写 `~/.hermes/scratch/review-digest-latest.json`
+2. `~/.hermes/skills/review-digest.md` 第一动作是执行 scanner，然后只读固定 JSON；禁止临场 `find/stat/execute_code` 重算指标
+3. `~/.hermes/skills/vault-tidy.md` 只读固定 JSON，并保留 24h 新鲜度门
+4. `~/.hermes/scripts/run-digest.sh` 作为手动入口，显式引用 skill 文件路径，绕过 skill 路由运气
+
+本次同时纠偏 `inbox/review-digest-2026-06-10.md` 和 `changelog.md`：修正频率按 spec 为 0（初建期语境），撤销"警报解除"表述；正式 scanner 验证孤岛率为 0%（0/114）。
+
 ## References
 
 - skill 执行文件：`~/.hermes/skills/review-digest.md`
 - scanner 脚本：`~/.hermes/scripts/review-digest-scan.py`
+- 固定 JSON 数据源：`~/.hermes/scratch/review-digest-latest.json`
+- 手动入口：`~/.hermes/scripts/run-digest.sh`
 - 2026-06-10 临场扫描器副本：`claude-drafts/tmp-vault-scan-20260610.py`
 - Curator 日志：`~/.hermes/logs/curator/`
 - design-principles 对应小节：「Skill 系统设计（从工具实践沉淀）」
