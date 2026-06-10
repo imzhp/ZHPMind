@@ -3,13 +3,13 @@ type: skill
 title: review-digest
 status: active
 created: 2026-05-11
-updated: 2026-06-04
+updated: 2026-06-10
 tags:
   - system-skill
   - tool-hermes
 references:
-  - "~/.hermes/skills/review-digest/SKILL.md"
-  - "~/.hermes/skills/review-digest/references/"
+  - "~/.hermes/skills/review-digest.md"
+  - "~/.hermes/scripts/review-digest-scan.py"
 ---
 
 # review-digest — Skill 反思页
@@ -115,13 +115,22 @@ SKILL.md v1.1 frontmatter 明明写 `created_by: human`，但 Curator 看到的�
 
 值得未来观察：如果 Curator 总是看到「1」，那么"两版本并存"是 Hermes 看得见的最终状态，需要手动决定哪个保留。
 
+## 2026-06-10 维护收敛
+
+本次 Hermes 维护把 review-digest 的执行形态收敛为**单文件 skill + scripts/ 确定性扫描器**：
+
+- 修复 `~/.hermes/skills/review-digest.md` 内部脚本名漂移：`review-digest-scanner.py` → `~/.hermes/scripts/review-digest-scan.py`
+- 删除历史目录版 `~/.hermes/skills/review-digest/` 与 `review-digest.md.v1/v2/v3.bak`
+- 目录版 `references/` 的有效经验已沉淀在本页 Pitfalls，不再保留双注册形态
+- 抢救 2026-06-10 临场扫描器到 `claude-drafts/tmp-vault-scan-20260610.py`，用于后续人工比较；不直接合并，因为正式脚本已有更完整的 `distill_status`、`raw_unreferenced`、`correction_frequency`
+
+验证结果：`hermes chat -q` 读取 `review-digest` 时唯一解析到该 skill，并返回正式脚本路径 `~/.hermes/scripts/review-digest-scan.py`；未触发重新扫描或写入。
+
 ## References
 
-- skill 执行文件：`~/.hermes/skills/review-digest/SKILL.md`
-- 相关脚本/模板：`~/.hermes/skills/review-digest/references/`
-- 单文件遗留：`~/.hermes/skills/review-digest.md`（实际为 v4 active，见 §1 纠错）
-- **scanner 脚本（实际生效）**：`~/.hermes/scripts/review-digest-scan.py`（2026-05-23 补）
-- 备份链：`~/.hermes/skills/review-digest.md.v[1-3].bak`
+- skill 执行文件：`~/.hermes/skills/review-digest.md`
+- scanner 脚本：`~/.hermes/scripts/review-digest-scan.py`
+- 2026-06-10 临场扫描器副本：`claude-drafts/tmp-vault-scan-20260610.py`
 - Curator 日志：`~/.hermes/logs/curator/`
 - design-principles 对应小节：「Skill 系统设计（从工具实践沉淀）」
 

@@ -3,7 +3,7 @@ type: skill
 title: vault-tidy
 status: active
 created: 2026-05-23
-updated: 2026-06-04
+updated: 2026-06-10
 tags:
   - system-skill
   - tool-hermes
@@ -87,6 +87,12 @@ vault-tidy **不重新扫描 vault**——读 `~/.hermes/cron/output/4923ff1a958
 | **#5 30h stale JSON 产生假阳性**(`critical-thinking-moc` 已存在却报候选、页数 57 vs 实际 70、已删的 `多 Agent…治理 1.md` 仍上榜) | 生成偏差(数据时效) | 24h gate 在 dry-run/apply 会中止(正确),draft 放行但产物不可 apply。**改进**:24h 警告触发时对所有 state-derived 结论(MOC 存在性 / 孤岛率 / 页数 / raw 清单)**统一降权**,而非零散 caveat——本次反在「已知局限 #4」声称候选"可信",过度自信。 |
 
 **dogfood 同时验证到位(正向)**:三档 scope 守住、**Tier 3 零违规**、诚实 caveat 段到位、sheep-archive-public(251 文件 100% 未引用)正确判为越界并交还人类、vault 零改动、24h gate 逻辑正确。
+
+## 2026-06-10 维护记录
+
+- 清理重复部署形态：删除 `~/.hermes/skills/vault-tidy/` 目录版，只保留权威单文件 `~/.hermes/skills/vault-tidy.md`
+- 验证 `hermes chat -q` 可唯一读取 `vault-tidy` skill，`--draft` 输出边界仍为 `claude-drafts/result-tidy-{timestamp}.md`
+- 再次确认 `--draft` 不允许修改 `wiki/pages`；Tier 3 对 `wiki/pages/*` 自动重写仍为硬拒绝
 
 ## 触发节奏
 
