@@ -5,7 +5,7 @@ type: book
 tags: [amazon, e-commerce, product-development, operations, ppc, supply-chain, strategy, full-chain]
 created: 2026-06-08
 updated: 2026-06-08
-sources: ["亚马逊产品线全链路运营实战手册.md"]
+sources: ["assets/books/亚马逊产品线全链路运营实战手册-拓跋勇.md"]
 source_count: 1
 discussions: []
 ---
@@ -177,4 +177,4 @@ discussions: []
 
 ## Sources
 
-- `raw/亚马逊产品线全链路运营实战手册.md` — 拓跋勇 V10 全链路 SOP，24 章 3889 行，D-60 到 D90 时间节点框架
+- `raw/assets/books/亚马逊产品线全链路运营实战手册-拓跋勇.md` — 拓跋勇 V10 全链路 SOP，24 章 3889 行，D-60 到 D90 时间节点框架
