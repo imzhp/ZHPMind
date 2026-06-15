@@ -54,3 +54,8 @@
 
 - 覆盖 inbox/review-digest-2026-06-10.md：基于正式 scanner 固定 JSON 重新生成完整快照
 - 数据摘要：114 wiki 页、0 孤岛、0 僵尸项目、1 MOC 候选（wildlume）、🔴 修正频率 0（初建期语境）、🔴 raw 未引用率 25%（2/8 顶层文件）
+
+## [2026-06-15] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-06-15.md
+- 数据摘要：115 wiki 页、0 孤岛、0 僵尸项目、2 MOC 候选（wildlume、system-skill）、🔴 修正频率 0（初建期语境）、🔴 raw 未引用率 25%（2/8 顶层文件）
