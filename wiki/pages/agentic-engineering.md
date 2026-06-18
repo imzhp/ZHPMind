@@ -3,7 +3,7 @@ title: "Agentic Engineering（代理工程）"
 type: concept
 tags: [ai, software-engineering, agents, llm, productivity]
 created: 2026-05-08
-updated: 2026-06-02
+updated: 2026-06-18
 sources: ["Andrej Karpathy From Vibe Coding to Agentic Engineering.md", "Boris Cherny Why Coding Is Solved, and What Comes Next.md", "Meta-Meta-Prompting The Secret to Making AI Agents Work.md", "assets/references/The-Founders-Playbook-05062026_v3.pdf"]
 source_count: 4
 discussions: []
@@ -126,6 +126,18 @@ Garry 的核心论断与 Karpathy 的 Agentic Engineering 高度呼应：
 - AI 生成的变更与之前的设计决策不一致
 - 同一个问题在不同会话中被以不同方式解决
 - 很难向新加入的人（或 AI）解释代码库为什么是现在这个样子
+
+## 自我改进的真实定义：Harness 积累，模型不变
+
+0xMovez 的 [[harness-engineering-with-claude]] 给"自我改进系统"提供了一个去神秘化的定义，与 Boris Cherny 的 100% AI 工作流直接对应：
+
+> "模型没有变。它周围的 Harness 变得更精准了。这才是'自我改进'的真实含义——不是一个会学习的模型，而是一个会积累的 Harness。"
+
+自我改进的机制链条：每次运行产出 → **独立 reviewer subagent** 检查（writer-vs-checker split，防止模型审查自己的产出时过于宽容） → 结果写入**状态文件**（跨次运行存活）→ 通用教训蒸馏进 **skills**（应用于所有未来运行）→ loop 再次执行，带着上次学到的一切。
+
+这与 Boris Cherny 的「/loop + 夜间数千个 agent」和 Garry Tan 的「技能积累护城河」在机制上完全一致——差异只在规模，不在原理。
+
+**Writer-vs-checker split（写作者与审查者分离）** 是 Agentic Engineering 中质量把关的最小可行模式：主 Agent 负责产出，独立 subagent 以全新上下文窗口负责检查——不共享上下文，避免自我确认偏误。这是 [[attention-governance]] 中上下文边界隔离的实操落地。
 
 ## Agent 边界设计：注意力治理框架
 

@@ -333,3 +333,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[skill-policy-monitor]]
 - **Pages updated**: [[skill-vault-tidy]]（MOC 候选判定升 v1.1：语义相关 MOC 实质覆盖即不算候选）、[[index]]（Skills 区登记 skill-policy-monitor）
 - **Note**: [dogfood] policy-monitor 作为首个 Push skill 试点进入 draft 期。Stage 0 结论：Hermes `blogwatcher` 可借鉴但不直接依赖；`feeds` 只有 DESCRIPTION 不可执行；本机无 Docker/Podman/Colima/OrbStack，RSSHub 公共 docs/实例返回 403，因此首版不以 RSSHub 为前置，gov.cn/雨果网/gs.amazon.cn 按 page-diff 处理。GOV.UK Atom 实测 200，可首版接入；Consilium/EUR-Lex/海关总署一类 WAF/403 源失败不中断，写入 scanner source health。新增执行体 `~/.hermes/skills/policy-monitor.md`、scanner `~/.hermes/scripts/policy-scan.py`、源配置 `~/.hermes/scripts/policy-monitor-sources.yaml`；首跑固定 JSON 为 13 源、11 OK、2 failed、首跑 baseline 候选 0，未写 inbox。
+
+---
+
+## [2026-06-18] distill | Harness Engineering with Claude 14-step roadmap
+
+- **Sources touched**: `raw/Harness engineering with Claude 14-step roadmap from one agent to a self-improving system..md`
+- **Pages created**: [[harness-engineering-with-claude]]
+- **Pages updated**: [[fat-skills-thin-harness]]（补 Harness 内部配置层级表、Hooks vs CLAUDE.md"执行 vs 建议"区分、三层楼模型与 Harness 位置）；[[agentic-engineering]]（补"自我改进的真实定义：Harness 积累，模型不变"段落 + writer-vs-checker split）；[[index]]（登记新页，更新 last-updated 行）
+- **Note**: [self-reviewed] 0xMovez AI Substack 文章，14 步操作路线图。核心新增：① Hooks = 确定性执行（退出码 2，模型无法绕过）vs CLAUDE.md = 建议（可被忽略）——这是 fat-skills-thin-harness 此前缺失的操作层分工；② 三层楼模型（Harness/Loop/Self-improving System）提供清晰的层级分离术语；③ "Harness 积累，模型不变"去神秘化了 self-improving system 的定义；④ writer-vs-checker split（独立 reviewer subagent）作为质量把关最小可行模式。未新建 entity 页（0xMovez AI 来源不足以支撑人物页）。Propagation：fat-skills-thin-harness 和 agentic-engineering 已更新，均为本文直接相关的概念页。

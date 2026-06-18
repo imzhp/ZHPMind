@@ -9,7 +9,7 @@ source_count: 0
 
 # Wiki Index
 
-_最后更新：2026-06-10 — 新增 policy-monitor Push skill 反思页，vault-tidy 升 v1.1_
+_最后更新：2026-06-18 — 新增 harness-engineering-with-claude；更新 fat-skills-thin-harness、agentic-engineering_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
@@ -125,6 +125,7 @@ _最后更新：2026-06-10 — 新增 policy-monitor Push skill 反思页，vaul
 - [[amazon-advanced-operations-handbook]] — 亚马逊跨境运营 9 章 312 页培训教材，覆盖算法至选品全链路 (1 个来源)
 - [[amazon-product-line-operations-handbook]] — 拓跋勇 V10 全链路运营 SOP：D-60→D90 时间节点经营、七道门控、商品集决策、5D 词库、G-M-R 广告架构、Go/Pivot/Kill (1 个来源)
 - [[andrej-karpathy-vibe-coding-to-agentic-engineering]] — AI Ascent 2025 对谈，涵盖 Software 3.0、Agentic Engineering 等核心议题 (1 个来源)
+- [[harness-engineering-with-claude]] — 0xMovez AI：14 步从单 Agent 到自我改进系统，三层楼模型 + Harness 配置层级 + 8 大反模式 (1 个来源)
 - [[boris-cherny-coding-is-solved]] — AI Ascent 2026 对谈，Boris 论述编程现状、loops 工作流、团队未来和 SaaS 格局 (1 个来源)
 - [[counselling-for-toads]] — 罗伯特·戴博德《蛤蟆先生去看心理医生》：以蛤蟆十次咨询叙事呈现 TA 理论，自我状态/人生坐标/心理游戏 (1 个来源)
 - [[financial-golden-triangle]] — 闻静《经营者的财务金三角》：经营/融资/投资三维战略三角 + 杜邦 ROE 分解 + 黑字倒闭 + 20% ROE 底线 (1 个来源)

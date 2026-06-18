@@ -3,7 +3,7 @@ title: "Fat Skills, Thin Harness（脂肪技能，精简 Harness）"
 type: concept
 tags: [ai, agents, architecture, software-engineering, llm]
 created: 2026-05-10
-updated: 2026-05-10
+updated: 2026-06-18
 sources: ["Meta-Meta-Prompting The Secret to Making AI Agents Work.md"]
 source_count: 1
 discussions: []
@@ -81,6 +81,30 @@ Garry 的 Harness（OpenClaw）只有几千行路由逻辑，不知道"书镜"�
 Garry 同时用 4 种模型，每种模型负责它最擅长的任务类型。切换或升级模型不影响技能文件，不影响知识库。系统的智能来自积累，而非来自某个特定模型的能力。
 
 这与 Karpathy 的 [[software-3-0]] 论点呼应：Prompt 和 Context 是控制杆，而非模型本身。
+
+## Harness 内部的配置层级
+
+Garry Tan 架构指明了"Harness 要薄"的方向，0xMovez 的操作指南给出了 Harness 内部的正确分工（来源：[[harness-engineering-with-claude]]）：
+
+| 配置位置 | 性质 | 存放内容 |
+|----------|------|----------|
+| `CLAUDE.md` | **建议**（模型可忽略）| 常驻事实——约定、架构、"不这样做是因为那次事故" |
+| `skills/` | **可复用流程** | 多步流程、PR 检查、发布程序——写一次，永久调用 |
+| `hooks/` | **确定性强制**（模型无法绕过）| 安全门（危险命令拦截）、格式化（每次编辑后自动跑 linter）|
+| `agents/` | **上下文隔离** | 独立的 reviewer、研究 agent——防噪声污染主线程 |
+| `agent-memory/` | **跨次状态** | 已验证事实、教训、上次会话断点 |
+
+关键区分：**CLAUDE.md 是建议，Hook 是法律**。把强制性规则写在 CLAUDE.md 里，模型可以忽略；写成 Hook（退出码 2 = 拦截），模型绕不过去。这是"Harness 要薄"的操作落地——把执行逻辑从指令层提到机制层。
+
+## 三层楼模型与 Harness 的位置
+
+Harness 是整个 Agent 系统的底层基础（来源：[[harness-engineering-with-claude]]）：
+
+- **第一层：Harness** — 单个 Agent 运行的静态环境（模型 + 工具 + 权限 + 上下文）
+- **第二层：Loop** — 在 Harness 上按计时器触发、生成辅助 Agent、自我续接
+- **第三层：自我改进系统** — Loop + 积累记忆，复利增长
+
+Fat Skills / Thin Harness 架构主要在第一层和它向上支撑的能力上生效：Harness 做路由（薄），Skills 和 Data 承载知识（厚）。循环（loop）和自我改进是更高楼层的产物——但它们的质量上限由底层 Harness 决定。
 
 ## 与 Agentic Engineering 的联系
 
