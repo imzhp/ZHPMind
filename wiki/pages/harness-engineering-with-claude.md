@@ -116,3 +116,7 @@ Agent 忘记两次运行之间的一切。**Harness 不必如此。** 状态文�
 ## Sources
 
 - `raw/Harness engineering with Claude 14-step roadmap from one agent to a self-improving system..md` — 0xMovez AI Substack 文章，Claude Code Harness Engineering 14 步路线图全文
+
+## 关联
+
+- [[kimi-k2-swarm-self-improving-loop]] — 同作者（@0xMovez）的姊妹文章：本文讲 Claude Harness 工程底层，彼文讲 Kimi K2.6 群集的规模化运行剧本。两文互补：Harness 是"建好底座"，群集剧本是"放大规模并让循环自改进"。

@@ -342,3 +342,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[harness-engineering-with-claude]]
 - **Pages updated**: [[fat-skills-thin-harness]]（补 Harness 内部配置层级表、Hooks vs CLAUDE.md"执行 vs 建议"区分、三层楼模型与 Harness 位置）；[[agentic-engineering]]（补"自我改进的真实定义：Harness 积累，模型不变"段落 + writer-vs-checker split）；[[index]]（登记新页，更新 last-updated 行）
 - **Note**: [self-reviewed] 0xMovez AI Substack 文章，14 步操作路线图。核心新增：① Hooks = 确定性执行（退出码 2，模型无法绕过）vs CLAUDE.md = 建议（可被忽略）——这是 fat-skills-thin-harness 此前缺失的操作层分工；② 三层楼模型（Harness/Loop/Self-improving System）提供清晰的层级分离术语；③ "Harness 积累，模型不变"去神秘化了 self-improving system 的定义；④ writer-vs-checker split（独立 reviewer subagent）作为质量把关最小可行模式。未新建 entity 页（0xMovez AI 来源不足以支撑人物页）。Propagation：fat-skills-thin-harness 和 agentic-engineering 已更新，均为本文直接相关的概念页。
+
+---
+
+## [2026-06-18] distill | The Self-Improving Loop: Kimi K2.6 群集 10 步剧本
+
+- **Sources touched**: `raw/The Self-Improving Loop a 300-agent swarm on Kimi K2.6, verified by Opus 4.8.md`
+- **Pages created**: [[kimi-k2-swarm-self-improving-loop]]
+- **Pages updated**: [[skillification]]（补"群集场景中的技能化"段，Kimi K2.6 步骤 6-9 作为技能化核心循环的群集实现）；[[harness-engineering-with-claude]]（补"关联"段，同作者互链，Harness 工程 vs 群集剧本双视角）；[[ai-engineering-moc]]（新增"Harness 工程"分区，含两篇 0xMovez 文章条目；来源文章区加入新文章）；[[index]]（登记新页，更新 last-updated 行）
+- **Note**: [self-reviewed] @0xMovez 发布，与已入库的 [[harness-engineering-with-claude]] 互为姊妹文章。本文新增知识点：① 验证门（Verify Gate）模式——廉价模型做批量、高价模型只做批判（Opus 4.8），是 harness-engineering-with-claude 中 writer-vs-checker split 在群集层的具体实现；② CONSTRAINTS.md 永久规则文件——将验证门捕获的错误烘焙成每次运行自动加载的硬约束；③ Kimi K2.6 的独立上下文窗口架构解释了为什么大规模群集不会崩溃；④ 步骤 1-10 形成完整复利循环：规范→并行执行→验证→技能化→重放→后台代理。候选概念页：Verify Gate（验证门）——已在 harness-engineering-with-claude 中以 writer-vs-checker split 形式隐含，当前不独立建页，待第二个来源触及此概念后再提升。

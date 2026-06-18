@@ -3,7 +3,7 @@ title: "技能化（Skillification）"
 type: concept
 tags: [ai, agents, meta-skill, workflow, automation, compounding-systems]
 created: 2026-05-10
-updated: 2026-05-10
+updated: 2026-06-18
 sources: ["Meta-Meta-Prompting The Secret to Making AI Agents Work.md"]
 source_count: 1
 discussions: []
@@ -98,6 +98,10 @@ book-mirror
 | media-ingest | 视频/音频/PDF/截图 → 转录 + 实体提取 |
 | perplexity-research | 网络研究 + 大脑已有知识去重 |
 | skillify | 从手动操作提取新技能（元技能本身） |
+
+## 群集场景中的技能化
+
+[[kimi-k2-swarm-self-improving-loop]]（@0xMovez，2026-06-18）提供了技能化在 Kimi K2.6 群集中的完整实现：步骤 6（将工作流保存为可复用技能）+ 步骤 7（文档转技能捕获领域知识）+ 步骤 8（将验证反馈写进 `CONSTRAINTS.md` 永久规则文件）+ 步骤 9（用新输入重放技能、成本崩溃）= 技能化核心循环的群集版。与 GBrain 的 Skillify 元技能异曲同工——Garry Tan 的 Skillify 是单 Agent 视角，Kimi 群集剧本是 300 代理并行视角，机制相同：首次运行 20 分钟，第 50 次运行 30 秒。
 
 ## Sources
 

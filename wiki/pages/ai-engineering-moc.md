@@ -2,7 +2,7 @@
 title: "AI Engineering MOC"
 tags: [moc, ai, llm, agents, software-engineering]
 created: 2026-05-11
-updated: 2026-06-02
+updated: 2026-06-18
 ---
 
 # AI Engineering MOC
@@ -45,6 +45,14 @@ updated: 2026-06-02
 
 ---
 
+## Harness 工程
+
+**[[harness-engineering-with-claude]]** — 0xMovez AI：从单 Agent 到自改进系统的 14 步路线图。三层楼模型（Harness / Loop / 自改进系统）、CLAUDE.md vs Skills vs Hooks 分工、写作者 vs 审查者分离、Harness 八大反模式。
+
+**[[kimi-k2-swarm-self-improving-loop]]** — 同作者（0xMovez）的 Kimi K2.6 群集剧本：300 并行代理 × 4000 步、规范驱动分解、验证门（Opus 4.8）、技能库复利、CONSTRAINTS.md 永久规则、后台代理升级。与上条互补——Claude Harness 侧重底层工程，Kimi 群集侧重规模与自改进循环。
+
+---
+
 ## 知识管理
 
 **[[personal-knowledge-base]]** — AI 时代的知识库重新定义：不是静态文件柜，而是由 Agent 持续写入、自动关联的运行中神经系统。核心机制是实体传播（Entity Propagation）——每次会议/文章后自动更新所有相关人物/公司页面，形成越用越聪明的复利效应。
@@ -63,3 +71,4 @@ updated: 2026-06-02
 - [[boris-cherny-coding-is-solved]] — Boris 在 AI Ascent 2026 的对谈蒸馏，覆盖编程已被解决、loops 工作流、跨学科通才、SaaS 护城河重塑
 - [[garry-tan-meta-meta-prompting]] — Garry Tan 文章的完整蒸馏，覆盖技能化、书镜工作流、Fat Skills / Thin Harness、GBrain 复利系统
 - [[multi-agent-attention-governance]] — 多 Agent 系统设计误区拆解：角色化 vs 注意力治理，六种边界定义，操作系统隐喻
+- [[kimi-k2-swarm-self-improving-loop]] — 0xMovez 的 Kimi K2.6 群集 10 步剧本：规范驱动分解、验证门、技能化复利、CONSTRAINTS.md、后台代理
