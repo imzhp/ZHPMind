@@ -59,3 +59,8 @@
 
 - 新建 inbox/review-digest-2026-06-15.md
 - 数据摘要：115 wiki 页、0 孤岛、0 僵尸项目、2 MOC 候选（wildlume、system-skill）、🔴 修正频率 0（初建期语境）、🔴 raw 未引用率 25%（2/8 顶层文件）
+
+## [2026-06-29] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-06-29.md
+- 数据摘要：117 wiki 页、0 孤岛、0 僵尸项目、2 MOC 候选（wildlume、system-skill）、🟢 修正频率 5 页（初建期）、🔴 raw 未引用率 18.2%（2/11 顶层文件）
