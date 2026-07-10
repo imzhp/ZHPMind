@@ -369,3 +369,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: none。
 - **Pages updated**: [[skill-review-digest]]、[[skill-vault-tidy]]、[[skill-cross-eval]]、[[skill-policy-monitor]]、[[index]]。
 - **Note**: Claudian 默认 provider 切到 Codex（`gpt-5.6-terra`）；`review-digest` 与 `vault-tidy` 迁为 Hermes 可发现的目录式 `SKILL.md`，旧扁平副本退役。review-digest scanner 把 `system-alert` 快照排除出人类 capture 指标，并把 EPUB/PDF/DOCX 纳入输入统计；本次验证为 6 条 capture、40 条系统快照。vault-tidy 不再自行 commit/push；cross-eval 静态配置已就绪，但仍以每次真实模型返回作为 gate 依据。旧 Claude 主笔工作流与 Hermes 安装指南归档，当前项目文档改为 Codex-first。
+
+---
+
+## [2026-07-10] distill | 控糖革命——以餐次情境降低血糖波动的十条策略
+
+- **Sources touched**: `assets/books/控糖革命-杰西·安佐斯佩.epub`
+- **Pages created**: [[glucose-revolution]]、[[glucose-friendly-eating]]
+- **Pages updated**: [[index]]
+- **Note**: [self-reviewed] 全书 17 章完整提取并复核：从葡萄糖、纤维、淀粉与果糖的基础解释，到峰值的短期/长期主张，再到进食顺序、绿色开胃菜、早餐、甜点时机、醋、餐后活动和碳水搭配等十条窍门。将可迁移行动抽为 [[glucose-friendly-eating]]，没有另建作者人物页，以避免为单一来源增加未充分支撑的履历内容。Propagation：盘点现有 pages 后未发现可实质合并的健康主题页或成熟健康 MOC；新方法与书页互链，并登记 index。cross-eval 已通过 OpenAI + DeepSeek 两家非 Claude 家系 gate（报告：`inbox/cross-eval-draft-distill-glucose-revolution-2026-07-10-214334.md`）。医疗边界保留：书中的疾病因果和“逆转”表述归为作者主张；用药者不得据此自行调整治疗。
