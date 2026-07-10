@@ -4,7 +4,7 @@
 
 ## 用途
 - 一台起草 / 交接,另一台接力:冷启动 handoff、草稿、跨机传递。
-- 本目录替代已退役的旧点目录:无点、可跨机同步,用于 Codex / Claude Code ↔ chat-Claude 的 handoff 与 result 文件。
+- 本目录替代已退役的旧点目录:无点、可跨机同步,用于 Codex 与其他本地执行面之间的 handoff 与 result 文件；目录名只保留历史兼容性。
 
 ## 纪律
 - 这里装的是 transient 草稿,**不是知识**。git 跟踪本 README、`handoff-*.md`、`result-*.md`,其余一律 ignore。

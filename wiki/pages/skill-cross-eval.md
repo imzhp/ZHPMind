@@ -1,104 +1,53 @@
 ---
 type: skill
 title: cross-eval
-status: draft
+status: experimental
 created: 2026-06-02
-updated: 2026-06-04
+updated: 2026-07-10
 tags:
   - system-skill
   - tool-hermes
   - quality-check
+sources: []
+source_count: 0
+discussions: []
 references:
-  - design-principles.md
-  - wiki/CLAUDE.md
-  - skill-adversarial-review.md
-  - garry-tan-meta-meta-prompting.md
-  - claude-drafts/handoff-hermes-cross-eval.md
+  - "~/.hermes/skills/cross-eval/SKILL.md"
+  - "~/.hermes/scripts/cross-eval-run.py"
 ---
 
-# cross-eval
+# cross-eval — Skill 反思页
 
-cross-eval 是 ZHPMind 红线 #2「互评」的执行层:所有 AI 写入在定稿前,用跨家系模型对「证据链 + 草稿」做独立评审。它不是书镜的附属功能;书镜只是第一个消费者,因为镜射最容易把"看起来懂你"写成虚构或泛话。
-
-## 是什么
-
-- **权威执行体**:`~/.hermes/skills/cross-eval/SKILL.md`
-- **确定性脚本**:`~/.hermes/scripts/cross-eval-run.py`
-- **当前状态**:`status: draft`——执行体已安装并在 `hermes skills list` 中 enabled;Claude 精确位真实返回通过,但缺 `OPENAI_API_KEY` / `DEEPSEEK_API_KEY`,正式 gate 暂不可用
+`cross-eval` 是 ZHPMind 的独立质量闸门：用不同模型家系审阅同一份证据链与草稿，专门拦截事实错位、来源错位、虚构映射和过度泛化。
 
 ## 设计意图
 
-第一版 ZHPMind 的互评停在 self-review:同一个 Claude 家系写完再批评自己。这个机制能抓一部分粗错,但抓不住同家系盲点,也容易把"我知道我要检查"误当成真的安全。
+它不替 Haopeng 判断“是否真正共鸣”，只判断草稿是否足够可核、是否把没有证据的内容写成了事实。它尤其服务 [[skill-book-mirror]]，但并不只属于书镜。
 
-cross-eval 把红线推进到可执行 gate:
+## 当前状态
 
-1. **喂证据链,不是喂成品**:模型必须同时看到 raw/source 与 draft。
-2. **跨家系才算数**:Claude(Opus)是精确/对引核源补充位,不计入跨家系下限;GPT/OpenAI + DeepSeek 两个非 Claude 家系都成功才满足 gate。
-3. **只写 inbox**:报告进入 `inbox/cross-eval-*.md`,不直接改 `wiki/pages/`。
-4. **gate,不是 advisory**:报告必须给 `pass` / `需修后复评` / `红旗阻断`。
+- 权威执行体：`~/.hermes/skills/cross-eval/SKILL.md`，已被 Hermes 发现。
+- 脚本：`~/.hermes/scripts/cross-eval-run.py`。
+- 当前静态配置已列出 OpenAI/GPT 与 DeepSeek 两个非 Claude 家系；`--check-config` 通过不等于真实调用、额度和路由都通过。
+- 因本轮未重新发起外部模型调用，状态保留 `experimental`；下一次真实 staging 草稿评审成功后再升为 active。
 
-## 判据
+## Gate 判据
 
-| 内容列 | 模型能判什么 | 模型不能判什么 |
-|---|---|---|
-| 摘要 / 原作列 | 事实错误、引用错位、遗漏、曲解 | 原作者未明说但人类读者的最终解释取舍 |
-| 映射 / 镜射列 | 虚构 Haopeng 事实、太泛、缺锚点 | 这条映射对 Haopeng 是否真的成立 |
-
-镜射列的 ground truth 是 Haopeng。模型只当闸门,挡虚构和泛话;最后的"真不真"必须人定。
-
-## 使用方式
-
-```bash
-python3 ~/.hermes/scripts/cross-eval-run.py \
-  --draft-path path/to/staging-draft.md \
-  --source-ref wiki/raw/source.md \
-  --content-type mirror
-```
-
-Book Mirror 按章跑,不要整书长稿:
-
-```bash
-python3 ~/.hermes/scripts/cross-eval-run.py \
-  --draft-path claude-drafts/book-mirror/ch01-draft.md \
-  --source-ref claude-drafts/book-mirror/ch01-source.md \
-  --chapter-id ch01 \
-  --content-type mirror
-```
-
-静态配置体检:
-
-```bash
-python3 ~/.hermes/scripts/cross-eval-run.py --check-config
-```
-
-注意:`--check-config` 只证明本机有足够候选模型配置,不验证 key / 额度 / 路由。真实可用性以正式 eval 或最小 dogfood 的模型调用结果为准。
-
-## 书镜接入流
-
-1. Claudian 每章生成 staging 草稿,先不写 `wiki/pages/`。
-2. Hermes cross-eval 逐章读取该章 raw 摘录、该章 staging 草稿、丢弃候选（若有）,写 `inbox/cross-eval-*.md`。
-3. Haopeng 审报告:摘要列红旗必须修;镜射列由 Haopeng 判断是否成立。
-4. 通过 gate 后,再把镜射写入 book 页 `## Mirror` 区,更新 links / index / log / git commit。
+1. 输入必须同时包含 source 与 draft；Book Mirror 还必须包含 draft 引用的 vault 事实锚点。
+2. OpenAI/GPT 与 DeepSeek 都有真实返回才满足跨家系下限；Claude/Anthropic 可作为可选精确位，不是必要依赖。
+3. 报告只写 `inbox/cross-eval-*.md`，不直接改 `wiki/pages/`。
+4. Book Mirror 按章运行，禁止整书长稿一次性评审。
 
 ## 实战 Pitfalls
 
 | Pitfall | 性质 | 应对 |
 |---|---|---|
-| **#1 handoff 指定单文件 `~/.hermes/skills/cross-eval.md`,但 Hermes 当前 prompt 快照只扫描目录式 `SKILL.md` / `DESCRIPTION.md`** | 平台陷阱 | 改为以 `~/.hermes/skills/cross-eval/SKILL.md` 为权威,删除扁平副本;脚本仍放 `~/.hermes/scripts/`。 |
-| **#2 静态配置可通过不等于真实可用** | 认证 / 路由陷阱 | `--check-config` 只看候选;当前只有 Anthropic key,缺 OpenAI/DeepSeek key,所以正式 gate 暂停。 |
-| **#3 gateway launchd running 不等于消息平台健康** | 平台观测陷阱 | 本次 `launchctl print` 显示 running,但 gateway error log 有 Telegram token rejected;平台冒烟要同时看 launchd 和 platform logs。 |
-| **#4 vault-tidy dogfood 仍写旧 `.tmp-claude-reports/`** | 旧通道漂移 | 已把 `~/.hermes/skills/vault-tidy.md` 与目录式 `SKILL.md` 的 `--draft` 落点改到 `claude-drafts/result-tidy-*.md`。 |
-
-## 待解决
-
-- 补原生 `OPENAI_API_KEY` 与 `DEEPSEEK_API_KEY`。
-- 用真实 staging book mirror 草稿跑一次 cross-eval,确认 report 结构可读。
-- 决定是否把 cross-eval 报告摘要 append 到 `wiki/log.md`。
+| 静态配置通过被误当作真实可用 | 认证与路由 | 用最小真实草稿验收，保留两家真实返回证据 |
+| 只喂书章、不喂右栏来源 | 证据链缺失 | 至少把 `zhanghaopeng.md` 和每条 `[来源:]` 一并作 `--source-ref` |
+| 把 Claude 当作 gate 必要条件 | 供应商依赖 | gate 下限只依赖 OpenAI/GPT + DeepSeek |
 
 ## References
 
-- [[design-principles]] — AI 红线与 Hermes 多 profile 互评目标
-- [[garry-tan-meta-meta-prompting]] — Garry 的书镜 cross-modal eval 来源
-- [[skill-adversarial-review]] — cross-role eval,与 cross-eval 互补
-- 执行体:`~/.hermes/skills/cross-eval/SKILL.md`
-- 脚本:`~/.hermes/scripts/cross-eval-run.py`
+- 执行体：`~/.hermes/skills/cross-eval/SKILL.md`
+- 书镜：[[skill-book-mirror]]
+- 相关机制：[[skill-adversarial-review]]

@@ -360,3 +360,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: none
 - **Pages updated**: [[skill-book-mirror]]、[[skill-concept-fable]]
 - **Note**: 将 active AI 入口和 skill 路径从 Claude provider / `.claude/skills/` 切到 Codex / `.codex/skills/`。新增 vault 根 `AGENTS.md` 作为 Codex 主入口；`CLAUDE.md` 与 `wiki/CLAUDE.md` 保留历史文件名和兼容语义，但明确 Claude provider 不再作为可用依赖。Book Mirror 与 Concept Fable 的反思页 references 改指 `.codex/skills/`；cross-eval gate 的 active 下限改为 OpenAI/GPT + DeepSeek 等可用模型家系，Claude / Anthropic 槽位仅作历史或可选补充。
+
+---
+
+## [2026-07-10] update + skillify | 运行层收束与 Hermes 技能目录化
+
+- **Sources touched**: Claudian 当前设置、Hermes gateway / cron / skills 运行态、review-digest scanner JSON。
+- **Pages created**: none。
+- **Pages updated**: [[skill-review-digest]]、[[skill-vault-tidy]]、[[skill-cross-eval]]、[[skill-policy-monitor]]、[[index]]。
+- **Note**: Claudian 默认 provider 切到 Codex（`gpt-5.6-terra`）；`review-digest` 与 `vault-tidy` 迁为 Hermes 可发现的目录式 `SKILL.md`，旧扁平副本退役。review-digest scanner 把 `system-alert` 快照排除出人类 capture 指标，并把 EPUB/PDF/DOCX 纳入输入统计；本次验证为 6 条 capture、40 条系统快照。vault-tidy 不再自行 commit/push；cross-eval 静态配置已就绪，但仍以每次真实模型返回作为 gate 依据。旧 Claude 主笔工作流与 Hermes 安装指南归档，当前项目文档改为 Codex-first。

@@ -102,10 +102,10 @@ _最后更新：2026-06-18 — 新增 kimi-k2-swarm-self-improving-loop；更新
 - [[skill-adversarial-review]] — adversarial-review skill 设计与演化：让 AI 扮对立专家挑刺方法论（cross-role eval，cross-modal 之外的增强）（status: draft）
 - [[skill-book-mirror]] — book-mirror skill 设计与演化：按章拆书、双栏镜射、cross-eval gate 与 B 结构组装（status: draft）
 - [[skill-concept-fable]] — concept-fable skill 的设计意图与演化记录：为 concept/method/framework 页生成直觉锚点寓言
-- [[skill-cross-eval]] — cross-eval skill 设计与演化：ZHPMind 红线 #2 的 Hermes 多模型互评 gate（status: draft，执行体已注册，待补 OpenAI / DeepSeek key）
+- [[skill-cross-eval]] — cross-eval skill 设计与演化：ZHPMind 红线 #2 的 Hermes 多模型互评 gate（status: experimental，静态配置已就绪，待下一次真实 staging 评审验证）
 - [[skill-policy-monitor]] — policy-monitor Push skill 设计与演化：欧洲政策/平台规则监控，确定性 scanner 固定 JSON + 7 天 draft dogfood（status: draft）
-- [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：vault 健康度周报
-- [[skill-vault-tidy]] — vault-tidy skill 的设计意图与演化记录：vault 执行器，基于 review-digest scanner JSON 生成 tidy actions（status: active，已部署+首次 dogfood）
+- [[skill-review-digest]] — review-digest skill 的设计意图与演化记录：目录式 Hermes 周报，确定性 scanner JSON 是唯一数据源（status: active）
+- [[skill-vault-tidy]] — vault-tidy skill 的设计意图与演化记录：目录式 on-demand 执行器，基于 review-digest scanner JSON 生成 tidy actions（status: active）
 
 ## People
 

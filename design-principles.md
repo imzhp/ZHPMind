@@ -476,12 +476,12 @@ Hermes(mini,gateway + cron)负责 vault 外信号采集和定时自动化:Push �
 
 | skill 名 | 信号源/触发 | 频率 | 产出位置 | 状态 |
 |---|---|---|---|---|
-| review-digest | vault 自身 | weekly | inbox/ | **v2(含 B 组内部膨胀)** |
+| review-digest | vault 自身 | weekly | inbox/ | **active（目录式 skill + 固定 JSON）** |
 | policy-monitor | 海关/税务/平台公告 | daily | inbox/ | 规划中 |
 | product-trend-watch | 电商平台/Google Trends | weekly | inbox/ | 规划中 |
 | email-triage | 邮箱 | hourly | inbox/ | 规划中 |
 | competitor-watch | 竞品 listing | daily | inbox/ | 规划中 |
-| vault-tidy | 手动触发 | on-demand | vault 内变更 | **规划中(v2.5 落地后启动)** |
+| vault-tidy | 手动触发 | on-demand | inbox/ 计划或已勾选 Tier 1 动作 | **active（目录式 skill；不自行 git）** |
 
 ## Codex vault skills(`.codex/skills/`)
 

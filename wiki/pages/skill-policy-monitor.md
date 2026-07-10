@@ -3,11 +3,14 @@ type: skill
 title: policy-monitor
 status: draft
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-07-10
 tags:
   - system-skill
   - tool-hermes
   - policy-monitor
+sources: []
+source_count: 0
+discussions: []
 references:
   - design-principles.md
   - skill-review-digest.md
@@ -20,11 +23,10 @@ policy-monitor 是 ZHPMind 的第一个“Push skill”试点：它不是整理�
 
 ## 当前状态
 
-- **执行体**：`~/.hermes/skills/policy-monitor.md`
 - **确定性 scanner**：`~/.hermes/scripts/policy-scan.py`
 - **源配置**：`~/.hermes/scripts/policy-monitor-sources.yaml`
 - **固定 JSON**：`~/.hermes/scratch/policy-scan-latest.json`
-- **状态**：`status: draft`，前 7 天只写 `claude-drafts/result-policy-{date}.md`，不写 inbox，不设 cron
+- **状态**：`status: draft`。当前只有 scanner 与源配置，尚未恢复可发现的 Hermes `SKILL.md`，不设 cron、不写 inbox；下一次启用须先补目录式执行体并完成 7 天 dogfood。
 
 ## 设计边界
 

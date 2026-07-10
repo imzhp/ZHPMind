@@ -756,7 +756,7 @@ Mirror 是认知循环中"反思"环节的双向映射，是 ZHPMind 的核心�
 
 **当前实现：** vault AI 在写入前进行 self-review——以批评者视角审查自己的产出，检查事实准确性、逻辑一致性、与已有 wiki 内容的兼容性。在日志中标注 `[self-reviewed]`。
 
-**目标执行体：** Hermes `cross-eval` skill 调用 GPT / DeepSeek 等至少两个可用模型家系，对「raw 原文 + staging 草稿（+ 丢弃候选）」做独立评审，报告写入 `inbox/`，作为定稿 gate。Claude / Anthropic 槽位仅作历史或可选补充；当前不能作为通过 gate 的必要条件。执行体以 `~/.hermes/skills/cross-eval/SKILL.md` 为权威，脚本为 `~/.hermes/scripts/cross-eval-run.py`；正式启用前需补齐对应模型 API 认证。
+**当前执行体：** Hermes `cross-eval` skill 调用 GPT / DeepSeek 等至少两个可用模型家系，对「raw 原文 + staging 草稿（+ 丢弃候选）」做独立评审，报告写入 `inbox/`，作为定稿 gate。Claude / Anthropic 槽位仅作历史或可选补充；当前不能作为通过 gate 的必要条件。执行体以 `~/.hermes/skills/cross-eval/SKILL.md` 为权威，脚本为 `~/.hermes/scripts/cross-eval-run.py`。静态配置已具备 OpenAI/GPT + DeepSeek 候选；正式 gate 仍以每次真实模型返回为准。
 
 ### 13.3 可回滚
 

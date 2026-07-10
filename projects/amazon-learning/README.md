@@ -2,6 +2,8 @@
 
 > 把云飞扬 AIFirst《亚马逊运营培训》课程,从"我上过这门课"蒸馏成"我真正会用的 Amazon 运营知识网"。
 
+当前执行规则见 [codex-learning-workflow.md](codex-learning-workflow.md)：Codex 是过程稿、审查和入库的单一执行者；跨家系评审只作为质量 gate，不再依赖 Claude 主笔。
+
 ---
 
 ## 项目背景与定位
