@@ -28,8 +28,9 @@ references:
 
 - 权威执行体：`~/.hermes/skills/cross-eval/SKILL.md`，已被 Hermes 发现。
 - 脚本：`~/.hermes/scripts/cross-eval-run.py`。
-- 当前静态配置已列出 OpenAI/GPT 与 DeepSeek 两个非 Claude 家系；`--check-config` 通过不等于真实调用、额度和路由都通过。
-- 因本轮未重新发起外部模型调用，状态保留 `experimental`；下一次真实 staging 草稿评审成功后再升为 active。
+- 默认配置已收束为 OpenAI/GPT 与 DeepSeek 两个非 Claude 家系；`--check-config` 通过不等于真实调用、额度和路由都通过。Claude/Anthropic 仅在显式设置 `CROSS_EVAL_ENABLE_ANTHROPIC=1` 时作为补充位运行。
+- 2026-07-10 的《控糖革命》首次真实评审已取得 OpenAI 与 DeepSeek 返回，但 DeepSeek 出现“首行 pass、红旗分节列出具体问题”的自相矛盾输出。脚本已加入一致性 guard；在下一次真实评审验证前，状态仍保留 `experimental`。
+- 每次新报告记录 API 返回的 token 用量与本次费用估算；DeepSeek 同时记录实时余额。OpenAI 余额仍以其 Billing / Costs 页面为账务事实来源。
 
 ## Gate 判据
 
@@ -37,6 +38,7 @@ references:
 2. OpenAI/GPT 与 DeepSeek 都有真实返回才满足跨家系下限；Claude/Anthropic 可作为可选精确位，不是必要依赖。
 3. 报告只写 `inbox/cross-eval-*.md`，不直接改 `wiki/pages/`。
 4. Book Mirror 按章运行，禁止整书长稿一次性评审。
+5. 模型首行写 `pass` 但“红旗”分节非空时，脚本强制降为 `需修后复评`，并写出 `gate_override`；不能只信首行。
 
 ## 实战 Pitfalls
 
@@ -45,6 +47,8 @@ references:
 | 静态配置通过被误当作真实可用 | 认证与路由 | 用最小真实草稿验收，保留两家真实返回证据 |
 | 只喂书章、不喂右栏来源 | 证据链缺失 | 至少把 `zhanghaopeng.md` 和每条 `[来源:]` 一并作 `--source-ref` |
 | 把 Claude 当作 gate 必要条件 | 供应商依赖 | gate 下限只依赖 OpenAI/GPT + DeepSeek |
+| 模型声明 pass 但红旗仍非空 | 结构化输出自相矛盾 | 以红旗分节兜底降级为需修后复评，并要求修后重跑 |
+| 不知道每次互评花了多少 | 运行可观测性缺失 | 报告记录 usage 与费用估算；DeepSeek 余额可用 `--check-balance` 主动查询 |
 
 ## References
 

@@ -378,3 +378,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[glucose-revolution]]、[[glucose-friendly-eating]]
 - **Pages updated**: [[index]]
 - **Note**: [self-reviewed] 全书 17 章完整提取并复核：从葡萄糖、纤维、淀粉与果糖的基础解释，到峰值的短期/长期主张，再到进食顺序、绿色开胃菜、早餐、甜点时机、醋、餐后活动和碳水搭配等十条窍门。将可迁移行动抽为 [[glucose-friendly-eating]]，没有另建作者人物页，以避免为单一来源增加未充分支撑的履历内容。Propagation：盘点现有 pages 后未发现可实质合并的健康主题页或成熟健康 MOC；新方法与书页互链，并登记 index。cross-eval 已通过 OpenAI + DeepSeek 两家非 Claude 家系 gate（报告：`inbox/cross-eval-draft-distill-glucose-revolution-2026-07-10-214334.md`）。医疗边界保留：书中的疾病因果和“逆转”表述归为作者主张；用药者不得据此自行调整治疗。
+
+---
+
+## [2026-07-10] fix + skillify | cross-eval 裁决一致性与成本可观测性
+
+- **Sources touched**: `inbox/cross-eval-draft-distill-glucose-revolution-2026-07-10-214334.md`；`~/.hermes/skills/cross-eval/SKILL.md`；`~/.hermes/scripts/cross-eval-run.py`
+- **Pages created**: none
+- **Pages updated**: [[skill-cross-eval]]
+- **Note**: 首次真实 dogfood 暴露模型结构化输出可自相矛盾：DeepSeek 首行写 `pass`，但红旗分节仍列出具体问题。执行脚本现以红旗分节兜底，将此类结果强制降为 `需修后复评` 并标注 `gate_override`。默认调用也收束为 OpenAI/GPT + DeepSeek；Claude/Anthropic 仅在显式开关下作为补充位，避免旧 key 产生意外 Opus 费用。新报告记录 provider 返回的 token usage 与费用估算，DeepSeek 余额可由 `--check-balance` 查询。既有报告作为历史快照保留，不回写。
