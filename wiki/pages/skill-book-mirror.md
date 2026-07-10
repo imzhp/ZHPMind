@@ -3,17 +3,17 @@ type: skill
 title: book-mirror
 status: draft
 created: 2026-06-03
-updated: 2026-06-04
+updated: 2026-07-10
 tags:
   - system-skill
-  - tool-claudian
+  - tool-codex
   - book-mirror
   - quality-check
 sources: []
 source_count: 0
 references:
   - claude-drafts/handoff-book-mirror.md
-  - .claude/skills/book-mirror/SKILL.md
+  - .codex/skills/book-mirror/SKILL.md
   - ~/.hermes/scripts/book-split.py
   - ~/.hermes/scripts/cross-eval-run.py
   - skill-cross-eval.md
@@ -22,22 +22,22 @@ references:
 
 # book-mirror
 
-book-mirror 是 ZHPMind 的书籍镜射工作流：把一本书按章拆成 verbatim 源文，让 Claudian 逐章生成「原作观点 / 映射到我的真实生活」双栏草稿，再由 Hermes cross-eval 和 Haopeng 人审共同 gate，最后组装进正式 book 页。
+book-mirror 是 ZHPMind 的书籍镜射工作流：把一本书按章拆成 verbatim 源文，让 Codex 逐章生成「原作观点 / 映射到我的真实生活」双栏草稿，再由 Hermes cross-eval 和 Haopeng 人审共同 gate，最后组装进正式 book 页。
 
 它不是普通摘要工具。摘要回答“这本书说了什么”；book-mirror 回答“这本书怎样照见 Haopeng 的真实生活、项目、关系和决策”。
 
 ## 是什么
 
-- **Claudian 执行体**：`.claude/skills/book-mirror/SKILL.md`
+- **Codex 执行体**：`.codex/skills/book-mirror/SKILL.md`
 - **确定性拆书脚本**：`~/.hermes/scripts/book-split.py`
 - **评审 gate**：`~/.hermes/scripts/cross-eval-run.py`
-- **当前状态**：`status: draft`。Part A 执行链已落地；`book-split.py` 已通过 `/private/tmp` 最小 EPUB dogfood；Claude + GPT + DeepSeek 三模型 gate 已通过 smoke，首本仍在按章试跑。
+- **当前状态**：`status: draft`。Part A 执行链已落地；`book-split.py` 已通过 `/private/tmp` 最小 EPUB dogfood；OpenAI/GPT + DeepSeek gate 已通过 smoke，Claude 槽位仅作历史/可选补充，首本仍在按章试跑。
 
 ## 设计意图
 
 Garry Tan 的 Book Mirror 给了一个核心启发：读书不是把书变成摘要，而是让每章原作者思想和读者真实生活互相映照。ZHPMind 的版本需要再加三道约束：
 
-1. **证据链诚实**：源文必须是 EPUB 确定性拆出的 verbatim 文本，不能让 Claudian 转写。
+1. **证据链诚实**：源文必须是 EPUB 确定性拆出的 verbatim 文本，不能让 LLM 转写。
 2. **镜射不虚构**：右栏映射必须锚定 vault 里的真实事实，每条带日期和来源。
 3. **模型只做闸门，人做 ground truth**：cross-eval 查虚构、太泛、缺锚点；Haopeng 判断 resonance 是否真的成立。
 
@@ -60,11 +60,11 @@ claude-drafts/book-mirror/{book-slug}/
 └── draft/ch-{NN}.md
 ```
 
-`source/ch-*.md` 是 cross-eval 的证据链，不加 frontmatter、不加 Claudian 解释。
+`source/ch-*.md` 是 cross-eval 的证据链，不加 frontmatter、不加 LLM 解释。
 
 ### 2. 按章吐稿
 
-Claudian 对每章生成 staging draft：
+Codex 对每章生成 staging draft：
 
 ```markdown
 | 原作观点 | 映射到我的真实生活 |
@@ -91,7 +91,7 @@ python3 ~/.hermes/scripts/cross-eval-run.py \
 
 ## 已定组装结构
 
-2026-06-03 已定：正式 book 页采用 B 结构，Claudian 默认按此组装，不再停下确认“摘要 vs 镜射”的关系。
+2026-06-03 已定：正式 book 页采用 B 结构，Codex 默认按此组装，不再停下确认“摘要 vs 镜射”的关系。
 
 ```markdown
 ## 核心总览
@@ -141,7 +141,7 @@ Haopeng 查：
 
 | Pitfall | 性质 | 应对 |
 |---|---|---|
-| 源文若由 Claudian 转写，cross-eval 会在伪证据链上评审 | 证据链污染 | 源文只由 `book-split.py` 确定性拆出，Claudian 不碰 source |
+| 源文若由 LLM 转写，cross-eval 会在伪证据链上评审 | 证据链污染 | 源文只由 `book-split.py` 确定性拆出，Codex 不碰 source |
 | 同一 XHTML 多个 TOC anchor 可能被误拆成一整章 | EPUB 结构陷阱 | `book-split.py` 已支持 fragment 截段，`/private/tmp` dogfood 验证通过 |
 | 右栏容易写成“创业者通常会...” | 泛化陷阱 | 每条必须带日期和 vault 来源；无锚点放入「不生成的候选」 |
 | cross-eval 只喂书章源文，没喂 `[来源:]` 锚点文件，模型无法核验 Haopeng 事实 | 证据链缺口 | 每章强制把 `wiki/pages/zhanghaopeng.md` + 所有 `[来源:]` 文件作为重复的 `--source-ref`；缺文件即阻断，不放进 `--discarded` |
@@ -159,5 +159,5 @@ Haopeng 查：
 - [[garry-tan-meta-meta-prompting]] — Book Mirror 灵感来源
 - [[skill-cross-eval]] — 按章互评 gate
 - `claude-drafts/handoff-book-mirror.md` — 本工作流 handoff
-- `.claude/skills/book-mirror/SKILL.md` — Claudian 执行体
+- `.codex/skills/book-mirror/SKILL.md` — Codex 执行体
 - `~/.hermes/scripts/book-split.py` — EPUB 确定性拆章脚本

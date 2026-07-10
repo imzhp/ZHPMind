@@ -351,3 +351,12 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: [[kimi-k2-swarm-self-improving-loop]]
 - **Pages updated**: [[skillification]]（补"群集场景中的技能化"段，Kimi K2.6 步骤 6-9 作为技能化核心循环的群集实现）；[[harness-engineering-with-claude]]（补"关联"段，同作者互链，Harness 工程 vs 群集剧本双视角）；[[ai-engineering-moc]]（新增"Harness 工程"分区，含两篇 0xMovez 文章条目；来源文章区加入新文章）；[[index]]（登记新页，更新 last-updated 行）
 - **Note**: [self-reviewed] @0xMovez 发布，与已入库的 [[harness-engineering-with-claude]] 互为姊妹文章。本文新增知识点：① 验证门（Verify Gate）模式——廉价模型做批量、高价模型只做批判（Opus 4.8），是 harness-engineering-with-claude 中 writer-vs-checker split 在群集层的具体实现；② CONSTRAINTS.md 永久规则文件——将验证门捕获的错误烘焙成每次运行自动加载的硬约束；③ Kimi K2.6 的独立上下文窗口架构解释了为什么大规模群集不会崩溃；④ 步骤 1-10 形成完整复利循环：规范→并行执行→验证→技能化→重放→后台代理。候选概念页：Verify Gate（验证门）——已在 harness-engineering-with-claude 中以 writer-vs-checker split 形式隐含，当前不独立建页，待第二个来源触及此概念后再提升。
+
+---
+
+## [2026-07-10] update + skillify | ZHPMind 主运行时切换到 Codex
+
+- **Sources touched**: Haopeng 对 Claude provider 不再可用的运行时决策；Claudian / Codex 技能设置检查
+- **Pages created**: none
+- **Pages updated**: [[skill-book-mirror]]、[[skill-concept-fable]]
+- **Note**: 将 active AI 入口和 skill 路径从 Claude provider / `.claude/skills/` 切到 Codex / `.codex/skills/`。新增 vault 根 `AGENTS.md` 作为 Codex 主入口；`CLAUDE.md` 与 `wiki/CLAUDE.md` 保留历史文件名和兼容语义，但明确 Claude provider 不再作为可用依赖。Book Mirror 与 Concept Fable 的反思页 references 改指 `.codex/skills/`；cross-eval gate 的 active 下限改为 OpenAI/GPT + DeepSeek 等可用模型家系，Claude / Anthropic 槽位仅作历史或可选补充。

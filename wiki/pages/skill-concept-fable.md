@@ -3,7 +3,7 @@ title: concept-fable
 type: skill
 status: active
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-07-10
 tags:
   - skill
   - concept-learning
@@ -14,13 +14,13 @@ discussions:
   - "2026-05-22"
   - "2026-05-23"
 references:
-  - ".claude/skills/concept-fable/SKILL.md"
-  - ".claude/skills/concept-fable/references/"
+  - ".codex/skills/concept-fable/SKILL.md"
+  - ".codex/skills/concept-fable/references/"
 ---
 
 # concept-fable — Skill 反思页
 
-> 这是 ZHPMind 里第二篇 skill 反思页（第一篇是 `[[skill-review-digest]]`），落地 design-principles v2.5 第二层「skillify」「内容分类 / 直觉锚点段落」与「Skill 系统设计」原则。skill 执行在 `.claude/skills/concept-fable/`，反思层在本页。
+> 这是 ZHPMind 里第二篇 skill 反思页（第一篇是 `[[skill-review-digest]]`），落地 design-principles v2.5 第二层「skillify」「内容分类 / 直觉锚点段落」与「Skill 系统设计」原则。skill 执行在 `.codex/skills/concept-fable/`，反思层在本页。
 
 ## 设计意图
 
@@ -28,9 +28,9 @@ references:
 
 **核心痛点**：分享完概念后听者点头说懂、转头就忘。这种问题加大讲解力度解决不了，因为问题不在讲的人不努力，而在大脑对抽象概念的留存机制天然偏弱。故事是大脑愿意主动复述的载体。
 
-**适用范围(三轮 dogfood 后的修订,2026-05-23)**:fable 不是"学懂概念"的全套工具,而是**工具链一环,只负责概念的"感觉 / 视角翻转"那一段**。感觉型概念能由 fable 单点完成(陌生化:"看见熟悉的木勺");方法论类靠 fable + 类比 + cases 组合(fable 锁视角,类比 / cases 教结构);结构型靠 fable + 教材 / 行业数据(fable 给"有这回事"印象,结构必须从公式 / 基准另学)。详见 `.claude/skills/concept-fable/references/prompt-template.md` A.1 三层光谱表。
+**适用范围(三轮 dogfood 后的修订,2026-05-23)**:fable 不是"学懂概念"的全套工具,而是**工具链一环,只负责概念的"感觉 / 视角翻转"那一段**。感觉型概念能由 fable 单点完成(陌生化:"看见熟悉的木勺");方法论类靠 fable + 类比 + cases 组合(fable 锁视角,类比 / cases 教结构);结构型靠 fable + 教材 / 行业数据(fable 给"有这回事"印象,结构必须从公式 / 基准另学)。详见 `.codex/skills/concept-fable/references/prompt-template.md` A.1 三层光谱表。
 
-**为什么落在 Claudian 而不是 Hermes**：concept-fable 是 vault 内的深度加工——给一个 wiki 页面（concept/method/framework）加直觉锚点段落，属于"距 wiki 最近"的 skill。按 design-principles v2.5「执行体归属」，vault 内深度加工归 Claudian。Hermes 通过 Gateway 暴露的轻量调用（手机端要寓言但不写入 vault）是备选 surface，暂不实现。
+**为什么落在 Obsidian-side Codex 而不是 Hermes**：concept-fable 是 vault 内的深度加工——给一个 wiki 页面（concept/method/framework）加直觉锚点段落，属于"距 wiki 最近"的 skill。按 design-principles v2.5「执行体归属」，vault 内深度加工归 Obsidian-side Codex / Claudian UI。Hermes 通过 Gateway 暴露的轻量调用（手机端要寓言但不写入 vault）是备选 surface，暂不实现。
 
 **为什么这是人工设计的 skill 而非 Hermes 自动复盘产出**：受外部启发（Amanda Askell 原版 prompt + 公众号文章优化版）想沉淀成可复用 skill。按 design-principles v2.5「skill 怎么产生」的「人主动设计」路径：先建反思页占位 → 建执行体 → 首次实战后回填 Pitfalls 和反思。
 
@@ -66,17 +66,18 @@ references:
 | 版本 | 时间 | 关键改动 |
 |---|---|---|
 | v1.0 | 2026-05-23 | 初版。执行体 `.claude/skills/concept-fable/SKILL.md` + `references/prompt-template.md`；反思页骨架本页。 |
+| v1.1 | 2026-07-10 | 主执行体迁到 `.codex/skills/concept-fable/`；`.claude/skills/` 仅保留 legacy 兼容。 |
 
 ## 当前状态
 
 ```
-.claude/skills/concept-fable/
+.codex/skills/concept-fable/
 ├── SKILL.md                          ← 工作流 spec
 └── references/
     └── prompt-template.md            ← 完整 prompt 模板
 ```
 
-无 `.bak` 链（首发）。无 Hermes 端镜像（暂不在 `~/.hermes/skills/` 部署——Claudian 主战场）。
+无 `.bak` 链（首发）。无 Hermes 端镜像（暂不在 `~/.hermes/skills/` 部署——Codex vault skill 是主执行体）。
 
 ## 反思与未解决问题
 
@@ -88,7 +89,7 @@ skill 当前的「适用边界」表是基于理论分类（感觉型 / 方法�
 - **Jobs-to-be-Done**（介于感觉型和方法论之间——边界模糊样本）
 - **库存周转率**（结构型，预期 fable 警告应该触发）
 
-每个跑完写一句"比直接看百度百科多给了什么 / 少了什么"。结果回填到 `.claude/skills/concept-fable/references/prompt-template.md` 的「适用边界」段，把判断标准从纸上谈兵变成数据。
+每个跑完写一句"比直接看百度百科多给了什么 / 少了什么"。结果回填到 `.codex/skills/concept-fable/references/prompt-template.md` 的「适用边界」段，把判断标准从纸上谈兵变成数据。
 
 **2. 直觉锚点段落是否需要 archive 机制**
 
@@ -98,7 +99,7 @@ skill 当前的「适用边界」表是基于理论分类（感觉型 / 方法�
 
 按 design-principles v2.5「执行体归属」末段，Hermes Gateway 暴露的轻量调用（手机端要寓言不写入 vault）是合理 surface。但部署 Hermes 镜像意味着同一个 skill 要在两个地方维护——违反「skill 双重存在」的"一份执行体"原则。
 
-未解决：未来如果手机端有强需求，是把 Claudian 的执行体复制到 Hermes（双份维护），还是让 Hermes 通过子进程调用 Claudian（单份维护但耦合 Claude Code）？这个决策等真有手机端需求时再做。
+未解决：未来如果手机端有强需求，是把 Codex 的执行体复制到 Hermes（双份维护），还是让 Hermes 通过子进程调用 Obsidian-side Codex runtime（单份维护但耦合本地运行环境）？这个决策等真有手机端需求时再做。
 
 **4. propagation 时是否要触发跨页 fable 一致性检查**
 
@@ -106,13 +107,13 @@ skill 当前的「适用边界」表是基于理论分类（感觉型 / 方法�
 
 ## References
 
-- 执行体 spec：`.claude/skills/concept-fable/SKILL.md`
-- prompt 模板：`.claude/skills/concept-fable/references/prompt-template.md`
+- 执行体 spec：`.codex/skills/concept-fable/SKILL.md`
+- prompt 模板：`.codex/skills/concept-fable/references/prompt-template.md`
 - 备份链：暂无（首发）
 - design-principles 对应小节：
   - 第二层「内容分类 / concept 写作模板」「直觉锚点适用边界」「skill 写作模板（D9）」
   - 第二层「Skill 系统设计」5 条原则
-  - 第三层「Claudian skills」表
+  - 第三层「Codex vault skills」表
 - 范本参考：`[[skill-review-digest]]`（vault 内最完整的 skill 反思页范本）
 - 来源溯源：
   - Amanda Askell（Anthropic）原版"寓言故事 prompt"

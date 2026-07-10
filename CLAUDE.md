@@ -1,12 +1,14 @@
-# ZHPMind Vault — Claude Code / Claudian 根指令
+# ZHPMind Vault — Legacy Claude / Claudian Entry
 
 这是张昊鹏的 ZHPMind 知识库。你的工作目录就是本 vault 根目录。
+
+> 2026-07-10 起，`AGENTS.md` 是 Codex 主入口。本文件保留给 Claude Code / Claudian 兼容读取。后续主动工作默认走 Codex；Claude provider 不再作为可用依赖。
 
 **在对 `wiki/` 做任何操作之前,必须先完整阅读并严格遵守权威规范:**
 
 @wiki/CLAUDE.md
 
-`wiki/CLAUDE.md` 是 Claudian 的操作手册(detailed schema)。本文件只是加载器 + 红线;两者冲突时以 `wiki/CLAUDE.md` 为准。
+`wiki/CLAUDE.md` 是 vault AI 操作手册(detailed schema)。本文件只是 legacy 加载器 + 红线;两者冲突时以 `wiki/CLAUDE.md` 为准。
 
 **自动化优先**:凡是能由 agent 完成的机械工作——格式转换(EPUB/PDF → 文本)、文本提取、大文件分块读取——都自动完成,不要推给 Haopeng 手动操作。Haopeng 负责判断与决策,不负责搬运。(对应 design-principles「AI 做宽度和速度,人做深度和判断」。)
 
@@ -57,9 +59,9 @@ ZHPMind 的 git 只为「可回滚 + GitHub 备份」服务(design-principles �
 
 | 角色 | 在哪 | 接什么 |
 |---|---|---|
-| **Codex / Claude Code** | mini(原生 shell/git/python/文件) | 默认执行者:脚本开发、git、批量/多文件/大文件改动、结构迁移、文件归位、dogfood、落地已定方案。能想能做——优先一个脑子走全程(设计→执行→自检),不事事外包 |
-| **Claudian** | Obsidian 内 | vault 内知识深加工:distill / mirror / propagation / reflect |
-| **chat 里的 Claude** | claude.ai(有 web + 跨会话 memory;MCP 执行不稳) | 按需顾问,由 Haopeng 主动 pull,限三件:① web 研究;② 独立评审(要"没写过这段"的第二脑子时);③ 开放式策略/设计。不接 vault 批量/重活 |
+| **Codex** | mini / Claudian Codex provider(原生 shell/git/python/文件 + vault skills) | 默认执行者:脚本开发、git-aware 文件工作、批量/多文件/大文件改动、结构迁移、文件归位、dogfood、落地已定方案。能想能做——优先一个脑子走全程(设计→执行→自检),不事事外包 |
+| **Claudian UI + Codex provider** | Obsidian 内 | vault 内知识深加工:distill / mirror / propagation / reflect / concept-fable。不要依赖 Claude provider |
+| **Claude / Claude provider** | 已不可用 | 不再作为主动工作 lane；历史来源、文章标题、知识页中语义准确的 Claude / Anthropic 引用保留 |
 | **Hermes** | mini(gateway + cron) | vault 外信号采集 + 定时自动化(review-digest / vault-tidy / signal)。只写 inbox |
 
 **handoff(跨角色转交,走文件不走人肉复制):**
@@ -68,4 +70,4 @@ ZHPMind 的 git 只为「可回滚 + GitHub 备份」服务(design-principles �
 - 结果或复核请求 → `claude-drafts/result-{task}.md`(执行方写)。
 - 转交只说一句("按 handoff-{task} 做" / "读 result-{task} 复核"),内容靠文件传递,Haopeng 不当人肉总线。两类文件按现行 `.gitignore` 策略入 git(随 Sync 跨机)。
 
-**默认偏置:能在 Codex 一处闭环的,就别切到 chat;切 chat 是 Haopeng 主动 pull,且限上面三件。**
+**默认偏置:能在 Codex 一处闭环的,就别切到外部 chat。**

@@ -116,7 +116,7 @@ propagation 不是被动发生的,是个**主动审查动作**。任何 distill 
 | project 阶段性结论 | 对应 concept/framework 页的 Compiled Truth 是否要 rewrite;相关 person 页 Timeline 是否要 append |
 | journal 触发的 Life Mirror | 相关 person/concept 页 Timeline 是否要 append(advisory,人决定)|
 | 新 inbox 来源(Hermes Push)| wiki/raw/ 是否要建对应原始素材页 |
-| skill 反思页(type: skill)更新 | 对应执行体(`~/.hermes/skills/` 或 `.claude/skills/`)是否同步;其他 skill 反思页是否引用了它 |
+| skill 反思页(type: skill)更新 | 对应执行体(`~/.hermes/skills/` 或 `.codex/skills/`)是否同步;其他 skill 反思页是否引用了它 |
 
 **关键检查**:每次写入后,是否有一条新事实被波及但**对应页面没改**?如果有,不能算 distill/harvest 完成。
 
@@ -137,9 +137,9 @@ review 的精神是"看自己看得清楚什么坏了"。两个层次:
 skillify 是 ZHPMind 真正"长出执行手脚"的机制。skill 在系统中**双重存在**:
 
 - **反思层**(`wiki/pages/skill-{name}.md`,type: skill)—— 记录设计意图、实战 Pitfalls、演化简史、反思与未解决问题。**给未来的你看**。结构规范见下方"skill 写作模板"。
-- **执行层**(`~/.hermes/skills/{name}/SKILL.md` 或 `.claude/skills/{name}/SKILL.md` + `references/`)—— 工作流、决策逻辑、判断标准、产出结构、prompt 模板、代码片段。**给当前 AI 调用**。
+- **执行层**(`~/.hermes/skills/{name}/SKILL.md` 或 `.codex/skills/{name}/SKILL.md` + `references/`; `.claude/skills/` 仅作 legacy 兼容)—— 工作流、决策逻辑、判断标准、产出结构、prompt 模板、代码片段。**给当前 AI 调用**。
 
-两层通过 skill name 关联。文档(反思)和实现(执行)分离,源于第一层「三层松耦合」:换 agent runtime(Hermes → Claude Code → 未来其他),执行层可以重写,反思层不动。
+两层通过 skill name 关联。文档(反思)和实现(执行)分离,源于第一层「三层松耦合」:换 agent runtime(Hermes → Codex → 未来其他),执行层可以重写,反思层不动。
 
 **skill 怎么产生**:
 
@@ -232,7 +232,7 @@ tags: [...]
 
 ### skill 写作模板(D9)
 
-`wiki/pages/skill-{name}.md` 是**反思页**(meta-level),不是工作流 spec。spec 在执行层(`~/.hermes/skills/{name}/SKILL.md` 或 `.claude/skills/{name}/SKILL.md`)。
+`wiki/pages/skill-{name}.md` 是**反思页**(meta-level),不是工作流 spec。spec 在执行层(`~/.hermes/skills/{name}/SKILL.md` 或 `.codex/skills/{name}/SKILL.md`; `.claude/skills/` 仅作 legacy 兼容)。
 
 ```markdown
 ---
@@ -245,8 +245,8 @@ tags: [skill, ...]
 sources: []                # 通常对话沉淀产物
 source_count: 0
 discussions: []
-references:                # 指向执行体物理路径(~/.hermes/skills/ 或 .claude/skills/,跟执行体实际位置一致)
-  - "~/.hermes/skills/{name}/SKILL.md"   # 或 ".claude/skills/{name}/SKILL.md"
+references:                # 指向执行体物理路径(~/.hermes/skills/ 或 .codex/skills/,跟执行体实际位置一致)
+  - "~/.hermes/skills/{name}/SKILL.md"   # 或 ".codex/skills/{name}/SKILL.md"
   - "~/.hermes/skills/{name}/references/"
 ---
 
@@ -272,7 +272,7 @@ references:                # 指向执行体物理路径(~/.hermes/skills/ 或 .
 (用得怎样、有什么待解决的、有什么洞察。这是反思页区别于 spec 的核心)
 
 ## References
-- 执行体:`~/.hermes/skills/{name}/SKILL.md` 或 `.claude/skills/{name}/SKILL.md`(按实际位置)
+- 执行体:`~/.hermes/skills/{name}/SKILL.md` 或 `.codex/skills/{name}/SKILL.md`(按实际位置; `.claude/skills/` 仅作 legacy 兼容)
 - references:`~/.hermes/skills/{name}/references/`(同上路径前缀)
 - 备份链:`~/.hermes/skills/{name}.md.v[1-N].bak`(如有)
 - design-principles 对应小节
@@ -329,7 +329,7 @@ skill 是 design-principles 的物理载体——它把工作流编码为可执�
 1. **经验沉淀**:每个 agent-created skill 在 SKILL.md 内设置 Pitfalls 小节,记录工具/环境/平台/业务约束。每条 Pitfall 含「为什么会出错」+「对应做法」。skill_manage 在主对话期间通过 `creation_nudge_interval` 触发的后台 review 自动维护,是 skill 真正变"聪明"的机制。
 2. **方法论与实现分离**:SKILL.md 讲方法论(决策逻辑、判断标准、产出结构),具体代码、命名约定、查询模板放 `references/{name}.md`。SKILL.md 引用 references 用相对路径,保持短而可读。
 3. **来源分层**:`~/.hermes/skills/` 下两类共存——bundled(Hermes 官方预装,登记在 `.bundled_manifest`,跟着 Hermes 升级)和 agent-created(用户/主对话生成,不登记 manifest,由 Curator 处理 deduplication)。「溯源」原则下 bundled 溯源到上游 repo,agent-created 溯源到本机 `.bak` 链 + vault git。
-4. **协议互通**:Hermes 的目录 skill 格式(`{skill}/SKILL.md` + `references/`)与 Anthropic Claude Code / Claude.ai 的 skill 协议一致。第一层「三层松耦合」中"智能层换了其他两层不报废"的原则,在 skill 粒度上得到了**协议级保障**——换 agent runtime,skill 不用重写。
+4. **协议互通**:Hermes 与 Codex 的目录 skill 格式都采用 `{skill}/SKILL.md` + `references/` 的可迁移结构；旧 `.claude/skills/` 保留作历史兼容。第一层「三层松耦合」中"智能层换了其他两层不报废"的原则,在 skill 粒度上得到物理保障——换 agent runtime,skill 的反思层不重写,执行层可低成本迁移。
 5. **维护机制分工**:skill_manage(主对话内、高频、跟着任务走、自动备份 `.bak`)做单 skill 的迭代;Curator(后台 batch、低频、合并/聚类/去重)做 skill 池子的整理。**不要把 Curator 当作 skill 演化的主驱动力**——它处理的是"杂乱",不是"进化"。
 
 ## 受众分层
@@ -338,7 +338,7 @@ ZHPMind 的内容服务于三层受众。**职责不重叠,写入时要分清"�
 
 | 位置 | 受众 | 职责 | 不同步的代价 |
 |---|---|---|---|
-| `design-principles.md` + `wiki/CLAUDE.md` + `~/.hermes/skills/{name}/SKILL.md` + `.claude/skills/{name}/SKILL.md` | **当前 AI**(Claudian、Hermes 操作时读的规则手册)| 不变量、设计原则、AI 心法 + 红线、工具映射、skill 执行 spec | AI 走弯路、违反原则 |
+| `design-principles.md` + `AGENTS.md` + `wiki/CLAUDE.md` + `~/.hermes/skills/{name}/SKILL.md` + `.codex/skills/{name}/SKILL.md` | **当前 AI**(Codex、Claudian UI、Hermes 操作时读的规则手册)| 不变量、设计原则、AI 心法 + 红线、工具映射、skill 执行 spec | AI 走弯路、违反原则 |
 | `wiki/pages/` 主体(含 skill 反思页 `skill-{name}.md`)| **未来的你**(半年/几年后的自己)| 沉淀的理解、可复用概念、长期价值的连接、skill 设计意图与演化记录 | 当年想清楚的事日后想不起来 |
 | `projects/` + `outputs/` | **当前的你 + 协作者** | 活的工作、对外的成品 | 项目进展丢失、对外成品不一致 |
 
@@ -421,7 +421,7 @@ design-principles.md 本身要被同样的标准审视:
 ZHPMind/
 ├── inbox/           ← Pull + Push 的统一入口(含 Obsidian Clipper 剪藏)
 ├── wiki/
-│   ├── CLAUDE.md    ← Claudian 操作手册(智能层规则)
+│   ├── CLAUDE.md    ← wiki 操作手册(历史文件名，智能层规则)
 │   ├── pages/       ← 所有 wiki 页面(平铺,tag + MOC 导航,frontmatter type 区分)
 │   ├── raw/         ← 已被 wiki 引用的原始素材(永久保留)
 │   └── log.md       ← Append-only 操作日志
@@ -430,7 +430,7 @@ ZHPMind/
 └── archive/         ← 按原结构镜像归档(含 archive/timeline/)
 ```
 
-`claude-drafts/` 作 Codex / Claude Code ↔ chat-Claude 的跨机 handoff 通道,跟踪 `handoff-*.md` 与 `result-*.md`,不算正式知识结构。
+`claude-drafts/` 是历史命名的 AI handoff 通道,跟踪 `handoff-*.md` 与 `result-*.md`,不算正式知识结构；它不再表示 active Claude 依赖。
 
 **inbox 和 raw 的区别是生命周期**:inbox 是"未来的可能性"(会被清空);raw 是"过去的记忆"(作为引用源永久保留)。
 
@@ -448,7 +448,7 @@ ZHPMind/
 | 信息三态 | wiki rewrite 哲学 | compiled truth + timeline | — | 三态显式分类 |
 | Pull + Push | Pull 人手动喂 | Push signal-detector | — | — |
 | 人判断 AI 执行 | LLM 写人审 | 三硬约束 | 编辑非记录员、三心法、检查不省 | 不设 AI 禁入区 |
-| 三层松耦合 | Obsidian + Claude Code + md | GBrain + skills + git | 三层受众显式分离 | 显式三层命名 |
+| 三层松耦合 | Obsidian + LLM + md | GBrain + skills + git | 三层受众显式分离 | 显式三层命名 |
 | 开放格式 | md + git | md + git | — | — |
 | 健康度 | (无显式监测)| maintain + doctor + skillpack-check | 尺寸体检 + 自检偏执 + 变更影响矩阵 | "流动"作为第一性原则 |
 
@@ -456,19 +456,19 @@ ZHPMind/
 
 **存储层 = markdown + git(ZHPMind vault)**:source of truth;git 化保护 AI 写入;开放格式保证长期存活。
 
-**智能层 = Claudian + Codex / Claude Code + chat-Claude + Hermes**
+**智能层 = Claudian UI(Codex provider) + Codex + Hermes**
 
-Claudian(Obsidian 内)负责 vault 内深加工:distill / mirror / propagation / reflect。
+Claudian UI(Obsidian 内,使用 Codex provider)负责 vault 内深加工:distill / mirror / propagation / reflect。
 
-Codex / Claude Code(mini,原生 shell/git/python/文件)是默认执行者:脚本、git、批量/结构性/大文件改动、落地已定方案,优先一处闭环(设计→执行→自检)。
+Codex(mini / desktop,原生 shell/git/python/文件)是默认执行者:脚本、git、批量/结构性/大文件改动、落地已定方案,优先一处闭环(设计→执行→自检)。
 
-chat 里的 Claude(claude.ai,有 web + 跨会话 memory)是按需顾问,由 Haopeng 主动 pull:web 研究、独立评审、开放式策略;不接 vault 批量/重活。
+Claude provider / chat-Claude 已退出现役；仅在历史来源、旧 handoff、旧文章标题中保留语义引用。
 
 Hermes(mini,gateway + cron)负责 vault 外信号采集和定时自动化:Push 信号采集 → inbox/、review-digest、健康度监测、cron 自动化、skillify 执行层,只写 inbox。
 
-两类接口分工:Hermes ↔ Claudian 走 **inbox/**;Codex / Claude Code ↔ chat-Claude 走 **handoff 文件**。操作细节见根 `CLAUDE.md`「智能层分工与 handoff 约定」,宪法不重复。
+两类接口分工:Hermes ↔ vault 深加工层走 **inbox/**;Codex ↔ Obsidian 侧工作走 **handoff 文件**。操作细节见根 `AGENTS.md` 与 `CLAUDE.md`「智能层分工与 handoff 约定」,宪法不重复。
 
-**Cross-modal eval 技术实现**:Hermes 支持多 profile(同一台机器跑多个独立 agent 实例,各自的模型、记忆、skill 完全隔离)。蒸馏类任务用主 profile + worker profile 双跑——主 profile 跑 Claude 做 distill,worker profile 跑不同家系模型(如 qwen)做 eval。结果不一致进入人工裁决。这就是 AI 红线"互评"在工具层的落地路径。
+**Cross-modal eval 技术实现**:Hermes 支持多 provider / profile,用至少两个可用模型家系做独立评审。当前有效下限是 OpenAI/GPT + DeepSeek；Claude / Anthropic 槽位仅作历史或可选补充,不能作为 gate 的必要依赖。结果不一致进入人工裁决。这就是 AI 红线"互评"在工具层的落地路径。
 
 **交互层 = Obsidian**:浏览/编辑、移动端捕捉、graph view / backlink 导航。Obsidian 可替换——切换只需指向同一个 ZHPMind 目录。
 
@@ -483,12 +483,12 @@ Hermes(mini,gateway + cron)负责 vault 外信号采集和定时自动化:Push �
 | competitor-watch | 竞品 listing | daily | inbox/ | 规划中 |
 | vault-tidy | 手动触发 | on-demand | vault 内变更 | **规划中(v2.5 落地后启动)** |
 
-## Claudian skills(`.claude/skills/`)
+## Codex vault skills(`.codex/skills/`)
 
-按协议互通原则,Claudian 的 skill 也用目录式结构(与 Hermes / Anthropic 标准一致):
+按协议互通原则,Codex vault skill 用目录式结构,与 Hermes skill 的物理组织保持接近；`.claude/skills/` 仅保留为 legacy 兼容副本:
 
 ```
-.claude/skills/
+.codex/skills/
 ├── {name}/
 │   ├── SKILL.md
 │   └── references/
@@ -497,8 +497,8 @@ Hermes(mini,gateway + cron)负责 vault 外信号采集和定时自动化:Push �
 
 | skill 名 | 职责 | 状态 |
 |---|---|---|
-| distill-wildlume-doc | 蒸馏曜野业务文档到 wiki/pages(详见 commit a101725)| 已有 |
-| concept-fable | 给 concept/method/framework 页生成或审查直觉锚点 | **本次新增** |
+| book-mirror | 按章生成 Book Mirror 双栏草稿并按 B 结构组装 | active |
+| concept-fable | 给 concept/method/framework 页生成或审查直觉锚点 | active |
 
 ## 节奏
 
@@ -517,13 +517,19 @@ Hermes(mini,gateway + cron)负责 vault 外信号采集和定时自动化:Push �
 
 **第三层** = "变"。随工具演化更新。
 
-**使用场景**:未来开新对话时粘进去;Hermes/Claudian 接入时作 skill 设计依据;年度 review 回头看"是不是还认这个原则"。
+**使用场景**:未来开新对话时粘进去;Hermes/Codex 接入时作 skill 设计依据;年度 review 回头看"是不是还认这个原则"。
 
 宪法可以修订,修订记录在 Changelog 里。**修订本身要遵循反膨胀**——见上方"宪法自审"。
 
 ---
 
 # Changelog
+
+**2026-07-10 v2.6** —— 主运行时切到 Codex，Claude provider 退出 active lane：
+- 第三层工具映射改为 Claudian UI(Codex provider) + Codex + Hermes；Claude provider / chat-Claude 仅保留历史语义引用
+- skill 执行层主路径改为 `.codex/skills/`，`.claude/skills/` 仅作 legacy 兼容
+- 受众分层加入 `AGENTS.md`，并把 cross-modal eval 的 active gate 改为 OpenAI/GPT + DeepSeek 等可用模型家系
+- `claude-drafts/` 明确为历史命名的 AI handoff 通道，不再表示 active Claude 依赖
 
 **2026-05-23 v2.5** —— 整合 neat-freak(KKKKhazix/khazix-skills)反熵心法 + 寓言故事 prompt(Amanda Askell 原版 + 公众号优化版)直觉锚点,并完成 D9(skill 反思页结构规范)。基于 v2.4-X(cbdb7b0)增量叠加:
 - 第二层新增「AI 心法」三条(减/合并/删 + 检查不省),章节改名「AI 心法 + 红线」;保留 X 的三条事后红线
