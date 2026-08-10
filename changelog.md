@@ -89,3 +89,8 @@
 
 - 新建 inbox/review-digest-2026-08-03.md
 - 数据摘要：119 wiki 页、0 孤岛、0 僵尸项目、2 MOC 候选（wildlume、system-skill）、修正频率 4 页（🟢）、🔴 raw 未引用率 18.2%（2/11 顶层：Matt Van Horn Every Claude Code Hack I Know March 2026.md、karpathy-llm-wiki-vs-zhpmind.md）
+
+## [2026-08-10] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-08-10.md
+- 数据摘要：119 wiki 页、0 孤岛、0 僵尸项目、2 MOC 候选（wildlume、system-skill）、🔴 修正频率 0 页（30 天内无旧页修改，非初建期，真实告警）、🔴 raw 未引用率 18.2%（2/11 顶层：Matt Van Horn Every Claude Code Hack I Know March 2026.md、karpathy-llm-wiki-vs-zhpmind.md）
