@@ -114,3 +114,10 @@
 - Amazon 六周规划标为历史参考，执行说明改为从当前问题出发。微博 JSON 与说明移到 templates/，不再作为交接草稿；浏览器中已导入的模板未改。
 - 验证：wiki/pages、wiki/raw、inbox、archive 共 190 个文件内容指纹前后一致；两个项目技能 quick_validate 通过；模板 JSON 与迁移路径核对通过，templates 不受现有 Git ignore 排除。只做文件与静态校验，未验证新会话、Claudian 加载或另一台设备生效。
 - 后台只读核查：Hermes 列表仍显示 review-digest 启用、计划下次 2026-09-07 09:00，最后记录为 2026-08-31 成功；同时工具报告 gateway 未运行。这不等于任务已停用。本次未更改 cron、watchdog、服务、账户或调用评审模型，也未手动 commit/push。
+
+## [2026-09-06] setup | 微信读书官方 Skill 接入准备
+
+- 安装 Tencent/WeChatReading 官方 skills 到 `.codex/skills/weread-skills/`，版本 1.0.4，固定源 commit `315698a8da1810fab0bbf24a52b38a6960e54cdc`；原文未改写，附原始 Apache-2.0 LICENSE。
+- 已核对 frontmatter、接口地址和能力文档引用。当前环境与检查过的常用配置未找到 WEREAD_API_KEY，指定钥匙串项也不可用；未调用个人数据接口，未生成阅读笔记。
+- 等待本机授权与首本书选择后，再验证单书导入、重复同步去重、源端改动和本地补充保护。此阶段不表示同步工具已经完成；不导入整个书架，不设定时任务，不回写微信读书，不自动蒸馏。
+- 本轮仅在 mini 安装项目文件，未测试 Claudian 技能发现或 Air 生效；未手动 commit/push。密钥不进入 vault、日志或聊天。
