@@ -1,46 +1,44 @@
-# ZHPMind Vault — Codex Root Instructions
+# ZHPMind 项目约定
 
-This is Zhang Haopeng's ZHPMind knowledge vault. The working directory is the vault root.
+本 vault 位于 `~/Obsidian/ZHPMind`，用于个人记录、思考和按需查阅资料，不是所有输入都必须加工的流水线。
 
-## Authority
+## 规则入口
 
-Before changing anything under `wiki/`, read and follow:
+- 共同协作约定来自 AgentHome 部署的全局入口，本项目不另行复制维护。
+- 用途与取舍见 [design-principles.md](design-principles.md)。
+- 只有创建或维护正式 wiki 页面、来源和索引时，才读取 [wiki/CLAUDE.md](wiki/CLAUDE.md)。普通剪藏、随想和对话不必加载整份 wiki 手册。
+- 本文件规定日常默认行为；旧 handoff、历史规划、旧技能副本不自动成为当前任务。本轮已取消的默认义务，不因旧文档仍有描述而恢复。
 
-@wiki/CLAUDE.md
+## 日常记录
 
-`wiki/CLAUDE.md` remains the detailed wiki operator manual for historical compatibility. In current use, "Claudian" in that manual means the Obsidian-side vault curator role, now normally backed by the **Codex provider** rather than the Claude provider.
+- 用户要求保存或修改随想时，直接处理目标笔记。新剪藏和未另定位置的个人记录可先放 `inbox/`；已保存不等于待蒸馏，也不要求清空。
+- 个人笔记可用中文短标题或日期，不强制 frontmatter、type、标签、双链、索引、日志、结论或下一步；已有属性无须批量删除。
+- 区分用户原话、外部原文和 AI 补充。后来的理解可以追加，但不把早先的疑问改写成确定事实。
+- 原文与想法可在同一篇笔记中清楚分区，不为了分类机械拆页。需要独立引用时再拆分。
+- 回答问题不自动保存；保存笔记不自动触发蒸馏、人物画像更新、概念扩展、书镜或模型评审。
 
-## Current Runtime Policy
+## 按需整理
 
-- Use Codex as the primary execution/runtime surface.
-- Do not rely on the Claude provider; the Claude account is no longer an available dependency.
-- Vault-level Codex skills live in `.codex/skills/{name}/SKILL.md`.
-- Legacy `.claude/skills/` may remain for history/compatibility, but new active skill work should target `.codex/skills/`.
-- Do not sync `~/.codex`, `~/.codex/threads`, or `~/.codex/auth.json`. Use Codex Remote Connections for thread continuity.
+- 明确要求蒸馏、整理入 wiki、书镜、寓言或项目经验提炼时，才进入相应工作流。先界定所需产物，不默认整本、全课或所有相关页。
+- 只纠正本次任务直接影响的事实与引用；不因主题相近就泛化传播或批量建页。身份、家庭和心理解释不随资料整理自动改写。
+- 普通摘录核对原文；个人笔记核对原意；重要分析核证据、数字和适用条件。多模型评审不是日常保存条件。
+- 若明确选择现有 `book-mirror` 或 `cross-eval` 流程，仍须遵守该流程的证据与组装门槛。未运行不能报通过，规则精简不等于脚本已改。
+- 不以页面数量、修改频率、孤岛率或 inbox 数量评价人的理解；检查断链等技术问题不产生学习任务。
 
-## Hard Rules
+## 保存位置与保护
 
-1. All distilled/wiki knowledge products go to flat `wiki/pages/`; do not create topic subdirectories.
-2. File names use lowercase English kebab-case slugs; tags use lowercase English kebab-case.
-3. Wiki body language is Simplified Chinese.
-4. For distill work, follow the full workflow in `wiki/CLAUDE.md`: frontmatter, `wiki/pages/index.md`, `wiki/log.md`, and propagation.
-5. Large sources must be extracted/split by tools or subagents. The main agent writes final pages.
-6. Book/document sources go to `wiki/raw/assets/books/` with `书名-作者.{epub,pdf,docx,md}` naming. Page `sources:` values use `assets/books/...` relative paths.
-7. Daily ZHPMind git commits/pushes are handled by the Mac mini auto-commit watcher. Agents do not manually commit/push unless the user explicitly asks and the handoff requires it.
+- 正式 wiki 页保留 `wiki/pages/` 平铺和现有链接；具体字段与来源路径见 wiki 手册。不要批量重命名旧页或把旧摘要自动认定为个人理解。
+- `wiki/raw/` 是参考来源，不以“已经蒸馏”作为保存前提；已有原文不改写。移动、删除和归档不从阅读或普通保存中自动产生。
+- `projects/` 只承接确实需要持续处理的问题，`outputs/` 按实际产出使用；不复制外部业务系统的实时数据或待办。
+- `templates/` 存放复用模板，不是 AI skill。不要因本轮精简另建首页、仪表盘或整套分类。
+- `claude-drafts/` 保留已有交接与专用 staging 路径，不是所有新产物的默认位置。同一任务能完成的工作不额外生成 handoff/result 对。
+- `archive/` 与历史记录不自动清理。凭据不写入 vault；读取私人材料不等于获准发送给外部模型。
 
-## Active Lane Split
+## 工具与备份
 
-| Role | Current use |
-|---|---|
-| Codex | Primary executor for scripts, git-aware file work, batch edits, skill migration, dogfood, and finalized implementation |
-| Claudian UI with Codex provider | Obsidian-side knowledge work: distill, mirror, propagation, reflect, concept-fable |
-| Hermes | Gateway/cron automation, review-digest, vault-tidy, policy/signal monitoring; writes mainly to `inbox/` |
-| Claude / Claude provider | Deprecated/unavailable for active workflows; references remain only where historically or semantically accurate |
-
-## Handoff Files
-
-`claude-drafts/` is retained as the historical handoff channel name. It now means "AI handoff drafts", not an active dependency on Claude.
-
-- Task specs: `claude-drafts/handoff-{task}.md`
-- Results/review requests: `claude-drafts/result-{task}.md`
-
+- Codex / Claudian 的 Codex provider 是当前可用入口，不依赖 Claude provider。
+- ZHPMind 技能以 `.codex/skills/{name}/SKILL.md` 为准；全局同名副本及 `.claude/skills/` 旧副本不覆盖本项目约定。只在调用相关能力时读技能。
+- Hermes 的任务、调度与运行配置是独立维护范围。修改本文件不代表 cron 或 watchdog 已停用；运行状态须另行验证。
+- 编辑同步沿用 Obsidian Sync；Git 默认由 mini auto-commit watcher 单点提交。所有 agent 默认不手动 add/commit/push，除非用户明确要求，并先核对锁、rebase/merge 和 watcher 状态。Air 不另起提交者。
+- Git 回滚粒度是 watcher 批次，不承诺每次 AI 写入一个 commit。不碰历史，不覆盖其他人的改动。
+- 二进制书源仍按现有规则排除 Git；Markdown 转录照常入 Git。同步不等于独立备份；没有核实就不声称已备份或已在另一台生效。

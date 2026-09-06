@@ -1,6 +1,6 @@
 ---
 name: concept-fable
-description: 给 ZHPMind wiki/pages/ 下的 concept / method / framework 类型页面生成或审查"直觉锚点"段落。用日常场景的寓言或类比包裹概念核心感觉，让陌生概念变成大脑愿意主动复述的画面。
+description: 用户要求为 ZHPMind 的 concept / method / framework 页生成或审查直觉锚点时，提供带边界的寓言或类比。不随蒸馏或普通笔记自动批量生成。
 ---
 
 # concept-fable
@@ -8,14 +8,14 @@ description: 给 ZHPMind wiki/pages/ 下的 concept / method / framework 类型�
 ## 调用场景
 
 - Haopeng 说 `/concept-fable [page-name]` 或"给 X 加直觉锚点"或"为 X 写个寓言"
-- distill 工作流产出新 concept/method/framework 页时，Codex 可主动建议"要不要给这个加直觉锚点"
-- 已有页面的直觉锚点显得牵强、需要 rewrite 时
+- 用户明确要求审查或改写已有页面的直觉锚点。
+- 不因新 concept 页出现而自动生成或固定追问。先读 vault 根 AGENTS.md；不把本 skill 的候选与检验步骤套到普通解释。
 
 ## 适用边界（生成前先判断）
 
 | 概念类型 | 处理方式 |
 |---|---|
-| 感觉型 / 关系型（陌生化、心流、PMF、孤独、协作）| **强烈推荐生成** |
+| 感觉型 / 关系型（陌生化、心流、PMF、孤独、协作）| 在用户请求范围内生成，不因类型命中自动执行 |
 | 方法论（method 类，如 5 Whys、A/B 测试、OKR 设定）| **可选**——类比可能比寓言更合适，看具体情况 |
 | 结构型（FIFO、漏斗转化率、库存周转率、布林带）| **警告并询问**——强塞寓言会污染精度。若用户坚持，明确告知"这条直觉锚点服务于'记得有这回事'，不替代结构本身" |
 | `type: person / project / snapshot / book / article / reflection` | **拒绝**——不是 concept-fable 的适用对象 |
@@ -85,22 +85,10 @@ description: 给 ZHPMind wiki/pages/ 下的 concept / method / framework 类型�
 - [ ] 寓言里有没有用比目标概念更抽象的词？有就不合格
 - [ ] 段落是否超过 100 行 soft limit？
 
-### Step 7 — Log + Commit
+### Step 7 — 收尾
 
-按 wiki/CLAUDE.md §5 写一条 `concept-fable` 日志：
-
-```markdown
-## [YYYY-MM-DD] concept-fable | [page-name]: 生成/审查直觉锚点
-
-- **Pages updated**: [[page-name]]
-- **Note**: 候选数 / 选定方案 / 类型判断结果
-```
-
-Git commit：
-
-```bash
-git -C "$VAULT" add -A && git -C "$VAULT" commit -m "wiki: concept-fable [page-name] – 直觉锚点 [生成|rewrite|审查]"
-```
+只读审查、未被选定的候选不写日志。实际保存了重要内容时，按 wiki/CLAUDE.md §5 记录一条 `concept-fable` 变更。
+不自动改其他页面；仅在摘要等索引内容变化时更新对应条目。不自行 git add/commit/push，交 mini watcher。
 
 ## Pitfalls
 
@@ -117,5 +105,5 @@ git -C "$VAULT" add -A && git -C "$VAULT" commit -m "wiki: concept-fable [page-n
 
 - prompt 模板：`references/prompt-template.md`
 - 反思页：`wiki/pages/skill-concept-fable.md`
-- 规范：design-principles v2.5「内容分类 / 直觉锚点适用边界」+ wiki/CLAUDE.md §3.9
+- 规范：vault 根 AGENTS.md + wiki/CLAUDE.md §3.9
 - 范本：`wiki/pages/skill-review-digest.md` 的 SKILL.md 结构

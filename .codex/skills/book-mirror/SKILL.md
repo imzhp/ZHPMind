@@ -1,15 +1,16 @@
 ---
 name: book-mirror
-description: 按章生成 Book Mirror 双栏草稿，并在 cross-eval gate 与 Haopeng 审核通过后，把镜射组装进 wiki/pages 的 book 页。只处理 staging 与组装规则；源文拆章由确定性 book-split.py 负责。适用于 ZHPMind vault 的书镜工作流。
+description: 在用户明确要求按章书镜或组装已审书镜时，生成双栏草稿并按 B 结构组装；保留 cross-eval 与人审门槛。普通阅读、随想、启发讨论和摘要不调用此流程。
 ---
 
 # book-mirror
 
 ## 调用场景
 
-- Haopeng 说 `mirror [book-slug]`、`book mirror [book]`、`按书镜处理这本书`
-- `claude-drafts/book-mirror/{book-slug}/source/ch-*.md` 已存在，需要逐章吐 `draft/ch-*.md`
-- 某本书的所有章节 cross-eval 报告通过，Haopeng 要求组装进 `wiki/pages/{book-slug}.md`
+- Haopeng 明确要求按章书镜、继续已指定的章节，或组装已审书镜。
+- 仅有 source / draft 文件存在，不是继续执行的授权；普通“这对我有什么启发”不触发此 skill。
+- 先读 vault 根 AGENTS.md 和 wiki/CLAUDE.md。只处理本次指定范围，不为凑齐整本自动启动剩余章节。
+- 外部评审须在本次材料外发授权范围内；未获授权时停在草稿，不自动发送身份与家庭材料，也不省略证据伪造通过。
 
 ## 不变量
 
@@ -185,7 +186,7 @@ wiki/pages/{book-slug}.md
 4. 如果已有 `## Mirror` / `## 镜射` 占位，把占位替换为 `## 镜射（按章）`。
 5. 如果已有正式镜射内容，不覆盖旧映射；按日期追加新一轮 reread 小节。
 6. 仅对真正适合 mirror 的人生 / 心理 / 哲学书执行本结构；方法书、业务书默认不走 mirror。
-7. 组装后更新 `wiki/pages/index.md` 与 `wiki/log.md`，再按 vault git 纪律提交。
+7. 组装后按 `wiki/CLAUDE.md` §4–5 更新实际受影响的索引与日志；不自动传播到人物页、概念页，不自行 git，留给 mini watcher。
 
 推荐组装形态：
 

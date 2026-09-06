@@ -1,73 +1,7 @@
-# ZHPMind Vault — Legacy Claude / Claudian Entry
+# ZHPMind 兼容入口
 
-这是张昊鹏的 ZHPMind 知识库。你的工作目录就是本 vault 根目录。
+本文件只保留历史工具的加载入口，不再单独维护一套规则。
 
-> 2026-07-10 起，`AGENTS.md` 是 Codex 主入口。本文件保留给 Claude Code / Claudian 兼容读取。后续主动工作默认走 Codex；Claude provider 不再作为可用依赖。
+@AGENTS.md
 
-**在对 `wiki/` 做任何操作之前,必须先完整阅读并严格遵守权威规范:**
-
-@wiki/CLAUDE.md
-
-`wiki/CLAUDE.md` 是 vault AI 操作手册(detailed schema)。本文件只是 legacy 加载器 + 红线;两者冲突时以 `wiki/CLAUDE.md` 为准。
-
-**自动化优先**:凡是能由 agent 完成的机械工作——格式转换(EPUB/PDF → 文本)、文本提取、大文件分块读取——都自动完成,不要推给 Haopeng 手动操作。Haopeng 负责判断与决策,不负责搬运。(对应 design-principles「AI 做宽度和速度,人做深度和判断」。)
-
----
-
-## 硬红线(覆盖你的默认习惯)
-
-以下规则的存在,是因为过去的会话忽略了规范、把产物散落进自造的文件夹(`20.reading/`、`30.areas/`、`wiki/pages/concept/` 等)。不要重蹈覆辙:
-
-1. **所有蒸馏 / 知识产物只进 `wiki/pages/`,且平铺。** 一本书 → 一个 `wiki/pages/{slug}.md`,`type: book`。
-2. **禁止新建任何 Johnny-Decimal 目录或任何新的顶层 / 子目录**(如 `20.reading/`、`30.areas/`、`wiki/books/`、`wiki/pages/concept/`)。`wiki/pages/` 是平铺的,没有子文件夹。
-3. **文件名**:小写连字符英文 slug,无日期,无下划线前缀(`asking-the-right-questions.md`,不是 `经营者的财务金三角-蒸馏版.md`)。
-4. **标签**:纯英文、小写、连字符。中文书名 / 别名放进 frontmatter 的 `aliases`,绝不作为 tag。
-5. **正文语言**:简体中文(见 `wiki/CLAUDE.md` §16)。wiki 页面里不用 emoji。
-6. **走完整 distill 工作流**(`wiki/CLAUDE.md` §6):正确 frontmatter、更新 `wiki/pages/index.md` 与 `wiki/log.md`、最后交给 git 单写者机制入库；只有明确 handoff 要求 Codex 手动 git 时才直接 commit / push。
-7. **来源太大读不下时,自动用子 agent / 工具提取并分块读取——这是机器该干的活,不要回头问 Haopeng 手动拆。但子 agent 只负责返回提取的文本 / 分块摘要,最终页面一律由你(受本规范约束的主 agent)写入 `wiki/pages/`。绝不让子 agent 直接写文件、也绝不让它自行决定存放位置。** 即「自动分块读取,受控统一写入」。
-
-8. **书 / 文档源材料统一归 `wiki/raw/assets/books/`,命名 `书名-作者.{epub,pdf,docx}`;页面 `sources:` 写 raw 相对路径 `assets/books/书名-作者.ext`。** 蒸馏时从 inbox 或别处读取的源材料,读完**必须落到 `wiki/raw/assets/books/`**——绝不留在 `wiki/raw/` 顶层或任何其他位置。`wiki/raw/` 顶层只放文章 / 讨论类 raw(`.md`);书 / 课程的二进制源(epub / pdf / docx)一律进 `assets/books/`。作者从你的知识判定、直接写进文件名(如 `死亡否认-厄内斯特·贝克尔.epub`),不必反问 Haopeng。理由:源归位 + `sources:` 路径稳定 = 溯源不断;历史上反复把 epub 丢在 `raw/` 顶层、`sources:` 写裸文件名,造成归档散乱、移动即断链(2026-06-02 一次性归位 6 本后立此规)。书/课程的 md 全文转录同样按性质归 assets/books/,命名同规(书名-作者.md);md 可 diff,照常入 git。
-
-## 写入前自检(每次写 `wiki/pages/` 前过一遍)
-
-- [ ] 我已经读过 `wiki/CLAUDE.md` 了吗?
-- [ ] 产物是否落在 `wiki/pages/` 平铺区,而不是任何子目录 / 顶层新目录?
-- [ ] 文件名是否小写连字符英文 slug?tag 是否纯英文?
-- [ ] `type` 是否取自 §3.1 的 10 个合法值?
-- [ ] 若用了子 agent 提取:最终写入是不是由我主 agent 完成、且落在 `wiki/pages/`?
-- [ ] 若涉及书 / 文档源:源是否已归 `wiki/raw/assets/books/`(命名 `书名-作者`)、`sources:` 写的是否为 `assets/books/...` 相对路径?
-- [ ] 是否更新了 `index.md` / `log.md`,并确认会由 Mac mini auto-commit watcher 入库?若 handoff 明确要求我手动 git,是否先确认 watcher 安全门状态?
-
----
-
-## Git 操作纪律(commit 卫生)
-
-ZHPMind 的 git 只为「可回滚 + GitHub 备份」服务(design-principles 第一层「开放格式」),不是日常跨设备同步通道——同步走 Obsidian Sync。基于此,以下纪律覆盖你的默认 git 习惯:
-
-1. **git commit / push 的默认执行者是 Mac mini 上的 auto-commit watcher。** ZHPMind 的日常写入由 Obsidian Sync 在编辑层同步,由 mini 上的常驻 watcher 每约 10 分钟统一 `pull --rebase --autostash`、commit、push。理由:提交点单一,避免 Air 与 mini 双头提交同一批内容造成 push 冲突。
-2. **任何 agent 默认不手动 commit / push。** Claudian、Hermes、Codex 日常操作都只写文件,不主动 git;例外是 Codex 执行明确包含 git 步骤的 handoff,且操作前后必须确认 watcher 安全门状态(无 `.git/index.lock`、无 rebase / merge 进行中,必要时查看 watcher 日志),避免跟自动提交撞车。
-3. **MacBook Air clone 只读。** Air 侧只通过 Obsidian Sync 参与编辑,git push 已禁用或应禁用;Air 上的 agent 不承担提交职责。
-4. **回滚粒度是 watcher 批次,不是每次 AI 写入一个 commit。** auto-commit 的粒度约等于 10 分钟静默窗口;若需要追溯具体来源,依赖页面 frontmatter、`wiki/log.md`、`claude-drafts/handoff-*` / `result-*` 和正文 sources,不要再宣称"每次 AI 写入都对应一个独立 commit"。
-5. **不拿 `git reset --hard origin/main` 当创可贴。** 工作树乱了 / 提交错了,先用 `git status`、`git diff`、`git stash`、`git restore <file>` 定点处理。`reset --hard` 到远端等于「丢弃本地全部未推送改动」的核武器,只在确认本地确无任何要保留内容时才用。理由:历史上曾用 reset-to-origin 抹平表面问题,连带丢失过未提交的蒸馏产物。
-6. **二进制源(epub / pdf / docx)不入 git。** 电子书 / 课程 / PDF 等二进制源材料一律由 `.gitignore` 排除(`*.epub` / `*.pdf` / `*.docx`,2026-06-01 用 filter-repo 瘦身后立规),仅靠「本地留盘 + Obsidian Sync」保存,不进 git 历史。理由:二进制不可 diff、体积大、撑爆仓库且无版本控制价值——git 只管可读可 diff 的 markdown。日后新增其他二进制格式(如 .mobi / .azw3)时,同步往 `.gitignore` 补对应 glob。
-
----
-
-## 智能层分工与 handoff 约定
-
-本 vault 由多个 AI 角色协作。读到这里的你,先认清自己是哪个角色、只做本 lane 的事;跨 lane 的活按下方 handoff 约定转交,别硬扛。
-
-| 角色 | 在哪 | 接什么 |
-|---|---|---|
-| **Codex** | mini / Claudian Codex provider(原生 shell/git/python/文件 + vault skills) | 默认执行者:脚本开发、git-aware 文件工作、批量/多文件/大文件改动、结构迁移、文件归位、dogfood、落地已定方案。能想能做——优先一个脑子走全程(设计→执行→自检),不事事外包 |
-| **Claudian UI + Codex provider** | Obsidian 内 | vault 内知识深加工:distill / mirror / propagation / reflect / concept-fable。不要依赖 Claude provider |
-| **Claude / Claude provider** | 已不可用 | 不再作为主动工作 lane；历史来源、文章标题、知识页中语义准确的 Claude / Anthropic 引用保留 |
-| **Hermes** | mini(gateway + cron) | vault 外信号采集 + 定时自动化(review-digest / vault-tidy / signal)。只写 inbox |
-
-**handoff(跨角色转交,走文件不走人肉复制):**
-
-- 任务书 → `claude-drafts/handoff-{task}.md`(出题方写:目标 / 约束 / 验收标准 / 已知坑)。
-- 结果或复核请求 → `claude-drafts/result-{task}.md`(执行方写)。
-- 转交只说一句("按 handoff-{task} 做" / "读 result-{task} 复核"),内容靠文件传递,Haopeng 不当人肉总线。两类文件按现行 `.gitignore` 策略入 git(随 Sync 跨机)。
-
-**默认偏置:能在 Codex 一处闭环的,就别切到外部 chat。**
+正式 wiki 操作再按 AGENTS.md 指引读取 `wiki/CLAUDE.md`。普通笔记不进入完整 wiki 工作流。

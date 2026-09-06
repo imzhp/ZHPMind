@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "微博 · 原文与我的想法",
+  "behavior": "create",
+  "noteNameFormat": "{{selector:article .wbpro-feed-ogText|first|trim|split:\"。\"|first|slice:0,32|safe_name}}",
+  "path": "inbox",
+  "vault": "ZHPMind",
+  "noteContentFormat": "## 我的想法\n\n<!-- 写下让我停下来的地方，或者此刻的想法；一句话也可以。 -->\n\n---\n\n> [!quote]- 原文 · {{selector:article a[class*=\"_name_\"]|first|trim}}\n> {{selector:article a[class*=\"_time_\"]|first|trim}} · [查看原微博]({{url}})\n>\n{{selectorHtml:article .wbpro-feed-content|first|markdown|blockquote}}\n",
+  "properties": [
+    { "name": "source", "value": "{{url}}", "type": "text" },
+    { "name": "created", "value": "{{date|date:\"YYYY-MM-DD\"}}", "type": "date" },
+    { "name": "tags", "value": "clippings", "type": "multitext" }
+  ],
+  "triggers": [
+    "/^https:\\/\\/weibo\\.com\\/\\d+\\/[A-Za-z0-9]+(?:[/?#].*)?$/"
+  ]
+}
