@@ -104,3 +104,13 @@
 
 - 新建 inbox/review-digest-2026-08-31.md
 - 数据摘要：119 wiki 页、0 孤岛、1 僵尸项目（sheep-archive-migration）、2 MOC 候选（wildlume、system-skill）、🔴 修正频率 0 页（30 天内无旧页修改，非初建期，真实告警）、🔴 raw 未引用率 18.2%（2/11 顶层：Matt Van Horn Every Claude Code Hack I Know March 2026.md、karpathy-llm-wiki-vs-zhpmind.md）
+
+## [2026-09-06] simplify | 个人记录优先，专项流程按需使用
+
+- 四份主规则（AGENTS、兼容 CLAUDE、design-principles、wiki 手册）从 1,559 行精简到 285 行；共同协作约定沿用 AgentHome，不在 vault 复制维护。
+- 普通剪藏与随想无需正式 wiki 字段、蒸馏、传播、互评或日志。正式 wiki 暂保留字段与来源路径兼容，不批量迁移旧页。
+- 取消以页数、修改频率、孤岛率和 inbox 数量判断个人认知；此前周报相关措辞只是历史报告，不能据此断言人的理解或进步。
+- 项目 book-mirror、concept-fable 限定按需调用，去掉 concept-fable 的全量 Git 提交命令；已明确选择书镜时，逐章证据与人审 gate 仍保留。未修改外部 cross-eval 脚本、全局同名技能或 legacy 技能副本。
+- Amazon 六周规划标为历史参考，执行说明改为从当前问题出发。微博 JSON 与说明移到 templates/，不再作为交接草稿；浏览器中已导入的模板未改。
+- 验证：wiki/pages、wiki/raw、inbox、archive 共 190 个文件内容指纹前后一致；两个项目技能 quick_validate 通过；模板 JSON 与迁移路径核对通过，templates 不受现有 Git ignore 排除。只做文件与静态校验，未验证新会话、Claudian 加载或另一台设备生效。
+- 后台只读核查：Hermes 列表仍显示 review-digest 启用、计划下次 2026-09-07 09:00，最后记录为 2026-08-31 成功；同时工具报告 gateway 未运行。这不等于任务已停用。本次未更改 cron、watchdog、服务、账户或调用评审模型，也未手动 commit/push。
