@@ -44,3 +44,6 @@ claude-drafts/*
 # 书籍/课程 PDF·DOCX 源:二进制不进 git(留盘 + Obsidian Sync)。2026-06-01 filter-repo 瘦身后立规。
 *.pdf
 *.docx
+
+# Device-local WeRead source snapshots and conflict state
+/.weread-sync-v1/
