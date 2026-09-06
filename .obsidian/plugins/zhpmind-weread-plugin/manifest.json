@@ -1,0 +1,10 @@
+{
+	"id": "zhpmind-weread-plugin",
+	"name": "ZHPMind 阅读同步",
+	"version": "0.1.0",
+	"minAppVersion": "1.4.11",
+	"description": "个人阅读记录：同步微信读书划线与感想，保护同篇续写和纸质书摘录。",
+	"author": "张昊鹏",
+	"requestUrl": true,
+	"isDesktopOnly": false
+}

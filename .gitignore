@@ -47,3 +47,7 @@ claude-drafts/*
 
 # Device-local WeRead source snapshots and conflict state
 /.weread-sync-v1/
+
+/.zhpmind-weread-sync-v1/
+
+/.zhpmind-weread-cache/
