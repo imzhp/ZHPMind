@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { Gateway, fetchBook, syncBook } from './zhpmind-sync.mjs';
 
 const id = '44026191';
@@ -120,9 +121,34 @@ test('many unannotated highlights fold; actual chapter/range controls pairing', 
   const f = fixture(t);
   await f.run(client({ highlights: Array.from({ length: 6 }, (_, n) => highlight(n+1)), pages: [{ totalCount: 1, reviews: [review()], hasMore: 0 }] }));
   const note = fs.readFileSync(f.note, 'utf8');
-  assert.match(note, /> \[!quote\]- 划线 · 5 条/);
+  assert.match(note, /> \[!quote\]- 划线摘录 · 5 条/);
   assert.equal((note.match(/测试原文 1/g) || []).length, 1);
   assert.ok(note.indexOf('测试感想') < note.indexOf('[!quote]'));
+});
+
+test('format-only migrates checked legacy content without fetching or changing source data', async t => {
+  const f = fixture(t);
+  await f.run();
+  const state = JSON.parse(fs.readFileSync(f.state, 'utf8'));
+  const sourceData = JSON.stringify(state.data);
+  delete state.renderVersion;
+  const legacy = '## 微信读书记录\n\n更新于 2026-08-01 · 1 条划线 · 0 条感想\n\n> 测试原文 1';
+  state.bodyHash = createHash('sha256').update(legacy).digest('hex');
+  fs.writeFileSync(f.state, JSON.stringify(state));
+  const prefix = `我的补充\n\n<!-- weread-sync:start ${id} -->\n`;
+  const suffix = `\n<!-- weread-sync:end ${id} -->\n\n末尾的补充`;
+  fs.writeFileSync(f.note, prefix + legacy + suffix);
+  const noNetwork = { call: () => { throw new Error('must not fetch'); } };
+  assert.equal((await f.run(noNetwork, { formatOnly: true })).status, 'formatted');
+  const note = fs.readFileSync(f.note, 'utf8');
+  assert.ok(note.startsWith(prefix) && note.endsWith(suffix));
+  assert.match(note, /更新于 2026-08-01/);
+  assert.match(note, /\[!quote\]- 划线摘录 · 1 条/);
+  assert.doesNotMatch(note, /## 微信读书记录/);
+  assert.equal(JSON.stringify(JSON.parse(fs.readFileSync(f.state, 'utf8')).data), sourceData);
+  assert.equal((await f.run(noNetwork, { formatOnly: true })).status, 'unchanged');
+  fs.writeFileSync(f.note, note.replace('测试原文 1', '用户改写'));
+  await assert.rejects(f.run(noNetwork, { formatOnly: true }), /本地修改/);
 });
 
 test('invalid identity, traversal, lock and empty responses do not create notes', async t => {

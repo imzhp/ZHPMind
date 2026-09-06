@@ -7,12 +7,13 @@ import { fileURLToPath } from 'node:url';
 
 const ENDPOINT = 'https://i.weread.qq.com/api/agent/gateway';
 const VERSION = '1.0.4';
+const RENDER_VERSION = 3;
 const ROOT = fileURLToPath(new URL('../../../../', import.meta.url));
 const sha = value => createHash('sha256').update(value).digest('hex');
 const fail = message => { throw new Error(message); };
 const string = value => value == null ? '' : String(value);
 const plain = value => string(value).replace(/[\\`*_{}\[\]<>#]/g, '\\$&');
-const quote = value => plain(value).split('\n').map(line => `> ${line}`).join('\n');
+const quote = value => plain(value).split('\n').map(line => line ? `> ${line}` : '>').join('\n');
 const date = seconds => {
   if (!Number.isFinite(Number(seconds)) || Number(seconds) <= 0) return '日期未提供';
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai' }).format(new Date(Number(seconds) * 1000));
@@ -104,33 +105,37 @@ function mergeRecords(oldRows, current) {
 function render(data, today) {
   const chapters = new Map(data.chapters.map(c => [c.id, c]));
   const ids = new Set([...data.highlights, ...data.reviews].map(r => r.chapter));
-  const lines = ['## 微信读书记录', '', `更新于 ${today} · ${data.highlights.filter(r => !r.missing).length} 条划线 · ${data.reviews.filter(r => !r.missing).length} 条感想`, ''];
+  const lines = [];
   const missing = row => row.missing ? '\n\n*本次接口未返回，保留上次记录。*' : '';
-  const thought = r => `**当时的感想 · ${date(r.time)}**\n\n${plain(r.text)}${missing(r)}\n\n^wr-r-${sha(r.id).slice(0,16)}`;
-  const highlight = h => `${quote(h.text)}\n\n*划线于 ${date(h.time)}*${missing(h)}\n\n^wr-h-${sha(h.id).slice(0,16)}`;
+  const thought = r => `**我的想法** · ${date(r.time)}\n\n${plain(r.text)}${missing(r)}\n\n^wr-r-${sha(r.id).slice(0,16)}`;
+  const highlight = h => `${quote(h.text)}\n>\n> *${date(h.time)}*${missing(h) ? '\n>\n' + quote('本次接口未返回，保留上次记录。') : ''}\n\n^wr-h-${sha(h.id).slice(0,16)}`;
+  const source = h => `> [!quote]- 对应原文 · ${date(h.time)}\n${quote(h.text)}${missing(h) ? '\n>\n' + quote('本次接口未返回，保留上次记录。') : ''}\n\n^wr-h-${sha(h.id).slice(0,16)}`;
   for (const id of [...ids].sort((a,b) => (chapters.get(a)?.index ?? 999999) - (chapters.get(b)?.index ?? 999999) || a.localeCompare(b))) {
     const hs = data.highlights.filter(h => h.chapter === id).sort((a,b) => (parseInt(a.range) || 0) - (parseInt(b.range) || 0) || a.id.localeCompare(b.id));
     const rs = data.reviews.filter(r => r.chapter === id).sort((a,b) => (a.time ?? 0) - (b.time ?? 0) || a.id.localeCompare(b.id));
     const title = chapters.get(id)?.title || rs.find(r=>r.chapterName)?.chapterName || '未标明章节';
-    lines.push(`### ${plain(title)}`, '');
+    lines.push(`## ${plain(title)}`, '');
     const used = new Set();
     const matched = hs.map(h => [h, rs.filter(r => r.range && r.range === h.range && hs.filter(other=>other.range===r.range).length===1)]);
     for (const [h, linked] of matched.filter(([, linked]) => linked.length)) {
-      lines.push(highlight(h), '');
       for (const r of linked) { used.add(r.id); lines.push(thought(r), ''); }
+      lines.push(source(h), '', '---', '');
     }
     for (const r of rs.filter(r => !used.has(r.id))) {
-      if (r.abstract) lines.push(quote(r.abstract), '');
       lines.push(thought(r), '');
+      if (r.abstract) lines.push('> [!quote]- 对应原文', quote(r.abstract), '');
+      lines.push('---', '');
     }
     const only = matched.filter(([, linked]) => !linked.length).map(([h])=>h);
-    if (only.length >= 5) {
-      lines.push(`> [!quote]- 划线 · ${only.length} 条`);
-      for (const h of only) lines.push('>', ...highlight(h).split('\n').map(line => `> ${line}`));
+    if (only.length) {
+      lines.push(`> [!quote]- 划线摘录 · ${only.length} 条`);
+      for (const h of only) lines.push('>', ...highlight(h).split('\n').map(line => line ? `> ${line}` : '>'));
       lines.push('');
-    } else for (const h of only) lines.push(highlight(h), '');
+    }
   }
   if (!ids.size) lines.push('本次未读取到个人划线或感想。', '');
+  const link = data.book.url ? `[微信读书](${data.book.url})` : '微信读书';
+  lines.push(`*${link} · ${data.highlights.filter(r => !r.missing).length} 条划线 · ${data.reviews.filter(r => !r.missing).length} 条感想 · 更新于 ${today}*`, '');
   return lines.join('\n').trimEnd() + '\n';
 }
 
@@ -159,7 +164,7 @@ function atomicWrite(filename, content, expected) {
   }
 }
 
-export async function syncBook({ vault, bookId, notePath, client, today = date(Date.now()/1000) }) {
+export async function syncBook({ vault, bookId, notePath, client, formatOnly = false, today = date(Date.now()/1000) }) {
   if (!/^[A-Za-z0-9_-]+$/.test(bookId)) fail('书籍编号不合法。');
   vault = fs.realpathSync(vault);
   if (path.isAbsolute(notePath) || notePath.split(/[\\/]/).includes('..') || !notePath.endsWith('.md')) fail('笔记路径必须是 vault 内的 Markdown 相对路径。');
@@ -188,26 +193,28 @@ export async function syncBook({ vault, bookId, notePath, client, today = date(D
       split = splitNote(oldNote, bookId);
       if (sha(split.body) !== state.bodyHash) fail('同步区曾被本地修改，或上次写入中断；现有内容未覆盖。');
     } else if (oldNote !== null) fail('目标笔记已存在但缺少同步状态；不接管或覆盖它。');
-    const fetched = await fetchBook(client, bookId);
-    const data = {
+    if (formatOnly && !state) fail('尚无同步状态，不能只调整排版。');
+    const fetched = formatOnly ? null : await fetchBook(client, bookId);
+    const data = formatOnly ? state.data : {
       book: fetched.book,
       chapters: [...new Map([...(state?.data.chapters ?? []), ...fetched.chapters].map(c=>[c.id,c])).values()],
       highlights: mergeRecords(state?.data.highlights ?? [], fetched.highlights),
       reviews: mergeRecords(state?.data.reviews ?? [], fetched.reviews),
     };
-    const counts = { highlights: fetched.highlights.length, reviews: fetched.reviews.length, retainedMissing: [...data.highlights, ...data.reviews].filter(r=>r.missing).length };
-    if (state && JSON.stringify(data) === JSON.stringify(state.data)) return { status: 'unchanged', notePath, ...counts };
+    const counts = { highlights: data.highlights.filter(r=>!r.missing).length, reviews: data.reviews.filter(r=>!r.missing).length, retainedMissing: [...data.highlights, ...data.reviews].filter(r=>r.missing).length };
+    if (state && state.renderVersion === RENDER_VERSION && JSON.stringify(data) === JSON.stringify(state.data)) return { status: 'unchanged', notePath, ...counts };
     if (!state && !fetched.highlights.length && !fetched.reviews.length) return { status: 'empty', ...counts };
-    const body = render(data, today).trimEnd();
+    const displayDate = formatOnly ? split.body.match(/更新于 (\d{4}-\d{2}-\d{2})/)?.[1] ?? today : today;
+    const body = render(data, displayDate).trimEnd();
     const [start, end] = markers(bookId);
     const yaml = value => JSON.stringify(value);
     const fresh = `---\nbook: ${yaml(data.book.title)}\nauthor: ${yaml(data.book.author)}\nweread_book_id: ${yaml(bookId)}\nsource: ${yaml(data.book.url)}\ncreated: ${today}\n---\n\n<!-- 可以在这里自由记录后来想到的内容，同步只更新下方标记之间的微信读书记录。 -->\n\n${start}\n${body}\n${end}\n`;
     const nextNote = split ? split.prefix + body + split.suffix : fresh;
-    const nextState = JSON.stringify({ version: 1, notePath, bodyHash: sha(body), data }, null, 2) + '\n';
+    const nextState = JSON.stringify({ version: 1, renderVersion: RENDER_VERSION, notePath, bodyHash: sha(body), data }, null, 2) + '\n';
     // Write the note first. A crash before state persistence causes a conflict on retry, not silent data loss.
     atomicWrite(note, nextNote, oldNote);
     atomicWrite(statePath, nextState, stateText);
-    return { status: state ? 'updated' : 'created', notePath, ...counts };
+    return { status: formatOnly ? 'formatted' : state ? 'updated' : 'created', notePath, ...counts };
   } finally {
     fs.closeSync(lockFd); fs.unlinkSync(lock);
   }
@@ -224,14 +231,16 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   try {
     const args = process.argv.slice(2), options = {};
     if (!args.length || args.includes('--help')) {
-      console.log('node zhpmind-sync.mjs --book-id ID --note inbox/书名-阅读记录.md [--vault PATH]');
+      console.log('node zhpmind-sync.mjs --book-id ID --note inbox/书名-阅读记录.md [--vault PATH] [--format-only]');
     } else {
-      for (let i=0; i<args.length; i+=2) {
+      for (let i=0; i<args.length;) {
+        if (args[i] === '--format-only' && !options[args[i]]) { options[args[i++]] = true; continue; }
         if (!['--book-id','--note','--vault'].includes(args[i]) || !args[i+1] || options[args[i]]) fail('参数不完整或重复。');
         options[args[i]] = args[i+1];
+        i += 2;
       }
       if (!options['--book-id'] || !options['--note']) fail('请指定书籍编号和目标笔记。');
-      console.log(JSON.stringify(await syncBook({ vault: options['--vault'] ?? ROOT, bookId: options['--book-id'], notePath: options['--note'], client: new Gateway(readKey()) })));
+      console.log(JSON.stringify(await syncBook({ vault: options['--vault'] ?? ROOT, bookId: options['--book-id'], notePath: options['--note'], formatOnly: !!options['--format-only'], client: options['--format-only'] ? null : new Gateway(readKey()) })));
     }
   } catch (error) {
     console.error(error instanceof SyntaxError ? '本地状态格式异常，请先核对，未继续同步。' : error.message);
