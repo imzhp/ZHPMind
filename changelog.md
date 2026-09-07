@@ -129,3 +129,8 @@
 - 在官方 skill 上新增明确标注的 ZHPMind 本地同步扩展、脚本与测试。来源仍为 Tencent/WeChatReading Apache-2.0，commit `315698a8da1810fab0bbf24a52b38a6960e54cdc`、接口版本 1.0.4；本地扩展不冒充官方功能。
 - 真实首次同步返回 `created`，第二次返回 `unchanged`；笔记与状态文件 SHA-256、mtime 均未改变。8 项离线测试通过，覆盖分页、重复同步、新增与修改、源端缺失保留、同步区外补充保留、同步区内冲突停止等。源端修改使用临时目录合成数据验证，没有向真实账户写入测试内容。
 - 状态保存在 Git 忽略的 `.codex/weread-sync/`，无密钥；当前仅 mini 单点运行，未验证 Air 状态接续或 Claudian 技能发现。不设置自动同步，不调用蒸馏或评审，不手动 commit/push。
+
+## [2026-09-07] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-09-07.md
+- 数据摘要：119 wiki 页、0 孤岛、2 MOC 候选（wildlume、system-skill）、🔴 raw 未引用率 18.2%（2/11 顶层文件未被引用）
