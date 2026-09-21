@@ -134,3 +134,8 @@
 
 - 新建 inbox/review-digest-2026-09-07.md
 - 数据摘要：119 wiki 页、0 孤岛、2 MOC 候选（wildlume、system-skill）、🔴 raw 未引用率 18.2%（2/11 顶层文件未被引用）
+
+## [2026-09-21] review-digest | 健康度周报
+
+- 新建 inbox/review-digest-2026-09-21.md
+- 数据摘要：119 wiki 页、0 孤岛、2 MOC 候选（wildlume、system-skill）、🔴 raw 未引用率 18.2%（2/11 顶层）、修正频率 1 页（🟡）、inbox 积压 6 条（全部 no_trace）
