@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/Users/zhanghaopeng/.local/bin:/Users/zhanghaopeng/.venv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+	<key>Label</key>
+	<string>ai.zhpmind.autocommit</string>
+	<key>LowPriorityIO</key>
+	<true/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>-l</string>
+		<string>-c</string>
+		<string>/Users/zhanghaopeng/Obsidian/ZHPMind/scripts/zhpmind-autocommit</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/zhanghaopeng/Library/Logs/ZHPMind/zhpmind-autocommit.stderr.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/zhanghaopeng/Library/Logs/ZHPMind/zhpmind-autocommit.stdout.log</string>
+	<key>StartInterval</key>
+	<integer>600</integer>
+	<key>ThrottleInterval</key>
+	<integer>60</integer>
+</dict>
+</plist>
