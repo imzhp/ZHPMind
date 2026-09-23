@@ -395,3 +395,10 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages updated**: [[index]]、[[zhanghaopeng]]（仅业务入口及旧团队描述）
 - **Sources touched**: 5 篇 wildlume 专题、4 份业务草稿／交接、旧专用入库流程和空路线图已迁出；mixed raw 未改
 - **Note**: 目标与原样快照见 [迁移映射](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/Migration-2026-09-23.md>)，含旧 `yaoye-*` aliases 的去向。旧日志中的页面链接属于历史记录，不重写；当前业务入口为 [Yaoye](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/README.md>)。索引移除 5 条业务页，书镜两个项目内执行副本仅修正来源路径。原文哈希逐份一致后再移除源文件；不操作 Git 提交或同步服务。
+
+## [2026-09-23] links | WorkOS 工作域调整
+
+- Pages created: none
+- Pages updated: index、zhanghaopeng，仅修复直接路径引用
+- Sources touched: none
+- Note: WorkOS 原 Yaoye 目录移至 Work/Yaoye；同步修正索引、人物页和两个 book-mirror 副本中的引用路径。正文事实、书镜流程与历史日志原内容保持不变；未手动提交 Git，未验证另一设备同步。

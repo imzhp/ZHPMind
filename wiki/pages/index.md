@@ -13,7 +13,7 @@ _最后更新：2026-09-23 — 114 个 Markdown 文件（含本索引）_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
 
-曜野专属业务资料已迁至 [WorkOS/Yaoye](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/README.md>)，不再列为本库业务页面。
+曜野专属业务资料已迁至 [WorkOS/Work/Yaoye](</Users/zhanghaopeng/Documents/ZHP WorkOS/Work/Yaoye/README.md>)，不再列为本库业务页面。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
 
 如需添加新页面：将来源文件放入 `wiki/raw/`，然后告诉 Claudian：`distill [文件名]`
