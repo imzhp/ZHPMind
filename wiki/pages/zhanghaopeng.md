@@ -25,7 +25,7 @@ source_count: 4
 
 一句话定义：**正处在"从机会型创业走向系统化运营的早期扩张阶段"，同时处在"成为父亲后重新平衡事业、家庭、健康和创造欲"的阶段。**
 
-曜野已经不是纯想法或单人试水项目——它有股东结构、注册资本、开票主体、SKU 体系、海外仓、货代、ERP 和外部用户（详见 [[wildlume-business-reference]]）。但它也还没有进入成熟组织阶段：真正承担业务全链条和产品开发的人只有张昊鹏本人，团队仅有 1 名财务和 1 名全职 ERP 工程师。
+曜野已经不是纯想法或单人试水项目——它有股东结构、注册资本、开票主体、SKU 体系、海外仓、货代、ERP 和外部用户（详见 [曜野业务背景](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/YaoYe Background.md>)）。但它也还没有进入成熟组织阶段：真正承担业务全链条和产品开发的人只有张昊鹏本人，本段原团队描述属于早期背景，现行团队与职责统一见上述 WorkOS 业务背景。
 
 这意味着压力不是单一岗位压力，而是"公司系统尚未完全组织化之前，核心能力临时集中在一个人身上"的压力。他既要处理业务，又要搭建系统；既要推进当下现金流和订单，又要思考组织、产品、工具和未来结构。
 
@@ -158,7 +158,7 @@ source_count: 4
 ## References
 
 - 口述原文：你怎么定义自己现在的人生阶段？（2026-05-12 语音转录）
-- 业务数据：[[wildlume-business-reference]]
+- 业务数据：[曜野业务背景](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/YaoYe Background.md>)
 - 讨论记录：zhpmind-discussion-2026-05-12
 - 口述补充：婚姻 / 孕期 / 姥姥时间线（2026-06-04 镜射对谈）
 - 父子关系理论：[[my-father-before-me]]（Diamond 精神分析视角）、[[raising-boys]]（Biddulph 社会生态学视角）

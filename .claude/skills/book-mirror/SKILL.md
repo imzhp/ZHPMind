@@ -63,14 +63,14 @@ python3 ~/.hermes/scripts/book-split.py \
 围绕本章原作观点，读取并筛选真实素材：
 
 - `wiki/pages/zhanghaopeng.md`
-- `wiki/pages/wildlume-*.md`
+- [曜野业务资料](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/README.md>)（已迁出 ZHPMind，按需读取对应专题）
 - `projects/**`
 - `inbox/**` 中仍未蒸馏但明确相关的随记
 - 与本书主题相关的既有 `wiki/pages/*.md`
 
 每条右栏映射必须能回指一个具体事实、事件、决策或反思。可用锚点格式：
 
-- `2026-06-03 [来源:[[wildlume-business-architecture]]] ...`
+- `2026-06-03 [来源:[曜野业务架构](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/Reference/Business-Architecture-v1.md>)] ...`
 - `2026-05-29 [来源:projects/amazon-learning/README.md] ...`
 - `2026-06-02 [来源:inbox/1随记.md] ...`
 

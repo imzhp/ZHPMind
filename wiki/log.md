@@ -387,3 +387,11 @@ Format: `## [YYYY-MM-DD] operation | Description`
 - **Pages created**: none
 - **Pages updated**: [[skill-cross-eval]]
 - **Note**: 首次真实 dogfood 暴露模型结构化输出可自相矛盾：DeepSeek 首行写 `pass`，但红旗分节仍列出具体问题。执行脚本现以红旗分节兜底，将此类结果强制降为 `需修后复评` 并标注 `gate_override`。默认调用也收束为 OpenAI/GPT + DeepSeek；Claude/Anthropic 仅在显式开关下作为补充位，避免旧 key 产生意外 Opus 费用。新报告记录 provider 返回的 token usage 与费用估算，DeepSeek 余额可由 `--check-balance` 查询。既有报告作为历史快照保留，不回写。
+
+
+## [2026-09-23] migrate | 曜野资料集中到 WorkOS
+
+- **Pages created**: none
+- **Pages updated**: [[index]]、[[zhanghaopeng]]（仅业务入口及旧团队描述）
+- **Sources touched**: 5 篇 wildlume 专题、4 份业务草稿／交接、旧专用入库流程和空路线图已迁出；mixed raw 未改
+- **Note**: 目标与原样快照见 [迁移映射](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/Migration-2026-09-23.md>)，含旧 `yaoye-*` aliases 的去向。旧日志中的页面链接属于历史记录，不重写；当前业务入口为 [Yaoye](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/README.md>)。索引移除 5 条业务页，书镜两个项目内执行副本仅修正来源路径。原文哈希逐份一致后再移除源文件；不操作 Git 提交或同步服务。

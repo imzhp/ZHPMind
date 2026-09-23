@@ -2,16 +2,18 @@
 title: "Wiki Index"
 tags: [meta, index]
 created: 2026-04-12
-updated: 2026-07-10
+updated: 2026-09-23
 sources: []
 source_count: 0
 ---
 
 # Wiki Index
 
-_最后更新：2026-07-10 — 118 pages total_
+_最后更新：2026-09-23 — 114 个 Markdown 文件（含本索引）_
 
 本页为 wiki 所有页面的主目录，由 Claudian 自动维护。
+
+曜野专属业务资料已迁至 [WorkOS/Yaoye](</Users/zhanghaopeng/Documents/ZHP WorkOS/Yaoye/README.md>)，不再列为本库业务页面。
 每条目格式：`- [[页面名]] — 一句话摘要（N 个来源）`
 
 如需添加新页面：将来源文件放入 `wiki/raw/`，然后告诉 Claudian：`distill [文件名]`
@@ -93,10 +95,6 @@ _最后更新：2026-07-10 — 118 pages total_
 - [[dual-process-theory]] — 系统一（快思考）与系统二（慢思考）认知架构，行为经济学偏差的统一解释框架（卡尼曼） (1 个来源)
 - [[prospect-theory]] — 前景理论：S形价值函数+决策权重，损失规避是行为经济学核心框架（卡尼曼和特韦尔斯基，1979） (2 个来源)
 - [[transactional-analysis]] — 沟通分析（TA）：儿童/父母/成人三种自我状态（PAC 模型）+ 人生坐标 + 心理游戏，强化成人状态实现有意识选择 (1 个来源)
-- [[wildlume-business-architecture]] — 曜野业务架构与价值链全景：参与者图谱、战略骨架、价值主张、信息流盘点 (0 个来源)
-- [[wildlume-feedback-listing]] — C 端反馈反哺 Listing 运营与分销商的机制设计（B 方向）(0 个来源)
-- [[wildlume-feedback-product]] — C 端反馈反哺产品改良与工厂研发的机制设计（A 方向）(0 个来源)
-- [[wildlume-project-roadmap]] — 曜野 Project 三层框架与 Phase 1 推进路线图，含任务清单与开新对话规范 (0 个来源)
 
 ## Skills
 
@@ -158,4 +156,3 @@ _最后更新：2026-07-10 — 118 pages total_
 ## Snapshots
 
 - [[amazon-fee-rates-snapshot]] — Amazon FBA 费率、类目佣金与对华进口关税的 2026-06-05 数据快照 (0 个来源)
-- [[wildlume-business-reference]] — 曜野业务事实单一来源：股东、SKU、定价、海外仓、货代、ERP、团队 (0 个来源)
