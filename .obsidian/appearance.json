@@ -1,5 +1,6 @@
 {
-  "cssTheme": "Minimal",
+  "cssTheme": "",
   "accentColor": "#008c5c",
-  "translucency": true
+  "translucency": true,
+  "nativeMenus": true
 }
