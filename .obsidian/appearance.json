@@ -2,5 +2,6 @@
   "cssTheme": "",
   "accentColor": "#008c5c",
   "translucency": true,
-  "nativeMenus": true
+  "nativeMenus": true,
+  "showRibbon": true
 }
